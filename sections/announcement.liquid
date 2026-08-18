@@ -30,6 +30,40 @@
       "label": "t:sections.header.settings.announcement_sticky_on_mobile.label",
       "default": false,
       "visible_if": "{{ section.settings.sticky_on_scroll == true }}"
+    },
+    {
+      "type": "header",
+      "content": "Hollow promo bar"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "LABOR DAY SALE"
+    },
+    {
+      "type": "text",
+      "id": "offer",
+      "label": "Offer text",
+      "default": "BUY 2 GET 2 FREE"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_countdown",
+      "label": "Show countdown",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "end_datetime",
+      "label": "Countdown end (ISO)",
+      "info": "Example: 2026-09-07T23:59:59",
+      "default": "2026-09-07T23:59:59"
     }
   ],
   "blocks": [

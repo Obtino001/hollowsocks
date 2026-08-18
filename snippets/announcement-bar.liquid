@@ -1,71 +1,69 @@
-{%- assign show_announcement = false -%}
-{%- assign announcement_block_count = 0 -%}
-{%- for block in section.blocks -%}
-  {%- if block.type == 'announcement' or block.type == '@app' -%}
-    {%- assign show_announcement = true -%}
-    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
-  {%- endif -%}
-{%- endfor -%}
+{%- liquid
+  assign show_announcement = false
+  assign announcement_block_count = 0
+  assign first_block = nil
+  for block in section.blocks
+    if block.type == 'announcement' or block.type == '@app'
+      assign show_announcement = true
+      assign announcement_block_count = announcement_block_count | plus: 1
+      if first_block == nil
+        assign first_block = block
+      endif
+    endif
+  endfor
+
+  assign heading = section.settings.heading | default: first_block.settings.text
+  assign offer = section.settings.offer | default: first_block.settings.link_text
+  assign link = section.settings.link | default: first_block.settings.link
+  assign end_date = section.settings.end_datetime | default: '2026-09-07T23:59:59'
+-%}
 
 {% if show_announcement %}
-  <div class="announcement-bar" data-sticky="{{ section.settings.sticky_on_scroll }}" data-sticky-mobile="{{ section.settings.sticky_on_mobile }}">
-    <div class="page-width">
-      <div class="slideshow-wrapper">
-        <button type="button" class="visually-hidden slideshow__pause" data-id="{{ section.id }}" aria-live="polite">
-          <span class="slideshow__pause-stop">
-            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pause" viewBox="0 0 10 13"><g fill-rule="evenodd"><path d="M0 0h3v13H0z"/><path d="M7 0h3v13H7z"/></g></svg>
-            <span class="icon__fallback-text">{{ 'sections.slideshow.pause_slideshow' | t }}</span>
-          </span>
-          <span class="slideshow__pause-play">
-            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play" viewBox="18.24 17.35 24.52 28.3"><path fill="#323232" d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/></svg>
-            <span class="icon__fallback-text">{{ 'sections.slideshow.play_slideshow' | t }}</span>
-          </span>
-        </button>
-
-        <div
-          id="AnnouncementSlider"
-          class="announcement-slider"
-          data-compact="{{ section.settings.announcement_compact }}"
-          data-block-count="{{ announcement_block_count }}">
-          {%- assign slide_index = 0 -%}
-          {%- for block in section.blocks -%}
-            {%- if block.type == '@app' -%}
-              <div
-                id="AnnouncementSlide-{{ block.id }}"
-                class="announcement-slider__slide"
-                data-index="{{ slide_index }}"
-                {{ block.shopify_attributes }}
-              >
-                {%- render block -%}
-              </div>
-              {%- assign slide_index = slide_index | plus: 1 -%}
-            {%- endif -%}
-            {%- if block.type == 'announcement' -%}
-              <div
-                id="AnnouncementSlide-{{ block.id }}"
-                class="announcement-slider__slide"
-                data-index="{{ slide_index }}"
-                {{ block.shopify_attributes }}
-              >
-                {%- if block.settings.link != blank -%}
-                  <a class="announcement-link" href="{{ block.settings.link }}">
-                {%- endif -%}
-                  {%- if block.settings.text != blank -%}
-                    <span class="announcement-text">{{ block.settings.text }}</span>
-                  {%- endif -%}
-                  {%- if block.settings.link_text != blank -%}
-                    <span class="announcement-link-text">{{ block.settings.link_text }}</span>
-                  {%- endif -%}
-                {%- if block.settings.link != blank -%}
-                  </a>
-                {%- endif -%}
-              </div>
-              {%- assign slide_index = slide_index | plus: 1 -%}
-            {%- endif -%}
-          {%- endfor -%}
+  <div
+    class="announcement-bar hollow-announcement"
+    data-sticky="{{ section.settings.sticky_on_scroll }}"
+    data-sticky-mobile="{{ section.settings.sticky_on_mobile }}"
+  >
+    <div class="hollow-announcement__inner page-width">
+      {%- if link != blank -%}
+        <a class="hollow-announcement__copy" href="{{ link }}">
+      {%- else -%}
+        <div class="hollow-announcement__copy">
+      {%- endif -%}
+        {%- if heading != blank -%}
+          <span class="hollow-announcement__title">{{ heading }}</span>
+        {%- endif -%}
+        {%- if offer != blank -%}
+          <span class="hollow-announcement__offer">{{ offer }}</span>
+        {%- endif -%}
+      {%- if link != blank -%}
+        </a>
+      {%- else -%}
         </div>
-      </div>
+      {%- endif -%}
+
+      {%- if section.settings.enable_countdown -%}
+        <div
+          class="hollow-countdown"
+          data-hollow-countdown
+          data-end="{{ end_date | escape }}"
+        >
+          <div class="hollow-countdown__unit">
+            <span class="hollow-countdown__box" data-unit="hours">00</span>
+            <span class="hollow-countdown__label">HR</span>
+          </div>
+          <span class="hollow-countdown__sep" aria-hidden="true">:</span>
+          <div class="hollow-countdown__unit">
+            <span class="hollow-countdown__box" data-unit="minutes">00</span>
+            <span class="hollow-countdown__label">MIN</span>
+          </div>
+          <span class="hollow-countdown__sep" aria-hidden="true">:</span>
+          <div class="hollow-countdown__unit">
+            <span class="hollow-countdown__box" data-unit="seconds">00</span>
+            <span class="hollow-countdown__label">SEC</span>
+          </div>
+        </div>
+      {%- endif -%}
     </div>
   </div>
-
 {% endif %}

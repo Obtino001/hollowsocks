@@ -1,0 +1,1103 @@
+/* Hollow Socks — Impulse 1:1 overlay
+   Matches hollowsocks.com: promo bar, header, hero, cards, footer */
+
+:root {
+  --hollow-red: #941b1b;
+  --hollow-black: #111111;
+  --hollow-white: #ffffff;
+  --hollow-muted: #8a8a8a;
+  --hollow-border: #111111;
+  --hollow-green: #2fa84f;
+  --hollow-display: "Oswald", "Impact", sans-serif;
+  --hollow-body: "Inter", Helvetica, Arial, sans-serif;
+  --hollow-header-height: 72px;
+}
+
+.hollow-theme,
+.hollow-theme body,
+.hollow-theme input,
+.hollow-theme textarea,
+.hollow-theme button,
+.hollow-theme select {
+  font-family: var(--hollow-body);
+}
+
+.hollow-theme h1,
+.hollow-theme h2,
+.hollow-theme h3,
+.hollow-theme .h1,
+.hollow-theme .h2,
+.hollow-theme .h3,
+.hollow-theme .hero__title,
+.hollow-theme .section-header__title {
+  font-family: var(--hollow-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.hollow-theme .page-width {
+  max-width: 1440px;
+}
+
+.hollow-theme .shopify-section.hollow-hero-section,
+.hollow-theme .shopify-section.hollow-banners-section,
+.hollow-theme .shopify-section.hollow-story-section {
+  margin: 0;
+}
+
+.hollow-theme .section--divider {
+  border: 0;
+}
+
+.hollow-theme .site-header {
+  background: var(--hollow-white);
+  padding: 12px 0;
+  box-shadow: none !important;
+  border-bottom: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .hollow-theme .site-header {
+    padding: 14px 0;
+  }
+}
+
+.hollow-theme .header-wrapper {
+  background: var(--hollow-white);
+}
+
+.hollow-theme .header-layout--left-center .header-item--logo {
+  flex: 0 0 190px !important;
+  max-width: none !important;
+}
+
+.hollow-theme .header-layout--left-center .header-item--icons {
+  flex: 0 0 300px !important;
+  max-width: none !important;
+  min-width: 260px !important;
+  justify-content: flex-end;
+}
+
+.hollow-theme .site-header__logo {
+  margin: 0;
+  font-size: 0;
+}
+
+.hollow-theme .site-header__logo a {
+  width: auto !important;
+}
+
+.hollow-wordmark {
+  display: block;
+  font-family: var(--hollow-display);
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--hollow-black);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 769px) {
+  .hollow-wordmark {
+    font-size: 34px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.hollow-theme .site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hollow-theme .site-nav__link {
+  font-family: var(--hollow-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hollow-black);
+  padding: 10px 16px;
+}
+
+.hollow-theme .site-nav__link--underline:after {
+  display: none;
+}
+
+.hollow-theme .site-nav__link--has-dropdown .icon-chevron-down {
+  display: none;
+}
+
+.hollow-theme .site-nav__icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hollow-header-search {
+  position: relative;
+  width: 210px;
+}
+
+.hollow-header-search input[type="search"] {
+  width: 100%;
+  height: 38px;
+  margin: 0;
+  padding: 0 38px 0 12px;
+  border: 1px solid var(--hollow-black);
+  border-radius: 0;
+  background: var(--hollow-white);
+  color: var(--hollow-black);
+  font-family: var(--hollow-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: none;
+  appearance: none;
+}
+
+.hollow-header-search input[type="search"]::placeholder {
+  color: #b3b3b3;
+  opacity: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hollow-header-search input[type="search"]:focus {
+  outline: none;
+  border-color: var(--hollow-black);
+}
+
+.hollow-header-search button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hollow-header-search .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.hollow-theme .cart-link__bubble {
+  display: none !important;
+}
+
+.hollow-theme .cart-link {
+  display: block;
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+
+.hollow-theme .cart-link .icon.hollow-icon-bag {
+  width: 24px;
+  height: 24px;
+}
+
+.hollow-theme .cart-link .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.hollow-cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background: var(--hollow-green);
+  color: var(--hollow-white);
+  font-family: var(--hollow-body);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hollow-announcement {
+  background: var(--hollow-red);
+  color: var(--hollow-white);
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.hollow-announcement__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.hollow-announcement__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: inherit;
+  text-decoration: none;
+  line-height: 1.05;
+}
+
+.hollow-announcement__copy:hover,
+.hollow-announcement__copy:active,
+.hollow-announcement__copy:visited {
+  color: inherit;
+}
+
+.hollow-announcement__title {
+  display: block;
+  font-family: var(--hollow-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hollow-announcement__offer {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--hollow-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hollow-countdown {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.hollow-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hollow-countdown__box {
+  min-width: 46px;
+  height: 36px;
+  padding: 0 8px;
+  background: var(--hollow-white);
+  color: var(--hollow-black);
+  font-family: var(--hollow-body);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 36px;
+  text-align: center;
+}
+
+.hollow-countdown__label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hollow-white);
+}
+
+.hollow-countdown__sep {
+  padding-bottom: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--hollow-white);
+  line-height: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-announcement {
+    padding: 8px 12px;
+  }
+
+  .hollow-announcement__inner {
+    gap: 14px;
+  }
+
+  .hollow-announcement__title {
+    font-size: 16px;
+  }
+
+  .hollow-announcement__offer {
+    font-size: 10px;
+  }
+
+  .hollow-countdown__box {
+    min-width: 38px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .hollow-header-search {
+    display: none;
+  }
+
+  .hollow-wordmark {
+    font-size: 24px;
+  }
+}
+
+.hollow-hero {
+  position: relative;
+  min-height: 640px;
+  height: calc(100vh - 140px);
+  max-height: 860px;
+  overflow: hidden;
+  color: var(--hollow-white);
+  background: #6b6460;
+}
+
+.hollow-hero__media,
+.hollow-hero__media img,
+.hollow-hero__placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  .hollow-hero__placeholder {
+    background: #6e6661;
+  }
+
+.hollow-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+.hollow-hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: inherit;
+  height: 100%;
+  padding: 60px 0 110px;
+}
+
+.hollow-hero__copy {
+  max-width: 720px;
+}
+
+.hollow-hero__kicker {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.hollow-hero__heading {
+  margin: 0 0 16px;
+  font-family: var(--hollow-display);
+  font-size: clamp(42px, 6.4vw, 86px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.hollow-hero__text {
+  margin: 0 0 28px;
+  max-width: 460px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+}
+
+.hollow-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  height: 36px;
+  padding: 0 18px;
+  color: var(--hollow-white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--hollow-red);
+  border: 0;
+  margin-top: 12px;
+}
+
+.hollow-hero__cta:hover,
+.hollow-hero__cta:visited {
+  color: var(--hollow-white);
+}
+
+.hollow-hero__stats {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1a1a;
+  padding: 18px 0 16px;
+  z-index: 2;
+}
+
+.hollow-hero__stats-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hollow-hero__stat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.hollow-hero__stat:not(:first-child){
+  border-left: 1px solid rgba(255,255,255,0.35);
+}
+
+.hollow-hero__stat-value {
+  display: block;
+  font-family: var(--hollow-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hollow-hero__stat-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.92);
+}
+
+.hollow-hero__vertical {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 44px;
+  background: #fff;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hollow-hero__vertical-text{
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #000;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-hero {
+    min-height: 520px;
+    height: 78vh;
+    max-height: none;
+  }
+
+  .hollow-hero__content {
+    padding: 48px 0 90px;
+    justify-content: flex-end;
+  }
+
+  .hollow-hero__stats {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 12px 0;
+  }
+
+  .hollow-hero__stats-grid{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hollow-hero__stat:not(:first-child){
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,0.35);
+    padding-top: 10px;
+  }
+
+  .hollow-hero__vertical {
+    display: none;
+  }
+}
+
+.hollow-benefits {
+  padding: 72px 0 40px;
+  text-align: center;
+}
+
+.hollow-benefits__title {
+  margin: 0 0 36px;
+  font-family: var(--hollow-display);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hollow-benefits__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px 48px;
+}
+
+.hollow-benefits__item {
+  width: 140px;
+  text-align: center;
+}
+
+.hollow-benefits__icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 12px;
+  color: var(--hollow-black);
+}
+
+.hollow-benefits__icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+.hollow-benefits__label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hollow-activity {
+  padding: 24px 0 56px;
+}
+
+.hollow-activity__title {
+  margin: 0 0 28px;
+  text-align: center;
+  font-family: var(--hollow-display);
+  font-size: clamp(22px, 3vw, 34px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hollow-activity__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.hollow-activity__card {
+  position: relative;
+  display: block;
+  min-height: 420px;
+  overflow: hidden;
+  color: var(--hollow-white);
+  text-decoration: none;
+  background: #d7d2cc;
+}
+
+.hollow-activity__card img,
+.hollow-activity__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hollow-activity__card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 45%);
+}
+
+.hollow-activity__name {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 1;
+  font-family: var(--hollow-display);
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1024px) {
+  .hollow-activity__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hollow-activity__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hollow-activity__card {
+    min-height: 280px;
+  }
+}
+
+.hollow-banners {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.hollow-banners__card {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  padding: 36px;
+  color: var(--hollow-white);
+  text-decoration: none;
+  overflow: hidden;
+  background: #6a6662;
+}
+
+.hollow-banners__card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hollow-banners__card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.hollow-banners__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hollow-banners__title {
+  margin: 0 0 8px;
+  font-family: var(--hollow-display);
+  font-size: 42px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.hollow-banners__cta {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hollow-banners__text {
+  max-width: 360px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-banners {
+    grid-template-columns: 1fr;
+  }
+
+  .hollow-banners__card {
+    min-height: 380px;
+  }
+}
+
+.hollow-theme .section-header {
+  margin-bottom: 24px;
+}
+
+.hollow-theme .section-header__title {
+  font-size: clamp(28px, 4vw, 48px);
+}
+
+.hollow-theme .grid-product.hollow-card {
+  margin-bottom: 30px;
+}
+
+.hollow-theme .hollow-card .grid-product__content {
+  position: relative;
+}
+
+.hollow-theme .hollow-card .grid-product__tag {
+  left: 12px;
+  top: 12px;
+  right: auto;
+  padding: 6px 10px;
+  background: var(--hollow-black);
+  color: var(--hollow-white);
+  border-radius: 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hollow-theme .hollow-card .grid-product__image-mask {
+  background: #eee;
+}
+
+.hollow-theme .hollow-card .grid-product__meta {
+  padding-top: 12px;
+  text-align: left;
+}
+
+.hollow-card__reviews {
+  margin-bottom: 6px;
+  color: var(--hollow-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hollow-theme .hollow-card .grid-product__title {
+  font-family: var(--hollow-body);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 6px;
+}
+
+.hollow-card__promo {
+  margin-bottom: 6px;
+  color: var(--hollow-red);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hollow-theme .hollow-card .grid-product__price {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.hollow-theme .hollow-card .grid-product__price--original {
+  color: var(--hollow-muted);
+}
+
+.hollow-theme .quick-product__btn {
+  left: 12px;
+  right: 12px;
+  width: auto;
+  bottom: 12px;
+  border-radius: 0;
+  background: var(--hollow-white);
+  color: var(--hollow-black);
+  border: 1px solid var(--hollow-black);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hollow-reviews {
+  padding: 72px 0;
+  text-align: center;
+}
+
+.hollow-reviews__title {
+  margin: 0 0 40px;
+  font-family: var(--hollow-display);
+  font-size: clamp(24px, 4vw, 42px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hollow-reviews__track {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 0 16px;
+  scrollbar-width: none;
+}
+
+.hollow-reviews__track::-webkit-scrollbar {
+  display: none;
+}
+
+.hollow-reviews__card {
+  flex: 0 0 min(420px, 80vw);
+  scroll-snap-align: start;
+  text-align: left;
+}
+
+.hollow-reviews__quote {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.hollow-reviews__author {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hollow-reviews__meta {
+  margin-top: 4px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hollow-muted);
+}
+
+.hollow-reviews__cta {
+  display: inline-block;
+  margin: 28px 0 40px;
+  color: var(--hollow-black);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hollow-reviews__trust {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hollow-story {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  min-height: 640px;
+}
+
+.hollow-story__media {
+  position: relative;
+  min-height: 480px;
+  background: #d9d4cf;
+}
+
+.hollow-story__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hollow-story__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 48px;
+  background: #f3f1ee;
+}
+
+.hollow-story__eyebrow {
+  margin: 0 0 16px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hollow-story__title {
+  margin: 0 0 18px;
+  font-family: var(--hollow-display);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.hollow-story__text {
+  max-width: 420px;
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.hollow-story__cta {
+  color: var(--hollow-black);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-story {
+    grid-template-columns: 1fr;
+  }
+
+  .hollow-story__content {
+    padding: 40px 20px;
+  }
+}
+
+.hollow-instagram {
+  padding: 72px 0;
+  text-align: center;
+}
+
+.hollow-instagram__title {
+  margin: 0;
+  font-family: var(--hollow-display);
+  font-size: clamp(28px, 4vw, 48px);
+  text-transform: uppercase;
+}
+
+.hollow-instagram__handle {
+  display: block;
+  margin: 10px 0 28px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.hollow-instagram__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.hollow-instagram__item {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #ece8e4;
+}
+
+.hollow-instagram__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 900px) {
+  .hollow-instagram__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hollow-newsletter {
+  padding: 72px 0 24px;
+}
+
+.hollow-newsletter__title {
+  margin: 0 0 10px;
+  font-family: var(--hollow-display);
+  font-size: clamp(28px, 4vw, 42px);
+  text-transform: uppercase;
+}
+
+.hollow-newsletter__text {
+  max-width: 420px;
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hollow-theme .site-footer {
+  background: var(--hollow-white);
+  color: var(--hollow-black);
+  padding-top: 24px;
+  border-top: 0;
+}
+
+.hollow-theme .footer__title,
+.hollow-theme .h4.footer__title {
+  font-family: var(--hollow-display);
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hollow-theme .site-footer__linklist a,
+.hollow-theme .footer__collapsible a {
+  color: var(--hollow-black);
+  font-size: 13px;
+  text-transform: lowercase;
+}
+
+.hollow-theme .site-footer__linklist a:hover {
+  color: var(--hollow-black);
+}
+
+.hollow-theme .footer__newsletter-input {
+  border: 0;
+  border-bottom: 1px solid var(--hollow-black);
+  border-radius: 0;
+  background: transparent;
+}
+
+.hollow-theme .footer__small-text {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.hollow-theme .btn,
+.hollow-theme .btn--secondary {
+  border-radius: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hollow-theme .footer__item[data-type="newsletter"] .footer__social {
+  display: none;
+}
+
+.hollow-theme .section-header__link {
+  border: 0;
+  background: none;
+  padding: 0;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+}

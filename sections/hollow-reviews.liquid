@@ -1,0 +1,147 @@
+<section class="hollow-reviews" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="hollow-reviews__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    <div class="hollow-reviews__track">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'review' -%}
+          <blockquote class="hollow-reviews__card" {{ block.shopify_attributes }}>
+            <p class="hollow-reviews__quote">{{ block.settings.quote }}</p>
+            {%- if block.settings.author != blank -%}
+              <div class="hollow-reviews__author">{{ block.settings.author }}</div>
+            {%- endif -%}
+            {%- if block.settings.meta != blank -%}
+              <div class="hollow-reviews__meta">{{ block.settings.meta }}</div>
+            {%- endif -%}
+          </blockquote>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <a class="hollow-reviews__cta" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+
+    {%- assign trust_blocks = section.blocks | where: 'type', 'trust' -%}
+    {%- if trust_blocks.size > 0 -%}
+      <div class="hollow-reviews__trust">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'trust' -%}
+            <span {{ block.shopify_attributes }}>{{ block.settings.label }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hollow reviews",
+  "class": "hollow-reviews-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "OVER 4,000,000+ PAIRS SOLD"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "READ MORE REVIEWS —"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "I’m very happy with this purchase, they are a quality product."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Steve J"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Meta",
+          "default": "verified buyer"
+        }
+      ]
+    },
+    {
+      "type": "trust",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "27,000+ reviews"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hollow reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable. Just what I needed for long walks with my dog.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet. I gave it 5 stars because even in the hot weather they feel very comfortable!",
+            "author": "Michael W",
+            "meta": "verified buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible.",
+            "author": "drew s",
+            "meta": "verified buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.",
+            "author": "Raymond L.",
+            "meta": "verified buyer"
+          }
+        },
+        { "type": "trust", "settings": { "label": "27,000+ reviews" } },
+        { "type": "trust", "settings": { "label": "OVER 4 MILLION SOLD" } },
+        { "type": "trust", "settings": { "label": "99 day money back guarantee" } }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popups"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,94 @@
+<section class="hollow-banners" data-section-id="{{ section.id }}">
+  {%- for block in section.blocks -%}
+    <a class="hollow-banners__card" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+      {%- if block.settings.image != blank -%}
+        {%- render 'image-element',
+          img: block.settings.image,
+          widths: '720, 1080, 1400, 1800',
+          loading: 'lazy'
+        -%}
+      {%- endif -%}
+      <div class="hollow-banners__content">
+        {%- if block.settings.title != blank -%}
+          <h3 class="hollow-banners__title">{{ block.settings.title }}</h3>
+        {%- endif -%}
+        {%- if block.settings.button_label != blank -%}
+          <span class="hollow-banners__cta">{{ block.settings.button_label }}</span>
+        {%- endif -%}
+        {%- if block.settings.text != blank -%}
+          <p class="hollow-banners__text">{{ block.settings.text }}</p>
+        {%- endif -%}
+      </div>
+    </a>
+  {%- endfor -%}
+</section>
+
+{% schema %}
+{
+  "name": "Hollow category banners",
+  "class": "hollow-banners-section",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Compression"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "shop now"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "The perfect aid for enhanced circulation and improved comfort."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hollow category banners",
+      "blocks": [
+        {
+          "type": "banner",
+          "settings": {
+            "title": "Compression",
+            "button_label": "shop now",
+            "text": "The perfect aid for enhanced circulation and improved comfort."
+          }
+        },
+        {
+          "type": "banner",
+          "settings": {
+            "title": "trades",
+            "button_label": "shop now",
+            "text": "Socks built for the 14-hour long days on the worksite."
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popups"]
+  }
+}
+{% endschema %}

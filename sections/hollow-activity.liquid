@@ -1,0 +1,76 @@
+<section class="hollow-activity" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="hollow-activity__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    <div class="hollow-activity__grid">
+      {%- for block in section.blocks -%}
+        <a class="hollow-activity__card" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {%- render 'image-element',
+              img: block.settings.image,
+              widths: '480, 720, 900, 1200',
+              loading: 'lazy'
+            -%}
+          {%- else -%}
+            <div class="hollow-activity__media"></div>
+          {%- endif -%}
+          <span class="hollow-activity__name">{{ block.settings.title }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hollow shop by activity",
+  "class": "hollow-activity-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "shop by activity"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "activity",
+      "name": "Activity",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "compression"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hollow shop by activity",
+      "blocks": [
+        { "type": "activity", "settings": { "title": "compression" } },
+        { "type": "activity", "settings": { "title": "trades" } },
+        { "type": "activity", "settings": { "title": "Bundles" } },
+        { "type": "activity", "settings": { "title": "Hunting" } }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popups"]
+  }
+}
+{% endschema %}

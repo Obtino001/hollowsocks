@@ -57,9 +57,9 @@
       "articles": "Articles",
       "no_results_html": "Search for \"{{ terms }}\"",
       "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
-      "title": "Search",
-      "placeholder": "Search",
-      "submit": "Search",
+      "title": "SEARCH",
+      "placeholder": "SEARCH",
+      "submit": "SEARCH",
       "cancel": "Cancel",
       "search_title": "Top searched",
       "result_count": {

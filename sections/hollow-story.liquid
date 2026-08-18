@@ -1,0 +1,76 @@
+<section class="hollow-story" data-section-id="{{ section.id }}">
+  <div class="hollow-story__media">
+    {%- if section.settings.image != blank -%}
+      {%- render 'image-element',
+        img: section.settings.image,
+        widths: '720, 1080, 1400, 1800',
+        loading: 'lazy'
+      -%}
+    {%- endif -%}
+  </div>
+  <div class="hollow-story__content">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="hollow-story__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.title != blank -%}
+      <h2 class="hollow-story__title">{{ section.settings.title | newline_to_br }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <p class="hollow-story__text">{{ section.settings.text }}</p>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a class="hollow-story__cta" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hollow story",
+  "class": "hollow-story-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "ethically sourced in the high altitudes of peru"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Heading",
+      "default": "hollow\nby nature"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Unlike cotton and wool, alpaca fiber is naturally hollow, creating breathable warmth and dry comfort without bulk."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "learn more"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hollow story"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popups"]
+  }
+}
+{% endschema %}

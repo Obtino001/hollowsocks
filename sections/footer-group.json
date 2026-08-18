@@ -4,43 +4,9 @@
   "sections": {
     "footer-promotions": {
       "type": "footer-promotions",
-      "blocks": {
-        "promotion-1": {
-          "type": "promotion",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "title": "Free Returns",
-            "text": "<p>Shop with confidence knowing you have 30 days to return your order.</p>",
-            "button_label": "Learn more",
-            "button_link": ""
-          }
-        },
-        "promotion-2": {
-          "type": "promotion",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "title": "Free Returns",
-            "text": "<p>Shop with confidence knowing you have 30 days to return your order.</p>",
-            "button_label": "Learn more",
-            "button_link": ""
-          }
-        },
-        "promotion-3": {
-          "type": "promotion",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "title": "Free Returns",
-            "text": "<p>Shop with confidence knowing you have 30 days to return your order.</p>",
-            "button_label": "Learn more",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": ["promotion-1", "promotion-2", "promotion-3"],
       "disabled": true,
+      "blocks": {},
+      "block_order": [],
       "settings": {
         "hide_homepage": false
       }
@@ -48,48 +14,60 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "menu-1": {
-          "type": "menu",
-          "settings": {
-            "show_footer_title": true,
-            "menu": "new-footer-shop",
-            "container_width": 20
-          }
-        },
-        "menu-2": {
-          "type": "menu",
-          "settings": {
-            "show_footer_title": true,
-            "menu": "new-footer-the-company",
-            "container_width": 20
-          }
-        },
-        "menu-3": {
-          "type": "menu",
-          "settings": {
-            "show_footer_title": true,
-            "menu": "new-footer-get-help",
-            "container_width": 20
-          }
-        },
         "newsletter": {
           "type": "newsletter",
           "settings": {
             "show_footer_title": true,
-            "title": "Sign up for Impulse updates",
-            "text": "<p>Be the first to know about our biggest and best sales. We'll never send more than one email a month.</p>",
-            "container_width": 40
+            "title": "JOIN THE HOLLOW CREW",
+            "text": "<p>Stay connected for new releases and exclusive offers.</p><p>You can unsubscribe at any time. View Terms & Privacy.</p>",
+            "container_width": 35
+          }
+        },
+        "shop": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "SHOP",
+            "text": "<p><a href=\"/collections/best-sellers\">best sellers</a><br><a href=\"/collections/bundles\">BUNDLE & SAVE 50%</a><br><a href=\"/collections/compression\">compression</a><br><a href=\"/collections/everyday\">everyday</a><br><a href=\"/collections/trades\">Trades</a></p>",
+            "container_width": 16
+          }
+        },
+        "learn": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "LEARN",
+            "text": "<p><a href=\"/pages/why-alpaca\">WHY ALPACA FIBER?</a><br><a href=\"/pages/store-locator\">store locator</a><br><a href=\"/pages/reviews\">reviews</a></p>",
+            "container_width": 16
+          }
+        },
+        "support": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "SUPPORT",
+            "text": "<p><a href=\"/pages/faq\">faqs</a><br><a href=\"/pages/returns\">returns & exchanges</a><br><a href=\"/pages/accessibility\">Accessibility</a><br><a href=\"/pages/contact\">contact us</a></p>",
+            "container_width": 16
+          }
+        },
+        "follow": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "FOLLOW ALONG",
+            "text": "<p></p>",
+            "container_width": 17
           }
         }
       },
-      "block_order": ["menu-1", "menu-2", "menu-3", "newsletter"],
+      "block_order": ["newsletter", "shop", "learn", "support", "follow"],
       "settings": {
         "show_currency_selector": false,
         "show_currency_flags": false,
         "show_locale_selector": false,
         "show_payment_icons": false,
-        "show_copyright": false,
-        "copyright_text": ""
+        "show_copyright": true,
+        "copyright_text": "Accessibility · Terms and Conditions · privacy policy · disclaimer"
       }
     }
   },

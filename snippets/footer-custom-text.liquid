@@ -25,6 +25,10 @@
         {%- endif -%}
 
         {{ block.settings.text }}
+
+        {%- if block.settings.title contains 'FOLLOW' -%}
+          {% render 'social-icons', additional_classes: 'footer__social' %}
+        {%- endif -%}
       </div>
     </div>
   </div>
