@@ -18,7 +18,10 @@
     endif
   endfor
 
-  assign show_buy2get2_badge = has_buy_tag and has_get_tag
+  assign show_buy2get2_badge = false
+  if has_buy_tag and has_get_tag
+    assign show_buy2get2_badge = true
+  endif
 
   if current_variant.compare_at_price > current_variant.price
     assign show_buy2get2_badge = true
