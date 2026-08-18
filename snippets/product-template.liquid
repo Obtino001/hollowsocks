@@ -7,6 +7,31 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
 
+  assign has_buy_tag = false
+  assign has_get_tag = false
+  for tag in product.tags
+    if tag contains 'buy' or tag contains 'BUY'
+      assign has_buy_tag = true
+    endif
+    if tag contains 'get' or tag contains 'GET'
+      assign has_get_tag = true
+    endif
+  endfor
+
+  assign show_buy2get2_badge = has_buy_tag and has_get_tag
+
+  if current_variant.compare_at_price > current_variant.price
+    assign show_buy2get2_badge = true
+  endif
+
+  assign reviews_rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count
+  assign reviews_rating_value = product.metafields.reviews.rating.value | default: product.metafields.reviews.rating
+  assign reviews_rating_value_num = reviews_rating_value | default: 5
+  assign reviews_full_stars = reviews_rating_value_num | times: 1 | round
+  if reviews_full_stars > 5
+    assign reviews_full_stars = 5
+  endif
+
   unless thumbnail_position
     assign thumbnail_position = 'beside'
   endunless
@@ -78,7 +103,7 @@
 
       <div class="grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %}">
         {%- if image_position == 'left' -%}
-          <div class="grid__item {{ product_image_width }} product-single__sticky">
+          <div class="grid__item {{ product_image_width }} product-single__sticky hollow-pdp-gallery-wrap">
             {%- render 'product-images',
               section_id: section_id,
               product: product,
@@ -98,6 +123,15 @@
               fallback: fallback,
               mobile_layout: mobile_layout,
             -%}
+
+            {%- if show_buy2get2_badge -%}
+              <div class="hollow-pdp-buy2get2" aria-hidden="true">
+                <div class="hollow-pdp-buy2get2__ring">
+                  <span class="hollow-pdp-buy2get2__top">BUY 2</span>
+                  <span class="hollow-pdp-buy2get2__mid">GET 2 FREE</span>
+                </div>
+              </div>
+            {%- endif -%}
           </div>
         {%- endif -%}
 
@@ -119,6 +153,21 @@
                   {%- else -%}
                     {{ product.vendor | link_to_vendor }}
                   {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if isModal != true and reviews_rating_count != blank -%}
+                <div class="hollow-pdp-rating" aria-label="Product rating">
+                  <span class="hollow-pdp-rating__stars" aria-hidden="true">
+                    {%- for i in (1..5) -%}
+                      {%- if i <= reviews_full_stars -%}
+                        ★
+                      {%- else -%}
+                        ☆
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </span>
+                  <span class="hollow-pdp-rating__count">({{ reviews_rating_count }} REVIEWS)</span>
                 </div>
               {%- endif -%}
 
@@ -201,6 +250,13 @@
                         <span data-compare-price-a11y class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
                       {%- else -%}
                         <span data-a11y-price class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                      {%- endif -%}
+
+                      {%- if current_variant.compare_at_price > current_variant.price -%}
+                        {%- assign compare_at = current_variant.compare_at_price -%}
+                        {%- assign price_val = current_variant.price -%}
+                        {%- assign discount_percent = compare_at | minus: price_val | times: 100.0 | divided_by: compare_at | round -%}
+                        <div class="hollow-pdp-discount" aria-hidden="true">{{ discount_percent }}% OFF</div>
                       {%- endif -%}
 
                       <span data-product-price
@@ -340,6 +396,18 @@
                           -%}
                         </div>
                       {%- endunless -%}
+
+                      {%- if show_buy2get2_badge -%}
+                        <div class="hollow-pdp-guarantee" aria-hidden="true">
+                          <div class="hollow-pdp-guarantee__ring">
+                            <div class="hollow-pdp-guarantee__days">99</div>
+                          </div>
+                          <div class="hollow-pdp-guarantee__copy">
+                            <div class="hollow-pdp-guarantee__title">99 DAY</div>
+                            <div class="hollow-pdp-guarantee__text">MONEY-BACK GUARANTEE</div>
+                          </div>
+                        </div>
+                      {%- endif -%}
 
                       {%- if block.settings.surface_pickup_enable -%}
                         <div data-store-availability-holder

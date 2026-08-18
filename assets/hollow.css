@@ -1045,8 +1045,8 @@
 }
 
 .hollow-theme .site-footer {
-  background: var(--hollow-white);
-  color: var(--hollow-black);
+  background: var(--hollow-black);
+  color: var(--hollow-white);
   padding-top: 24px;
   border-top: 0;
 }
@@ -1058,29 +1058,32 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 16px;
+  color: var(--hollow-white);
 }
 
 .hollow-theme .site-footer__linklist a,
 .hollow-theme .footer__collapsible a {
-  color: var(--hollow-black);
+  color: var(--hollow-white);
   font-size: 13px;
   text-transform: lowercase;
 }
 
 .hollow-theme .site-footer__linklist a:hover {
-  color: var(--hollow-black);
+  color: var(--hollow-white);
 }
 
 .hollow-theme .footer__newsletter-input {
   border: 0;
-  border-bottom: 1px solid var(--hollow-black);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 0;
   background: transparent;
+  color: var(--hollow-white);
 }
 
 .hollow-theme .footer__small-text {
   font-size: 12px;
   letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .hollow-theme .btn,
@@ -1094,10 +1097,187 @@
   display: none;
 }
 
+/* Left newsletter tile (footer screenshot) */
+.hollow-theme .footer-newsletter-tile{
+  position: relative;
+  overflow: hidden;
+  padding: 28px 24px;
+  min-height: 240px;
+}
+.hollow-theme .footer-newsletter-tile__bg{
+  position:absolute;
+  inset:0;
+  background-size: cover;
+  background-position: center;
+  z-index:0;
+}
+.hollow-theme .footer-newsletter-tile__bg .image-wrap{
+  position:absolute;
+  inset:0;
+  height: 100% !important;
+}
+.hollow-theme .footer-newsletter-tile__overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.55);
+  z-index:1;
+}
+.hollow-theme .footer-newsletter-tile__content{
+  position: relative;
+  z-index:2;
+  max-width: 360px;
+}
+.hollow-theme .footer-newsletter-tile .footer__newsletter-input::placeholder{
+  color: rgba(255,255,255,0.65);
+}
+
+/* Hide Powered by Shopify line (last small text) */
+.hollow-theme .footer__small-text:last-of-type{
+  display:none;
+}
+
+.hollow-theme .social-icons svg path,
+.hollow-theme .social-icons svg circle,
+.hollow-theme .social-icons svg rect {
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
 .hollow-theme .section-header__link {
   border: 0;
   background: none;
   padding: 0;
   font-size: 13px;
   letter-spacing: 0.14em;
+}
+
+/* --- PDP (product-template.liquid) Hollow overrides --- */
+.hollow-theme .hollow-pdp-rating{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin: 0 0 12px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color: #000;
+}
+
+.hollow-theme .hollow-pdp-rating__stars{
+  font-size:14px;
+  line-height:1;
+}
+
+.hollow-theme .hollow-pdp-rating__count{
+  font-size:11px;
+  opacity:0.9;
+}
+
+.hollow-theme .hollow-pdp-discount{
+  display:inline-block;
+  margin: 0 0 6px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color: var(--hollow-white);
+  background: var(--hollow-red);
+  padding: 6px 10px;
+  line-height: 1;
+}
+
+.hollow-theme .hollow-pdp-gallery-wrap{
+  position: relative;
+}
+
+.hollow-theme .hollow-pdp-buy2get2{
+  position:absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-55%);
+  z-index: 3;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__ring{
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  border: 2px solid var(--hollow-black);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background: #fff;
+  text-align:center;
+  font-family: var(--hollow-display);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__top{
+  font-size: 12px;
+  line-height: 1.05;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__mid{
+  font-size: 12px;
+  line-height: 1.05;
+}
+
+/* Make the Impulse ATC look like Hollow's big red button */
+.hollow-theme .product-single__form .add-to-cart{
+  background: var(--hollow-red) !important;
+  border: 0 !important;
+  color: var(--hollow-white) !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  font-weight: 800 !important;
+  height: 44px !important;
+  border-radius: 0 !important;
+}
+
+.hollow-theme .product-single__form .add-to-cart span{
+  font-size: 12px !important;
+}
+
+.hollow-theme .hollow-pdp-guarantee{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.hollow-theme .hollow-pdp-guarantee__ring{
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  border: 2px solid var(--hollow-black);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: #fff;
+  font-family: var(--hollow-display);
+  font-weight: 800;
+}
+
+.hollow-theme .hollow-pdp-guarantee__days{
+  font-size: 18px;
+}
+
+.hollow-theme .hollow-pdp-guarantee__title{
+  font-family: var(--hollow-display);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.hollow-theme .hollow-pdp-guarantee__text{
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.95;
 }
