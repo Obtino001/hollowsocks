@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "t:sections.footer-group.name",
@@ -5,8 +14,6 @@
     "footer-promotions": {
       "type": "footer-promotions",
       "disabled": true,
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "hide_homepage": false
       }
@@ -60,7 +67,13 @@
           }
         }
       },
-      "block_order": ["newsletter", "shop", "learn", "support", "follow"],
+      "block_order": [
+        "newsletter",
+        "shop",
+        "learn",
+        "support",
+        "follow"
+      ],
       "settings": {
         "show_currency_selector": false,
         "show_currency_flags": false,
@@ -71,5 +84,8 @@
       }
     }
   },
-  "order": ["footer-promotions", "footer"]
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
 }
