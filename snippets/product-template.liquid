@@ -24,12 +24,25 @@
     assign show_buy2get2_badge = true
   endif
 
+  {%- comment -%}
+    Theme Editor / design preview often uses "Default product" which may not
+    have the required tags or metafields. Add fallbacks so Hollow elements
+    are visible in preview, without affecting real storefront logic.
+  {%- endcomment -%}
+  if request.design_mode
+    assign show_buy2get2_badge = true
+  endif
+
   assign reviews_rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count
   assign reviews_rating_value = product.metafields.reviews.rating.value | default: product.metafields.reviews.rating
   assign reviews_rating_value_num = reviews_rating_value | default: 5
   assign reviews_full_stars = reviews_rating_value_num | times: 1 | round
   if reviews_full_stars > 5
     assign reviews_full_stars = 5
+  endif
+
+  if request.design_mode and reviews_rating_count == blank
+    assign reviews_rating_count = 27000
   endif
 
   unless thumbnail_position
@@ -252,10 +265,14 @@
                         <span data-a11y-price class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
                       {%- endif -%}
 
-                      {%- if current_variant.compare_at_price > current_variant.price -%}
-                        {%- assign compare_at = current_variant.compare_at_price -%}
-                        {%- assign price_val = current_variant.price -%}
-                        {%- assign discount_percent = compare_at | minus: price_val | times: 100.0 | divided_by: compare_at | round -%}
+                      {%- if current_variant.compare_at_price > current_variant.price or request.design_mode -%}
+                        {%- if current_variant.compare_at_price > current_variant.price -%}
+                          {%- assign compare_at = current_variant.compare_at_price -%}
+                          {%- assign price_val = current_variant.price -%}
+                          {%- assign discount_percent = compare_at | minus: price_val | times: 100.0 | divided_by: compare_at | round -%}
+                        {%- else -%}
+                          {%- assign discount_percent = 50 -%}
+                        {%- endif -%}
                         <div class="hollow-pdp-discount" aria-hidden="true">{{ discount_percent }}% OFF</div>
                       {%- endif -%}
 
