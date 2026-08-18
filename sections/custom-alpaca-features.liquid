@@ -1,0 +1,318 @@
+{% style %}
+  .custom-section-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .custom-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 769px) {
+    .custom-grid-{{ section.id }} {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+  }
+
+  .left-col-heading {
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-size: calc(var(--typeHeaderSize) * 1.2);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+  }
+
+  .feature-list-{{ section.id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .feature-item-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .feature-item-{{ section.id }}:last-child {
+    border-bottom: none;
+  }
+
+  .feature-icon-{{ section.id }} {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    object-fit: contain;
+  }
+
+  .feature-text-{{ section.id }} {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1a1a1a;
+  }
+
+  .center-col-image-wrapper {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .center-col-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .right-col-heading {
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-size: calc(var(--typeHeaderSize) * 0.9);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+
+  .activity-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .activity-card-{{ section.id }} {
+    text-decoration: none;
+    display: block;
+  }
+
+  .activity-image-wrapper {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .activity-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .activity-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: #f7f6f2;
+    color: #1a1a1a;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .activity-title {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+  }
+{% endstyle %}
+
+<div class="custom-section-{{ section.id }}">
+  <div class="page-width">
+    <div class="custom-grid-{{ section.id }}">
+      
+      <div class="grid-column left-column">
+        {% if section.settings.left_heading != blank %}
+          <h2 class="left-col-heading">{{ section.settings.left_heading | newline_to_br }}</h2>
+        {% endif %}
+        
+        <ul class="feature-list-{{ section.id }}">
+          {% for block in section.blocks %}
+            {% if block.type == 'feature_item' %}
+              <li class="feature-item-{{ section.id }}" {{ block.shopify_attributes }}>
+                {% if block.settings.icon != blank %}
+                  {{ block.settings.icon | image_url: width: 50 | image_tag: class: 'feature-icon-' | append: section.id, loading: 'lazy' }}
+                {% endif %}
+                <span class="feature-text-{{ section.id }}">{{ block.settings.title }}</span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="grid-column center-column">
+        <div class="center-col-image-wrapper">
+          {% if section.settings.center_image != blank %}
+            {{ section.settings.center_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="grid-column right-column">
+        {% if section.settings.right_heading != blank %}
+          <h2 class="right-col-heading">{{ section.settings.right_heading }}</h2>
+        {% endif %}
+
+        <div class="activity-grid-{{ section.id }}">
+          {% for block in section.blocks %}
+            {% if block.type == 'activity_card' %}
+              <a href="{{ block.settings.link }}" class="activity-card-{{ section.id }}" {{ block.shopify_attributes }}>
+                <div class="activity-image-wrapper">
+                  {% if block.settings.badge_text != blank %}
+                    <span class="activity-badge">{{ block.settings.badge_text }}</span>
+                  {% endif %}
+                  
+                  {% if block.settings.image != blank %}
+                    {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+                  {% else %}
+                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {% endif %}
+                </div>
+                <span class="activity-title">{{ block.settings.title }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "3-Column Features",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f9f8f6"
+    },
+    {
+      "type": "textarea",
+      "id": "left_heading",
+      "label": "Left Column Heading",
+      "default": "HOLLOW SOCKS\nARE MADE WITH\nALPACA FIBER."
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Center Main Image"
+    },
+    {
+      "type": "text",
+      "id": "right_heading",
+      "label": "Right Column Heading",
+      "default": "SHOP BY ACTIVITY"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_item",
+      "name": "Left Feature Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (Small)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Text",
+          "default": "TEMPERATURE REGULATING"
+        }
+      ]
+    },
+    {
+      "type": "activity_card",
+      "name": "Right Activity Card",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Activity Name",
+          "default": "COMPRESSION"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text (Optional)",
+          "info": "e.g., '50% OFF'"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "3-Column Features (Custom)",
+      "blocks": [
+        { "type": "feature_item", "settings": { "title": "TEMPERATURE REGULATING" } },
+        { "type": "feature_item", "settings": { "title": "BREATHABLE & LIGHT" } },
+        { "type": "feature_item", "settings": { "title": "SOFT ALPACA FIBER" } },
+        { "type": "feature_item", "settings": { "title": "MOISTURE WICKING" } },
+        { "type": "feature_item", "settings": { "title": "ODOR RESISTANT" } },
+        { "type": "feature_item", "settings": { "title": "MADE IN THE USA" } },
+        { "type": "activity_card", "settings": { "title": "COMPRESSION" } },
+        { "type": "activity_card", "settings": { "title": "TRADES" } },
+        { "type": "activity_card", "settings": { "title": "BUNDLES", "badge_text": "50% OFF" } },
+        { "type": "activity_card", "settings": { "title": "HUNTING" } }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popups"]
+  }
+}
+{% endschema %}

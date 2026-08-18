@@ -104,19 +104,28 @@
       "block_order": ["banner-1", "banner-2"],
       "settings": {}
     },
-    "hollow-benefits-2": {
-      "type": "hollow-benefits",
+    "custom-alpaca-features": {
+      "type": "custom-alpaca-features",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "icon": "temp", "label": "Temperature Regulating" } },
-        "b2": { "type": "benefit", "settings": { "icon": "drop", "label": "moisture wicking" } },
-        "b3": { "type": "benefit", "settings": { "icon": "air", "label": "Breathable & Light" } },
-        "b4": { "type": "benefit", "settings": { "icon": "shield", "label": "odor resistant" } },
-        "b5": { "type": "benefit", "settings": { "icon": "fiber", "label": "Soft Alpaca Fiber" } },
-        "b6": { "type": "benefit", "settings": { "icon": "usa", "label": "made in the usa" } }
+        "f1": { "type": "feature_item", "settings": { "title": "TEMPERATURE REGULATING" } },
+        "f2": { "type": "feature_item", "settings": { "title": "BREATHABLE & LIGHT" } },
+        "f3": { "type": "feature_item", "settings": { "title": "SOFT ALPACA FIBER" } },
+        "f4": { "type": "feature_item", "settings": { "title": "MOISTURE WICKING" } },
+        "f5": { "type": "feature_item", "settings": { "title": "ODOR RESISTANT" } },
+        "f6": { "type": "feature_item", "settings": { "title": "MADE IN THE USA" } },
+        "a1": { "type": "activity_card", "settings": { "title": "COMPRESSION" } },
+        "a2": { "type": "activity_card", "settings": { "title": "TRADES" } },
+        "a3": { "type": "activity_card", "settings": { "title": "BUNDLES", "badge_text": "50% OFF" } },
+        "a4": { "type": "activity_card", "settings": { "title": "HUNTING" } }
       },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6", "a1", "a2", "a3", "a4"],
       "settings": {
-        "title": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER."
+        "bg_color": "#f9f8f6",
+        "left_heading": "HOLLOW SOCKS\nARE MADE WITH\nALPACA FIBER.",
+        "center_image": "",
+        "right_heading": "SHOP BY ACTIVITY",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "hollow-reviews": {
@@ -200,7 +209,7 @@
     "hollow-activity",
     "featured-collection",
     "hollow-banners",
-    "hollow-benefits-2",
+    "custom-alpaca-features",
     "hollow-reviews",
     "hollow-story",
     "hollow-instagram"
