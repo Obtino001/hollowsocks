@@ -1,0 +1,97 @@
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "promotion-1": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Free Returns",
+            "text": "<p>Shop with confidence knowing you have 30 days to return your order.</p>",
+            "button_label": "Learn more",
+            "button_link": ""
+          }
+        },
+        "promotion-2": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Free Returns",
+            "text": "<p>Shop with confidence knowing you have 30 days to return your order.</p>",
+            "button_label": "Learn more",
+            "button_link": ""
+          }
+        },
+        "promotion-3": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Free Returns",
+            "text": "<p>Shop with confidence knowing you have 30 days to return your order.</p>",
+            "button_label": "Learn more",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": ["promotion-1", "promotion-2", "promotion-3"],
+      "disabled": true,
+      "settings": {
+        "hide_homepage": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "menu-1": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "new-footer-shop",
+            "container_width": 20
+          }
+        },
+        "menu-2": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "new-footer-the-company",
+            "container_width": 20
+          }
+        },
+        "menu-3": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "new-footer-get-help",
+            "container_width": 20
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "show_footer_title": true,
+            "title": "Sign up for Impulse updates",
+            "text": "<p>Be the first to know about our biggest and best sales. We'll never send more than one email a month.</p>",
+            "container_width": 40
+          }
+        }
+      },
+      "block_order": ["menu-1", "menu-2", "menu-3", "newsletter"],
+      "settings": {
+        "show_currency_selector": false,
+        "show_currency_flags": false,
+        "show_locale_selector": false,
+        "show_payment_icons": false,
+        "show_copyright": false,
+        "copyright_text": ""
+      }
+    }
+  },
+  "order": ["footer-promotions", "footer"]
+}

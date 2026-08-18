@@ -1,0 +1,248 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "size_chart": {
+          "type": "size_chart",
+          "settings": {
+            "size_chart": "size-chart"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Description",
+            "content": "<p>[connect via dynamic source]</p>",
+            "page": ""
+          }
+        },
+        "tab-2": {
+          "type": "tab",
+          "settings": {
+            "title": "Materials & Care",
+            "content": "<p>[connect via dynamic source]</p>",
+            "page": ""
+          }
+        },
+        "tab-3": {
+          "type": "tab",
+          "settings": {
+            "title": "Certifications",
+            "content": "<p>[connect certification badges/images via dynamic source]</p>",
+            "page": ""
+          }
+        },
+        "tab-4": {
+          "type": "tab",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>something something</p>",
+            "page": ""
+          }
+        },
+        "sales_point-1": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "leaf",
+            "text": "Organic cotton"
+          }
+        },
+        "sales_point-2": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "ribbon",
+            "text": "Something something"
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "description",
+        "size_chart",
+        "variant_picker",
+        "buy_buttons",
+        "tab-1",
+        "tab-2",
+        "tab-3",
+        "tab-4",
+        "sales_point-1",
+        "sales_point-2"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": true,
+        "mobile_layout": "full",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 5,
+        "products_per_row": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "recent_count": 5
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Couldn't be happier with the service I received from this company.</p>",
+            "author": "Leslie M.",
+            "author_info": "Toronto, ON"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Really went out of their way to make me feel special as a customer, highly recommend!</p>",
+            "author": "Rachel F.",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Fantastic fabrics, great fit and no issues going through the laundry either!</p>",
+            "author": "Sam R.",
+            "author_info": "Brooklyn, NY"
+          }
+        },
+        "testimonial-4": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Arrived fast and beautifully boxed. They even let me model on their site :)</p>",
+            "author": "Sharon S.",
+            "author_info": "New Orleans, LA"
+          }
+        },
+        "testimonial-5": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Couldn't be happier with the service I received from this company.</p>",
+            "author": "Matt C.",
+            "author_info": "Montreal, QC"
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3", "testimonial-4", "testimonial-5"],
+      "settings": {
+        "title": "Hear it from them",
+        "heading_size": "h2",
+        "align_text": "center",
+        "round_images": true,
+        "color_background": "#e6ebef",
+        "color_text": "#2a3743"
+      }
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "something something",
+            "title": "Sustainability",
+            "title_size": 80,
+            "subheading": "Quality materials, thoughtful details, and products made to keep up.",
+            "link": "",
+            "link_text": "Leads to sustainability page",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "parallax_direction": "top",
+            "overlay_opacity": 20
+          }
+        }
+      },
+      "block_order": ["image-1"],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "apps": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "recently-viewed",
+    "collection-return",
+    "testimonials",
+    "slideshow",
+    "sub",
+    "apps"
+  ]
+}

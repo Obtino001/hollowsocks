@@ -1,0 +1,106 @@
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "announcement-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping",
+            "link_text": "On all orders over $100",
+            "link": ""
+          }
+        },
+        "announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Hassle-free returns",
+            "link_text": "30-day postage paid returns",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["announcement-0", "announcement-1"],
+      "settings": {
+        "announcement_compact": true,
+        "sticky_on_scroll": true,
+        "sticky_on_mobile": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega-menu-1": {
+          "type": "mega_menu",
+          "name": "New",
+          "settings": {
+            "menu_item": "New",
+            "show_images": false,
+            "image_aspect_ratio": "landscape",
+            "center_content": false,
+            "promo_text_alignment": "center",
+            "promo_heading_size": "small",
+            "promo1_image": "",
+            "promo1_image_shape": "rounded-top",
+            "promo1_link": "",
+            "promo1_heading": "Linen Favorites",
+            "promo1_text": "Breathable, relaxed pieces for everyday wear",
+            "promo1_button_label": "",
+            "promo1_position": "after",
+            "promo2_image": "",
+            "promo2_image_shape": "rounded-top",
+            "promo2_link": "",
+            "promo2_heading": "New This Week",
+            "promo2_text": "",
+            "promo2_button_label": "The Wren Coat",
+            "promo2_position": "after"
+          }
+        },
+        "mega-menu-2": {
+          "type": "mega_menu",
+          "name": "Clothing",
+          "settings": {
+            "menu_item": "Clothing",
+            "show_images": true,
+            "image_aspect_ratio": "landscape",
+            "center_content": false,
+            "promo_text_alignment": "left",
+            "promo_heading_size": "medium",
+            "promo1_image_shape": "landscape",
+            "promo1_link": "",
+            "promo1_heading": "",
+            "promo1_text": "",
+            "promo1_button_label": "",
+            "promo1_position": "after",
+            "promo2_image_shape": "landscape",
+            "promo2_link": "",
+            "promo2_heading": "",
+            "promo2_text": "",
+            "promo2_button_label": "",
+            "promo2_position": "after"
+          }
+        }
+      },
+      "block_order": ["mega-menu-1", "mega-menu-2"],
+      "settings": {
+        "logo": "",
+        "desktop_logo_width": 160,
+        "mobile_logo_width": 120,
+        "main_menu_link_list": "main-menu",
+        "hover_menu": true,
+        "main_menu_alignment": "center",
+        "header_style": "sticky",
+        "sticky_index": false,
+        "sticky_collection": false,
+        "toolbar_menu": "new-toolbar",
+        "toolbar_social": true,
+        "show_currency_selector": true,
+        "show_currency_flags": false,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": ["announcement", "header"]
+}
