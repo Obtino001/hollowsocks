@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hollow preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/hollow.css?v=2">
+  <style>
+    body { margin: 0; }
+    .page-width { padding: 0 24px; }
+    .site-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; background: #fff; }
+    .site-nav { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+    .site-nav a { font-family: var(--hollow-mono); font-size: 12px; letter-spacing: .56px; text-transform: uppercase; color: #282828; text-decoration: none; }
+    .header-icons { display: flex; align-items: center; gap: 12px; }
+    .hollow-header-search { display: flex; align-items: center; border-bottom: 1px solid #282828; }
+    .hollow-header-search input { border: 0; font-family: var(--hollow-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; width: 88px; }
+  </style>
+</head>
+<body class="hollow-theme">
+  <div class="announcement-bar hollow-announcement">
+    <div class="hollow-announcement__inner">
+      <div class="hollow-announcement__copy">
+        <span class="hollow-announcement__title">LABOR DAY SALE</span>
+        <span class="hollow-announcement__offer">BUY 2 GET 2 FREE</span>
+      </div>
+      <div class="hollow-countdown" data-hollow-countdown data-end="2026-08-20T23:59:59">
+        <div class="hollow-countdown__unit"><span class="hollow-countdown__box" data-unit="hours">05</span><span class="hollow-countdown__label">HR</span></div>
+        <span class="hollow-countdown__sep">:</span>
+        <div class="hollow-countdown__unit"><span class="hollow-countdown__box" data-unit="minutes">00</span><span class="hollow-countdown__label">MIN</span></div>
+        <span class="hollow-countdown__sep">:</span>
+        <div class="hollow-countdown__unit"><span class="hollow-countdown__box" data-unit="seconds">41</span><span class="hollow-countdown__label">SEC</span></div>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <img class="hollow-logo" src="../assets/hollow-logo.svg" alt="HOLLOW" width="93" height="32">
+    <ul class="site-nav">
+      <li><a href="#">BEST SELLERS</a></li>
+      <li><a href="#">COMPRESSION</a></li>
+      <li><a href="#">EVERYDAY</a></li>
+      <li><a href="#">BUNDLES</a></li>
+      <li><a href="#">TRADES</a></li>
+      <li><a href="#">HUNTING</a></li>
+    </ul>
+    <div class="header-icons">
+      <form class="hollow-header-search"><input type="search" placeholder="SEARCH"><button type="submit" aria-label="search"></button></form>
+      <span class="cart-link"><span class="hollow-cart-count">0</span></span>
+    </div>
+  </header>
+  <section class="hollow-hero">
+    <div class="hollow-hero__placeholder"></div>
+    <div class="hollow-hero__overlay" style="background:rgba(0,0,0,.12)"></div>
+    <div class="hollow-hero__content">
+      <div class="page-width">
+        <div class="hollow-hero__copy">
+          <p class="hollow-hero__kicker">KNITTED IN THE U.S.A.</p>
+          <h2 class="hollow-hero__heading">LABOR DAY SALE</h2>
+          <p class="hollow-hero__text">Alpaca fiber sourced from Peru, knit into every pair here in the U.S.</p>
+          <a class="hollow-hero__cta" href="#">SHOP BEST SELLERS —</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hollow-trust">
+    <div class="hollow-trust__grid">
+      <div class="hollow-trust__item"><span class="hollow-trust__value">27,000+</span><span class="hollow-trust__label">5-star reviews</span></div>
+      <div class="hollow-trust__item"><span class="hollow-trust__value">4 MILLION+</span><span class="hollow-trust__label">pairs sold</span></div>
+      <div class="hollow-trust__item"><span class="hollow-trust__value">99-DAY</span><span class="hollow-trust__label">money-back guarantee</span></div>
+    </div>
+  </section>
+  <section class="hollow-intro">
+    <div class="page-width hollow-intro__desktop">
+      <div class="hollow-intro__grid">
+        <div class="hollow-intro__left">
+          <h2 class="hollow-intro__heading">HOLLOW SOCKS ARE MADE WITH ALPACA FIBER.</h2>
+          <ul class="hollow-intro__features">
+            <li class="hollow-intro__feature"><span class="hollow-intro__feature-text">Temperature Regulating</span></li>
+            <li class="hollow-intro__feature"><span class="hollow-intro__feature-text">Breathable & Light</span></li>
+            <li class="hollow-intro__feature"><span class="hollow-intro__feature-text">Soft Alpaca Fiber</span></li>
+            <li class="hollow-intro__feature"><span class="hollow-intro__feature-text">Moisture Wicking</span></li>
+            <li class="hollow-intro__feature"><span class="hollow-intro__feature-text">Odor Resistant</span></li>
+          </ul>
+        </div>
+        <div class="hollow-intro__center"><div class="hollow-intro__fiber-fallback"></div></div>
+        <div class="hollow-intro__right">
+          <h2 class="hollow-intro__heading hollow-intro__heading--right">shop by activity</h2>
+          <div class="hollow-intro__activities">
+            <a class="hollow-intro__activity" href="#"><span class="hollow-intro__activity-media"></span><span class="hollow-intro__activity-title">compression</span></a>
+            <a class="hollow-intro__activity" href="#"><span class="hollow-intro__activity-media"></span><span class="hollow-intro__activity-title">trades</span></a>
+            <a class="hollow-intro__activity" href="#"><span class="hollow-intro__activity-media"><span class="hollow-intro__badge">50% OFF</span></span><span class="hollow-intro__activity-title">bundles</span></a>
+            <a class="hollow-intro__activity" href="#"><span class="hollow-intro__activity-media"></span><span class="hollow-intro__activity-title">hunting</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="index-section">
+    <div class="page-width"><div class="section-header"><h2 class="section-header__title">Best Sellers</h2></div></div>
+    <div class="hollow-shop-all"><a class="hollow-btn hollow-btn--dark" href="#">shop all</a></div>
+  </div>
+  <section class="hollow-banners">
+    <article class="hollow-banners__item"><a class="hollow-banners__media" href="#"><h3 class="hollow-banners__title">Compression</h3></a><p class="hollow-banners__text">The perfect aid for enhanced circulation and improved comfort.</p></article>
+    <article class="hollow-banners__item"><a class="hollow-banners__media" href="#"><h3 class="hollow-banners__title">trades</h3></a><p class="hollow-banners__text">Socks built for the 14-hour long days on the worksite.</p></article>
+  </section>
+  <section class="hollow-benefits">
+    <div class="page-width">
+      <h2 class="hollow-benefits__title">HOLLOW SOCKS ARE MADE WITH ALPACA FIBER.</h2>
+      <div class="hollow-benefits__grid">
+        <div class="hollow-benefits__item"><div class="hollow-benefits__label">Temperature Regulating</div></div>
+        <div class="hollow-benefits__item"><div class="hollow-benefits__label">moisture wicking</div></div>
+        <div class="hollow-benefits__item"><div class="hollow-benefits__label">Breathable & Light</div></div>
+        <div class="hollow-benefits__item"><div class="hollow-benefits__label">odor resistant</div></div>
+        <div class="hollow-benefits__item"><div class="hollow-benefits__label">Soft Alpaca Fiber</div></div>
+        <div class="hollow-benefits__item"><div class="hollow-benefits__label">made in the usa</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="hollow-reviews">
+    <div class="page-width">
+      <div class="hollow-reviews__stars" aria-hidden="true">★★★★★</div>
+      <h2 class="hollow-reviews__title">OVER 4,000,000+ PAIRS SOLD</h2>
+      <div class="hollow-reviews__track">
+        <blockquote class="hollow-reviews__card"><div class="hollow-reviews__card-stars">★★★★★</div><p class="hollow-reviews__quote">I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable.</p><div class="hollow-reviews__author">Steve J</div><div class="hollow-reviews__meta">verified buyer</div></blockquote>
+        <blockquote class="hollow-reviews__card"><div class="hollow-reviews__card-stars">★★★★★</div><p class="hollow-reviews__quote">I was looking for an ankle size compression sock that was comfortable and was a good compression.</p><div class="hollow-reviews__author">Michael W</div><div class="hollow-reviews__meta">verified buyer</div></blockquote>
+        <blockquote class="hollow-reviews__card"><div class="hollow-reviews__card-stars">★★★★★</div><p class="hollow-reviews__quote">These compression socks are FANTASTIC. My legs feel 30 years younger.</p><div class="hollow-reviews__author">drew s</div><div class="hollow-reviews__meta">verified buyer</div></blockquote>
+        <blockquote class="hollow-reviews__card"><div class="hollow-reviews__card-stars">★★★★★</div><p class="hollow-reviews__quote">After years of struggling with sweaty, blistered feet, these game-changing alpaca socks finally work.</p><div class="hollow-reviews__author">Raymond L.</div><div class="hollow-reviews__meta">verified buyer</div></blockquote>
+      </div>
+      <a class="hollow-reviews__cta" href="#">READ MORE REVIEWS —</a>
+      <div class="hollow-reviews__stats">
+        <div class="hollow-reviews__stat"><span class="hollow-reviews__stat-value">27,000+</span><span class="hollow-reviews__stat-label">reviews</span></div>
+        <div class="hollow-reviews__stat"><span class="hollow-reviews__stat-value">OVER 4 MILLION</span><span class="hollow-reviews__stat-label">sold</span></div>
+        <div class="hollow-reviews__stat"><span class="hollow-reviews__stat-value">99 day</span><span class="hollow-reviews__stat-label">money back guarantee</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="hollow-fiber">
+    <div class="page-width hollow-fiber__wrap">
+      <div class="hollow-fiber__copy-top">
+        <h2 class="hollow-fiber__title">Why Alpaca Fiber Outperforms Wool and Cotton</h2>
+        <p class="hollow-fiber__eyebrow">ethically sourced in the high altitudes of peru</p>
+      </div>
+      <div class="hollow-fiber__layout">
+        <div class="hollow-fiber__main"><div class="hollow-fiber__hero-fallback"></div></div>
+        <div class="hollow-fiber__side">
+          <div class="hollow-fiber__circles">
+            <div class="hollow-fiber__circle hollow-fiber__circle--top hollow-fiber__circle--empty"></div>
+            <div class="hollow-fiber__circle hollow-fiber__circle--bottom hollow-fiber__circle--empty"></div>
+            <span class="hollow-fiber__line"></span>
+          </div>
+          <div class="hollow-fiber__story">
+            <h3 class="hollow-fiber__story-title">hollow by nature</h3>
+            <p class="hollow-fiber__text">Unlike cotton and wool, alpaca fiber is naturally hollow, creating breathable warmth and dry comfort without bulk.</p>
+            <a class="hollow-fiber__cta" href="#">learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hollow-social">
+    <div class="page-width hollow-social__header">
+      <h2 class="hollow-social__title">Gear up for great days</h2>
+      <div class="hollow-social__meta"><a class="hollow-social__handle" href="#">#hollowsocks</a></div>
+    </div>
+  </section>
+  <script src="../assets/hollow.js?v=2"></script>
+</body>
+</html>

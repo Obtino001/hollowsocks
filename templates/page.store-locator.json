@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Store locator",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find Hollow Socks at retailers across the U.S. Search by city or zip, then visit a partner store to try a pair in person.</p><p>Don’t see a store nearby? Shop online with free U.S. shipping on qualifying orders, plus our 99-day money-back guarantee.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true
+      }
+    }
+  },
+  "order": ["main"]
+}

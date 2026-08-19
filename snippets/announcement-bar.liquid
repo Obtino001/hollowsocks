@@ -15,7 +15,7 @@
   assign heading = section.settings.heading | default: first_block.settings.text
   assign offer = section.settings.offer | default: first_block.settings.link_text
   assign link = section.settings.link | default: first_block.settings.link
-  assign end_date = section.settings.end_datetime | default: '2026-09-07T23:59:59'
+  assign end_date = section.settings.end_datetime | default: '2026-08-20T23:59:59'
 -%}
 
 {% if show_announcement %}
@@ -24,7 +24,7 @@
     data-sticky="{{ section.settings.sticky_on_scroll }}"
     data-sticky-mobile="{{ section.settings.sticky_on_mobile }}"
   >
-    <div class="hollow-announcement__inner page-width">
+    <div class="hollow-announcement__inner">
       {%- if link != blank -%}
         <a class="hollow-announcement__copy" href="{{ link }}">
       {%- else -%}

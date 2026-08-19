@@ -1,1 +1,93 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"slideshow":{"type":"slideshow","blocks":{"slideshow-0":{"type":"image","settings":{}}},"block_order":["slideshow-0"],"settings":{}},"rich-text":{"type":"rich-text","blocks":{"heading":{"type":"heading","settings":{}},"text":{"type":"text","settings":{}}},"block_order":["heading","text"],"settings":{}},"map":{"type":"map","settings":{}},"text-columns":{"type":"text-columns","blocks":{"column1":{"type":"text_block","settings":{}},"column2":{"type":"text_block","settings":{}},"column3":{"type":"text_block","settings":{}}},"block_order":["column1","column2","column3"],"settings":{}},"featured-collection":{"type":"featured-collection","settings":{}},"form":{"type":"contact-form","settings":{}}},"order":["main","slideshow","rich-text","text-columns","map","featured-collection","form"]}
+{
+  "sections": {
+    "about": {
+      "type": "hollow-about",
+      "blocks": {
+        "t1": {
+          "type": "timeline",
+          "settings": {
+            "year": "2018",
+            "title": "The Discovery",
+            "text": "After many long days going from the gym to the office to the trails, we discovered that the usual performance socks we depended on weren't cutting it anymore. We decided to take matters into our own hands and discovered the magic of alpaca fibers."
+          }
+        },
+        "t2": {
+          "type": "timeline",
+          "settings": {
+            "year": "2020",
+            "title": "The Research",
+            "text": "We spent two years researching and testing the best places to source alpaca fibers, the best type of alpaca fibers to use, and the best way to turn magical alpaca fibers into trustworthy performance socks."
+          }
+        },
+        "t3": {
+          "type": "timeline",
+          "settings": {
+            "year": "2023",
+            "title": "The Result",
+            "text": "Today, we proudly supply trustworthy performance socks using our unique alpaca fiber blend to adventurers around the country. Our socks keep feet everywhere dry and comfortable."
+          }
+        },
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "title": "TEMPERATURE REGULATING",
+            "text": "Alpaca fibers have a semi-hollow core that act like natural insulation allowing the fibers to trap warm air when it’s cold, and release heat when warm."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "title": "BREATHABLE & LIGHT",
+            "text": "Alpaca fiber is naturally lightweight and breathable allowing it to adapt to any temperature while keeping you comfortable even in the harshest conditions."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "title": "SOFT ALPACA FIBER",
+            "text": "Alpaca fibers are naturally smooth, and have a lower scale structure—meaning no coarse, or itchy feeling you get with wool."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "title": "MOISTURE WICKING",
+            "text": "Alpaca fibers naturally repel moisture thanks to their low absorption rate, about 8% versus wool’s 30%, and cotton’s 60%."
+          }
+        },
+        "f5": {
+          "type": "feature",
+          "settings": {
+            "title": "ODOR RESISTANT",
+            "text": "Unlike synthetic socks that trap moisture and odor over time, alpaca fibers make bacterial growth difficult, reducing the root cause of foot odor."
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3", "f1", "f2", "f3", "f4", "f5"],
+      "settings": {
+        "hero_heading": "The Magic of Alpaca",
+        "hero_text": "After two years of real-world testing, alpaca stood above everything else for comfort and performance.",
+        "fiber_title": "Only the Best Fiber Makes the Cut",
+        "fiber_eyebrow": "ethically sourced in the high altitudes of peru",
+        "fiber_story_title": "Precision in Every knit",
+        "fiber_text": "Made in the USA using time tested techniques to create the best socks ever",
+        "fiber_image": "",
+        "means_heading": "WHAT BETTER REALLY MEANS"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "best sellers",
+        "heading_size": "h2",
+        "home_featured_products": "",
+        "per_row": 4,
+        "rows": 2,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    }
+  },
+  "order": ["about", "featured-collection"]
+}

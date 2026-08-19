@@ -98,6 +98,12 @@
   </div>
 </div>
 
+{%- if section.settings.view_all -%}
+  <div class="hollow-shop-all page-width">
+    <a href="{{ collections[section.settings.home_featured_products].url | default: routes.all_products_collection_url }}" class="hollow-btn hollow-btn--dark">shop all</a>
+  </div>
+{%- endif -%}
+
 {%- if section.settings.divider -%}</div>{%- endif -%}
 
 {% schema %}

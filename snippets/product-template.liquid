@@ -218,6 +218,10 @@
                     {{ 'home_page.onboarding.product_title' | t }}
                   {%- endunless -%}
                 </h1>
+                {%- unless product.empty? -%}
+                  <p class="hollow-pdp-subtitle">{{ product.metafields.descriptors.subtitle.value | default: product.description | strip_html | truncate: 90 }}</p>
+                  <span class="hollow-pdp-discount">BUY 2 GET 2 FREE</span>
+                {%- endunless -%}
               {%- endif -%}
 
               {%- if sku_enable -%}
@@ -427,6 +431,7 @@
                   {%- when 'buy_buttons' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
                       {%- unless product.empty? -%}
+                        {%- render 'hollow-offer-cards', product: product, form_id: form_id -%}
                         <div class="product-block">
                           {%- render 'product-form',
                             form_id: form_id,
@@ -437,16 +442,6 @@
                           -%}
                         </div>
                       {%- endunless -%}
-
-                      <div class="hollow-pdp-shipping-row">
-                        <span class="hollow-pdp-shipping-row__ships">
-                          <span class="hollow-pdp-shipping-row__dot"></span>
-                          SHIPS BY: <strong>{%- assign ship_date = 'now' | date: '%s' | plus: 172800 -%}{{ ship_date | date: '%b %e' | upcase }}TH</strong>
-                        </span>
-                        <span class="hollow-pdp-shipping-row__fast">
-                          🇺🇸 <strong>FAST US SHIPPING</strong>
-                        </span>
-                      </div>
 
                       <div class="hollow-pdp-guarantee">
                         <div class="hollow-pdp-guarantee__seal">
@@ -463,13 +458,15 @@
                         </div>
                       </div>
 
-                      {%- if show_buy2get2_badge -%}
-                        <div class="hollow-pdp-promo-card">
-                          <div class="hollow-pdp-promo-card__top">BUY 2 PAIRS</div>
-                          <div class="hollow-pdp-promo-card__highlight">GET 2 PAIRS FREE</div>
-                          <div class="hollow-pdp-promo-card__sub">MIX &amp; MATCH ANY PAIR</div>
-                        </div>
-                      {%- endif -%}
+                      <div class="hollow-pdp-shipping-row">
+                        <span class="hollow-pdp-shipping-row__ships">
+                          <span class="hollow-pdp-shipping-row__dot"></span>
+                          SHIPS BY: <strong>{%- assign ship_date = 'now' | date: '%s' | plus: 172800 -%}{{ ship_date | date: '%b %e' | upcase }}TH</strong>
+                        </span>
+                        <span class="hollow-pdp-shipping-row__fast">
+                          🇺🇸 <strong>FAST US SHIPPING</strong>
+                        </span>
+                      </div>
 
                       {%- if block.settings.surface_pickup_enable -%}
                         <div data-store-availability-holder

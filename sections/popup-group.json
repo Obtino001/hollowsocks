@@ -2,6 +2,18 @@
   "type": "custom.popups",
   "name": "t:sections.popup-group.name",
   "sections": {
+    "hollow-luck": {
+      "type": "hollow-luck-popup",
+      "settings": {
+        "enable": true,
+        "title": "TRY YOUR LUCK",
+        "text": "Match 3 cards to see what you win.",
+        "dismiss_label": "No thanks",
+        "win_text": "You matched 3 — use code HOLLOW at checkout.",
+        "lose_text": "No match this time. Shop the sale anyway.",
+        "delay": 1
+      }
+    },
     "newsletter-popup": {
       "type": "newsletter-popup",
       "disabled": true,
@@ -32,5 +44,5 @@
       "settings": {}
     }
   },
-  "order": ["newsletter-popup", "age-verification-popup"]
+  "order": ["hollow-luck", "newsletter-popup", "age-verification-popup"]
 }

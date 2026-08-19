@@ -34,15 +34,15 @@
         "offer": "BUY 2 GET 2 FREE",
         "link": "",
         "enable_countdown": true,
-        "end_datetime": "2026-09-07T23:59:59"
+        "end_datetime": "2026-08-20T23:59:59"
       }
     },
     "header": {
       "type": "header",
       "settings": {
         "logo": "",
-        "desktop_logo_width": 180,
-        "mobile_logo_width": 130,
+        "desktop_logo_width": 94,
+        "mobile_logo_width": 80,
         "main_menu_link_list": "main-menu",
         "hover_menu": true,
         "main_menu_alignment": "left-center",
@@ -55,10 +55,22 @@
         "show_currency_flags": false,
         "show_locale_selector": false
       }
+    },
+    "hollow-subnav": {
+      "type": "hollow-subnav",
+      "blocks": {
+        "c1": { "type": "item", "settings": { "title": "best sellers", "link": "", "badge": "" } },
+        "c2": { "type": "item", "settings": { "title": "compression", "link": "", "badge": "" } },
+        "c3": { "type": "item", "settings": { "title": "bundles", "link": "", "badge": "50% OFF" } },
+        "c4": { "type": "item", "settings": { "title": "trades", "link": "", "badge": "" } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": {}
     }
   },
   "order": [
     "announcement",
-    "header"
+    "header",
+    "hollow-subnav"
   ]
 }

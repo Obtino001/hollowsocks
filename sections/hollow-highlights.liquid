@@ -1,0 +1,72 @@
+<section class="hollow-highlights" data-section-id="{{ section.id }}">
+  {%- for block in section.blocks -%}
+    <article class="hollow-highlights__row{% if block.settings.reverse %} is-reverse{% endif %}" {{ block.shopify_attributes }}>
+      <div class="hollow-highlights__media">
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '720, 1080, 1400' }}
+        {%- else -%}
+          <div class="hollow-highlights__fallback" aria-hidden="true"></div>
+        {%- endif -%}
+      </div>
+      <div class="hollow-highlights__copy">
+        {%- if block.settings.title != blank -%}
+          <h2 class="hollow-highlights__title">{{ block.settings.title }}</h2>
+        {%- endif -%}
+        {%- if block.settings.text != blank -%}
+          <p>{{ block.settings.text }}</p>
+        {%- endif -%}
+      </div>
+    </article>
+  {%- endfor -%}
+</section>
+
+{% schema %}
+{
+  "name": "Hollow highlights",
+  "class": "hollow-highlights-section",
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Highlight",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "GRADUATED COMPRESSION THAT really WORKS" },
+        { "type": "textarea", "id": "text", "label": "Text" },
+        { "type": "checkbox", "id": "reverse", "label": "Reverse layout", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hollow highlights",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "title": "GRADUATED COMPRESSION THAT really WORKS",
+            "text": "True graduated compression — firm at the ankle, easing up the calf. Reduces swelling and keeps blood moving through long days on your feet."
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "Cool In 100° summer Heat",
+            "text": "Alpaca fiber naturally wicks sweat and dumps heat. Feet stay dry and cool even on your hottest days.",
+            "reverse": true
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "easy on, easy off",
+            "text": "Stretches wide enough to slide over swollen feet and calves. On in seconds, no struggle, no dreading the morning."
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "custom.popups"]
+  }
+}
+{% endschema %}

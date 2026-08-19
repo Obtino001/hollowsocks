@@ -1,0 +1,43 @@
+{%- if section.settings.enable -%}
+  <div
+    class="hollow-luck"
+    data-hollow-luck
+    data-delay="{{ section.settings.delay | times: 1000 }}"
+    data-win="{{ section.settings.win_text | escape }}"
+    data-lose="{{ section.settings.lose_text | escape }}"
+    hidden
+  >
+    <div class="hollow-luck__panel" role="dialog" aria-modal="true" aria-labelledby="HollowLuckTitle">
+      <img class="hollow-luck__logo" src="{{ 'hollow-logo.svg' | asset_url }}" alt="{{ shop.name }}" width="93" height="32">
+      <h2 id="HollowLuckTitle" class="hollow-luck__title">{{ section.settings.title }}</h2>
+      <p class="hollow-luck__text">{{ section.settings.text }}</p>
+      <div class="hollow-luck__cards">
+        {%- for i in (1..4) -%}
+          <button type="button" class="hollow-luck__card" data-hollow-card aria-label="Pick this card">
+            <span class="hollow-luck__face hollow-luck__face--back">?</span>
+            <span class="hollow-luck__face hollow-luck__face--front"></span>
+          </button>
+        {%- endfor -%}
+      </div>
+      <p class="hollow-luck__result" data-hollow-luck-result hidden></p>
+      <button type="button" class="hollow-luck__dismiss" data-hollow-luck-dismiss>{{ section.settings.dismiss_label }}</button>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hollow luck popup",
+  "class": "hollow-luck-section",
+  "settings": [
+    { "type": "checkbox", "id": "enable", "label": "Enable popup", "default": true },
+    { "type": "text", "id": "title", "label": "Heading", "default": "TRY YOUR LUCK" },
+    { "type": "text", "id": "text", "label": "Text", "default": "Match 3 cards to see what you win." },
+    { "type": "text", "id": "dismiss_label", "label": "Dismiss label", "default": "No thanks" },
+    { "type": "text", "id": "win_text", "label": "Win message", "default": "You matched 3 — use code HOLLOW at checkout." },
+    { "type": "text", "id": "lose_text", "label": "Lose message", "default": "No match this time. Shop the sale anyway." },
+    { "type": "range", "id": "delay", "min": 0, "max": 12, "step": 1, "unit": "s", "label": "Delay", "default": 1 }
+  ],
+  "presets": [{ "name": "Hollow luck popup" }]
+}
+{% endschema %}

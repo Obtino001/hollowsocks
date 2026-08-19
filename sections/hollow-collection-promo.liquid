@@ -1,0 +1,28 @@
+{%- if section.settings.text != blank -%}
+  <div class="hollow-ticker" data-section-id="{{ section.id }}">
+    <div class="hollow-ticker__track">
+      {%- for i in (1..8) -%}
+        <span>{{ section.settings.text }}</span>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hollow sale ticker",
+  "class": "hollow-ticker-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "LABOR DAY SALE: BUY 2 GET 2 FREE"
+    }
+  ],
+  "presets": [{ "name": "Hollow sale ticker" }],
+  "disabled_on": {
+    "groups": ["header", "custom.popups"]
+  }
+}
+{% endschema %}

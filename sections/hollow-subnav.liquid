@@ -1,0 +1,53 @@
+{%- if section.blocks.size > 0 -%}
+  <nav class="hollow-subnav" aria-label="Shop by category">
+    <div class="hollow-subnav__track">
+      {%- for block in section.blocks -%}
+        <a class="hollow-subnav__item" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+          <span class="hollow-subnav__media">
+            {%- if block.settings.badge != blank -%}
+              <span class="hollow-subnav__badge">{{ block.settings.badge }}</span>
+            {%- endif -%}
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '200, 320, 480' }}
+            {%- endif -%}
+          </span>
+          <span class="hollow-subnav__label">{{ block.settings.title }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </nav>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hollow subnav",
+  "class": "hollow-subnav-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Category",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "best sellers" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "text", "id": "badge", "label": "Badge" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hollow subnav",
+      "blocks": [
+        { "type": "item", "settings": { "title": "best sellers" } },
+        { "type": "item", "settings": { "title": "compression" } },
+        { "type": "item", "settings": { "title": "bundles", "badge": "50% OFF" } },
+        { "type": "item", "settings": { "title": "trades" } }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}

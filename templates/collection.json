@@ -1,37 +1,18 @@
 {
   "sections": {
+    "ticker": {
+      "type": "hollow-collection-promo",
+      "settings": {
+        "text": "LABOR DAY SALE: BUY 2 GET 2 FREE"
+      }
+    },
     "collection-header": {
       "type": "collection-header",
       "settings": {
-        "enable": false,
-        "collection_image_enable": true,
-        "parallax": true,
+        "enable": true,
+        "collection_image_enable": false,
+        "parallax": false,
         "parallax_direction": "top"
-      }
-    },
-    "promo-grid": {
-      "type": "promo-grid",
-      "blocks": {
-        "banner": {
-          "type": "banner",
-          "settings": {
-            "heading": "Save on Select Styles",
-            "heading_size": "h3",
-            "text": "Take an extra 10% off sale items — limited time",
-            "link": "",
-            "label": "Shop now",
-            "color_tint": "#2a3743",
-            "color_tint_opacity": 10,
-            "framed": false
-          }
-        }
-      },
-      "block_order": ["banner"],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": true,
-        "space_below": false
       }
     },
     "main-collection": {
@@ -41,32 +22,26 @@
           "type": "collection_description",
           "settings": {}
         },
-        "subcollections": {
-          "type": "subcollections",
-          "settings": {
-            "subcollections_per_row": 5
-          }
-        },
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "enable_collection_count": true,
+            "enable_collection_count": false,
             "per_row": 4,
             "rows_per_page": 10,
-            "mobile_flush_grid": true
+            "mobile_flush_grid": false
           }
         }
       },
-      "block_order": ["collection_description", "subcollections", "product_grid"],
+      "block_order": ["collection_description", "product_grid"],
       "settings": {
-        "enable_sidebar": true,
+        "enable_sidebar": false,
         "collapsed": true,
         "filter_style": "drawer",
         "enable_color_swatches": true,
         "enable_swatch_labels": true,
-        "enable_sort": true
+        "enable_sort": false
       }
     }
   },
-  "order": ["collection-header", "promo-grid", "main-collection"]
+  "order": ["ticker", "collection-header", "main-collection"]
 }

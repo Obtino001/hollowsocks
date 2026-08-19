@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "hollow-reviews": {
+      "type": "hollow-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable. Just what I needed for long walks with my dog. Highly recommend them to anyone who is looking for a great pair of socks.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet. I gave it 5 stars because even in the hot weather they feel very comfortable!",
+            "author": "Michael W",
+            "meta": "verified buyer"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible. My legs feel 30 years younger and I am not in pain.",
+            "author": "drew s",
+            "meta": "verified buyer"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.",
+            "author": "Raymond L.",
+            "meta": "verified buyer"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "show_stars": true,
+        "title": "OVER 4,000,000+ PAIRS SOLD",
+        "button_label": "",
+        "button_link": "",
+        "stat_1_value": "27,000+",
+        "stat_1_label": "reviews",
+        "stat_2_value": "OVER 4 MILLION",
+        "stat_2_label": "sold",
+        "stat_3_value": "99 day",
+        "stat_3_label": "money back guarantee"
+      }
+    }
+  },
+  "order": ["hollow-reviews"]
+}

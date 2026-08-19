@@ -117,7 +117,15 @@
     </a>
   {%- endif -%}
 {%- else -%}
-  <a href="{{ routes.root_url }}" itemprop="url" class="hollow-wordmark">HOLLOW</a>
+  <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link hollow-logo-link">
+    <img
+      src="{{ 'hollow-logo.svg' | asset_url }}"
+      alt="{{ shop.name | escape }}"
+      width="93"
+      height="32"
+      class="hollow-logo"
+    >
+  </a>
 {%- endif -%}
 
 {%- if template == 'index' -%}

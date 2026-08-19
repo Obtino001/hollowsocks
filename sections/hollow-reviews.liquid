@@ -1,5 +1,12 @@
 <section class="hollow-reviews" data-section-id="{{ section.id }}">
   <div class="page-width">
+    {%- if section.settings.show_stars -%}
+      <div class="hollow-reviews__stars" aria-hidden="true">
+        {%- for i in (1..5) -%}
+          {%- render 'hollow-icon', name: 'star' -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
     {%- if section.settings.title != blank -%}
       <h2 class="hollow-reviews__title">{{ section.settings.title }}</h2>
     {%- endif -%}
@@ -8,6 +15,7 @@
       {%- for block in section.blocks -%}
         {%- if block.type == 'review' -%}
           <blockquote class="hollow-reviews__card" {{ block.shopify_attributes }}>
+            <div class="hollow-reviews__card-stars" aria-hidden="true">★★★★★</div>
             <p class="hollow-reviews__quote">{{ block.settings.quote }}</p>
             {%- if block.settings.author != blank -%}
               <div class="hollow-reviews__author">{{ block.settings.author }}</div>
@@ -16,6 +24,14 @@
               <div class="hollow-reviews__meta">{{ block.settings.meta }}</div>
             {%- endif -%}
           </blockquote>
+        {%- elsif block.type == 'image' -%}
+          <figure class="hollow-reviews__photo{% if block.settings.tall %} is-tall{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '480, 720, 900' }}
+            {%- else -%}
+              <div class="hollow-reviews__photo-fallback" aria-hidden="true"></div>
+            {%- endif -%}
+          </figure>
         {%- endif -%}
       {%- endfor -%}
     </div>
@@ -24,14 +40,26 @@
       <a class="hollow-reviews__cta" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
     {%- endif -%}
 
-    {%- assign trust_blocks = section.blocks | where: 'type', 'trust' -%}
-    {%- if trust_blocks.size > 0 -%}
-      <div class="hollow-reviews__trust">
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'trust' -%}
-            <span {{ block.shopify_attributes }}>{{ block.settings.label }}</span>
-          {%- endif -%}
-        {%- endfor -%}
+    {%- if section.settings.stat_1_value != blank or section.settings.stat_2_value != blank or section.settings.stat_3_value != blank -%}
+      <div class="hollow-reviews__stats">
+        {%- if section.settings.stat_1_value != blank -%}
+          <div class="hollow-reviews__stat">
+            <span class="hollow-reviews__stat-value">{{ section.settings.stat_1_value }}</span>
+            <span class="hollow-reviews__stat-label">{{ section.settings.stat_1_label }}</span>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.stat_2_value != blank -%}
+          <div class="hollow-reviews__stat">
+            <span class="hollow-reviews__stat-value">{{ section.settings.stat_2_value }}</span>
+            <span class="hollow-reviews__stat-label">{{ section.settings.stat_2_label }}</span>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.stat_3_value != blank -%}
+          <div class="hollow-reviews__stat">
+            <span class="hollow-reviews__stat-value">{{ section.settings.stat_3_value }}</span>
+            <span class="hollow-reviews__stat-label">{{ section.settings.stat_3_label }}</span>
+          </div>
+        {%- endif -%}
       </div>
     {%- endif -%}
   </div>
@@ -42,59 +70,33 @@
   "name": "Hollow reviews",
   "class": "hollow-reviews-section",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Heading",
-      "default": "OVER 4,000,000+ PAIRS SOLD"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button label",
-      "default": "READ MORE REVIEWS —"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    }
+    { "type": "checkbox", "id": "show_stars", "label": "Show stars", "default": true },
+    { "type": "text", "id": "title", "label": "Heading", "default": "OVER 4,000,000+ PAIRS SOLD" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "READ MORE REVIEWS —" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "text", "id": "stat_1_value", "label": "Stat 1 value", "default": "27,000+" },
+    { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "reviews" },
+    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "OVER 4 MILLION" },
+    { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "sold" },
+    { "type": "text", "id": "stat_3_value", "label": "Stat 3 value", "default": "99 day" },
+    { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "money back guarantee" }
   ],
   "blocks": [
     {
       "type": "review",
       "name": "Review",
       "settings": [
-        {
-          "type": "textarea",
-          "id": "quote",
-          "label": "Quote",
-          "default": "I’m very happy with this purchase, they are a quality product."
-        },
-        {
-          "type": "text",
-          "id": "author",
-          "label": "Author",
-          "default": "Steve J"
-        },
-        {
-          "type": "text",
-          "id": "meta",
-          "label": "Meta",
-          "default": "verified buyer"
-        }
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "I’m very happy with this purchase, they are a quality product." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Steve J" },
+        { "type": "text", "id": "meta", "label": "Meta", "default": "verified buyer" }
       ]
     },
     {
-      "type": "trust",
-      "name": "Trust item",
+      "type": "image",
+      "name": "Photo",
       "settings": [
-        {
-          "type": "text",
-          "id": "label",
-          "label": "Label",
-          "default": "27,000+ reviews"
-        }
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "checkbox", "id": "tall", "label": "Tall crop", "default": true }
       ]
     }
   ],
@@ -102,46 +104,15 @@
     {
       "name": "Hollow reviews",
       "blocks": [
-        {
-          "type": "review",
-          "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable. Just what I needed for long walks with my dog.",
-            "author": "Steve J",
-            "meta": "verified buyer"
-          }
-        },
-        {
-          "type": "review",
-          "settings": {
-            "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet. I gave it 5 stars because even in the hot weather they feel very comfortable!",
-            "author": "Michael W",
-            "meta": "verified buyer"
-          }
-        },
-        {
-          "type": "review",
-          "settings": {
-            "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible.",
-            "author": "drew s",
-            "meta": "verified buyer"
-          }
-        },
-        {
-          "type": "review",
-          "settings": {
-            "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.",
-            "author": "Raymond L.",
-            "meta": "verified buyer"
-          }
-        },
-        { "type": "trust", "settings": { "label": "27,000+ reviews" } },
-        { "type": "trust", "settings": { "label": "OVER 4 MILLION SOLD" } },
-        { "type": "trust", "settings": { "label": "99 day money back guarantee" } }
+        { "type": "review", "settings": { "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable. Just what I needed for long walks with my dog. Highly recommend them to anyone who is looking for a great pair of socks.", "author": "Steve J", "meta": "verified buyer" } },
+        { "type": "review", "settings": { "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet. I gave it 5 stars because even in the hot weather they feel very comfortable!", "author": "Michael W", "meta": "verified buyer" } },
+        { "type": "review", "settings": { "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible. My legs feel 30 years younger and I am not in pain.", "author": "drew s", "meta": "verified buyer" } },
+        { "type": "review", "settings": { "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.", "author": "Raymond L.", "meta": "verified buyer" } }
       ]
     }
   ],
   "disabled_on": {
-    "groups": ["header", "footer", "custom.popups"]
+    "groups": ["header", "custom.popups"]
   }
 }
 {% endschema %}

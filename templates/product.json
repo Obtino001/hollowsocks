@@ -94,6 +94,103 @@
         "products_per_row": 5
       }
     },
+    "hollow-trust": {
+      "type": "hollow-trust-bar",
+      "blocks": {
+        "stat-1": { "type": "stat", "settings": { "value": "27,000+", "label": "5-star reviews" } },
+        "stat-2": { "type": "stat", "settings": { "value": "4 MILLION+", "label": "pairs sold" } },
+        "stat-3": { "type": "stat", "settings": { "value": "99-DAY", "label": "money-back guarantee" } }
+      },
+      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "settings": {
+        "background": "#282828",
+        "text_color": "#ffffff"
+      }
+    },
+    "hollow-reviews": {
+      "type": "hollow-reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible.", "author": "drew s", "meta": "verified buyer" } },
+        "r2": { "type": "review", "settings": { "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet.", "author": "Michael W", "meta": "verified buyer" } },
+        "r3": { "type": "review", "settings": { "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable.", "author": "Steve J", "meta": "verified buyer" } },
+        "r4": { "type": "review", "settings": { "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.", "author": "Raymond L.", "meta": "verified buyer" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "show_stars": true,
+        "title": "Real customers, real relief",
+        "button_label": "",
+        "button_link": "",
+        "stat_1_value": "",
+        "stat_1_label": "",
+        "stat_2_value": "",
+        "stat_2_label": "",
+        "stat_3_value": "",
+        "stat_3_label": ""
+      }
+    },
+    "hollow-highlights": {
+      "type": "hollow-highlights",
+      "blocks": {
+        "h1": {
+          "type": "row",
+          "settings": {
+            "image": "",
+            "title": "GRADUATED COMPRESSION THAT really WORKS",
+            "text": "True graduated compression — firm at the ankle, easing up the calf. Reduces swelling and keeps blood moving through long days on your feet.",
+            "reverse": false
+          }
+        },
+        "h2": {
+          "type": "row",
+          "settings": {
+            "image": "",
+            "title": "Cool In 100° summer Heat",
+            "text": "Alpaca fiber naturally wicks sweat and dumps heat. Feet stay dry and cool even on your hottest days.",
+            "reverse": true
+          }
+        },
+        "h3": {
+          "type": "row",
+          "settings": {
+            "image": "",
+            "title": "easy on, easy off",
+            "text": "Stretches wide enough to slide over swollen feet and calves. On in seconds, no struggle, no dreading the morning.",
+            "reverse": false
+          }
+        }
+      },
+      "block_order": ["h1", "h2", "h3"],
+      "settings": {}
+    },
+    "hollow-benefits": {
+      "type": "hollow-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "temp", "label": "temperature regulating" } },
+        "b2": { "type": "benefit", "settings": { "icon": "air", "label": "breathable & light" } },
+        "b3": { "type": "benefit", "settings": { "icon": "fiber", "label": "super soft" } },
+        "b4": { "type": "benefit", "settings": { "icon": "drop", "label": "moisture wicking" } },
+        "b5": { "type": "benefit", "settings": { "icon": "shield", "label": "odor resistant" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5"],
+      "settings": {
+        "title": ""
+      }
+    },
+    "hollow-wins": {
+      "type": "hollow-wins",
+      "blocks": {
+        "w1": { "type": "feature", "settings": { "image": "", "title": "Graduated Compression", "text": "Firm at the ankle, easing up the calf. Keeps blood moving and swelling down through long days on your feet." } },
+        "w2": { "type": "feature", "settings": { "image": "", "title": "Non-Binding Cuff", "text": "Stays up without digging in. No marks, no indentations — just clean, comfortable compression when you take them off." } },
+        "w3": { "type": "feature", "settings": { "image": "", "title": "Alpaca Fiber", "text": "Naturally soft, breathable, and moisture-wicking. Gentler on sensitive skin than merino or synthetic blends." } },
+        "w4": { "type": "feature", "settings": { "image": "", "title": "easy on, easy off", "text": "Stretches wide enough to slide over swollen feet and calves. On in seconds, no struggle, no dreading the morning." } },
+        "w5": { "type": "feature", "settings": { "image": "", "title": "Recommended by Podiatrists", "text": "Hollow Alpaca Compression Socks are recommended by Dr. Dana Figura, a board-certified podiatric foot and ankle surgeon." } }
+      },
+      "block_order": ["w1", "w2", "w3", "w4", "w5"],
+      "settings": {
+        "title": "Why Hollow Wins? Feature by Feature."
+      }
+    },
     "recently-viewed": {
       "type": "recently-viewed",
       "disabled": true,
@@ -109,6 +206,11 @@
   },
   "order": [
     "main",
+    "hollow-trust",
+    "hollow-reviews",
+    "hollow-highlights",
+    "hollow-benefits",
+    "hollow-wins",
     "product-recommendations",
     "recently-viewed",
     "collection-return"

@@ -1,16 +1,24 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "type": "footer",
   "name": "t:sections.footer-group.name",
   "sections": {
+    "hollow-instagram": {
+      "type": "hollow-instagram",
+      "blocks": {
+        "i1": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i2": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i3": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i4": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i5": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i6": { "type": "image", "settings": { "image": "", "link": "" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
+      "settings": {
+        "title": "Gear up for great days",
+        "handle": "#hollowsocks",
+        "handle_link": "https://www.instagram.com/hollowsocks/"
+      }
+    },
     "footer-promotions": {
       "type": "footer-promotions",
       "disabled": true,
@@ -44,7 +52,7 @@
           "settings": {
             "show_footer_title": true,
             "title": "LEARN",
-            "text": "<p><a href=\"/pages/why-alpaca\">WHY ALPACA FIBER?</a><br><a href=\"/pages/store-locator\">store locator</a><br><a href=\"/pages/reviews\">reviews</a></p>",
+            "text": "<p><a href=\"/pages/about-us\">WHY ALPACA FIBER?</a><br><a href=\"/pages/store-locator\">store locator</a><br><a href=\"/pages/all-reviews\">reviews</a></p>",
             "container_width": 16
           }
         },
@@ -53,7 +61,7 @@
           "settings": {
             "show_footer_title": true,
             "title": "SUPPORT",
-            "text": "<p><a href=\"/pages/faq\">faqs</a><br><a href=\"/pages/returns\">returns & exchanges</a><br><a href=\"/pages/accessibility\">Accessibility</a><br><a href=\"/pages/contact\">contact us</a></p>",
+            "text": "<p><a href=\"/pages/faqs\">faqs</a><br><a href=\"/pages/returns-and-exchanges\">returns & exchanges</a><br><a href=\"/pages/accessibility-statement\">Accessibility</a><br><a href=\"/pages/contact-us\">contact us</a></p>",
             "container_width": 16
           }
         },
@@ -85,6 +93,7 @@
     }
   },
   "order": [
+    "hollow-instagram",
     "footer-promotions",
     "footer"
   ]

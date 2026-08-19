@@ -1,0 +1,113 @@
+<section class="hollow-about" data-section-id="{{ section.id }}">
+  {%- if section.settings.hero_heading != blank or section.settings.hero_text != blank -%}
+    <div class="hollow-about__hero page-width">
+      {%- if section.settings.hero_heading != blank -%}
+        <h1 class="hollow-about__hero-title">{{ section.settings.hero_heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.hero_text != blank -%}
+        <p class="hollow-about__hero-text">{{ section.settings.hero_text }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.fiber_title != blank or section.settings.fiber_text != blank -%}
+    <div class="page-width hollow-about__fiber">
+      <div class="hollow-about__fiber-copy">
+        {%- if section.settings.fiber_title != blank -%}
+          <h2 class="hollow-fiber__title">{{ section.settings.fiber_title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.fiber_eyebrow != blank -%}
+          <p class="hollow-fiber__eyebrow">
+            <span class="hollow-fiber__pin">{%- render 'hollow-icon', name: 'pin' -%}</span>
+            {{ section.settings.fiber_eyebrow }}
+          </p>
+        {%- endif -%}
+        {%- if section.settings.fiber_story_title != blank -%}
+          <h3 class="hollow-fiber__story-title">{{ section.settings.fiber_story_title }}</h3>
+        {%- endif -%}
+        {%- if section.settings.fiber_text != blank -%}
+          <p class="hollow-fiber__text">{{ section.settings.fiber_text }}</p>
+        {%- endif -%}
+      </div>
+      <div class="hollow-about__fiber-media">
+        {%- if section.settings.fiber_image != blank -%}
+          {{ section.settings.fiber_image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'hollow-fiber__hero-image', widths: '720, 1080, 1200' }}
+        {%- else -%}
+          <div class="hollow-fiber__hero-fallback" aria-hidden="true"></div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- assign timeline = section.blocks | where: 'type', 'timeline' -%}
+  {%- if timeline.size > 0 -%}
+    <div class="page-width hollow-about__timeline">
+      {%- for block in timeline -%}
+        <article class="hollow-about__year" {{ block.shopify_attributes }}>
+          <span class="hollow-about__year-mark">{{ block.settings.year }}</span>
+          <h3 class="hollow-about__year-title">{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- assign features = section.blocks | where: 'type', 'feature' -%}
+  {%- if features.size > 0 -%}
+    <div class="hollow-about__means">
+      <div class="page-width">
+        {%- if section.settings.means_heading != blank -%}
+          <h2 class="hollow-about__means-title">{{ section.settings.means_heading }}</h2>
+        {%- endif -%}
+        <div class="hollow-about__means-grid">
+          {%- for block in features -%}
+            <article class="hollow-about__means-item" {{ block.shopify_attributes }}>
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.text }}</p>
+            </article>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Hollow about",
+  "class": "hollow-about-section",
+  "settings": [
+    { "type": "text", "id": "hero_heading", "label": "Hero heading", "default": "The Magic of Alpaca" },
+    { "type": "textarea", "id": "hero_text", "label": "Hero text", "default": "After two years of real-world testing, alpaca stood above everything else for comfort and performance." },
+    { "type": "text", "id": "fiber_title", "label": "Fiber heading", "default": "Only the Best Fiber Makes the Cut" },
+    { "type": "text", "id": "fiber_eyebrow", "label": "Fiber eyebrow", "default": "ethically sourced in the high altitudes of peru" },
+    { "type": "text", "id": "fiber_story_title", "label": "Fiber story heading", "default": "Precision in Every knit" },
+    { "type": "textarea", "id": "fiber_text", "label": "Fiber story text", "default": "Made in the USA using time tested techniques to create the best socks ever" },
+    { "type": "image_picker", "id": "fiber_image", "label": "Fiber image" },
+    { "type": "text", "id": "means_heading", "label": "Features heading", "default": "WHAT BETTER REALLY MEANS" }
+  ],
+  "blocks": [
+    {
+      "type": "timeline",
+      "name": "Timeline item",
+      "settings": [
+        { "type": "text", "id": "year", "label": "Year", "default": "2018" },
+        { "type": "text", "id": "title", "label": "Title", "default": "The Discovery" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "TEMPERATURE REGULATING" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Hollow about" }],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popups"]
+  }
+}
+{% endschema %}

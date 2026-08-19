@@ -46,7 +46,12 @@ Arguments
   elsif product_tags contains 'bestseller' or product_tags contains 'best-seller' or product_tags contains 'BEST SELLER'
     assign has_custom_label = true
     assign custom_label = 'BEST SELLER'
+  elsif collection.handle == 'best-sellers'
+    assign has_custom_label = true
+    assign custom_label = 'BEST SELLER'
   endif
+
+  assign reviews_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count
 -%}
 
 <div class="grid__item grid-product hollow-card {{ gridView }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}" data-product-handle="{{ product.handle }}" data-product-id="{{ product.id }}">
@@ -147,6 +152,10 @@ Arguments
               widths: '360, 540, 720, 1000',
             -%}
           </div>
+        {%- endif -%}
+
+        {%- if reviews_count != blank and reviews_count != 0 -%}
+          <div class="hollow-card__reviews">★★★★★ ({{ reviews_count }} REVIEWS)</div>
         {%- endif -%}
 
         {%- if settings.enable_swatches -%}

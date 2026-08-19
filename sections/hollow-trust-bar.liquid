@@ -1,0 +1,45 @@
+<section class="hollow-trust" data-section-id="{{ section.id }}" style="--trust-bg: {{ section.settings.background }}; --trust-color: {{ section.settings.text_color }};">
+  <div class="hollow-trust__grid">
+    {%- for block in section.blocks -%}
+      <div class="hollow-trust__item" {{ block.shopify_attributes }}>
+        <span class="hollow-trust__value">{{ block.settings.value }}</span>
+        <span class="hollow-trust__label">{{ block.settings.label }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hollow trust bar",
+  "tag": "section",
+  "class": "hollow-trust-section",
+  "settings": [
+    { "type": "color", "id": "background", "label": "Background", "default": "#282828" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "27,000+" },
+        { "type": "text", "id": "label", "label": "Label", "default": "5-star reviews" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hollow trust bar",
+      "blocks": [
+        { "type": "stat", "settings": { "value": "27,000+", "label": "5-star reviews" } },
+        { "type": "stat", "settings": { "value": "4 MILLION+", "label": "pairs sold" } },
+        { "type": "stat", "settings": { "value": "99-DAY", "label": "money-back guarantee" } }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "custom.popups"]
+  }
+}
+{% endschema %}
