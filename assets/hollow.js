@@ -64,6 +64,7 @@
   function initLuck() {
     var root = document.querySelector('[data-hollow-luck]');
     if (!root) return;
+    if (window.Shopify && Shopify.designMode) return;
     var delay = Number(root.getAttribute('data-delay') || 1000);
     var winText = root.getAttribute('data-win') || 'You matched 3 — use code HOLLOW at checkout.';
     var loseText = root.getAttribute('data-lose') || 'No match this time. Shop the sale anyway.';

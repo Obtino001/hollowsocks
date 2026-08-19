@@ -73,6 +73,12 @@
   endcase
 
   assign product_img_structure = product.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+  assign media_aspect = product.featured_media.aspect_ratio | default: 1
+  if media_aspect == 0 or media_aspect == blank
+    assign media_aspect = 1
+  endif
+
+  assign pdp_subtitle = product.metafields.descriptors.subtitle.value | default: product.metafields.custom.subtitle.value
 -%}
 
 {%- liquid
@@ -107,7 +113,7 @@
   data-product-handle="{{ product.handle }}"
   data-product-title="{{ product.title | escape }}"
   data-product-url="{{ product.url | within: collection }}"
-  data-aspect-ratio="{{ 100 | divided_by: product.featured_media.aspect_ratio }}"
+  data-aspect-ratio="{{ 100.0 | divided_by: media_aspect }}"
   data-img-url="{{ product_img_structure }}"
   {% unless isModal %}
     data-history="true"
@@ -145,26 +151,8 @@
               sizeVariable: product_image_width,
               fallback: fallback,
               mobile_layout: mobile_layout,
+              show_promo_stamp: show_buy2get2_badge,
             -%}
-
-            {%- if show_buy2get2_badge -%}
-              <div class="hollow-pdp-buy2get2" aria-hidden="true">
-                <div class="hollow-pdp-buy2get2__ring">
-                  <svg class="hollow-pdp-buy2get2__circle-text" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
-                    </defs>
-                    <text>
-                      <textPath href="#circlePath" startOffset="0%">DON'T MISS THE OFFER · DON'T MISS IT ·&#160;</textPath>
-                    </text>
-                  </svg>
-                  <div class="hollow-pdp-buy2get2__center">
-                    <span class="hollow-pdp-buy2get2__top">BUY 2</span>
-                    <span class="hollow-pdp-buy2get2__mid">GET 2 FREE</span>
-                  </div>
-                </div>
-              </div>
-            {%- endif -%}
           </div>
         {%- endif -%}
 
@@ -219,8 +207,12 @@
                   {%- endunless -%}
                 </h1>
                 {%- unless product.empty? -%}
-                  <p class="hollow-pdp-subtitle">{{ product.metafields.descriptors.subtitle.value | default: product.description | strip_html | truncate: 90 }}</p>
-                  <span class="hollow-pdp-discount">BUY 2 GET 2 FREE</span>
+                  {%- if pdp_subtitle != blank -%}
+                    <p class="hollow-pdp-subtitle">{{ pdp_subtitle | escape }}</p>
+                  {%- endif -%}
+                  {%- if show_buy2get2_badge -%}
+                    <span class="hollow-pdp-discount">BUY 2 GET 2 FREE</span>
+                  {%- endif -%}
                 {%- endunless -%}
               {%- endif -%}
 
@@ -461,7 +453,21 @@
                       <div class="hollow-pdp-shipping-row">
                         <span class="hollow-pdp-shipping-row__ships">
                           <span class="hollow-pdp-shipping-row__dot"></span>
-                          SHIPS BY: <strong>{%- assign ship_date = 'now' | date: '%s' | plus: 172800 -%}{{ ship_date | date: '%b %e' | upcase }}TH</strong>
+                          SHIPS BY: <strong>
+                            {%- assign ship_ts = 'now' | date: '%s' | plus: 172800 -%}
+                            {%- assign ship_day = ship_ts | date: '%d' | plus: 0 -%}
+                            {%- assign ship_mod10 = ship_day | modulo: 10 -%}
+                            {%- assign ship_mod100 = ship_day | modulo: 100 -%}
+                            {%- assign ship_ord = 'TH' -%}
+                            {%- if ship_mod100 != 11 and ship_mod10 == 1 -%}
+                              {%- assign ship_ord = 'ST' -%}
+                            {%- elsif ship_mod100 != 12 and ship_mod10 == 2 -%}
+                              {%- assign ship_ord = 'ND' -%}
+                            {%- elsif ship_mod100 != 13 and ship_mod10 == 3 -%}
+                              {%- assign ship_ord = 'RD' -%}
+                            {%- endif -%}
+                            {{ ship_ts | date: '%b' | upcase }} {{ ship_day }}{{ ship_ord }}
+                          </strong>
                         </span>
                         <span class="hollow-pdp-shipping-row__fast">
                           🇺🇸 <strong>FAST US SHIPPING</strong>
@@ -551,7 +557,10 @@
         </div>
 
         {%- unless image_position == 'left' -%}
-          <div class="grid__item {{ product_image_width }} product-single__sticky">
+          <div class="grid__item {{ product_image_width }} product-single__sticky hollow-pdp-gallery-wrap">
+            {%- if is_best_seller -%}
+              <div class="hollow-pdp-bestseller-tag">BEST SELLER</div>
+            {%- endif -%}
             {%- render 'product-images',
               section_id: section_id,
               product: product,
@@ -569,6 +578,7 @@
               sizeVariable: product_image_width,
               fallback: fallback,
               mobile_layout: mobile_layout,
+              show_promo_stamp: show_buy2get2_badge,
             -%}
           </div>
         {%- endunless -%}

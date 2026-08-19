@@ -68,6 +68,12 @@
             </span>
           </button>
         {%- endif -%}
+
+        {%- render 'hollow-pdp-stamp',
+          show_promo_stamp: show_promo_stamp,
+          product: product,
+          section_id: section_id
+        -%}
       </div>
 
       <div

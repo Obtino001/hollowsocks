@@ -8,7 +8,7 @@
     hidden
   >
     <div class="hollow-luck__panel" role="dialog" aria-modal="true" aria-labelledby="HollowLuckTitle">
-      <img class="hollow-luck__logo" src="{{ 'hollow-logo.svg' | asset_url }}" alt="{{ shop.name }}" width="93" height="32">
+      <img class="hollow-luck__logo" src="{{ 'hollow-logo.svg' | asset_url }}" alt="{{ shop.name | escape }}" width="93" height="32">
       <h2 id="HollowLuckTitle" class="hollow-luck__title">{{ section.settings.title }}</h2>
       <p class="hollow-luck__text">{{ section.settings.text }}</p>
       <div class="hollow-luck__cards">

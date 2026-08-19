@@ -97,11 +97,12 @@
     {%- endif -%}
 
     {%- if section.settings.show_copyright -%}
-      <p class="footer__small-text">
+      <p class="footer__small-text hollow-footer-legal">
         &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}
-        {%- if section.settings.copyright_text != blank -%}
-          {{ section.settings.copyright_text }}
-        {%- endif -%}
+        <a href="{{ pages['accessibility-statement'].url | default: '/pages/accessibility-statement' }}">Accessibility</a>
+        <a href="{{ pages['terms-and-conditions'].url | default: '/pages/terms-and-conditions' }}">Terms and Conditions</a>
+        <a href="{{ pages['privacy-policy'].url | default: '/policies/privacy-policy' }}">privacy policy</a>
+        <a href="{{ pages['disclaimer'].url | default: '/pages/disclaimer' }}">disclaimer</a>
       </p>
     {%- endif -%}
     <p class="footer__small-text">{{ powered_by_link }}</p>

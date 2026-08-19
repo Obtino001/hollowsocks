@@ -136,9 +136,33 @@
   height: 32px;
 }
 
-.hollow-theme .site-nav {
+.hollow-theme .header-item--navigation .site-nav {
   display: flex;
   justify-content: center;
+}
+
+.hollow-theme .hollow-header-icons,
+.hollow-theme .header-item--icons .site-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hollow-logo-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.hollow-logo-link {
+  color: var(--hollow-black);
+}
+
+.hollow-logo-link .hollow-logo {
+  display: block;
+  width: 94px;
+  height: 32px;
 }
 
 .hollow-theme .site-nav__link {
@@ -224,13 +248,13 @@
 
 .hollow-cart-count {
   position: absolute;
-  top: -6px;
-  right: -8px;
-  min-width: 16px;
-  height: 16px;
-  padding: 0 4px;
-  border-radius: 8px;
-  background: var(--hollow-green);
+  top: -4px;
+  right: -10px;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+  border-radius: 7px;
+  background: var(--hollow-black);
   color: var(--hollow-white);
   font-family: var(--hollow-mono);
   font-size: 10px;
@@ -245,6 +269,8 @@
   padding: 6px 0 8px;
   text-align: center;
   min-height: 70px;
+  height: auto;
+  overflow: visible;
 }
 
 .hollow-announcement__inner {
@@ -596,10 +622,41 @@
     background: var(--hollow-cream);
   }
 
+  .hollow-theme .header-layout--left-center {
+    position: relative;
+    min-height: 48px;
+  }
+
+  .hollow-theme .header-item--navigation {
+    display: none;
+  }
+
+  .hollow-theme .header-item--logo,
   .hollow-theme .site-header__logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
+    flex: none !important;
+    width: auto;
+  }
+
+  .hollow-theme .header-item--icons {
+    width: 100%;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    justify-content: stretch;
+  }
+
+  .hollow-theme .hollow-header-icons,
+  .hollow-theme .header-item--icons .site-nav,
+  .hollow-theme .header-item--icons .site-nav__icons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hollow-theme .hollow-mobile-search {
+    display: none !important;
   }
 
   .hollow-hero__content {
@@ -708,6 +765,8 @@
   height: 20px;
   flex: 0 0 20px;
   color: var(--hollow-black);
+  overflow: hidden;
+  line-height: 0;
 }
 
 .hollow-intro__icon svg {
@@ -1610,6 +1669,24 @@
 
 .hollow-theme .footer__small-text:last-of-type {
   display: none;
+}
+
+.hollow-footer-legal a {
+  margin-left: 8px;
+}
+
+.hollow-theme .footer__social {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 0;
+}
+
+.hollow-theme .hollow-social .social-icons {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .hollow-theme .site-footer .social-icons svg path,

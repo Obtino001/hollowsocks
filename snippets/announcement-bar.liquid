@@ -12,9 +12,27 @@
     endif
   endfor
 
-  assign heading = section.settings.heading | default: first_block.settings.text
-  assign offer = section.settings.offer | default: first_block.settings.link_text
-  assign link = section.settings.link | default: first_block.settings.link
+  assign heading = section.settings.heading
+  assign offer = section.settings.offer
+  assign link = section.settings.link
+  if heading == blank and first_block
+    assign heading = first_block.settings.text
+  endif
+  if offer == blank and first_block
+    assign offer = first_block.settings.link_text
+  endif
+  if link == blank and first_block
+    assign link = first_block.settings.link
+  endif
+  if heading == blank
+    assign heading = 'LABOR DAY SALE'
+  endif
+  if offer == blank
+    assign offer = 'BUY 2 GET 2 FREE'
+  endif
+  if heading != blank or offer != blank
+    assign show_announcement = true
+  endif
   assign end_date = section.settings.end_datetime | default: '2026-08-20T23:59:59'
 -%}
 

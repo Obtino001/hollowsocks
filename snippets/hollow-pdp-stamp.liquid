@@ -1,0 +1,19 @@
+{%- if show_promo_stamp -%}
+  {%- assign stamp_path_id = 'hollowCirclePath-' | append: product.id | append: '-' | append: section_id -%}
+  <div class="hollow-pdp-buy2get2" aria-hidden="true">
+    <div class="hollow-pdp-buy2get2__ring">
+      <svg class="hollow-pdp-buy2get2__circle-text" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="128" height="128" focusable="false">
+        <defs>
+          <path id="{{ stamp_path_id }}" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+        </defs>
+        <text>
+          <textPath href="#{{ stamp_path_id }}" xlink:href="#{{ stamp_path_id }}" startOffset="0%">DON'T MISS THE OFFER · DON'T MISS IT · </textPath>
+        </text>
+      </svg>
+      <div class="hollow-pdp-buy2get2__center">
+        <span class="hollow-pdp-buy2get2__top">BUY 2</span>
+        <span class="hollow-pdp-buy2get2__mid">GET 2 FREE</span>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
