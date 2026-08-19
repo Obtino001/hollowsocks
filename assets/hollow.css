@@ -1843,8 +1843,112 @@
 }
 
 /* PDP */
+.hollow-theme .page-content--product .grid__item {
+  min-width: 0;
+}
+
 .hollow-theme .product-single__meta {
   background: var(--hollow-cream);
+  padding-left: 28px;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-theme .product-single__meta {
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+.hollow-theme .hollow-pdp-gallery-wrap {
+  position: relative;
+}
+
+.hollow-theme .hollow-pdp-gallery-wrap .product__main-photos {
+  position: relative;
+  overflow: hidden;
+}
+
+.hollow-theme .hollow-pdp-buy2get2 {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 4;
+  width: 128px;
+  height: 128px;
+  pointer-events: none;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__circle-text {
+  display: block;
+  width: 128px;
+  height: 128px;
+  max-width: 128px;
+  max-height: 128px;
+  overflow: visible;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__circle-text text {
+  fill: var(--hollow-black);
+  font-family: var(--hollow-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__center {
+  position: absolute;
+  inset: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--hollow-cream);
+  border-radius: 50%;
+  color: var(--hollow-black);
+  line-height: 1.05;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__top,
+.hollow-theme .hollow-pdp-buy2get2__mid {
+  display: block;
+  font-family: var(--hollow-display);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__top {
+  font-size: 15px;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__mid {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-theme .hollow-pdp-buy2get2,
+  .hollow-theme .hollow-pdp-buy2get2__circle-text {
+    width: 96px;
+    height: 96px;
+    max-width: 96px;
+    max-height: 96px;
+  }
+
+  .hollow-theme .hollow-pdp-buy2get2__top {
+    font-size: 12px;
+  }
+
+  .hollow-theme .hollow-pdp-buy2get2__mid {
+    font-size: 8px;
+  }
 }
 
 .hollow-pdp-subtitle {
@@ -1861,7 +1965,7 @@
   position: absolute;
   top: 14px;
   left: 14px;
-  z-index: 4;
+  z-index: 5;
   background: var(--hollow-tan);
   color: var(--hollow-black);
   font-family: var(--hollow-mono);
@@ -2005,15 +2109,48 @@
   text-transform: uppercase;
 }
 
+.hollow-theme .hollow-pdp-shipping-row__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  background: #16a34a;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
 .hollow-theme .hollow-pdp-guarantee {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 14px;
   font-family: var(--hollow-mono);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.hollow-theme .hollow-pdp-guarantee__seal,
+.hollow-theme .hollow-pdp-guarantee__seal-svg {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+}
+
+.hollow-theme .hollow-pdp-guarantee__seal-svg {
+  display: block;
+}
+
+.hollow-theme .hollow-pdp-guarantee__title {
+  font-family: var(--hollow-display);
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.hollow-theme .hollow-pdp-guarantee__text {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
 }
 
 .hollow-theme .variant-input input:checked + label,
