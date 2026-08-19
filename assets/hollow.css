@@ -1152,132 +1152,301 @@
 }
 
 /* --- PDP (product-template.liquid) Hollow overrides --- */
-.hollow-theme .hollow-pdp-rating{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin: 0 0 12px;
-  font-weight:700;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  color: #000;
-}
 
-.hollow-theme .hollow-pdp-rating__stars{
-  font-size:14px;
-  line-height:1;
-}
-
-.hollow-theme .hollow-pdp-rating__count{
-  font-size:11px;
-  opacity:0.9;
-}
-
-.hollow-theme .hollow-pdp-discount{
-  display:inline-block;
-  margin: 0 0 6px;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color: var(--hollow-white);
-  background: var(--hollow-red);
-  padding: 6px 10px;
-  line-height: 1;
-}
-
+/* Gallery wrapper */
 .hollow-theme .hollow-pdp-gallery-wrap{
   position: relative;
 }
 
-.hollow-theme .hollow-pdp-buy2get2{
-  position:absolute;
+/* BEST SELLER tag — top-left of gallery */
+.hollow-theme .hollow-pdp-bestseller-tag{
+  position: absolute;
+  top: 14px;
   left: 14px;
-  top: 50%;
-  transform: translateY(-55%);
-  z-index: 3;
+  z-index: 4;
+  background: var(--hollow-black);
+  color: var(--hollow-white);
+  font-family: var(--hollow-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  line-height: 1;
+}
+
+/* Dark circular spinning badge — bottom-left of gallery */
+.hollow-theme .hollow-pdp-buy2get2{
+  position: absolute;
+  left: 14px;
+  bottom: 120px;
+  z-index: 4;
 }
 
 .hollow-theme .hollow-pdp-buy2get2__ring{
-  width: 92px;
-  height: 92px;
-  border-radius: 999px;
-  border: 2px solid var(--hollow-black);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background: #fff;
-  text-align:center;
+  width: 130px;
+  height: 130px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__circle-text{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: hollow-spin 12s linear infinite;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__circle-text text{
+  font-family: var(--hollow-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--hollow-white);
+}
+
+.hollow-theme .hollow-pdp-buy2get2__ring::before{
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: var(--hollow-black);
+  z-index: 0;
+}
+
+.hollow-theme .hollow-pdp-buy2get2__center{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--hollow-white);
   font-family: var(--hollow-display);
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
 }
 
 .hollow-theme .hollow-pdp-buy2get2__top{
-  font-size: 12px;
-  line-height: 1.05;
+  display: block;
+  font-size: 15px;
 }
 
 .hollow-theme .hollow-pdp-buy2get2__mid{
-  font-size: 12px;
-  line-height: 1.05;
+  display: block;
+  font-size: 13px;
 }
 
-/* Make the Impulse ATC look like Hollow's big red button */
-.hollow-theme .product-single__form .add-to-cart{
+@keyframes hollow-spin{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+
+/* Rating stars row */
+.hollow-theme .hollow-pdp-rating{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  color: #000;
+}
+
+.hollow-theme .hollow-pdp-rating__stars{
+  font-size: 15px;
+  line-height: 1;
+  color: #000;
+}
+
+.hollow-theme .hollow-pdp-rating__count{
+  font-family: var(--hollow-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Product title */
+.hollow-theme .product-single__title{
+  font-family: var(--hollow-display) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  font-size: clamp(24px, 3vw, 34px) !important;
+  margin-bottom: 10px !important;
+}
+
+/* Discount badge */
+.hollow-theme .hollow-pdp-discount{
+  display: inline-block;
+  margin: 0 8px 6px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--hollow-white);
+  background: var(--hollow-red);
+  padding: 5px 10px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Per-pair price badge */
+.hollow-theme .hollow-pdp-perpair{
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hollow-black);
+  background: #f5d442;
+  padding: 5px 10px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* ATC button */
+.hollow-theme .product-single__form .add-to-cart,
+.hollow-theme .element-button[type="submit"]{
   background: var(--hollow-red) !important;
   border: 0 !important;
   color: var(--hollow-white) !important;
   letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
   font-weight: 800 !important;
-  height: 44px !important;
+  min-height: 52px !important;
+  height: auto !important;
   border-radius: 0 !important;
+  font-size: 14px !important;
 }
 
-.hollow-theme .product-single__form .add-to-cart span{
-  font-size: 12px !important;
-}
-
-.hollow-theme .hollow-pdp-guarantee{
-  display:flex;
-  align-items:center;
+/* Shipping row */
+.hollow-theme .hollow-pdp-shipping-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 12px;
   margin-top: 14px;
+  padding: 10px 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hollow-black);
 }
 
-.hollow-theme .hollow-pdp-guarantee__ring{
-  width: 58px;
-  height: 58px;
-  border-radius: 999px;
+.hollow-theme .hollow-pdp-shipping-row__ships{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hollow-theme .hollow-pdp-shipping-row__dot{
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hollow-green);
+}
+
+.hollow-theme .hollow-pdp-shipping-row__fast{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 99-day guarantee block */
+.hollow-theme .hollow-pdp-guarantee{
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 18px;
   border: 2px solid var(--hollow-black);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: #fff;
-  font-family: var(--hollow-display);
-  font-weight: 800;
+  border-radius: 0;
 }
 
-.hollow-theme .hollow-pdp-guarantee__days{
-  font-size: 18px;
+.hollow-theme .hollow-pdp-guarantee__seal{
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+}
+
+.hollow-theme .hollow-pdp-guarantee__seal-svg{
+  width: 56px;
+  height: 56px;
+  color: var(--hollow-black);
+}
+
+.hollow-theme .hollow-pdp-guarantee__copy{
+  flex: 1;
 }
 
 .hollow-theme .hollow-pdp-guarantee__title{
   font-family: var(--hollow-display);
   font-weight: 900;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 13px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 1.1;
+  margin-bottom: 6px;
 }
 
 .hollow-theme .hollow-pdp-guarantee__text{
-  margin-top: 4px;
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-weight: 700;
-  opacity: 0.95;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* BUY 2 PAIRS / GET 2 PAIRS FREE promo card */
+.hollow-theme .hollow-pdp-promo-card{
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 2px solid var(--hollow-black);
+  text-align: left;
+}
+
+.hollow-theme .hollow-pdp-promo-card__top{
+  font-family: var(--hollow-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.hollow-theme .hollow-pdp-promo-card__highlight{
+  display: inline-block;
+  font-family: var(--hollow-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  background: var(--hollow-red);
+  color: var(--hollow-white);
+  padding: 4px 8px;
+  margin-bottom: 6px;
+}
+
+.hollow-theme .hollow-pdp-promo-card__sub{
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* Hide description from inline (it's in tabs now) */
+.hollow-theme .product-block:has(.product-single__description):not(.product-block--tab){
+  display: none;
 }
