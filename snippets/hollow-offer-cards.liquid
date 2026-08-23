@@ -15,39 +15,48 @@
   <input type="hidden" name="quantity" value="1" form="{{ form_id }}" data-hollow-qty>
 
   <label class="hollow-offers__card is-selected">
-    <input type="radio" name="hollow-offer-{{ product.id }}" value="1" data-qty="1" checked>
-    <span class="hollow-offers__left">
-      <span class="hollow-offers__name">1 Pair</span>
-      <span class="hollow-offers__each">{{ price | money }}/pair</span>
-    </span>
-    <span class="hollow-offers__right">
-      <span class="hollow-offers__price">{{ price | money }}</span>
+    <input class="hollow-offers__radio" type="radio" name="hollow-offer-{{ product.id }}" value="1" data-qty="1" checked>
+    <span class="hollow-offers__radio-ui" aria-hidden="true"></span>
+    <span class="hollow-offers__body">
+      <span class="hollow-offers__left">
+        <span class="hollow-offers__name">1 Pair</span>
+        <span class="hollow-offers__each">{{ price | money }}/pair</span>
+      </span>
+      <span class="hollow-offers__right">
+        <span class="hollow-offers__price">{{ price | money }}</span>
+      </span>
     </span>
   </label>
 
   <label class="hollow-offers__card">
-    <input type="radio" name="hollow-offer-{{ product.id }}" value="4" data-qty="4">
+    <input class="hollow-offers__radio" type="radio" name="hollow-offer-{{ product.id }}" value="4" data-qty="4">
+    <span class="hollow-offers__radio-ui" aria-hidden="true"></span>
     <span class="hollow-offers__badge">Most Popular</span>
-    <span class="hollow-offers__left">
-      <span class="hollow-offers__name">buy 2 pairs get 2 free</span>
-      <span class="hollow-offers__each">{{ two_price | divided_by: 4 | money }}/Pair + free shipping</span>
-    </span>
-    <span class="hollow-offers__right">
-      <span class="hollow-offers__price">{{ two_price | money }}</span>
-      <s class="hollow-offers__was">{{ two_compare | money }}</s>
+    <span class="hollow-offers__body">
+      <span class="hollow-offers__left">
+        <span class="hollow-offers__name">buy 2 pairs get 2 free</span>
+        <span class="hollow-offers__each">{{ two_price | divided_by: 4 | money }}/Pair + free shipping</span>
+      </span>
+      <span class="hollow-offers__right">
+        <span class="hollow-offers__price">{{ two_price | money }}</span>
+        <s class="hollow-offers__was">{{ two_compare | money }}</s>
+      </span>
     </span>
   </label>
 
   <label class="hollow-offers__card">
-    <input type="radio" name="hollow-offer-{{ product.id }}" value="6" data-qty="6">
+    <input class="hollow-offers__radio" type="radio" name="hollow-offer-{{ product.id }}" value="6" data-qty="6">
+    <span class="hollow-offers__radio-ui" aria-hidden="true"></span>
     <span class="hollow-offers__badge hollow-offers__badge--value">Best Value</span>
-    <span class="hollow-offers__left">
-      <span class="hollow-offers__name">buy 3 pairs get 3 free</span>
-      <span class="hollow-offers__each">{{ three_price | divided_by: 6 | money }}/Pair + free shipping</span>
-    </span>
-    <span class="hollow-offers__right">
-      <span class="hollow-offers__price">{{ three_price | money }}</span>
-      <s class="hollow-offers__was">{{ three_compare | money }}</s>
+    <span class="hollow-offers__body">
+      <span class="hollow-offers__left">
+        <span class="hollow-offers__name">buy 3 pairs get 3 free</span>
+        <span class="hollow-offers__each">{{ three_price | divided_by: 6 | money }}/Pair + free shipping</span>
+      </span>
+      <span class="hollow-offers__right">
+        <span class="hollow-offers__price">{{ three_price | money }}</span>
+        <s class="hollow-offers__was">{{ three_compare | money }}</s>
+      </span>
     </span>
   </label>
 </div>

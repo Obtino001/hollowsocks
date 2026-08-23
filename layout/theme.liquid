@@ -36,30 +36,103 @@
   {{ 'hollow.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
   <style id="hollow-font-lock">
-    :root {
+    :root,
+    body.hollow-theme {
       --hollow-display: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
       --hollow-mono: "GT America Mono", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
       --hollow-body: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      --typeHeaderPrimary: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      --typeBasePrimary: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+      /* Override Impulse / Shopify theme font settings everywhere */
+      --typeHeaderPrimary: "Graphik XX Cond";
+      --typeHeaderFallback: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --typeHeaderWeight: 700;
+      --typeHeaderSize: 32px;
+      --typeHeaderLineHeight: 1.05;
+      --typeHeaderSpacing: 0.02em;
+
+      --typeBasePrimary: "Haas Grot Text";
+      --typeBaseFallback: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --typeBaseWeight: 400;
+      --typeBaseSize: 16px;
+      --typeBaseLineHeight: 1.5;
+      --typeBaseSpacing: 0;
+
+      --font-heading-family: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-body-family: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-heading-weight: 700;
+      --font-body-weight: 400;
+
       --element-text-font-family--heading: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
       --element-text-font-family--body: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --element-text-font-weight--heading: 700;
+      --element-text-font-weight--body: 400;
     }
+
     body.hollow-theme,
     body.hollow-theme input,
     body.hollow-theme button,
     body.hollow-theme select,
-    body.hollow-theme textarea {
+    body.hollow-theme textarea,
+    body.hollow-theme p,
+    body.hollow-theme li,
+    body.hollow-theme span,
+    body.hollow-theme a,
+    body.hollow-theme label,
+    body.hollow-theme td,
+    body.hollow-theme th {
       font-family: var(--hollow-body) !important;
+      font-weight: 400;
     }
+
     body.hollow-theme h1,
     body.hollow-theme h2,
     body.hollow-theme h3,
+    body.hollow-theme h4,
+    body.hollow-theme h5,
+    body.hollow-theme h6,
     body.hollow-theme .h1,
     body.hollow-theme .h2,
-    body.hollow-theme .h3 {
+    body.hollow-theme .h3,
+    body.hollow-theme .h4,
+    body.hollow-theme .h5,
+    body.hollow-theme .h6,
+    body.hollow-theme .section-header__title,
+    body.hollow-theme .hero__title,
+    body.hollow-theme .product-single__title,
+    body.hollow-theme .footer__title,
+    body.hollow-theme .collection-header__title {
       font-family: var(--hollow-display) !important;
       font-weight: 700 !important;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    /* Consistent heading scale — section CSS can still override with more-specific !important */
+    body.hollow-theme h1,
+    body.hollow-theme .h1 { font-size: clamp(32px, 5vw, 64px); }
+    body.hollow-theme h2,
+    body.hollow-theme .h2 { font-size: clamp(26px, 3.2vw, 40px); }
+    body.hollow-theme h3,
+    body.hollow-theme .h3 { font-size: clamp(20px, 2.4vw, 28px); }
+    body.hollow-theme h4,
+    body.hollow-theme .h4 { font-size: 18px; }
+    body.hollow-theme h5,
+    body.hollow-theme .h5 { font-size: 15px; }
+    body.hollow-theme h6,
+    body.hollow-theme .h6 { font-size: 13px; }
+
+    body.hollow-theme .site-nav,
+    body.hollow-theme .site-nav a,
+    body.hollow-theme .announcement-bar,
+    body.hollow-theme .hollow-offers__label,
+    body.hollow-theme .hollow-offers__each,
+    body.hollow-theme .hollow-offers__badge,
+    body.hollow-theme .hollow-variant-label,
+    body.hollow-theme .hollow-pdp-shipping-row,
+    body.hollow-theme .hollow-pdp-guarantee,
+    body.hollow-theme .hollow-pdp-guarantee__title {
+      font-family: var(--hollow-mono) !important;
     }
   </style>
 

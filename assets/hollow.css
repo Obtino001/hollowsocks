@@ -17,6 +17,14 @@
 }
 
 @font-face {
+  font-family: "Graphik XX Cond";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GraphikXXCond-Bold.woff2?v=1787481112") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "GT America Mono";
   src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GTAmericaMono.woff2?v=1787481137") format("woff2");
   font-weight: 400;
@@ -120,16 +128,22 @@
 .hollow-theme h1,
 .hollow-theme h2,
 .hollow-theme h3,
+.hollow-theme h4,
+.hollow-theme h5,
+.hollow-theme h6,
 .hollow-theme .h1,
 .hollow-theme .h2,
 .hollow-theme .h3,
+.hollow-theme .h4,
+.hollow-theme .h5,
+.hollow-theme .h6,
 .hollow-theme .hero__title,
 .hollow-theme .section-header__title {
   font-family: var(--hollow-display);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  line-height: 0.92;
+  line-height: 1.05;
 }
 
 .hollow-theme .page-width {
@@ -2828,96 +2842,144 @@
   color: var(--hollow-black);
 }
 
-/* Offers */
+/* Offers — 1:1 with Hollow quantity cards */
 .hollow-offers {
   display: grid;
-  gap: 10px;
-  margin: 4px 0 16px;
+  gap: 12px;
+  margin: 6px 0 14px;
 }
 
 .hollow-offers__label {
-  margin: 0 0 2px;
-  font-family: var(--hollow-body);
+  margin: 0 0 4px;
+  font-family: var(--hollow-mono);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--hollow-black);
 }
 
 .hollow-offers__card {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 16px 16px 14px;
-  border: 1.5px solid #d5d0c8;
-  background: var(--hollow-white);
+  column-gap: 12px;
+  padding: 14px 14px 14px 12px;
+  border: 1px solid #cfc9c0;
+  background: #ffffff;
   cursor: pointer;
   border-radius: 2px;
+  box-sizing: border-box;
 }
 
 .hollow-offers__card.is-selected {
   background: var(--hollow-tan);
-  border-color: var(--hollow-black);
-  border-width: 2px;
+  border: 2px solid var(--hollow-black);
+  padding: 13px 13px 13px 11px;
 }
 
-.hollow-offers__card input {
+.hollow-offers__radio {
   position: absolute;
   opacity: 0;
+  width: 1px;
+  height: 1px;
   pointer-events: none;
+}
+
+.hollow-offers__radio-ui {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #8a857e;
+  border-radius: 50%;
+  background: #ffffff;
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.hollow-offers__card.is-selected .hollow-offers__radio-ui {
+  border-color: var(--hollow-black);
+}
+
+.hollow-offers__card.is-selected .hollow-offers__radio-ui::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--hollow-black);
+}
+
+.hollow-offers__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  width: 100%;
 }
 
 .hollow-offers__left {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   min-width: 0;
+  text-align: left;
 }
 
 .hollow-offers__right {
   flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+  padding-top: 1px;
 }
 
 .hollow-offers__badge {
   position: absolute;
-  top: -9px;
+  top: -8px;
   right: 12px;
-  left: auto;
+  z-index: 2;
   background: #cfc8bf;
   color: var(--hollow-black);
   padding: 3px 8px;
-  font-family: var(--hollow-body);
-  font-size: 10px;
+  border-radius: 2px;
+  font-family: var(--hollow-mono);
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .hollow-offers__badge--value {
   background: var(--hollow-green);
-  color: var(--hollow-white);
+  color: #ffffff;
 }
 
 .hollow-offers__name {
   display: block;
   font-family: var(--hollow-display) !important;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.15;
   letter-spacing: 0.02em;
+  color: var(--hollow-black);
 }
 
 .hollow-offers__each {
   display: block;
-  margin-top: 2px;
-  font-family: var(--hollow-body);
-  font-size: 12px;
-  letter-spacing: 0.02em;
+  font-family: var(--hollow-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #6f6a64;
+  line-height: 1.3;
 }
 
 .hollow-offers__extra {
@@ -2927,19 +2989,23 @@
 .hollow-offers__price {
   display: block;
   font-family: var(--hollow-display) !important;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   text-align: right;
-  line-height: 1.1;
+  line-height: 1.15;
+  color: var(--hollow-black);
+  white-space: nowrap;
 }
 
 .hollow-offers__was {
   display: block;
-  font-family: var(--hollow-body);
+  font-family: var(--hollow-mono);
   color: #9a948c;
   text-align: right;
   font-size: 12px;
+  line-height: 1.2;
   text-decoration: line-through;
+  white-space: nowrap;
 }
 
 /* Variant labels + buttons */
@@ -3079,34 +3145,36 @@
   background: var(--hollow-red) !important;
   border: 0 !important;
   color: var(--hollow-white) !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
   font-family: var(--hollow-display) !important;
   font-weight: 700 !important;
+  font-size: 15px !important;
   min-height: 52px !important;
-  border-radius: 4px !important;
+  border-radius: 2px !important;
   width: 100%;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .hollow-theme .hollow-pdp-guarantee {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 16px;
-  font-family: var(--hollow-body);
+  gap: 8px;
+  margin-top: 14px;
+  font-family: var(--hollow-mono);
   font-size: 11px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;
+  color: #4a4a4a;
 }
 
 .hollow-theme .hollow-pdp-guarantee__seal,
 .hollow-theme .hollow-pdp-guarantee__seal-svg {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
 }
 
 .hollow-theme .hollow-pdp-guarantee__seal-svg {
@@ -3114,11 +3182,12 @@
 }
 
 .hollow-theme .hollow-pdp-guarantee__title {
-  font-family: var(--hollow-body);
-  font-weight: 700;
+  font-family: var(--hollow-mono);
+  font-weight: 600;
   font-size: 11px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   margin: 0;
+  color: #4a4a4a;
 }
 
 .hollow-theme .hollow-pdp-guarantee__text {
@@ -3128,33 +3197,177 @@
 .hollow-theme .hollow-pdp-shipping-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 14px;
-  padding: 12px 14px;
+  justify-content: center;
+  gap: 0;
+  margin-top: 12px;
+  padding: 11px 14px;
   background: #ebe6dc;
-  border-radius: 6px;
-  font-family: var(--hollow-body);
+  border-radius: 8px;
+  font-family: var(--hollow-mono);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--hollow-black);
+}
+
+.hollow-theme .hollow-pdp-shipping-row__ships,
+.hollow-theme .hollow-pdp-shipping-row__fast {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.hollow-theme .hollow-pdp-shipping-row__ships {
+  padding-right: 14px;
+}
+
+.hollow-theme .hollow-pdp-shipping-row__fast {
+  padding-left: 14px;
+  border-left: 1px solid #c5bfb4;
 }
 
 .hollow-theme .hollow-pdp-shipping-row__dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 6px;
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
   background: #16a34a;
   border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18);
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
-.hollow-theme .hollow-pdp-shipping-row__fast {
-  display: inline-flex;
+.hollow-theme .hollow-pdp-shipping-row__flag {
+  display: none;
+}
+
+/* --- Sticky Add to Cart --- */
+.hollow-sticky-atc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background: #ffffff;
+  border-top: 1px solid #e5e0d7;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(110%);
+  transition: transform 0.28s ease, visibility 0.28s ease;
+  visibility: hidden;
+  padding: 10px 0 calc(10px + env(safe-area-inset-bottom, 0px));
+}
+
+.hollow-sticky-atc.is-visible {
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.hollow-sticky-atc__inner {
+  display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1180px;
+}
+
+.hollow-sticky-atc__product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.hollow-sticky-atc__thumb {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ebe6dc;
+}
+
+.hollow-sticky-atc__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hollow-sticky-atc__meta {
+  min-width: 0;
+}
+
+.hollow-sticky-atc__title {
+  margin: 0 0 2px;
+  font-family: var(--hollow-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hollow-sticky-atc__price {
+  margin: 0;
+  font-family: var(--hollow-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hollow-black);
+}
+
+.hollow-sticky-atc__btn {
+  flex: 0 0 auto;
+  min-width: 180px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--hollow-red);
+  color: #ffffff;
+  font-family: var(--hollow-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hollow-sticky-atc__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hollow-theme.body--sticky-atc-open,
+.hollow-theme:has(.hollow-sticky-atc.is-visible) {
+  padding-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-sticky-atc__title {
+    font-size: 12px;
+    max-width: 42vw;
+  }
+
+  .hollow-sticky-atc__btn {
+    min-width: 0;
+    flex: 1 1 140px;
+    min-height: 46px;
+    font-size: 13px;
+    padding: 0 14px;
+  }
+
+  .hollow-sticky-atc__thumb {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
 }
 
 .hollow-theme .product-block--tab,

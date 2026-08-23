@@ -1,0 +1,48 @@
+{%- unless product.empty? or isModal -%}
+  {%- liquid
+    assign sticky_variant = product.selected_or_first_available_variant
+    assign sticky_image = sticky_variant.featured_media | default: product.featured_media
+  -%}
+  <div
+    class="hollow-sticky-atc"
+    data-hollow-sticky-atc
+    hidden
+    aria-hidden="true"
+  >
+    <div class="hollow-sticky-atc__inner page-width">
+      <div class="hollow-sticky-atc__product">
+        {%- if sticky_image != blank -%}
+          <div class="hollow-sticky-atc__thumb">
+            {{
+              sticky_image
+              | image_url: width: 120
+              | image_tag:
+                loading: 'lazy',
+                widths: '60, 120',
+                sizes: '48px',
+                alt: product.title
+            }}
+          </div>
+        {%- endif -%}
+        <div class="hollow-sticky-atc__meta">
+          <p class="hollow-sticky-atc__title">{{ product.title }}</p>
+          <p class="hollow-sticky-atc__price" data-hollow-sticky-price>
+            {{ sticky_variant.price | money }}
+          </p>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="hollow-sticky-atc__btn"
+        data-hollow-sticky-atc-btn
+        {% unless sticky_variant.available %}disabled{% endunless %}
+      >
+        {% if sticky_variant.available %}
+          ADD TO CART
+        {% else %}
+          SOLD OUT
+        {% endif %}
+      </button>
+    </div>
+  </div>
+{%- endunless -%}

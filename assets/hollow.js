@@ -40,11 +40,65 @@
       bar.classList.toggle('announcement-bar--sticky', sticky);
       document.body.style.setProperty('--sticky-announcement-bar-height', sticky ? height + 'px' : '0px');
       document.body.classList.toggle('has-sticky-announcement-bar', sticky);
+      syncStickyHeaderHeight();
     }
 
     update();
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
+  }
+
+  function syncStickyHeaderHeight() {
+    var stuck = document.querySelector('.site-header--stuck') || document.querySelector('.site-header');
+    if (!stuck) return;
+    var h = Math.ceil(stuck.getBoundingClientRect().height);
+    if (h > 0) {
+      document.documentElement.style.setProperty('--header-height', h + 'px');
+    }
+  }
+
+  function initStickyAtc() {
+    var bar = document.querySelector('[data-hollow-sticky-atc]');
+    if (!bar) return;
+    var mainBtn = document.querySelector('.product-single__form [data-add-to-cart]');
+    if (!mainBtn) return;
+    var stickyBtn = bar.querySelector('[data-hollow-sticky-atc-btn]');
+
+    function setVisible(on) {
+      bar.classList.toggle('is-visible', on);
+      bar.hidden = !on;
+      bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+      document.body.classList.toggle('hollow-sticky-atc-open', on);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(
+        function (entries) {
+          var entry = entries[0];
+          if (!entry) return;
+          var past = entry.boundingClientRect.bottom < 0 || (!entry.isIntersecting && entry.boundingClientRect.top < 0);
+          setVisible(past);
+        },
+        { threshold: 0, rootMargin: '0px' }
+      );
+      observer.observe(mainBtn);
+    } else {
+      function onScroll() {
+        var rect = mainBtn.getBoundingClientRect();
+        setVisible(rect.bottom < 0);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    if (stickyBtn) {
+      stickyBtn.addEventListener('click', function () {
+        if (stickyBtn.disabled) return;
+        if (typeof mainBtn.click === 'function') {
+          mainBtn.click();
+        }
+      });
+    }
   }
 
   function initOffers() {
@@ -240,7 +294,11 @@
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-hollow-countdown]').forEach(tickCountdown);
     stickyAnnouncement();
+    syncStickyHeaderHeight();
+    window.addEventListener('scroll', syncStickyHeaderHeight, { passive: true });
+    window.addEventListener('resize', syncStickyHeaderHeight);
     initOffers();
+    initStickyAtc();
     initHollowPdpVariants();
     initLuck();
     duplicateMarquee();
