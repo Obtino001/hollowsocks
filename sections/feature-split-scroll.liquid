@@ -13,26 +13,32 @@
     color: {{ section.settings.left_text_color }};
     padding: 80px 5%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .feature-left-sticky-{{ section.id }} {
     position: sticky;
-    top: {{ section.settings.sticky_offset }}px;
+    /* Clear sticky announcement + site header so the title never hides underneath */
+    top: calc(
+      var(--sticky-announcement-bar-height, 0px)
+      + var(--header-height, 72px)
+      + {{ section.settings.sticky_offset }}px
+    );
     max-width: 550px;
     width: 100%;
-    align-self: start; /* Crucial for sticky inside grid */
+    align-self: start;
+    z-index: 2;
   }
 
   .feature-main-heading-{{ section.id }} {
-    font-family: var(--font-heading-family), sans-serif;
-    font-size: clamp(32px, 4vw, 42px);
-    font-weight: 800;
+    font-family: var(--hollow-display) !important;
+    font-size: clamp(28px, 3.4vw, 40px) !important;
+    font-weight: 700 !important;
     text-transform: uppercase;
-    line-height: 1.1;
-    margin-bottom: 40px;
+    line-height: 1.05;
+    margin: 0 0 40px;
     color: {{ section.settings.left_text_color }};
-    letter-spacing: -0.5px;
+    letter-spacing: 0.02em;
     text-align: center;
   }
 
@@ -67,17 +73,20 @@
   }
 
   .feature-text-content-{{ section.id }} h4 {
-    font-family: var(--font-heading-family), sans-serif;
-    font-size: 18px;
-    font-weight: 800;
+    font-family: var(--hollow-display) !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
     text-transform: uppercase;
     margin: 0 0 8px 0;
     color: {{ section.settings.left_text_color }};
+    letter-spacing: 0.02em;
+    line-height: 1.2;
   }
 
   .feature-text-content-{{ section.id }} p {
-    font-family: var(--font-body-family), sans-serif;
-    font-size: 15px;
+    font-family: var(--hollow-body) !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
     line-height: 1.5;
     margin: 0;
     color: {{ section.settings.left_text_color }};
@@ -120,17 +129,20 @@
   }
 
   .scroll-card-content-{{ section.id }} h3 {
-    font-family: var(--font-heading-family), sans-serif;
-    font-size: 24px;
-    font-weight: 800;
+    font-family: var(--hollow-display) !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
     text-transform: uppercase;
     margin: 0 0 10px 0;
     color: {{ section.settings.right_text_color }};
+    letter-spacing: 0.02em;
+    line-height: 1.1;
   }
 
   .scroll-card-content-{{ section.id }} p {
-    font-family: var(--font-body-family), sans-serif;
-    font-size: 16px;
+    font-family: var(--hollow-body) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
     line-height: 1.6;
     margin: 0;
     color: {{ section.settings.right_text_color }};
@@ -259,12 +271,12 @@
       "type": "range",
       "id": "sticky_offset",
       "min": 0,
-      "max": 150,
-      "step": 10,
+      "max": 80,
+      "step": 4,
       "unit": "px",
-      "label": "Sticky Top Space",
-      "info": "Space from the top of the screen when scrolling. Adjust if you have a sticky header.",
-      "default": 80
+      "label": "Extra sticky gap",
+      "info": "Added above the sticky header + announcement bar so the title stays fully visible.",
+      "default": 16
     },
     {
       "type": "header",
