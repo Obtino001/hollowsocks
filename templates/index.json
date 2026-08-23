@@ -12,6 +12,7 @@
     "hollow-hero": {
       "type": "hollow-hero",
       "settings": {
+        "image": "shopify://shop_images/hero-homepage-DESKTOP-04_84a98fa5-fae1-48c4-a6b7-117d942f9e67.jpg",
         "overlay_opacity": 12,
         "kicker": "KNITTED IN THE U.S.A.",
         "heading": "LABOR DAY SALE",
