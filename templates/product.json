@@ -109,6 +109,20 @@
             "text": "Temperature Regulating"
           }
         },
+        "marquee_item_PaQpyt": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Temperature Regulating"
+          }
+        },
+        "marquee_item_FPNckM": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Temperature Regulating"
+          }
+        },
         "m2": {
           "type": "marquee_item",
           "settings": {
@@ -140,6 +154,8 @@
       },
       "block_order": [
         "m1",
+        "marquee_item_PaQpyt",
+        "marquee_item_FPNckM",
         "m2",
         "m3",
         "m4",
@@ -148,10 +164,10 @@
       "settings": {
         "bg_color": "#e4dcd0",
         "text_color": "#333333",
-        "speed": 30,
+        "speed": 60,
         "font_size": 14,
         "icon_size": 24,
-        "padding_y": 15
+        "padding_y": 30
       }
     },
     "custom-advantage": {
