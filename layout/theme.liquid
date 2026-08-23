@@ -28,9 +28,10 @@
   {%- render 'head.is-land' -%}
 
   {%- render 'font-face' -%}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preload" href="https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GraphikXXCond-Bold.woff2?v=1787481112" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GTAmericaMono.woff2?v=1787481137" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://cdn.shopify.com/s/files/1/1015/4298/6071/files/HaasGrotText.woff2?v=1787481127" as="font" type="font/woff2" crossorigin>
   {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
   {{ 'hollow.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
