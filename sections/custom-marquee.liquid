@@ -25,16 +25,14 @@
   .marquee-content-{{ section.id }} {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    min-width: 100%;
     flex-shrink: 0;
   }
 
   .marquee-item-{{ section.id }} {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 0 40px; /* Space between each item */
+    gap: 8px;
+    padding: 0 20px;
     font-size: {{ section.settings.font_size }}px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -55,7 +53,7 @@
 
   @media screen and (max-width: 768px) {
     .marquee-item-{{ section.id }} {
-      padding: 0 25px;
+      padding: 0 15px;
       font-size: {{ section.settings.font_size | minus: 2 }}px;
     }
   }
