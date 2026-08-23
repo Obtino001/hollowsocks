@@ -256,6 +256,8 @@
           "type": "left_feature",
           "settings": {
             "custom_svg": "",
+            "icon_image": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/a692680f-5ae6-4240-a64d-76f3c38d52b2",
             "title": "NATURALLY MOISTURE-WICKING",
             "text": "Alpaca fiber naturally wicks moisture to keep you comfortable and dry all-day."
           }
@@ -264,16 +266,30 @@
           "type": "left_feature",
           "settings": {
             "custom_svg": "",
+            "icon_image": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/9dd05c83-10f3-4579-869d-49a5732e35a6",
             "title": "SECURED NO-SLIP FIT",
-            "text": "Hollow socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down."
+            "text": "Hollow socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down so you stay locked in and focused on performing your best."
           }
         },
         "f3": {
           "type": "left_feature",
           "settings": {
             "custom_svg": "",
+            "icon_image": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/0c284065-2483-438a-8914-30dc55097956",
             "title": "ALL-SEASON TEMPERATURE CONTROL",
-            "text": "Built-in temperature regulation ensures you stay warm when it's cold, and cool when it's hot."
+            "text": "Built-in temperature regulation ensures you stay warm when it's cold, and cool when it's hot. Stay comfy in any weather."
+          }
+        },
+        "f4": {
+          "type": "left_feature",
+          "settings": {
+            "custom_svg": "",
+            "icon_image": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/5f411ca2-c8e7-4b48-8fe5-38aa02e397c2",
+            "title": "PREMIUM PERUVIAN ALPACA FIBER",
+            "text": "Hollow socks are made with premium alpaca fiber imported from the pristine highlands of Peru. Our bespoke precision manufacturing process guarantees you're wearing the best alpaca socks ever."
           }
         },
         "r1": {
@@ -302,6 +318,7 @@
         "f1",
         "f2",
         "f3",
+        "f4",
         "r1",
         "right_image_card_ek6ngP",
         "r2"

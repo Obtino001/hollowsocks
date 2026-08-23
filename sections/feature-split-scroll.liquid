@@ -33,6 +33,7 @@
     margin-bottom: 40px;
     color: {{ section.settings.left_text_color }};
     letter-spacing: -0.5px;
+    text-align: center;
   }
 
   .feature-list-{{ section.id }} {
@@ -172,6 +173,8 @@
                   {{ block.settings.custom_svg }}
                 {%- elsif block.settings.icon_image != blank -%}
                   <img src="{{ block.settings.icon_image | image_url: width: 80 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+                {%- elsif block.settings.icon_url != blank -%}
+                  <img src="{{ block.settings.icon_url }}" alt="{{ block.settings.title | escape }}" loading="eager">
                 {%- endif -%}
               </div>
               
@@ -294,8 +297,14 @@
         {
           "type": "image_picker",
           "id": "icon_image",
-          "label": "Or Image Icon",
+          "label": "Or Image Icon (Shopify)",
           "info": "Used if SVG is blank."
+        },
+        {
+          "type": "text",
+          "id": "icon_url",
+          "label": "Or Icon URL (External)",
+          "info": "External URL for icon image. Used if SVG and Shopify image are both blank."
         },
         {
           "type": "text",
