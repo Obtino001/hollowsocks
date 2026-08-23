@@ -99,6 +99,41 @@
         "product_video_style": "muted"
       }
     },
+    "hollow-trust": {
+      "type": "hollow-trust-bar",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "27,000+",
+            "label": "5-star reviews"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "4 MILLION+",
+            "label": "pairs sold"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "99-DAY",
+            "label": "money-back guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
+      "settings": {
+        "background": "#282828",
+        "text_color": "#ffffff"
+      }
+    },
     "custom-marquee": {
       "type": "custom-marquee",
       "blocks": {
@@ -214,41 +249,6 @@
         "padding_bottom": 50
       }
     },
-    "hollow-trust": {
-      "type": "hollow-trust-bar",
-      "blocks": {
-        "stat-1": {
-          "type": "stat",
-          "settings": {
-            "value": "27,000+",
-            "label": "5-star reviews"
-          }
-        },
-        "stat-2": {
-          "type": "stat",
-          "settings": {
-            "value": "4 MILLION+",
-            "label": "pairs sold"
-          }
-        },
-        "stat-3": {
-          "type": "stat",
-          "settings": {
-            "value": "99-DAY",
-            "label": "money-back guarantee"
-          }
-        }
-      },
-      "block_order": [
-        "stat-1",
-        "stat-2",
-        "stat-3"
-      ],
-      "settings": {
-        "background": "#282828",
-        "text_color": "#ffffff"
-      }
-    },
     "feature-split-scroll": {
       "type": "feature-split-scroll",
       "blocks": {
@@ -283,6 +283,13 @@
             "text": "Alpaca fiber's natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
           }
         },
+        "right_image_card_ek6ngP": {
+          "type": "right_image_card",
+          "settings": {
+            "title": "DESIGNED TO PERFORM",
+            "text": "Alpaca fiber's natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
+          }
+        },
         "r2": {
           "type": "right_image_card",
           "settings": {
@@ -296,6 +303,7 @@
         "f2",
         "f3",
         "r1",
+        "right_image_card_ek6ngP",
         "r2"
       ],
       "settings": {
