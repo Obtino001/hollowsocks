@@ -35,6 +35,33 @@
   {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
   {{ 'hollow.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
+  <style id="hollow-font-lock">
+    :root {
+      --hollow-display: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --hollow-mono: "GT America Mono", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --hollow-body: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --typeHeaderPrimary: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --typeBasePrimary: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --element-text-font-family--heading: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --element-text-font-family--body: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    body.hollow-theme,
+    body.hollow-theme input,
+    body.hollow-theme button,
+    body.hollow-theme select,
+    body.hollow-theme textarea {
+      font-family: var(--hollow-body) !important;
+    }
+    body.hollow-theme h1,
+    body.hollow-theme h2,
+    body.hollow-theme h3,
+    body.hollow-theme .h1,
+    body.hollow-theme .h2,
+    body.hollow-theme .h3 {
+      font-family: var(--hollow-display) !important;
+      font-weight: 700 !important;
+    }
+  </style>
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

@@ -9,9 +9,41 @@
 }
 
 @font-face {
+  font-family: "Graphik XX Cond";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GraphikXXCond-Bold.woff2?v=1787481112") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "GT America Mono";
   src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GTAmericaMono.woff2?v=1787481137") format("woff2");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Mono";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GTAmericaMono.woff2?v=1787481137") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Mono";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GTAmericaMono.woff2?v=1787481137") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Mono";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GTAmericaMono.woff2?v=1787481137") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -24,6 +56,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Haas Grot Text";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/HaasGrotText.woff2?v=1787481127") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Haas Grot Text";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/HaasGrotText.woff2?v=1787481127") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Haas Grot Text";
+  src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/HaasGrotText.woff2?v=1787481127") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --hollow-red: #991b1b;
   --hollow-black: #282828;
@@ -32,13 +88,14 @@
   --hollow-tan: #e5dcca;
   --hollow-green: #073026;
   --hollow-muted: #6b6b6b;
-  --hollow-display: "Graphik XX Cond", Impact, sans-serif;
-  --hollow-mono: "GT America Mono", ui-monospace, monospace;
+  /* Fallbacks stay in the Hollow family — never Impact / Courier */
+  --hollow-display: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --hollow-mono: "GT America Mono", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --hollow-body: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --hollow-radius: 12px;
-  --typeHeaderPrimary: "Graphik XX Cond", Impact, sans-serif;
+  --typeHeaderPrimary: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --typeBasePrimary: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --element-text-font-family--heading: "Graphik XX Cond", Impact, sans-serif;
+  --element-text-font-family--heading: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --element-text-font-family--body: "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -50,6 +107,8 @@
 .hollow-theme select {
   font-family: var(--hollow-body);
   color: var(--hollow-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .hollow-theme body,
@@ -71,7 +130,6 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   line-height: 0.92;
-  /* color: var(--hollow-black); */
 }
 
 .hollow-theme .page-width {
@@ -2583,10 +2641,10 @@
 }
 
 .hollow-theme .hollow-pdp-features__text {
-  font-family: var(--hollow-mono);
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: var(--hollow-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   line-height: 1.25;
   text-transform: uppercase;
   color: var(--hollow-black);
@@ -2600,13 +2658,13 @@
   }
 
   .hollow-theme .hollow-pdp-features__text {
-    font-size: 7px;
+    font-size: 8px;
   }
 }
 
 .hollow-theme .product-single__title {
   font-family: var(--hollow-display) !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.02em !important;
   font-size: clamp(30px, 3.2vw, 44px) !important;
@@ -2617,7 +2675,7 @@
 .hollow-theme .hollow-pdp-discount {
   display: inline-block;
   margin: 0 0 18px;
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2658,7 +2716,7 @@
 
 .hollow-offers__label {
   margin: 0 0 2px;
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -2709,9 +2767,10 @@
   background: #cfc8bf;
   color: var(--hollow-black);
   padding: 3px 8px;
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 10px;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -2722,19 +2781,20 @@
 
 .hollow-offers__name {
   display: block;
-  font-family: var(--hollow-display);
-  font-size: 16px;
-  font-weight: 800;
+  font-family: var(--hollow-display) !important;
+  font-size: 17px;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
 .hollow-offers__each {
   display: block;
   margin-top: 2px;
-  font-family: var(--hollow-mono);
-  font-size: 11px;
-  letter-spacing: 0.04em;
+  font-family: var(--hollow-body);
+  font-size: 12px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #6f6a64;
 }
@@ -2745,15 +2805,16 @@
 
 .hollow-offers__price {
   display: block;
-  font-family: var(--hollow-display);
+  font-family: var(--hollow-display) !important;
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   text-align: right;
   line-height: 1.1;
 }
 
 .hollow-offers__was {
   display: block;
+  font-family: var(--hollow-body);
   color: #9a948c;
   text-align: right;
   font-size: 12px;
@@ -2768,7 +2829,7 @@
   gap: 12px;
   width: 100%;
   margin: 0 0 10px;
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -2787,7 +2848,7 @@
 .hollow-theme .hollow-variant-label__right .tool-tip-trigger,
 .hollow-theme .hollow-variant-label__right a,
 .hollow-theme .hollow-variant-label__right button {
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -2803,7 +2864,7 @@
 }
 
 .hollow-theme .product-single__form .variant__label {
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -2856,7 +2917,7 @@
 .hollow-theme .hollow-fit-label__name {
   font-family: var(--hollow-display);
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -2877,7 +2938,7 @@
 .hollow-theme .hollow-size-label__name {
   font-family: var(--hollow-display);
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -2897,10 +2958,10 @@
   background: var(--hollow-red) !important;
   border: 0 !important;
   color: var(--hollow-white) !important;
-  letter-spacing: 0.16em !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   font-family: var(--hollow-display) !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   min-height: 52px !important;
   border-radius: 4px !important;
   width: 100%;
@@ -2913,9 +2974,9 @@
   justify-content: center;
   gap: 10px;
   margin-top: 16px;
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: center;
 }
@@ -2932,10 +2993,10 @@
 }
 
 .hollow-theme .hollow-pdp-guarantee__title {
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-weight: 700;
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   margin: 0;
 }
 
@@ -2952,10 +3013,10 @@
   padding: 12px 14px;
   background: #ebe6dc;
   border-radius: 6px;
-  font-family: var(--hollow-mono);
+  font-family: var(--hollow-body);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -3000,7 +3061,7 @@
   margin: 0;
   font-family: var(--hollow-display);
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1;
@@ -3035,7 +3096,7 @@
   color: #ffffff;
   font-family: var(--hollow-display);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -3073,7 +3134,7 @@
   padding: 16px 36px 16px 0 !important;
   font-family: var(--hollow-display) !important;
   font-size: 18px !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
   text-align: left !important;
