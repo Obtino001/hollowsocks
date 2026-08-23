@@ -307,62 +307,9 @@
         "right_text_color": "#111111"
       }
     },
-    "hollow-instagram": {
-      "type": "hollow-instagram",
-      "blocks": {
-        "i1": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i2": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i3": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i4": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i5": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i6": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "i1",
-        "i2",
-        "i3",
-        "i4",
-        "i5",
-        "i6"
-      ],
-      "settings": {
-        "title": "Gear up for great days",
-        "handle": "#hollowsocks",
-        "handle_link": ""
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "product_recommendations_heading": "You may also like",
         "related_count": 4,
@@ -372,11 +319,10 @@
   },
   "order": [
     "main",
+    "hollow-trust",
     "custom-marquee",
     "custom-advantage",
-    "hollow-trust",
     "feature-split-scroll",
-    "hollow-instagram",
     "product-recommendations"
   ]
 }

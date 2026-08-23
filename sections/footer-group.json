@@ -67,7 +67,6 @@
     },
     "footer-promotions": {
       "type": "footer-promotions",
-      "disabled": true,
       "settings": {
         "hide_homepage": false
       }
@@ -108,7 +107,8 @@
         "newsletter_subheading": "Stay connected for new releases and exclusive offers.",
         "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"/policies/terms-of-service\">View Terms & Privacy</a>.</p>",
         "brand_text": "HOLLOW",
-        "bottom_menu": "footer"
+        "bottom_menu": "footer",
+        "follow_label": "FOLLOW ALONG"
       }
     }
   },
