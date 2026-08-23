@@ -1217,10 +1217,6 @@
   display: none !important;
 }
 
-.hollow-card__reviews {
-  display: none;
-}
-
 /* Banners */
 .hollow-banners {
   display: grid;
