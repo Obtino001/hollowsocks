@@ -59,10 +59,10 @@
     "hollow-subnav": {
       "type": "hollow-subnav",
       "blocks": {
-        "c1": { "type": "item", "settings": { "title": "best sellers", "link": "", "badge": "" } },
-        "c2": { "type": "item", "settings": { "title": "compression", "link": "", "badge": "" } },
-        "c3": { "type": "item", "settings": { "title": "bundles", "link": "", "badge": "50% OFF" } },
-        "c4": { "type": "item", "settings": { "title": "trades", "link": "", "badge": "" } }
+        "c1": { "type": "item", "settings": { "title": "BEST SELLERS", "link": "", "badge": "" } },
+        "c2": { "type": "item", "settings": { "title": "COMPRESSION", "link": "", "badge": "" } },
+        "c3": { "type": "item", "settings": { "title": "BUNDLES", "link": "", "badge": "50% OFF" } },
+        "c4": { "type": "item", "settings": { "title": "TRADES", "link": "", "badge": "" } }
       },
       "block_order": ["c1", "c2", "c3", "c4"],
       "settings": {}

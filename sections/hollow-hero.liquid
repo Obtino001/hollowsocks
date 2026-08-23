@@ -18,7 +18,7 @@
 
   <div class="hollow-hero__overlay" style="background: rgba(0,0,0,{{ overlay_alpha }});"></div>
 
-  <div class="hollow-hero__content page-width">
+  <div class="hollow-hero__content">
     <div class="page-width">
       <div class="hollow-hero__copy">
         {%- if section.settings.kicker != blank -%}
@@ -31,7 +31,7 @@
           <p class="hollow-hero__text">{{ section.settings.text }}</p>
         {%- endif -%}
         {%- if section.settings.button_label != blank -%}
-          <a class="hollow-hero__cta" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label }}</a>
+          <a class="hollow-hero__cta" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label | remove: '—' | strip }}</a>
         {%- endif -%}
       </div>
     </div>
