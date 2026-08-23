@@ -154,9 +154,10 @@
       var pct = 0;
       if (n >= threshold) pct = 100;
       else if (n <= 0) pct = 0;
-      else if (n === 1) pct = 28;
+      else if (n === 1) pct = 33;
       else pct = Math.min(99, Math.round((n / threshold) * 100));
       bar.style.width = pct + '%';
+      progress.classList.toggle('is-complete', n >= threshold);
     }
 
     progress.querySelectorAll('.hollow-cart-progress__step').forEach(function (step) {
