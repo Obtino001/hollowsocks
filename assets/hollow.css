@@ -141,14 +141,10 @@
 .hollow-theme .section-header__title {
   font-family: var(--hollow-display);
   font-weight: 700;
-  
   text-transform: uppercase;
   line-height: 1.05;
 }
 
-.hollow-theme .page-width {
-  max-width: 1440px;
-}
 
 .hollow-theme .shopify-section.hollow-hero-section,
 .hollow-theme .shopify-section.hollow-banners-section,
@@ -2981,12 +2977,12 @@
 
 .hollow-offers__name {
   display: block;
-  font-family: var(--hollow-display) !important;
-  font-size: 15px;
+  font-family: var(--hollow-mono);
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 1.15;
-  
+  letter-spacing: 0.02em;
+  line-height: 1.2;
   color: var(--hollow-black);
 }
 
@@ -3007,11 +3003,12 @@
 
 .hollow-offers__price {
   display: block;
-  font-family: var(--hollow-display) !important;
-  font-size: 16px;
+  font-family: var(--hollow-mono);
+  font-size: 15px;
   font-weight: 700;
   text-align: right;
   line-height: 1.15;
+  letter-spacing: 0.01em;
   color: var(--hollow-black);
   white-space: nowrap;
 }
@@ -3025,6 +3022,7 @@
   line-height: 1.2;
   text-decoration: line-through;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 /* Variant labels + buttons */
@@ -3179,21 +3177,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   margin-top: 14px;
   font-family: var(--hollow-mono);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;
-  color: #4a4a4a;
+  color: var(--hollow-black);
 }
 
 .hollow-theme .hollow-pdp-guarantee__seal,
 .hollow-theme .hollow-pdp-guarantee__seal-svg {
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
 }
 
 .hollow-theme .hollow-pdp-guarantee__seal-svg {
@@ -3206,7 +3204,7 @@
   font-size: 11px;
   letter-spacing: 0.08em;
   margin: 0;
-  color: #4a4a4a;
+  color: var(--hollow-black);
 }
 
 .hollow-theme .hollow-pdp-guarantee__text {
@@ -3389,10 +3387,9 @@
   }
 }
 
-.hollow-theme .product-block--tab,
-.hollow-theme .collapsible-trigger {
-  font-family: var(--hollow-mono);
-  letter-spacing: 0.06em;
+.hollow-theme .product-block--tab .collapsible-trigger {
+  font-family: var(--hollow-display);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -3535,10 +3532,13 @@
   font-size: 15px;
   line-height: 1.5;
   color: var(--hollow-black);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .hollow-theme .hollow-pdp-tab .rte p {
   margin: 0 0 10px;
+  text-transform: none;
 }
 
 .hollow-theme .hollow-pdp-tab .rte ul {
@@ -3553,7 +3553,10 @@
   margin: 0;
   font-family: var(--hollow-body);
   font-size: 15px;
-  line-height: 1.4;
+  font-weight: 400;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .hollow-theme .hollow-check-list {
@@ -3561,29 +3564,33 @@
   margin: 0 !important;
   padding: 0 !important;
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .hollow-theme .hollow-check-list li {
   position: relative;
-  padding-left: 32px;
+  padding-left: 34px;
   margin: 0;
-  font-family: var(--hollow-body);
-  font-size: 15px;
-  line-height: 1.4;
+  font-family: var(--hollow-body) !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.45;
   list-style: none;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: var(--hollow-black);
 }
 
 .hollow-theme .hollow-check-list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 1px;
-  width: 20px;
-  height: 20px;
+  top: 0.1em;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: var(--hollow-black);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.5 8.2 6.4 11l6-7' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-color: var(--hollow-black);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.2 8.1 6.3 11.1 12.8 4.2' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 12px 12px;
