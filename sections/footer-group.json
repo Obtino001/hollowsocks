@@ -78,27 +78,19 @@
           "type": "link_list",
           "settings": {
             "heading": "SHOP",
-            "menu": ""
-          }
-        },
-        "menu-learn": {
-          "type": "link_list",
-          "settings": {
-            "heading": "LEARN",
-            "menu": ""
+            "menu": "k-b-produkter-til-daglig-sundhed"
           }
         },
         "menu-support": {
           "type": "link_list",
           "settings": {
             "heading": "SUPPORT",
-            "menu": ""
+            "menu": "shop-efter-behov-1"
           }
         }
       },
       "block_order": [
         "menu-shop",
-        "menu-learn",
         "menu-support"
       ],
       "settings": {
