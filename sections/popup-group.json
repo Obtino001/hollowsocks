@@ -4,8 +4,9 @@
   "sections": {
     "hollow-luck": {
       "type": "hollow-luck-popup",
+      "disabled": true,
       "settings": {
-        "enable": true,
+        "enable": false,
         "title": "TRY YOUR LUCK",
         "text": "Match 3 cards to see what you win.",
         "dismiss_label": "No thanks",
