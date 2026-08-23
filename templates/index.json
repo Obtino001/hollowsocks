@@ -1,9 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hollow-hero": {
       "type": "hollow-hero",
       "settings": {
-        "image": "",
         "overlay_opacity": 12,
         "kicker": "KNITTED IN THE U.S.A.",
         "heading": "LABOR DAY SALE",
@@ -15,11 +23,33 @@
     "hollow-trust": {
       "type": "hollow-trust-bar",
       "blocks": {
-        "stat-1": { "type": "stat", "settings": { "value": "27,000+", "label": "5-STAR REVIEWS" } },
-        "stat-2": { "type": "stat", "settings": { "value": "4 MILLION+", "label": "PAIRS SOLD" } },
-        "stat-3": { "type": "stat", "settings": { "value": "99-DAY", "label": "MONEY-BACK GUARANTEE" } }
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "27,000+",
+            "label": "5-STAR REVIEWS"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "4 MILLION+",
+            "label": "PAIRS SOLD"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "99-DAY",
+            "label": "MONEY-BACK GUARANTEE"
+          }
+        }
       },
-      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
       "settings": {
         "background": "#282828",
         "text_color": "#ffffff"
@@ -28,20 +58,87 @@
     "hollow-intro": {
       "type": "hollow-intro-reveal",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "icon": "temp", "label": "TEMPERATURE REGULATING" } },
-        "f2": { "type": "feature", "settings": { "icon": "air", "label": "BREATHABLE & LIGHT" } },
-        "f3": { "type": "feature", "settings": { "icon": "fiber", "label": "SOFT ALPACA FIBER" } },
-        "f4": { "type": "feature", "settings": { "icon": "drop", "label": "MOISTURE WICKING" } },
-        "f5": { "type": "feature", "settings": { "icon": "shield", "label": "ODOR RESISTANT" } },
-        "a1": { "type": "activity", "settings": { "image": "", "title": "COMPRESSION", "link": "", "badge": "" } },
-        "a2": { "type": "activity", "settings": { "image": "", "title": "TRADES", "link": "", "badge": "" } },
-        "a3": { "type": "activity", "settings": { "image": "", "title": "BUNDLES", "link": "", "badge": "50% OFF" } },
-        "a4": { "type": "activity", "settings": { "image": "", "title": "HUNTING", "link": "", "badge": "" } }
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "temp",
+            "label": "TEMPERATURE REGULATING"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "air",
+            "label": "BREATHABLE & LIGHT"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "fiber",
+            "label": "SOFT ALPACA FIBER"
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "drop",
+            "label": "MOISTURE WICKING"
+          }
+        },
+        "f5": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "label": "ODOR RESISTANT"
+          }
+        },
+        "a1": {
+          "type": "activity",
+          "settings": {
+            "title": "COMPRESSION",
+            "link": "",
+            "badge": ""
+          }
+        },
+        "a2": {
+          "type": "activity",
+          "settings": {
+            "title": "TRADES",
+            "link": "",
+            "badge": ""
+          }
+        },
+        "a3": {
+          "type": "activity",
+          "settings": {
+            "title": "BUNDLES",
+            "link": "",
+            "badge": "50% OFF"
+          }
+        },
+        "a4": {
+          "type": "activity",
+          "settings": {
+            "title": "HUNTING",
+            "link": "",
+            "badge": ""
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "a1", "a2", "a3", "a4"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
       "settings": {
         "left_heading": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER.",
-        "center_image": "",
         "right_heading": "SHOP BY ACTIVITY"
       }
     },
@@ -50,7 +147,7 @@
       "settings": {
         "title": "Best Sellers",
         "heading_size": "h2",
-        "home_featured_products": "",
+        "home_featured_products": "a-line",
         "per_row": 4,
         "rows": 1,
         "mobile_scrollable": true,
@@ -64,7 +161,6 @@
         "banner-1": {
           "type": "banner",
           "settings": {
-            "image": "",
             "title": "Compression",
             "text": "The perfect aid for enhanced circulation and improved comfort.",
             "link": ""
@@ -73,27 +169,72 @@
         "banner-2": {
           "type": "banner",
           "settings": {
-            "image": "",
             "title": "trades",
             "text": "Socks built for the 14-hour long days on the worksite.",
             "link": ""
           }
         }
       },
-      "block_order": ["banner-1", "banner-2"],
+      "block_order": [
+        "banner-1",
+        "banner-2"
+      ],
       "settings": {}
     },
     "hollow-benefits": {
       "type": "hollow-benefits",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "icon": "temp", "label": "Temperature Regulating" } },
-        "b2": { "type": "benefit", "settings": { "icon": "drop", "label": "moisture wicking" } },
-        "b3": { "type": "benefit", "settings": { "icon": "air", "label": "Breathable & Light" } },
-        "b4": { "type": "benefit", "settings": { "icon": "shield", "label": "odor resistant" } },
-        "b5": { "type": "benefit", "settings": { "icon": "fiber", "label": "Soft Alpaca Fiber" } },
-        "b6": { "type": "benefit", "settings": { "icon": "usa", "label": "made in the usa" } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "temp",
+            "label": "Temperature Regulating"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "drop",
+            "label": "moisture wicking"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "air",
+            "label": "Breathable & Light"
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "label": "odor resistant"
+          }
+        },
+        "b5": {
+          "type": "benefit",
+          "settings": {
+            "icon": "fiber",
+            "label": "Soft Alpaca Fiber"
+          }
+        },
+        "b6": {
+          "type": "benefit",
+          "settings": {
+            "icon": "usa",
+            "label": "made in the usa"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
       "settings": {
         "title": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER."
       }
@@ -109,7 +250,18 @@
             "meta": "verified buyer"
           }
         },
-        "p1": { "type": "image", "settings": { "image": "", "tall": true } },
+        "p1": {
+          "type": "image",
+          "settings": {
+            "tall": true
+          }
+        },
+        "p2": {
+          "type": "image",
+          "settings": {
+            "tall": true
+          }
+        },
         "r2": {
           "type": "review",
           "settings": {
@@ -118,8 +270,12 @@
             "meta": "verified buyer"
           }
         },
-        "p2": { "type": "image", "settings": { "image": "", "tall": true } },
-        "p3": { "type": "image", "settings": { "image": "", "tall": false } },
+        "p3": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
         "r3": {
           "type": "review",
           "settings": {
@@ -128,7 +284,12 @@
             "meta": "verified buyer"
           }
         },
-        "p4": { "type": "image", "settings": { "image": "", "tall": true } },
+        "p4": {
+          "type": "image",
+          "settings": {
+            "tall": true
+          }
+        },
         "r4": {
           "type": "review",
           "settings": {
@@ -138,7 +299,16 @@
           }
         }
       },
-      "block_order": ["r1", "p1", "p2", "r2", "p3", "r3", "p4", "r4"],
+      "block_order": [
+        "r1",
+        "p1",
+        "p2",
+        "r2",
+        "p3",
+        "r3",
+        "p4",
+        "r4"
+      ],
       "settings": {
         "show_stars": true,
         "title": "OVER 4,000,000+ PAIRS SOLD",
@@ -157,9 +327,6 @@
       "settings": {
         "title": "Why Alpaca Fiber Outperforms Wool and Cotton",
         "eyebrow": "ethically sourced in the high altitudes of peru",
-        "image": "",
-        "circle_1": "",
-        "circle_2": "",
         "story_title": "hollow by nature",
         "text": "Unlike cotton and wool, alpaca fiber is naturally hollow, creating breathable warmth and dry comfort without bulk.",
         "button_label": "learn more",
