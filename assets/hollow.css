@@ -494,15 +494,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   min-height: inherit;
   height: 100%;
   padding: 48px 0;
+}
+
+.hollow-hero__content .page-width {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .hollow-hero__copy {
   max-width: 560px;
   margin-left: 0;
   text-align: left;
+  align-self: flex-start;
 }
 
 .hollow-hero__kicker {
@@ -723,6 +731,7 @@
 
   .hollow-hero__copy {
     margin: 0;
+    align-self: flex-start;
   }
 
   .hollow-hero__text {
