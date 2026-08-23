@@ -37,13 +37,8 @@
 
   assign show_buy2get2_badge = true
 
-  if request.design_mode
+  if request.design_mode or product.handle == 'hunt-socks'
     assign is_best_seller = true
-    assign is_new_color = true
-  endif
-
-  if product.handle == 'hunt-socks'
-    assign is_new_color = true
   endif
 
   assign reviews_rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count
@@ -110,7 +105,7 @@
           assign size_trigger = 'products.general.size_trigger' | t | downcase
           assign downcased_option = option.name | downcase
 
-          if downcased_option contains size_trigger
+          if downcased_option contains size_trigger or downcased_option contains 'size'
             assign connect_to_sizechart = true
           endif
         endfor
@@ -150,6 +145,7 @@
             {%- if is_new_color -%}
               <div class="hollow-pdp-newcolor-tag">NEW COLOR</div>
             {%- endif -%}
+            {%- render 'hollow-pdp-gallery-features' -%}
 
             {%- render 'product-images',
               section_id: section_id,
@@ -169,7 +165,7 @@
               sizeVariable: product_image_width,
               fallback: fallback,
               mobile_layout: mobile_layout,
-              show_promo_stamp: show_buy2get2_badge,
+              show_promo_stamp: false,
             -%}
           </div>
         {%- endif -%}
@@ -194,7 +190,7 @@
                         {%- endif -%}
                       {%- endfor -%}
                     </span>
-                    <span class="hollow-pdp-rating__count">({{ reviews_rating_count }} REVIEWS)</span>
+                    <span class="hollow-pdp-rating__count">({{ reviews_rating_count }})</span>
                   </div>
                 {%- endif -%}
               {%- endif -%}
@@ -261,9 +257,16 @@
                       {{ block.settings.content }}
                       {{ block.settings.page.content }}
                     {% endcapture %}
+                    {% liquid
+                      assign force_open = false
+                      assign tab_title_down = block.settings.title | downcase
+                      if tab_title_down == 'features'
+                        assign force_open = true
+                      endif
+                    %}
                     {% unless tab_content == blank and block.settings.title == blank %}
-                      <div class="product-block product-block--tab" {{ block.shopify_attributes }}>
-                        {%- render 'tab', id: tab_id, title: block.settings.title, content: tab_content -%}
+                      <div class="product-block product-block--tab hollow-pdp-tab" {{ block.shopify_attributes }}>
+                        {%- render 'tab', id: tab_id, title: block.settings.title, content: tab_content, force_open: force_open -%}
                       </div>
                     {% endunless %}
                   {%- when 'contact' -%}
@@ -462,10 +465,7 @@
                             <text x="40" y="50" text-anchor="middle" font-size="8" font-weight="700" font-family="Graphik XX Cond, sans-serif" fill="currentColor" letter-spacing="0.08em">DAY</text>
                           </svg>
                         </div>
-                        <div class="hollow-pdp-guarantee__copy">
-                          <div class="hollow-pdp-guarantee__title">99 DAY MONEY BACK GUARANTEE</div>
-                          <div class="hollow-pdp-guarantee__text">WHETHER SOMETHING WASN'T QUITE RIGHT OR YOU CHANGED YOUR MIND, WE'VE GOT YOU COVERED.</div>
-                        </div>
+                        <div class="hollow-pdp-guarantee__title">99-DAY MONEY BACK GUARANTEE</div>
                       </div>
 
                       <div class="hollow-pdp-shipping-row">
@@ -474,9 +474,12 @@
                           SHIPS BY: <strong>TOMORROW</strong>
                         </span>
                         <span class="hollow-pdp-shipping-row__fast">
-                          🇺🇸 <strong>FAST US SHIPPING</strong>
+                          <span class="hollow-pdp-shipping-row__flag" aria-hidden="true">🇺🇸</span>
+                          <strong>FAST US SHIPPING</strong>
                         </span>
                       </div>
+
+                      {%- render 'hollow-size-chart' -%}
 
                       {%- if block.settings.surface_pickup_enable -%}
                         <div data-store-availability-holder
@@ -568,6 +571,7 @@
             {%- if is_new_color -%}
               <div class="hollow-pdp-newcolor-tag">NEW COLOR</div>
             {%- endif -%}
+            {%- render 'hollow-pdp-gallery-features' -%}
             {%- render 'product-images',
               section_id: section_id,
               product: product,
@@ -585,7 +589,7 @@
               sizeVariable: product_image_width,
               fallback: fallback,
               mobile_layout: mobile_layout,
-              show_promo_stamp: show_buy2get2_badge,
+              show_promo_stamp: false,
             -%}
           </div>
         {%- endunless -%}

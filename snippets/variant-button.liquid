@@ -1,46 +1,66 @@
 {%- assign swatch_file_extension = 'png' -%}
 
 {%- capture size_chart_title -%}
-  {{ 'products.general.size_chart' | t }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-size-chart" viewBox="0 0 64 64"><path d="M22.39 33.53c-7.46 0-13.5-3.9-13.5-8.72s6-8.72 13.5-8.72 13.5 3.9 13.5 8.72a12 12 0 0 1-.22 1.73"/><ellipse cx="22.39" cy="24.81" rx="3.28" ry="2.12"/><path d="M8.89 24.81V38.5c0 7.9 6.4 9.41 14.3 9.41h31.92V33.53H22.39"/><path d="M46.78 33.53v7.44"/><path d="M38.65 33.53v7.44"/><path d="M30.52 33.53v7.44"/><path d="M22.39 33.53v7.44"/></svg>
+  OPEN SIZE CHART
 {%- endcapture -%}
 
 {%- liquid
   assign is_size = false
+  assign is_fit = false
   assign size_trigger = 'products.general.size_trigger' | t | downcase
   assign downcased_option = option.name | downcase
 
   if downcased_option contains size_trigger or downcased_option contains 'size'
     assign is_size = true
   endif
+  if downcased_option contains 'fit'
+    assign is_fit = true
+  endif
+
+  assign size_range_label = ''
+  assign selected_down = option.selected_value | downcase
+  if selected_down == 'm' or selected_down == 'medium'
+    assign size_range_label = 'MEN 6-9, WOMEN 7-9.5'
+  elsif selected_down == 'l' or selected_down == 'large'
+    assign size_range_label = 'MEN 9.5-12, WOMEN 10-13'
+  elsif selected_down == 'xl' or selected_down == 'x-large' or selected_down == 'x large' or selected_down == 'extra large'
+    assign size_range_label = 'MEN 12.5-15'
+  elsif selected_down == 's' or selected_down == 'small'
+    assign size_range_label = 'WOMEN 4-6.5'
+  endif
 -%}
 
-<div class="variant-wrapper js" data-type="button">
-  <label class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}"
-    for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ forloop.index0 }}">
-    {{ option.name }}
-    {%- if connect_to_sizechart and is_size -%}
-      <span class="variant__label-info">
-        &mdash;
-        {%- render
-          'tool-tip-trigger',
-          title: size_chart_title,
-          content: section.blocks[sizechart_index].settings.size_chart.content,
-          context: 'size-chart'
-        -%}
-      </span>
-    {%- endif -%}
-    {%- if is_color -%}
-      <span class="variant__label-info">
-        &mdash;
-        <span
-          data-variant-color-label
-          data-index="{{ forloop.index0 }}"
-          data-option-index="{{ color_option_index }}">
-          {{ option.selected_value }}
-        </span>
-      </span>
-    {%- endif -%}
-  </label>
+<div class="variant-wrapper js{% if is_size %} hollow-variant--size{% endif %}{% if is_fit %} hollow-variant--fit{% endif %}" data-type="button">
+  <div class="hollow-variant-label variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}">
+    <div class="hollow-variant-label__left">
+      {%- if is_size -%}
+        <span class="hollow-variant-label__key" data-hollow-size-selected>{{ option.selected_value | upcase }}</span>{%- if size_range_label != blank -%}<span class="hollow-variant-label__sep">:</span> <span class="hollow-variant-label__range" data-hollow-size-range>{{ size_range_label }}</span>{%- endif -%}
+      {%- elsif is_fit -%}
+        <span class="hollow-variant-label__key">{{ option.name | upcase }}:</span>
+        <span class="hollow-variant-label__value" data-hollow-fit-selected>{{ option.selected_value | upcase }}</span>
+      {%- else -%}
+        {{ option.name }}
+        {%- if is_color -%}
+          <span class="variant__label-info">
+            &mdash;
+            <span data-variant-color-label data-index="{{ forloop.index0 }}" data-option-index="{{ color_option_index }}">
+              {{ option.selected_value }}
+            </span>
+          </span>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+    <div class="hollow-variant-label__right">
+      {%- if connect_to_sizechart and is_size -%}
+        <a href="#HollowSizeChart" class="hollow-variant-label__link">OPEN SIZE CHART</a>
+      {%- elsif is_size -%}
+        <a href="#HollowSizeChart" class="hollow-variant-label__link">OPEN SIZE CHART</a>
+      {%- elsif is_fit -%}
+        <button type="button" class="hollow-variant-label__link" data-hollow-fit-details>OPEN FIT DETAILS</button>
+      {%- endif -%}
+    </div>
+  </div>
+
   {%- assign option_index = forloop.index -%}
   <fieldset class="variant-input-wrap"
     name="{{ option.name }}"
@@ -53,6 +73,17 @@
         assign product_available = true
         if product.options.size == 1 and block.settings.product_dynamic_variants_enable
           assign product_available = product.variants[forloop.index0].available
+        endif
+        assign value_down = value | downcase
+        assign short_size = value
+        if value_down == 'medium'
+          assign short_size = 'M'
+        elsif value_down == 'large'
+          assign short_size = 'L'
+        elsif value_down == 'small'
+          assign short_size = 'S'
+        elsif value_down == 'x-large' or value_down == 'x large' or value_down == 'extra large'
+          assign short_size = 'XL'
         endif
       -%}
       <div
@@ -72,7 +103,6 @@
           id="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}">
         {%- if is_color -%}
           {%- if value.swatch -%}
-            {% comment %} Handle color swatches from Liquid swatch drop {% endcomment %}
             {%- liquid
               assign color_image = value.swatch.image | image_url: width: 50
               assign color_swatch_fallback = value.swatch.color
@@ -85,7 +115,6 @@
               {{ value | escape }}
             </label>
           {%- else -%}
-            {% comment %} Handle legacy color swatches generated color product option + product images {% endcomment %}
             {%- liquid
               assign color_file_name = value | handle | append: '.' | append: swatch_file_extension
               assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
@@ -99,31 +128,32 @@
               {{ value | escape }}
             </label>
           {%- endif -%}
-        {%- else -%}
-          {%- liquid
-            assign size_men = ''
-            assign size_women = ''
-            assign value_down = value | downcase
-            if value_down == 's' or value_down == 'small'
-              assign size_women = 'Women 4-6.5'
-            elsif value_down == 'm' or value_down == 'medium'
-              assign size_men = 'Men 6-9'
-              assign size_women = 'Women 7-9.5'
-            elsif value_down == 'l' or value_down == 'large'
-              assign size_men = 'Men 9.5-12'
-              assign size_women = 'Women 10-13'
-            elsif value_down == 'xl' or value_down == 'x-large' or value_down == 'x large' or value_down == 'extra large'
-              assign size_men = 'Men 12.5-15'
-            endif
-          -%}
+        {%- elsif is_fit -%}
           <label
             for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
-            class="variant__button-label{% if is_size %} hollow-size-label{% endif %}{% unless product_available %} disabled{% endunless %}">
-            <span class="hollow-size-label__name">{{ value | escape }}</span>
-            {%- if is_size -%}
-              {%- if size_men != blank -%}<span class="hollow-size-label__range">{{ size_men }}</span>{%- endif -%}
-              {%- if size_women != blank -%}<span class="hollow-size-label__range">{{ size_women }}</span>{%- endif -%}
-            {%- endif -%}
+            class="variant__button-label hollow-fit-label{% unless product_available %} disabled{% endunless %}">
+            <span class="hollow-fit-label__icon" aria-hidden="true">
+              {%- if value_down contains 'over' or value_down contains 'calf' or value_down contains 'otc' -%}
+                <svg viewBox="0 0 40 56" fill="none"><path d="M14 4h12v28c0 2 .8 3.5 2.2 4.8L34 44c2 2 2 5.2 0 7.2s-5.2 2-7.2 0l-8.8-8.8C16.2 40.6 15 38.4 15 36V4Z" stroke="currentColor" stroke-width="2"/><path d="M14 12h12" stroke="currentColor" stroke-width="2"/></svg>
+              {%- else -%}
+                <svg viewBox="0 0 40 48" fill="none"><path d="M14 4h12v20c0 1.8.7 3.2 2 4.4L32 36c1.6 1.6 1.6 4.2 0 5.8s-4.2 1.6-5.8 0l-7-7C17.6 33.2 16.5 31.4 16.5 29.4V4Z" stroke="currentColor" stroke-width="2"/><path d="M14 11h12" stroke="currentColor" stroke-width="2"/></svg>
+              {%- endif -%}
+            </span>
+            <span class="hollow-fit-label__name">{{ value | escape }}</span>
+          </label>
+        {%- elsif is_size -%}
+          <label
+            for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+            class="variant__button-label hollow-size-label{% unless product_available %} disabled{% endunless %}"
+            data-size-key="{{ short_size | upcase }}"
+            data-size-range="{%- if value_down == 'm' or value_down == 'medium' -%}MEN 6-9, WOMEN 7-9.5{%- elsif value_down == 'l' or value_down == 'large' -%}MEN 9.5-12, WOMEN 10-13{%- elsif value_down == 'xl' or value_down == 'x-large' or value_down == 'x large' or value_down == 'extra large' -%}MEN 12.5-15{%- elsif value_down == 's' or value_down == 'small' -%}WOMEN 4-6.5{%- endif -%}">
+            <span class="hollow-size-label__name">{{ short_size | upcase }}</span>
+          </label>
+        {%- else -%}
+          <label
+            for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+            class="variant__button-label{% unless product_available %} disabled{% endunless %}">
+            {{ value | escape }}
           </label>
         {%- endif -%}
       </div>

@@ -61,6 +61,36 @@
     });
   }
 
+  function initHollowPdpVariants() {
+    document.querySelectorAll('.hollow-variant--size').forEach(function (wrap) {
+      var selected = wrap.querySelector('[data-hollow-size-selected]');
+      var range = wrap.querySelector('[data-hollow-size-range]');
+      wrap.querySelectorAll('input[data-variant-input]').forEach(function (input) {
+        input.addEventListener('change', function () {
+          if (!input.checked) return;
+          var label = wrap.querySelector('label[for="' + input.id + '"]');
+          if (!label) return;
+          if (selected) selected.textContent = (label.getAttribute('data-size-key') || input.value || '').toUpperCase();
+          if (range) {
+            var next = label.getAttribute('data-size-range') || '';
+            range.textContent = next;
+            range.style.display = next ? '' : 'none';
+          }
+        });
+      });
+    });
+
+    document.querySelectorAll('.hollow-variant--fit').forEach(function (wrap) {
+      var selected = wrap.querySelector('[data-hollow-fit-selected]');
+      wrap.querySelectorAll('input[data-variant-input]').forEach(function (input) {
+        input.addEventListener('change', function () {
+          if (!input.checked || !selected) return;
+          selected.textContent = (input.value || '').toUpperCase();
+        });
+      });
+    });
+  }
+
   function initLuck() {
     var root = document.querySelector('[data-hollow-luck]');
     if (!root) return;
@@ -211,6 +241,7 @@
     document.querySelectorAll('[data-hollow-countdown]').forEach(tickCountdown);
     stickyAnnouncement();
     initOffers();
+    initHollowPdpVariants();
     initLuck();
     duplicateMarquee();
     initHollowCartDrawer();
