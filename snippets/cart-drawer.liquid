@@ -1,9 +1,21 @@
 {%- if settings.cart_type == 'drawer' -%}
-  <div id="CartDrawer" class="drawer drawer--right">
+  {%- liquid
+    assign hollow_threshold = settings.hollow_cart_threshold | default: 2
+    assign hollow_free = settings.hollow_cart_free_pairs | default: 2
+    assign hollow_count = cart.item_count
+    assign hollow_remaining = hollow_threshold | minus: hollow_count
+    if hollow_remaining < 0
+      assign hollow_remaining = 0
+    endif
+  -%}
+
+  <div id="CartDrawer" class="drawer drawer--right hollow-cart-drawer">
     <form id="CartDrawerForm" action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents" data-location="cart-drawer">
       <div class="drawer__fixed-header">
         <div class="drawer__header appear-animation appear-delay-1">
-          <div class="h2 drawer__title">{{ 'cart.general.title' | t }}</div>
+          <div class="h2 drawer__title hollow-cart-drawer__title">
+            CART (<span data-hollow-cart-count>{{ hollow_count }}</span>)
+          </div>
           <div class="drawer__close">
             <button type="button" class="drawer__close-button js-drawer-close">
               <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg>
@@ -15,6 +27,57 @@
 
       <div class="drawer__inner">
         <div class="drawer__scrollable">
+          {%- if settings.hollow_cart_progress_enable -%}
+            <div
+              class="hollow-cart-progress"
+              data-hollow-cart-progress
+              data-threshold="{{ hollow_threshold }}"
+              data-free="{{ hollow_free }}"
+              data-count="{{ hollow_count }}"
+              data-msg-incomplete="{{ settings.hollow_cart_progress_message | escape }}"
+              data-msg-complete="{{ settings.hollow_cart_progress_complete | escape }}"
+            >
+              <p class="hollow-cart-progress__message" data-hollow-progress-message>
+                {%- if hollow_count >= hollow_threshold -%}
+                  {{ settings.hollow_cart_progress_complete }}
+                {%- else -%}
+                  {{ settings.hollow_cart_progress_message | replace: '[remaining]', hollow_remaining | replace: '[free]', hollow_free }}
+                {%- endif -%}
+              </p>
+
+              <div class="hollow-cart-progress__track" aria-hidden="true">
+                <div class="hollow-cart-progress__bar" data-hollow-progress-bar style="width: {% if hollow_count >= hollow_threshold %}100{% elsif hollow_count == 1 %}28{% elsif hollow_count > 1 %}{% assign pct = hollow_count | times: 100 | divided_by: hollow_threshold %}{{ pct }}{% else %}0{% endif %}%;"></div>
+
+                <div class="hollow-cart-progress__steps">
+                  <div class="hollow-cart-progress__step{% if hollow_count >= 1 %} is-active{% endif %}" data-step="1">
+                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--sock">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 2h6v10.5c0 .8.3 1.5.9 2.1l3.6 3.6c1.2 1.2 1.2 3.1 0 4.2-1.2 1.2-3.1 1.2-4.2 0l-5.1-5.1C8.4 16.5 8 15.5 8 14.4V2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 6h6" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </span>
+                    <span class="hollow-cart-progress__label" data-step-label="1">{% if hollow_count >= 1 %}IN CART{% else %}PAIR 1{% endif %}</span>
+                  </div>
+                  <div class="hollow-cart-progress__step{% if hollow_count >= 2 %} is-active{% endif %}" data-step="2">
+                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--sock">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 2h6v10.5c0 .8.3 1.5.9 2.1l3.6 3.6c1.2 1.2 1.2 3.1 0 4.2-1.2 1.2-3.1 1.2-4.2 0l-5.1-5.1C8.4 16.5 8 15.5 8 14.4V2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 6h6" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </span>
+                    <span class="hollow-cart-progress__label" data-step-label="2">{% if hollow_count >= 2 %}IN CART{% else %}ADD 1{% endif %}</span>
+                  </div>
+                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_count >= hollow_threshold %} is-active{% endif %}" data-step="3">
+                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--gift">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10h16v10H4V10zM3 7h18v3H3V7zM12 7v13M8.5 4.5c1 0 2 .8 3.5 2.5C13.5 5.3 14.5 4.5 15.5 4.5 17 4.5 18 5.5 18 7H6c0-1.5 1-2.5 2.5-2.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="hollow-cart-progress__label">FREE</span>
+                  </div>
+                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_count >= hollow_threshold %} is-active{% endif %}" data-step="4">
+                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--gift">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10h16v10H4V10zM3 7h18v3H3V7zM12 7v13M8.5 4.5c1 0 2 .8 3.5 2.5C13.5 5.3 14.5 4.5 15.5 4.5 17 4.5 18 5.5 18 7H6c0-1.5 1-2.5 2.5-2.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="hollow-cart-progress__label">FREE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+
           <div data-products class="appear-animation appear-delay-2"></div>
 
           {% if settings.cart_notes_enable %}
@@ -25,7 +88,7 @@
           {% endif %}
         </div>
 
-        <div class="drawer__footer appear-animation appear-delay-4">
+        <div class="drawer__footer appear-animation appear-delay-4 hollow-cart-drawer__footer">
           <div data-discounts>
             {% if cart.cart_level_discount_applications != blank %}
               <div class="cart__discounts cart__item-sub cart__item-row">
@@ -41,15 +104,16 @@
             {% endif %}
           </div>
 
-          <div class="cart__item-sub cart__item-row">
-            <div class="ajaxcart__subtotal">{{ 'cart.general.subtotal' | t }}</div>
+          <div class="cart__item-sub cart__item-row hollow-cart-drawer__subtotal">
+            <div class="ajaxcart__subtotal">
+              SUBTOTAL: <span data-hollow-subtotal-label>{% if hollow_count == 1 %}1 ITEM{% else %}{{ hollow_count }} ITEMS{% endif %}</span>
+            </div>
             <div data-subtotal>{{ cart.total_price | money }}</div>
           </div>
 
-          <div class="cart__item-row text-center">
-            <small>
-              {{ 'cart.general.shipping_at_checkout' | t }}<br />
-            </small>
+          <div class="hollow-cart-drawer__shipping cart__item-row">
+            <span>SHIPPING</span>
+            <span>{{ settings.hollow_cart_shipping_text | default: 'CALCULATED AT CHECKOUT' }}</span>
           </div>
 
           {% if settings.cart_terms_conditions_enable %}
@@ -66,14 +130,31 @@
           {% endif %}
 
           <div class="cart__checkout-wrapper">
-            <button type="submit" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}" class="btn cart__checkout">
-              {{ 'cart.general.checkout' | t }}
+            <button type="submit" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}" class="btn cart__checkout hollow-cart-drawer__checkout">
+              <svg class="hollow-cart-drawer__lock" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2"/><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg>
+              {{ settings.hollow_cart_checkout_label | default: 'SECURE CHECKOUT' }}
             </button>
 
             {% if additional_checkout_buttons and settings.cart_additional_buttons %}
               <div class="additional-checkout-buttons additional-checkout-buttons--vertical">{{ content_for_additional_checkout_buttons }}</div>
             {% endif %}
           </div>
+
+          {%- if settings.hollow_cart_trust_enable -%}
+            <div class="hollow-cart-trust">
+              <div class="hollow-cart-trust__item">
+                <span class="hollow-cart-trust__stars" aria-hidden="true">★★★★★</span>
+                <span class="hollow-cart-trust__text">{{ settings.hollow_cart_trust_reviews | default: '27,000+ 5-STAR REVIEWS' }}</span>
+              </div>
+              <div class="hollow-cart-trust__divider" aria-hidden="true"></div>
+              <div class="hollow-cart-trust__item">
+                <span class="hollow-cart-trust__badge" aria-hidden="true">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="2"/><text x="20" y="24" text-anchor="middle" font-size="12" font-weight="800" fill="currentColor" font-family="Oswald, sans-serif">99</text></svg>
+                </span>
+                <span class="hollow-cart-trust__text">{{ settings.hollow_cart_trust_guarantee | default: '99-DAY MONEY BACK GUARANTEE' }}</span>
+              </div>
+            </div>
+          {%- endif -%}
         </div>
       </div>
 

@@ -875,6 +875,77 @@
         "type": "url",
         "id": "cart_terms_conditions_page",
         "label": "t:settings_schema.cart.settings.cart_terms_conditions_page.label"
+      },
+      {
+        "type": "header",
+        "content": "Hollow cart drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "hollow_cart_progress_enable",
+        "label": "Show Buy 2 Get 2 progress bar",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "hollow_cart_threshold",
+        "label": "Pairs needed to unlock free pairs",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "hollow_cart_free_pairs",
+        "label": "Free pairs unlocked",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "text",
+        "id": "hollow_cart_progress_message",
+        "label": "Progress message (incomplete)",
+        "default": "ADD [remaining] PAIR MORE TO UNLOCK [free] FREE PAIRS",
+        "info": "Use [remaining] and [free] placeholders"
+      },
+      {
+        "type": "text",
+        "id": "hollow_cart_progress_complete",
+        "label": "Progress message (complete)",
+        "default": "YOU'VE UNLOCKED 2 FREE PAIRS!"
+      },
+      {
+        "type": "text",
+        "id": "hollow_cart_checkout_label",
+        "label": "Checkout button label",
+        "default": "SECURE CHECKOUT"
+      },
+      {
+        "type": "text",
+        "id": "hollow_cart_shipping_text",
+        "label": "Shipping text",
+        "default": "CALCULATED AT CHECKOUT"
+      },
+      {
+        "type": "checkbox",
+        "id": "hollow_cart_trust_enable",
+        "label": "Show trust row under checkout",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "hollow_cart_trust_reviews",
+        "label": "Trust reviews text",
+        "default": "27,000+ 5-STAR REVIEWS"
+      },
+      {
+        "type": "text",
+        "id": "hollow_cart_trust_guarantee",
+        "label": "Trust guarantee text",
+        "default": "99-DAY MONEY BACK GUARANTEE"
       }
     ]
   },

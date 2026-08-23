@@ -127,13 +127,13 @@
   "cart": {
     "general": {
       "title": "Cart",
-      "remove": "Remove",
+      "remove": "REMOVE",
       "note": "Order note",
       "subtotal": "Subtotal",
       "discounts": "Discounts",
       "shipping_at_checkout": "Shipping, taxes, and discount codes calculated at checkout.",
       "update": "Update cart",
-      "checkout": "Check out",
+      "checkout": "SECURE CHECKOUT",
       "empty": "Your cart is currently empty.",
       "continue_browsing_html": "<a href='{{ url }}'>Continue shopping</a>",
       "close_cart": "Close cart",

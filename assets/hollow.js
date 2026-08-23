@@ -120,11 +120,98 @@
     });
   }
 
+  function updateHollowCartUI(count) {
+    var n = typeof count === 'number' ? count : 0;
+    document.querySelectorAll('[data-hollow-cart-count]').forEach(function (el) {
+      el.textContent = String(n);
+    });
+    document.querySelectorAll('[data-hollow-subtotal-label]').forEach(function (el) {
+      el.textContent = n === 1 ? '1 ITEM' : n + ' ITEMS';
+    });
+
+    var progress = document.querySelector('[data-hollow-cart-progress]');
+    if (!progress) return;
+
+    var threshold = Number(progress.getAttribute('data-threshold') || 2);
+    var free = Number(progress.getAttribute('data-free') || 2);
+    var remaining = Math.max(0, threshold - n);
+    var msgEl = progress.querySelector('[data-hollow-progress-message]');
+    var bar = progress.querySelector('[data-hollow-progress-bar]');
+    var incomplete = progress.getAttribute('data-msg-incomplete') || '';
+    var complete = progress.getAttribute('data-msg-complete') || '';
+
+    if (msgEl) {
+      if (n >= threshold) {
+        msgEl.textContent = complete;
+      } else {
+        msgEl.textContent = incomplete
+          .replace('[remaining]', String(remaining))
+          .replace('[free]', String(free));
+      }
+    }
+
+    if (bar) {
+      var pct = 0;
+      if (n >= threshold) pct = 100;
+      else if (n <= 0) pct = 0;
+      else if (n === 1) pct = 28;
+      else pct = Math.min(99, Math.round((n / threshold) * 100));
+      bar.style.width = pct + '%';
+    }
+
+    progress.querySelectorAll('.hollow-cart-progress__step').forEach(function (step) {
+      var stepNum = Number(step.getAttribute('data-step') || 0);
+      var active = false;
+      if (stepNum === 1) active = n >= 1;
+      else if (stepNum === 2) active = n >= 2;
+      else active = n >= threshold;
+      step.classList.toggle('is-active', active);
+
+      var label = step.querySelector('[data-step-label]');
+      if (label && stepNum === 1) label.textContent = n >= 1 ? 'IN CART' : 'PAIR 1';
+      if (label && stepNum === 2) label.textContent = n >= 2 ? 'IN CART' : 'ADD 1';
+    });
+
+    progress.setAttribute('data-count', String(n));
+  }
+
+  function initHollowCartDrawer() {
+    document.addEventListener('cart:updated', function (evt) {
+      var cart = evt && evt.detail && evt.detail.cart;
+      if (cart && typeof cart.item_count !== 'undefined') {
+        updateHollowCartUI(cart.item_count);
+      }
+    });
+
+    document.addEventListener('cart:build', function () {
+      window.setTimeout(function () {
+        var items = document.querySelector('#CartDrawerForm [data-products] .cart__items');
+        if (items && items.dataset.count) {
+          updateHollowCartUI(parseInt(items.dataset.count, 10) || 0);
+        }
+      }, 50);
+    });
+
+    var form = document.getElementById('CartDrawerForm');
+    if (!form) return;
+    var observer = new MutationObserver(function () {
+      var items = form.querySelector('[data-products] .cart__items');
+      if (items && items.dataset.count) {
+        updateHollowCartUI(parseInt(items.dataset.count, 10) || 0);
+      }
+    });
+    var products = form.querySelector('[data-products]');
+    if (products) {
+      observer.observe(products, { childList: true, subtree: true });
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-hollow-countdown]').forEach(tickCountdown);
     stickyAnnouncement();
     initOffers();
     initLuck();
     duplicateMarquee();
+    initHollowCartDrawer();
   });
 })();
