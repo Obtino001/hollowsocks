@@ -141,7 +141,7 @@
 .hollow-theme .section-header__title {
   font-family: var(--hollow-display);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  
   text-transform: uppercase;
   line-height: 1.05;
 }
@@ -681,7 +681,7 @@
   font-family: var(--hollow-display);
   font-size: clamp(22px, 2.4vw, 32px);
   font-weight: 800;
-  letter-spacing: 0.02em;
+  
   line-height: 1;
   text-transform: uppercase;
 }
@@ -856,89 +856,101 @@
   }
 }
 
-/* Intro reveal */
+/* Intro reveal — match hollowsocks.com alpaca / shop-by-activity */
 .hollow-intro {
   background: var(--hollow-cream);
-  padding: 64px 0 48px;
+  padding: 72px 0 56px;
 }
 
 .hollow-intro__grid {
   display: grid;
-  grid-template-columns: 0.95fr auto 1fr;
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(240px, 300px) minmax(0, 1.1fr);
+  gap: 48px 56px;
   align-items: start;
 }
 
 .hollow-intro__heading {
-  margin: 0 0 28px;
-  font-size: clamp(32px, 4.2vw, 52px);
-  max-width: 11ch;
+  margin: 0 0 32px;
+  font-family: var(--hollow-display);
+  font-size: clamp(36px, 4.6vw, 56px);
+  font-weight: 700;
+  line-height: 0.95;
+  
+  text-transform: uppercase;
+  max-width: 12ch;
+  color: var(--hollow-black);
 }
 
 .hollow-intro__heading--right {
   max-width: none;
+  font-size: clamp(26px, 2.8vw, 36px);
+  margin-bottom: 22px;
+  line-height: 1;
 }
 
 .hollow-intro__features {
   list-style: none;
-  margin: 0 0 0 48px;
+  margin: 0;
   padding: 0;
-  max-width: 320px;
+  max-width: 360px;
+  border-top: 1px solid var(--hollow-black);
 }
 
 .hollow-intro__feature {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 0;
+  gap: 14px;
+  padding: 14px 0;
   border-bottom: 1px solid var(--hollow-black);
 }
 
-.hollow-intro__feature:last-child {
-  border-bottom: 0;
-}
-
 .hollow-intro__icon {
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
   color: var(--hollow-black);
   overflow: hidden;
   line-height: 0;
 }
 
 .hollow-intro__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
 .hollow-intro__feature-text {
   font-family: var(--hollow-mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--hollow-black);
+  line-height: 1.2;
 }
 
 .hollow-intro__center {
-  width: min(280px, 22vw);
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .hollow-intro__fiber-image,
 .hollow-intro__fiber-fallback {
   display: block;
   width: 100%;
-  min-height: 420px;
+  aspect-ratio: 3 / 4.2;
+  min-height: 0;
+  height: auto;
   object-fit: cover;
-  border-radius: var(--hollow-radius);
+  border-radius: 10px;
   background: #cfc8bf;
 }
 
 .hollow-intro__activities {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 18px 16px;
 }
 
 .hollow-intro__activity {
@@ -951,7 +963,7 @@
   display: block;
   aspect-ratio: 1;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #d9d4cc;
 }
 
@@ -966,23 +978,26 @@
   top: 8px;
   left: 8px;
   z-index: 1;
-  background: var(--hollow-tan);
+  background: #ebe6dc;
   color: var(--hollow-black);
   font-family: var(--hollow-mono);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 4px 7px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  line-height: 1.2;
 }
 
 .hollow-intro__activity-title {
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
   text-align: center;
   font-family: var(--hollow-mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -1006,6 +1021,10 @@
     font-size: 36px;
   }
 
+  .hollow-intro__heading--right {
+    font-size: 28px;
+  }
+
   .hollow-intro__features {
     margin-left: 0;
     max-width: none;
@@ -1014,7 +1033,7 @@
   .hollow-intro__mobile-track {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px;
   }
 }
 
@@ -1416,7 +1435,7 @@
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  
 }
 
 .hollow-highlights__subheading {
@@ -1496,7 +1515,7 @@
   font-family: var(--hollow-display);
   font-size: clamp(28px, 3.6vw, 42px);
   font-weight: 800;
-  letter-spacing: 0.02em;
+  
   text-transform: uppercase;
   line-height: 1;
   color: inherit;
@@ -2033,7 +2052,7 @@
   font-size: clamp(28px, 2.6vw, 36px);
   font-weight: 800;
   line-height: 0.95;
-  letter-spacing: 0.02em;
+  
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -2967,7 +2986,7 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.15;
-  letter-spacing: 0.02em;
+  
   color: var(--hollow-black);
 }
 

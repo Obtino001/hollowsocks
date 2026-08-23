@@ -28,21 +28,21 @@
     "hollow-intro": {
       "type": "hollow-intro-reveal",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "icon": "temp", "label": "Temperature Regulating" } },
-        "f2": { "type": "feature", "settings": { "icon": "air", "label": "Breathable & Light" } },
-        "f3": { "type": "feature", "settings": { "icon": "fiber", "label": "Soft Alpaca Fiber" } },
-        "f4": { "type": "feature", "settings": { "icon": "drop", "label": "Moisture Wicking" } },
-        "f5": { "type": "feature", "settings": { "icon": "shield", "label": "Odor Resistant" } },
-        "a1": { "type": "activity", "settings": { "image": "", "title": "compression", "link": "", "badge": "" } },
-        "a2": { "type": "activity", "settings": { "image": "", "title": "trades", "link": "", "badge": "" } },
-        "a3": { "type": "activity", "settings": { "image": "", "title": "bundles", "link": "", "badge": "50% OFF" } },
-        "a4": { "type": "activity", "settings": { "image": "", "title": "hunting", "link": "", "badge": "" } }
+        "f1": { "type": "feature", "settings": { "icon": "temp", "label": "TEMPERATURE REGULATING" } },
+        "f2": { "type": "feature", "settings": { "icon": "air", "label": "BREATHABLE & LIGHT" } },
+        "f3": { "type": "feature", "settings": { "icon": "fiber", "label": "SOFT ALPACA FIBER" } },
+        "f4": { "type": "feature", "settings": { "icon": "drop", "label": "MOISTURE WICKING" } },
+        "f5": { "type": "feature", "settings": { "icon": "shield", "label": "ODOR RESISTANT" } },
+        "a1": { "type": "activity", "settings": { "image": "", "title": "COMPRESSION", "link": "", "badge": "" } },
+        "a2": { "type": "activity", "settings": { "image": "", "title": "TRADES", "link": "", "badge": "" } },
+        "a3": { "type": "activity", "settings": { "image": "", "title": "BUNDLES", "link": "", "badge": "50% OFF" } },
+        "a4": { "type": "activity", "settings": { "image": "", "title": "HUNTING", "link": "", "badge": "" } }
       },
       "block_order": ["f1", "f2", "f3", "f4", "f5", "a1", "a2", "a3", "a4"],
       "settings": {
         "left_heading": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER.",
         "center_image": "",
-        "right_heading": "shop by activity"
+        "right_heading": "SHOP BY ACTIVITY"
       }
     },
     "featured-collection": {

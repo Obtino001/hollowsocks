@@ -9,24 +9,25 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
-    align-items: center;
+    align-items: start;
   }
 
   @media screen and (min-width: 769px) {
     .custom-grid-{{ section.id }} {
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 30px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.05fr) minmax(240px, 300px) minmax(0, 1.1fr);
+      gap: 48px 56px;
     }
   }
 
-  .left-col-heading {
+  .left-col-heading-{{ section.id }} {
     font-family: var(--hollow-display) !important;
-    font-size: calc(var(--typeHeaderSize) * 1.2);
+    font-size: clamp(36px, 4.6vw, 56px);
     text-transform: uppercase;
     font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 30px;
+    line-height: 0.95;
+    
+    margin: 0 0 32px;
+    max-width: 12ch;
     color: #1a1a1a;
   }
 
@@ -34,103 +35,122 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    max-width: 360px;
+    border-top: 1px solid #1a1a1a;
   }
 
   .feature-item-{{ section.id }} {
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    gap: 14px;
+    padding: 14px 0;
     border-bottom: 1px solid #1a1a1a;
   }
 
-  .feature-item-{{ section.id }}:last-child {
-    border-bottom: none;
+  .feature-icon-{{ section.id }} {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    object-fit: contain;
+    color: #1a1a1a;
   }
 
-  .feature-icon-{{ section.id }} {
-    width: 24px;
-    height: 24px;
-    margin-right: 15px;
-    object-fit: contain;
+  .feature-icon-{{ section.id }} svg {
+    width: 22px;
+    height: 22px;
+    display: block;
   }
 
   .feature-text-{{ section.id }} {
     font-family: var(--hollow-mono) !important;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     color: #1a1a1a;
+    line-height: 1.2;
   }
 
-  .center-col-image-wrapper {
+  .center-col-image-wrapper-{{ section.id }} {
     width: 100%;
-    border-radius: 6px;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
     overflow: hidden;
   }
-  
-  .center-col-image-wrapper img {
+
+  .center-col-image-wrapper-{{ section.id }} img {
     width: 100%;
+    aspect-ratio: 3 / 4.2;
     height: auto;
     display: block;
     object-fit: cover;
   }
 
-  .right-col-heading {
+  .right-col-heading-{{ section.id }} {
     font-family: var(--hollow-display) !important;
-    font-size: calc(var(--typeHeaderSize) * 0.9);
+    font-size: clamp(26px, 2.8vw, 36px);
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 20px;
+    
+    line-height: 1;
+    margin: 0 0 22px;
     color: #1a1a1a;
   }
 
   .activity-grid-{{ section.id }} {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 18px 16px;
   }
 
   .activity-card-{{ section.id }} {
     text-decoration: none;
     display: block;
+    color: #1a1a1a;
   }
 
-  .activity-image-wrapper {
+  .activity-image-wrapper-{{ section.id }} {
     position: relative;
-    border-radius: 4px;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 10px;
     aspect-ratio: 1 / 1;
+    background: #d9d4cc;
   }
 
-  .activity-image-wrapper img {
+  .activity-image-wrapper-{{ section.id }} img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .activity-badge {
+  .activity-badge-{{ section.id }} {
     position: absolute;
-    top: 6px;
-    left: 6px;
-    background: #f7f6f2;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    background: #ebe6dc;
     color: #1a1a1a;
+    font-family: var(--hollow-mono);
     font-size: 10px;
-    font-weight: 700;
-    padding: 2px 6px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 4px 8px;
     text-transform: uppercase;
     border-radius: 2px;
+    line-height: 1.2;
   }
 
-  .activity-title {
+  .activity-title-{{ section.id }} {
     display: block;
     text-align: center;
-    font-size: 11px;
-    font-weight: 700;
+    margin-top: 10px;
+    font-family: var(--hollow-mono);
+    font-size: 12px;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     color: #1a1a1a;
   }
 {% endstyle %}
@@ -138,18 +158,21 @@
 <div class="custom-section-{{ section.id }}">
   <div class="page-width">
     <div class="custom-grid-{{ section.id }}">
-      
+
       <div class="grid-column left-column">
         {% if section.settings.left_heading != blank %}
-          <h2 class="left-col-heading">{{ section.settings.left_heading | newline_to_br }}</h2>
+          <h2 class="left-col-heading-{{ section.id }}">{{ section.settings.left_heading | newline_to_br }}</h2>
         {% endif %}
-        
+
         <ul class="feature-list-{{ section.id }}">
           {% for block in section.blocks %}
             {% if block.type == 'feature_item' %}
               <li class="feature-item-{{ section.id }}" {{ block.shopify_attributes }}>
                 {% if block.settings.icon != blank %}
-                  {{ block.settings.icon | image_url: width: 50 | image_tag: class: 'feature-icon-' | append: section.id, loading: 'lazy' }}
+                  {% capture icon_class %}feature-icon-{{ section.id }}{% endcapture %}
+                  {{ block.settings.icon | image_url: width: 50 | image_tag: class: icon_class, loading: 'lazy' }}
+                {% elsif block.settings.icon_key != blank %}
+                  <span class="feature-icon-{{ section.id }}">{%- render 'hollow-icon', icon: block.settings.icon_key -%}</span>
                 {% endif %}
                 <span class="feature-text-{{ section.id }}">{{ block.settings.title }}</span>
               </li>
@@ -159,7 +182,7 @@
       </div>
 
       <div class="grid-column center-column">
-        <div class="center-col-image-wrapper">
+        <div class="center-col-image-wrapper-{{ section.id }}">
           {% if section.settings.center_image != blank %}
             {{ section.settings.center_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
           {% else %}
@@ -170,25 +193,25 @@
 
       <div class="grid-column right-column">
         {% if section.settings.right_heading != blank %}
-          <h2 class="right-col-heading">{{ section.settings.right_heading }}</h2>
+          <h2 class="right-col-heading-{{ section.id }}">{{ section.settings.right_heading }}</h2>
         {% endif %}
 
         <div class="activity-grid-{{ section.id }}">
           {% for block in section.blocks %}
             {% if block.type == 'activity_card' %}
-              <a href="{{ block.settings.link }}" class="activity-card-{{ section.id }}" {{ block.shopify_attributes }}>
-                <div class="activity-image-wrapper">
+              <a href="{{ block.settings.link | default: '#' }}" class="activity-card-{{ section.id }}" {{ block.shopify_attributes }}>
+                <div class="activity-image-wrapper-{{ section.id }}">
                   {% if block.settings.badge_text != blank %}
-                    <span class="activity-badge">{{ block.settings.badge_text }}</span>
+                    <span class="activity-badge-{{ section.id }}">{{ block.settings.badge_text }}</span>
                   {% endif %}
-                  
+
                   {% if block.settings.image != blank %}
                     {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
                   {% else %}
                     {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
                   {% endif %}
                 </div>
-                <span class="activity-title">{{ block.settings.title }}</span>
+                <span class="activity-title-{{ section.id }}">{{ block.settings.title }}</span>
               </a>
             {% endif %}
           {% endfor %}
@@ -207,13 +230,13 @@
       "type": "color",
       "id": "bg_color",
       "label": "Background Color",
-      "default": "#f9f8f6"
+      "default": "#f8f6f2"
     },
     {
       "type": "textarea",
       "id": "left_heading",
       "label": "Left Column Heading",
-      "default": "HOLLOW SOCKS\nARE MADE WITH\nALPACA FIBER."
+      "default": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER."
     },
     {
       "type": "image_picker",
@@ -230,21 +253,21 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 4,
       "unit": "px",
       "label": "Padding Top",
-      "default": 60
+      "default": 72
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 4,
       "unit": "px",
       "label": "Padding Bottom",
-      "default": 60
+      "default": 56
     }
   ],
   "blocks": [
@@ -255,7 +278,21 @@
         {
           "type": "image_picker",
           "id": "icon",
-          "label": "Icon (Small)"
+          "label": "Custom icon image (optional)"
+        },
+        {
+          "type": "select",
+          "id": "icon_key",
+          "label": "Built-in icon",
+          "default": "temp",
+          "options": [
+            { "value": "temp", "label": "Temperature" },
+            { "value": "air", "label": "Breathable" },
+            { "value": "fiber", "label": "Alpaca fiber" },
+            { "value": "drop", "label": "Moisture" },
+            { "value": "shield", "label": "Odor" },
+            { "value": "usa", "label": "Made in USA" }
+          ]
         },
         {
           "type": "text",
@@ -299,12 +336,11 @@
     {
       "name": "3-Column Features (Custom)",
       "blocks": [
-        { "type": "feature_item", "settings": { "title": "TEMPERATURE REGULATING" } },
-        { "type": "feature_item", "settings": { "title": "BREATHABLE & LIGHT" } },
-        { "type": "feature_item", "settings": { "title": "SOFT ALPACA FIBER" } },
-        { "type": "feature_item", "settings": { "title": "MOISTURE WICKING" } },
-        { "type": "feature_item", "settings": { "title": "ODOR RESISTANT" } },
-        { "type": "feature_item", "settings": { "title": "MADE IN THE USA" } },
+        { "type": "feature_item", "settings": { "icon_key": "temp", "title": "TEMPERATURE REGULATING" } },
+        { "type": "feature_item", "settings": { "icon_key": "air", "title": "BREATHABLE & LIGHT" } },
+        { "type": "feature_item", "settings": { "icon_key": "fiber", "title": "SOFT ALPACA FIBER" } },
+        { "type": "feature_item", "settings": { "icon_key": "drop", "title": "MOISTURE WICKING" } },
+        { "type": "feature_item", "settings": { "icon_key": "shield", "title": "ODOR RESISTANT" } },
         { "type": "activity_card", "settings": { "title": "COMPRESSION" } },
         { "type": "activity_card", "settings": { "title": "TRADES" } },
         { "type": "activity_card", "settings": { "title": "BUNDLES", "badge_text": "50% OFF" } },
