@@ -12,16 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "size_chart": {
-          "type": "size_chart",
-          "settings": {
-            "size_chart": "size-chart"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -29,6 +19,12 @@
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
             "color_swatches": true
+          }
+        },
+        "size_chart": {
+          "type": "size_chart",
+          "settings": {
+            "size_chart": "size-chart"
           }
         },
         "buy_buttons": {
@@ -42,50 +38,58 @@
         "tab-1": {
           "type": "tab",
           "settings": {
-            "title": "Description",
-            "content": "<p>[connect via dynamic source]</p>",
+            "title": "Features",
+            "content": "<ul><li>Enhanced achilles padding for superior support</li><li>Weather adapting temperature control</li><li>Easy on and off: slides on in seconds</li><li>Lightweight and built-in breathable mesh vents</li><li>Alpaca fiber: naturally soft and breathable</li></ul>",
             "page": ""
           }
         },
         "tab-2": {
           "type": "tab",
           "settings": {
-            "title": "Materials & Care",
-            "content": "<p>[connect via dynamic source]</p>",
+            "title": "materials",
+            "content": "<p><strong>Made in USA with imported yarn:</strong></p><p>Designed in Wisconsin by outdoor enthusiasts and made in North Carolina.</p><ul><li>51% Premium Peruvian Alpaca Fiber (Imported)</li><li>45% Stretch Nylon</li><li>4% Elastane</li></ul>",
             "page": ""
           }
         },
         "tab-3": {
           "type": "tab",
           "settings": {
-            "title": "Certifications",
-            "content": "<p>[connect certification badges/images via dynamic source]</p>",
+            "title": "washing & care",
+            "content": "<p>Wash cold and hang dry. Machine washing and drying tests have shown no damage.</p>",
             "page": ""
           }
         },
         "tab-4": {
           "type": "tab",
           "settings": {
-            "title": "Shipping & Returns",
-            "content": "<p>something something</p>",
+            "title": "99-day money back guarantee",
+            "content": "<p>We have a 99-day money back guarantee! Whether something wasn't quite right or you changed your mind, we've got you covered.</p>",
+            "page": ""
+          }
+        },
+        "tab-5": {
+          "type": "tab",
+          "settings": {
+            "title": "shipping",
+            "content": "<p>Free US shipping on orders over $79</p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "price",
-        "size_chart",
         "variant_picker",
+        "size_chart",
         "buy_buttons",
         "tab-1",
         "tab-2",
         "tab-3",
-        "tab-4"
+        "tab-4",
+        "tab-5"
       ],
       "settings": {
         "sku_enable": false,
         "image_position": "left",
-        "image_size": "medium",
+        "image_size": "large",
         "product_zoom_enable": true,
         "thumbnail_position": "below",
         "thumbnail_height": "flexible",
@@ -120,98 +124,151 @@
           }
         }
       },
-      "block_order": [
-        "stat-1",
-        "stat-2",
-        "stat-3"
-      ],
+      "block_order": ["stat-1", "stat-2", "stat-3"],
       "settings": {
         "background": "#282828",
         "text_color": "#ffffff"
       }
     },
-    "hollow-reviews": {
-      "type": "hollow-reviews",
+    "hollow-advantage": {
+      "type": "hollow-highlights",
       "blocks": {
-        "r1": {
-          "type": "review",
+        "h1": {
+          "type": "row",
           "settings": {
-            "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible.",
-            "author": "drew s",
-            "meta": "verified buyer"
+            "title": "Endurance Tested Comfort",
+            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt.",
+            "reverse": false
           }
         },
-        "r2": {
-          "type": "review",
+        "h2": {
+          "type": "row",
           "settings": {
-            "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet.",
-            "author": "Michael W",
-            "meta": "verified buyer"
+            "title": "Engineered for versatility",
+            "text": "Designed to adapt to the changing environment of fast and agile moving hunts.",
+            "reverse": true
           }
         },
-        "r3": {
-          "type": "review",
+        "h3": {
+          "type": "row",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable.",
-            "author": "Steve J",
-            "meta": "verified buyer"
-          }
-        },
-        "r4": {
-          "type": "review",
-          "settings": {
-            "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.",
-            "author": "Raymond L.",
-            "meta": "verified buyer"
+            "title": "easy on, easy off",
+            "text": "Stretches wide enough to slide over feet and calves. On in seconds without the struggle.",
+            "reverse": false
           }
         }
       },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3",
-        "r4"
-      ],
+      "block_order": ["h1", "h2", "h3"],
       "settings": {
-        "show_stars": true,
-        "title": "Real customers, real relief",
-        "button_label": "",
-        "button_link": "",
-        "stat_1_value": "",
-        "stat_1_label": "",
-        "stat_2_value": "",
-        "stat_2_label": "",
-        "stat_3_value": "",
-        "stat_3_label": ""
+        "heading": "The Hollow Advantage",
+        "subheading": "See why thousands of hunters trust Hollow Hunt Socks"
+      }
+    },
+    "hollow-benefits": {
+      "type": "hollow-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "temp", "label": "temperature regulating" } },
+        "b2": { "type": "benefit", "settings": { "icon": "air", "label": "breathable & light" } },
+        "b3": { "type": "benefit", "settings": { "icon": "fiber", "label": "super soft" } },
+        "b4": { "type": "benefit", "settings": { "icon": "drop", "label": "moisture wicking" } },
+        "b5": { "type": "benefit", "settings": { "icon": "shield", "label": "odor resistant" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5"],
+      "settings": {
+        "title": ""
+      }
+    },
+    "hollow-wins": {
+      "type": "hollow-wins",
+      "blocks": {
+        "w1": {
+          "type": "feature",
+          "settings": {
+            "title": "Naturally moisture-wicking",
+            "text": "Alpaca fiber naturally wicks moisture to keep you comfortable and dry all-day."
+          }
+        },
+        "w2": {
+          "type": "feature",
+          "settings": {
+            "title": "Secured No-slip fit",
+            "text": "Hollow socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down so you stay locked in and focused on performing your best."
+          }
+        },
+        "w3": {
+          "type": "feature",
+          "settings": {
+            "title": "All-season Temperature Control",
+            "text": "Built-in temperature regulation ensures you stay warm when it’s cold, and cool when it’s hot. Stay comfy in any weather."
+          }
+        },
+        "w4": {
+          "type": "feature",
+          "settings": {
+            "title": "Premium Peruvian Alpaca Fiber",
+            "text": "Hollow socks are made with premium alpaca fiber imported from the pristine highlands of Peru."
+          }
+        },
+        "w5": {
+          "type": "feature",
+          "settings": {
+            "title": "Designed to Perform",
+            "text": "Alpaca fiber’s natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
+          }
+        },
+        "w6": {
+          "type": "feature",
+          "settings": {
+            "title": "Odor-Resistant Wear",
+            "text": "Unlike synthetic socks that trap moisture and odor over time, alpaca fibers make bacterial growth difficult, reducing the root cause of foot odor."
+          }
+        },
+        "w7": {
+          "type": "feature",
+          "settings": {
+            "title": "Soft, Light, And Breathable",
+            "text": "Alpaca fibers are naturally smooth, lightweight, breathable, and have a lower scale structure—meaning no coarse, itchiness, or suffocating feeling you get with wool."
+          }
+        }
+      },
+      "block_order": ["w1", "w2", "w3", "w4", "w5", "w6", "w7"],
+      "settings": {
+        "title": "Why Hollow Wins? Feature by Feature."
+      }
+    },
+    "hollow-instagram": {
+      "type": "hollow-instagram",
+      "blocks": {
+        "i1": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i2": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i3": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i4": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i5": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i6": { "type": "image", "settings": { "image": "", "link": "" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
+      "settings": {
+        "title": "Gear up for great days",
+        "handle": "#hollowsocks",
+        "handle_link": ""
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
         "product_recommendations_heading": "You may also like",
-        "related_count": 5,
-        "products_per_row": 5
+        "related_count": 4,
+        "products_per_row": 4
       }
-    },
-    "recently-viewed": {
-      "type": "recently-viewed",
-      "disabled": true,
-      "settings": {
-        "recent_count": 5
-      }
-    },
-    "collection-return": {
-      "type": "collection-return",
-      "disabled": true,
-      "settings": {}
     }
   },
   "order": [
     "main",
     "hollow-trust",
-    "hollow-reviews",
-    "product-recommendations",
-    "recently-viewed",
-    "collection-return"
+    "hollow-advantage",
+    "hollow-benefits",
+    "hollow-wins",
+    "hollow-instagram",
+    "product-recommendations"
   ]
 }

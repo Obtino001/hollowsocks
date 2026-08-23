@@ -10,6 +10,7 @@
   assign has_buy_tag = false
   assign has_get_tag = false
   assign is_best_seller = false
+  assign is_new_color = false
   for tag in product.tags
     if tag contains 'buy' or tag contains 'BUY'
       assign has_buy_tag = true
@@ -19,6 +20,9 @@
     endif
     if tag contains 'best seller' or tag contains 'Best Seller' or tag contains 'best-seller' or tag contains 'bestseller'
       assign is_best_seller = true
+    endif
+    if tag contains 'new color' or tag contains 'New Color' or tag contains 'new-color' or tag contains 'NEW COLOR'
+      assign is_new_color = true
     endif
   endfor
 
@@ -31,9 +35,15 @@
     assign show_buy2get2_badge = true
   endif
 
+  assign show_buy2get2_badge = true
+
   if request.design_mode
-    assign show_buy2get2_badge = true
     assign is_best_seller = true
+    assign is_new_color = true
+  endif
+
+  if product.handle == 'hunt-socks'
+    assign is_new_color = true
   endif
 
   assign reviews_rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count
@@ -46,7 +56,7 @@
 
   if request.design_mode
     if reviews_rating_count == blank
-      assign reviews_rating_count = 8149
+      assign reviews_rating_count = 843
     endif
   endif
 
@@ -79,6 +89,11 @@
   endif
 
   assign pdp_subtitle = product.metafields.descriptors.subtitle.value | default: product.metafields.custom.subtitle.value
+  if pdp_subtitle == blank
+    if product.handle == 'hunt-socks' or request.design_mode
+      assign pdp_subtitle = "USA's #1 hunt sock for no slip, no sweat, & no smell."
+    endif
+  endif
 -%}
 
 {%- liquid
@@ -131,6 +146,9 @@
 
             {%- if is_best_seller -%}
               <div class="hollow-pdp-bestseller-tag">BEST SELLER</div>
+            {%- endif -%}
+            {%- if is_new_color -%}
+              <div class="hollow-pdp-newcolor-tag">NEW COLOR</div>
             {%- endif -%}
 
             {%- render 'product-images',
@@ -440,8 +458,8 @@
                           <svg class="hollow-pdp-guarantee__seal-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="2.5"/>
                             <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="1"/>
-                            <text x="40" y="36" text-anchor="middle" font-size="18" font-weight="800" font-family="Oswald, sans-serif" fill="currentColor">99</text>
-                            <text x="40" y="50" text-anchor="middle" font-size="8" font-weight="700" font-family="Oswald, sans-serif" fill="currentColor" letter-spacing="0.08em">DAY</text>
+                            <text x="40" y="36" text-anchor="middle" font-size="18" font-weight="700" font-family="Graphik XX Cond, sans-serif" fill="currentColor">99</text>
+                            <text x="40" y="50" text-anchor="middle" font-size="8" font-weight="700" font-family="Graphik XX Cond, sans-serif" fill="currentColor" letter-spacing="0.08em">DAY</text>
                           </svg>
                         </div>
                         <div class="hollow-pdp-guarantee__copy">
@@ -453,21 +471,7 @@
                       <div class="hollow-pdp-shipping-row">
                         <span class="hollow-pdp-shipping-row__ships">
                           <span class="hollow-pdp-shipping-row__dot"></span>
-                          SHIPS BY: <strong>
-                            {%- assign ship_ts = 'now' | date: '%s' | plus: 172800 -%}
-                            {%- assign ship_day = ship_ts | date: '%d' | plus: 0 -%}
-                            {%- assign ship_mod10 = ship_day | modulo: 10 -%}
-                            {%- assign ship_mod100 = ship_day | modulo: 100 -%}
-                            {%- assign ship_ord = 'TH' -%}
-                            {%- if ship_mod100 != 11 and ship_mod10 == 1 -%}
-                              {%- assign ship_ord = 'ST' -%}
-                            {%- elsif ship_mod100 != 12 and ship_mod10 == 2 -%}
-                              {%- assign ship_ord = 'ND' -%}
-                            {%- elsif ship_mod100 != 13 and ship_mod10 == 3 -%}
-                              {%- assign ship_ord = 'RD' -%}
-                            {%- endif -%}
-                            {{ ship_ts | date: '%b' | upcase }} {{ ship_day }}{{ ship_ord }}
-                          </strong>
+                          SHIPS BY: <strong>TOMORROW</strong>
                         </span>
                         <span class="hollow-pdp-shipping-row__fast">
                           🇺🇸 <strong>FAST US SHIPPING</strong>
@@ -560,6 +564,9 @@
           <div class="grid__item {{ product_image_width }} product-single__sticky hollow-pdp-gallery-wrap">
             {%- if is_best_seller -%}
               <div class="hollow-pdp-bestseller-tag">BEST SELLER</div>
+            {%- endif -%}
+            {%- if is_new_color -%}
+              <div class="hollow-pdp-newcolor-tag">NEW COLOR</div>
             {%- endif -%}
             {%- render 'product-images',
               section_id: section_id,

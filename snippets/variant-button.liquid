@@ -9,7 +9,7 @@
   assign size_trigger = 'products.general.size_trigger' | t | downcase
   assign downcased_option = option.name | downcase
 
-  if downcased_option contains size_trigger
+  if downcased_option contains size_trigger or downcased_option contains 'size'
     assign is_size = true
   endif
 -%}
@@ -100,9 +100,31 @@
             </label>
           {%- endif -%}
         {%- else -%}
+          {%- liquid
+            assign size_men = ''
+            assign size_women = ''
+            assign value_down = value | downcase
+            if value_down == 's' or value_down == 'small'
+              assign size_women = 'Women 4-6.5'
+            elsif value_down == 'm' or value_down == 'medium'
+              assign size_men = 'Men 6-9'
+              assign size_women = 'Women 7-9.5'
+            elsif value_down == 'l' or value_down == 'large'
+              assign size_men = 'Men 9.5-12'
+              assign size_women = 'Women 10-13'
+            elsif value_down == 'xl' or value_down == 'x-large' or value_down == 'x large' or value_down == 'extra large'
+              assign size_men = 'Men 12.5-15'
+            endif
+          -%}
           <label
             for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
-            class="variant__button-label{% unless product_available %} disabled{% endunless %}">{{ value | escape }}</label>
+            class="variant__button-label{% if is_size %} hollow-size-label{% endif %}{% unless product_available %} disabled{% endunless %}">
+            <span class="hollow-size-label__name">{{ value | escape }}</span>
+            {%- if is_size -%}
+              {%- if size_men != blank -%}<span class="hollow-size-label__range">{{ size_men }}</span>{%- endif -%}
+              {%- if size_women != blank -%}<span class="hollow-size-label__range">{{ size_women }}</span>{%- endif -%}
+            {%- endif -%}
+          </label>
         {%- endif -%}
       </div>
     {%- endfor -%}

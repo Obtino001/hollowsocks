@@ -75,32 +75,41 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "link_list_RaBEkd": {
+        "menu-shop": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick Links",
-            "menu": "shop-efter-behov"
+            "heading": "SHOP",
+            "menu": ""
           }
         },
-        "link_list_cG9C9V": {
+        "menu-learn": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick Links",
-            "menu": "shop-efter-behov"
+            "heading": "LEARN",
+            "menu": ""
+          }
+        },
+        "menu-support": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SUPPORT",
+            "menu": ""
           }
         }
       },
       "block_order": [
-        "link_list_RaBEkd",
-        "link_list_cG9C9V"
+        "menu-shop",
+        "menu-learn",
+        "menu-support"
       ],
       "settings": {
         "newsletter_image": "shopify://shop_images/review-image1.png",
-        "newsletter_heading": "JOIN THE ARVENIXO CREW",
+        "newsletter_heading": "JOIN THE HOLLOW CREW",
         "newsletter_subheading": "Stay connected for new releases and exclusive offers.",
-        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"#\">View Terms & Privacy</a>.</p>",
-        "brand_text": "Hollow",
-        "bottom_menu": "footer"
+        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"/policies/terms-of-service\">View Terms & Privacy</a>.</p>",
+        "brand_text": "HOLLOW",
+        "bottom_menu": "footer",
+        "follow_label": "FOLLOW ALONG"
       }
     }
   },
