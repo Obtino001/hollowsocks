@@ -6,6 +6,20 @@
         "text": "LABOR DAY SALE: BUY 2 GET 2 FREE"
       }
     },
+    "collection-nav": {
+      "type": "hollow-collection-nav",
+      "blocks": {
+        "cat-1": { "type": "category", "settings": { "title": "BEST SELLERS", "link": "shopify://collections/best-sellers" } },
+        "cat-2": { "type": "category", "settings": { "title": "COMPRESSION", "link": "shopify://collections/compression" } },
+        "cat-3": { "type": "category", "settings": { "title": "BUNDLES", "link": "shopify://collections/bundles" } },
+        "cat-4": { "type": "category", "settings": { "title": "TRADES", "link": "shopify://collections/trades" } },
+        "cat-5": { "type": "category", "settings": { "title": "HUNTING", "link": "shopify://collections/hunting" } },
+        "cat-6": { "type": "category", "settings": { "title": "EVERYDAY", "link": "shopify://collections/everyday" } },
+        "cat-7": { "type": "category", "settings": { "title": "RUNNING", "link": "shopify://collections/running" } }
+      },
+      "block_order": ["cat-1", "cat-2", "cat-3", "cat-4", "cat-5", "cat-6", "cat-7"],
+      "settings": {}
+    },
     "collection-header": {
       "type": "collection-header",
       "settings": {
@@ -18,21 +32,17 @@
     "main-collection": {
       "type": "main-collection",
       "blocks": {
-        "collection_description": {
-          "type": "collection_description",
-          "settings": {}
-        },
         "product_grid": {
           "type": "product_grid",
           "settings": {
             "enable_collection_count": false,
             "per_row": 4,
-            "rows_per_page": 10,
+            "rows_per_page": 8,
             "mobile_flush_grid": false
           }
         }
       },
-      "block_order": ["collection_description", "product_grid"],
+      "block_order": ["product_grid"],
       "settings": {
         "enable_sidebar": false,
         "collapsed": true,
@@ -43,5 +53,5 @@
       }
     }
   },
-  "order": ["ticker", "collection-header", "main-collection"]
+  "order": ["ticker", "collection-nav", "collection-header", "main-collection"]
 }
