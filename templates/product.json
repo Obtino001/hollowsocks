@@ -249,94 +249,6 @@
         "text_color": "#ffffff"
       }
     },
-    "hollow-advantage": {
-      "type": "hollow-highlights",
-      "blocks": {
-        "h1": {
-          "type": "row",
-          "settings": {
-            "title": "Endurance Tested Comfort",
-            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt.",
-            "reverse": false
-          }
-        },
-        "h2": {
-          "type": "row",
-          "settings": {
-            "title": "Engineered for versatility",
-            "text": "Designed to adapt to the changing environment of fast and agile moving hunts.",
-            "reverse": true
-          }
-        },
-        "h3": {
-          "type": "row",
-          "settings": {
-            "title": "easy on, easy off",
-            "text": "Stretches wide enough to slide over feet and calves. On in seconds without the struggle.",
-            "reverse": false
-          }
-        }
-      },
-      "block_order": [
-        "h1",
-        "h2",
-        "h3"
-      ],
-      "settings": {
-        "heading": "The Hollow Advantage",
-        "subheading": "See why thousands of hunters trust Hollow Hunt Socks"
-      }
-    },
-    "hollow-benefits": {
-      "type": "hollow-benefits",
-      "blocks": {
-        "b1": {
-          "type": "benefit",
-          "settings": {
-            "icon": "temp",
-            "label": "temperature regulating"
-          }
-        },
-        "b2": {
-          "type": "benefit",
-          "settings": {
-            "icon": "air",
-            "label": "breathable & light"
-          }
-        },
-        "b3": {
-          "type": "benefit",
-          "settings": {
-            "icon": "fiber",
-            "label": "super soft"
-          }
-        },
-        "b4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "drop",
-            "label": "moisture wicking"
-          }
-        },
-        "b5": {
-          "type": "benefit",
-          "settings": {
-            "icon": "shield",
-            "label": "odor resistant"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4",
-        "b5"
-      ],
-      "settings": {
-        "title": ""
-      }
-    },
     "feature-split-scroll": {
       "type": "feature-split-scroll",
       "blocks": {
@@ -463,8 +375,6 @@
     "custom-marquee",
     "custom-advantage",
     "hollow-trust",
-    "hollow-advantage",
-    "hollow-benefits",
     "feature-split-scroll",
     "hollow-instagram",
     "product-recommendations"
