@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "t:sections.footer-group.name",
@@ -5,18 +14,55 @@
     "hollow-instagram": {
       "type": "hollow-instagram",
       "blocks": {
-        "i1": { "type": "image", "settings": { "image": "", "link": "" } },
-        "i2": { "type": "image", "settings": { "image": "", "link": "" } },
-        "i3": { "type": "image", "settings": { "image": "", "link": "" } },
-        "i4": { "type": "image", "settings": { "image": "", "link": "" } },
-        "i5": { "type": "image", "settings": { "image": "", "link": "" } },
-        "i6": { "type": "image", "settings": { "image": "", "link": "" } }
+        "i1": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "i2": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "i3": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "i4": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "i5": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "i6": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
       "settings": {
         "title": "Gear up for great days",
         "handle": "#hollowsocks",
-        "handle_link": "https://www.instagram.com/hollowsocks/"
+        "handle_link": ""
       }
     },
     "footer-promotions": {
@@ -29,66 +75,32 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "newsletter": {
-          "type": "newsletter",
+        "link_list_RaBEkd": {
+          "type": "link_list",
           "settings": {
-            "show_footer_title": true,
-            "title": "JOIN THE HOLLOW CREW",
-            "text": "<p>Stay connected for new releases and exclusive offers.</p><p>You can unsubscribe at any time. View Terms & Privacy.</p>",
-            "container_width": 35
+            "heading": "Quick Links",
+            "menu": "shop-efter-behov"
           }
         },
-        "shop": {
-          "type": "custom",
+        "link_list_cG9C9V": {
+          "type": "link_list",
           "settings": {
-            "show_footer_title": true,
-            "title": "SHOP",
-            "text": "<p><a href=\"/collections/best-sellers\">best sellers</a><br><a href=\"/collections/bundles\">BUNDLE & SAVE 50%</a><br><a href=\"/collections/compression\">compression</a><br><a href=\"/collections/everyday\">everyday</a><br><a href=\"/collections/trades\">Trades</a></p>",
-            "container_width": 16
-          }
-        },
-        "learn": {
-          "type": "custom",
-          "settings": {
-            "show_footer_title": true,
-            "title": "LEARN",
-            "text": "<p><a href=\"/pages/about-us\">WHY ALPACA FIBER?</a><br><a href=\"/pages/store-locator\">store locator</a><br><a href=\"/pages/all-reviews\">reviews</a></p>",
-            "container_width": 16
-          }
-        },
-        "support": {
-          "type": "custom",
-          "settings": {
-            "show_footer_title": true,
-            "title": "SUPPORT",
-            "text": "<p><a href=\"/pages/faqs\">faqs</a><br><a href=\"/pages/returns-and-exchanges\">returns & exchanges</a><br><a href=\"/pages/accessibility-statement\">Accessibility</a><br><a href=\"/pages/contact-us\">contact us</a></p>",
-            "container_width": 16
-          }
-        },
-        "follow": {
-          "type": "custom",
-          "settings": {
-            "show_footer_title": true,
-            "title": "FOLLOW ALONG",
-            "text": "<p></p>",
-            "container_width": 17
+            "heading": "Quick Links",
+            "menu": "shop-efter-behov"
           }
         }
       },
       "block_order": [
-        "newsletter",
-        "shop",
-        "learn",
-        "support",
-        "follow"
+        "link_list_RaBEkd",
+        "link_list_cG9C9V"
       ],
       "settings": {
-        "show_currency_selector": false,
-        "show_currency_flags": false,
-        "show_locale_selector": false,
-        "show_payment_icons": false,
-        "show_copyright": true,
-        "copyright_text": "Accessibility · Terms and Conditions · privacy policy · disclaimer"
+        "newsletter_image": "shopify://shop_images/review-image1.png",
+        "newsletter_heading": "JOIN THE ARVENIXO CREW",
+        "newsletter_subheading": "Stay connected for new releases and exclusive offers.",
+        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"#\">View Terms & Privacy</a>.</p>",
+        "brand_text": "Hollow",
+        "bottom_menu": "footer"
       }
     }
   },
