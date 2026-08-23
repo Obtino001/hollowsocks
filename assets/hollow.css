@@ -1033,13 +1033,19 @@
   }
 }
 
-/* Product cards */
+/* Product cards — match hollowsocks.com Best Sellers */
 .hollow-theme .section-header {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .hollow-theme .section-header__title {
-  font-size: clamp(32px, 4vw, 48px);
+  font-family: var(--hollow-display);
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
 }
 
 .hollow-theme .section-header__link {
@@ -1049,109 +1055,170 @@
 .hollow-shop-all {
   display: flex;
   justify-content: center;
-  padding: 12px 0 36px;
+  padding: 8px 0 48px;
+}
+
+.hollow-shop-all .hollow-btn--dark {
+  min-width: 200px;
+  height: 48px;
+  padding: 0 40px;
+  background: #282828;
+  color: #fff;
+  font-family: var(--hollow-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
 }
 
 .hollow-theme .grid-product.hollow-card {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
+}
+
+.hollow-theme .hollow-card .grid-product__content {
+  position: relative;
 }
 
 .hollow-theme .hollow-card .grid-product__image-mask,
 .hollow-theme .hollow-card .grid__image-ratio {
-  border-radius: var(--hollow-radius);
+  border-radius: 10px;
   overflow: hidden;
-  background: #eceae4;
+  background: #f0eeea;
+}
+
+.hollow-theme .hollow-card .grid-product__image-mask img,
+.hollow-theme .hollow-card .grid__image-ratio img {
+  object-fit: cover;
 }
 
 .hollow-theme .hollow-card .grid-product__tag {
   left: 10px;
   top: 10px;
   right: auto;
-  padding: 6px 10px;
-  background: var(--hollow-tan);
+  padding: 5px 8px;
+  background: #e5dcca;
   color: var(--hollow-black);
   border-radius: 2px;
   font-family: var(--hollow-mono);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   z-index: 2;
+  line-height: 1.2;
+}
+
+.hollow-theme .hollow-card .grid-product__tag--sold-out {
+  background: #e5dcca;
+  color: var(--hollow-black);
+}
+
+.hollow-theme .hollow-card .grid-product__tag--sale {
+  display: none;
 }
 
 .hollow-theme .hollow-card .grid-product__meta {
-  padding-top: 12px;
+  padding-top: 14px;
   text-align: left;
 }
 
 .hollow-theme .hollow-card .grid-product__title {
   font-family: var(--hollow-display) !important;
-  font-size: 18px !important;
-  font-weight: 800 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
-  margin-bottom: 8px !important;
-  line-height: 1.1 !important;
+  margin: 0 0 10px !important;
+  line-height: 1.15 !important;
+  color: var(--hollow-black) !important;
+}
+
+.hollow-theme .hollow-card .grid-product__vendor {
+  display: none !important;
 }
 
 .hollow-card__swatches {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 
 .hollow-card__swatch {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 2px;
-  border: 1px solid #cfcfcf;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.hollow-card__swatch.is-active {
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+  border-color: var(--hollow-black);
+  box-shadow: 0 0 0 1px var(--hollow-black);
 }
 
 .hollow-card__promo {
   display: inline-block;
-  margin-bottom: 8px;
-  color: var(--hollow-white);
+  margin: 0 0 10px;
+  color: #ffffff;
   background: var(--hollow-red);
   font-family: var(--hollow-mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 4px 8px;
-  line-height: 1;
+  padding: 5px 9px;
+  line-height: 1.2;
+  border-radius: 0;
 }
 
 .hollow-theme .hollow-card .grid-product__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--hollow-mono);
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--hollow-black);
+  line-height: 1.2;
+}
+
+.hollow-theme .hollow-card .grid-product__price--current {
+  font-family: var(--hollow-mono);
+  font-weight: 600;
+  color: var(--hollow-black);
 }
 
 .hollow-theme .hollow-card .grid-product__price--original {
-  color: var(--hollow-muted);
+  color: #b5aea4;
   text-decoration: line-through;
-  font-weight: 400;
-  margin-left: 6px;
+  font-weight: 500;
+  font-size: 13px;
+  margin: 0;
 }
 
-.hollow-theme .hollow-card + .grid-product__colors {
+.hollow-theme .hollow-card .grid-product__price--savings,
+.hollow-theme .hollow-card .product__unit-price {
   display: none !important;
 }
 
-.hollow-theme .quick-product__btn {
-  left: 12px;
-  right: 12px;
-  width: auto;
-  bottom: 12px;
-  border-radius: 0;
-  background: var(--hollow-white);
-  color: var(--hollow-black);
-  border: 1px solid var(--hollow-black);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.hollow-theme .hollow-card + .grid-product__colors,
+.hollow-theme .hollow-card > .grid-product__colors {
+  display: none !important;
+}
+
+.hollow-theme .hollow-card .quick-product__btn {
+  display: none !important;
+}
+
+.hollow-card__reviews {
+  display: none;
 }
 
 /* Banners */
@@ -1351,17 +1418,7 @@
 }
 
 .hollow-card__reviews {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  z-index: 2;
-  font-family: var(--hollow-mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: rgba(248, 246, 242, 0.92);
-  color: var(--hollow-black);
-  padding: 4px 8px;
+  display: none !important;
 }
 
 .hollow-theme .hollow-card .grid-product__image-mask {

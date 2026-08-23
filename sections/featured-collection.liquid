@@ -77,8 +77,9 @@
               product: product,
               collection: collection,
               per_row: per_row,
-              quick_shop_enable: settings.quick_shop_enable,
+              quick_shop_enable: false,
               fallback: fallback,
+              force_bestseller_badge: true,
             -%}
           {%- endfor -%}
 
@@ -100,7 +101,7 @@
 
 {%- if section.settings.view_all -%}
   <div class="hollow-shop-all page-width">
-    <a href="{{ collections[section.settings.home_featured_products].url | default: routes.all_products_collection_url }}" class="hollow-btn hollow-btn--dark">shop all</a>
+    <a href="{{ collections[section.settings.home_featured_products].url | default: routes.all_products_collection_url }}" class="hollow-btn hollow-btn--dark">SHOP ALL</a>
   </div>
 {%- endif -%}
 

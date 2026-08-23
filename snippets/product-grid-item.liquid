@@ -46,9 +46,14 @@ Arguments
   elsif product_tags contains 'bestseller' or product_tags contains 'best-seller' or product_tags contains 'BEST SELLER'
     assign has_custom_label = true
     assign custom_label = 'BEST SELLER'
-  elsif collection.handle == 'best-sellers'
+  elsif collection.handle == 'best-sellers' or force_bestseller_badge
     assign has_custom_label = true
     assign custom_label = 'BEST SELLER'
+  endif
+
+  # Sold out wins over bestseller badge (only when unavailable)
+  if product.available == false
+    assign has_custom_label = false
   endif
 
   assign reviews_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count
@@ -155,9 +160,10 @@ Arguments
         {%- endif -%}
 
         {%- if reviews_count != blank and reviews_count != 0 -%}
-          <div class="hollow-card__reviews">★★★★★ ({{ reviews_count }} REVIEWS)</div>
+          <div class="hollow-card__reviews" aria-hidden="true">★★★★★ ({{ reviews_count }} REVIEWS)</div>
         {%- endif -%}
 
+        {%- comment -%} Color images for hover/swatch JS only — UI swatches live under title {%- endcomment -%}
         {%- if settings.enable_swatches -%}
           {%- assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase -%}
           {%- for option in product.options_with_values -%}
@@ -191,11 +197,7 @@ Arguments
           {%- endfor -%}
         {%- endif -%}
 
-        {%- if quick_shop_enable and type == blank and product.variants_count <= 250 -%}
-          <button class="quick-product__btn btn--not-ready js-modal-open-quick-modal-{{ product.id }} small--hide">
-            {{ settings.quick_shop_text }}
-          </button>
-        {%- endif -%}
+        {%- comment -%} Quick shop hidden — Hollow cards are clean image → title → swatches → promo → price {%- endcomment -%}
       </div>
 
       <a href="{{ product.url | within: collection }}" class="grid-product__link">
@@ -237,6 +239,7 @@ Arguments
               {%- if is_color_inline -%}
                 {%- assign option_index_inline = forloop.index0 -%}
                 {%- assign values_inline = '' -%}
+                {%- assign swatch_i = 0 -%}
                 <div class="hollow-card__swatches">
                   {%- for variant in product.variants -%}
                     {%- assign value_inline = variant.options[option_index_inline] %}
@@ -246,9 +249,10 @@ Arguments
                         assign color_file_inline = value_inline | handle | append: '.' | append: swatch_file_extension_inline
                         assign color_image_inline = color_file_inline | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
                         assign color_swatch_fb = value_inline | split: ' ' | last | handle
+                        assign swatch_i = swatch_i | plus: 1
                       -%}
                       <span
-                        class="hollow-card__swatch"
+                        class="hollow-card__swatch{% if swatch_i == 1 %} is-active{% endif %}"
                         aria-label="{{ value_inline }}"
                         style="background-color: {{ color_swatch_fb }};{% if images[color_file_inline] != blank %} background-image: url({{ color_image_inline }});{% endif %}">
                       </span>
@@ -264,44 +268,15 @@ Arguments
           {%- endif -%}
 
           <div class="grid-product__price">
+            {%- if product.price_varies -%}
+              {%- assign price = product.price_min | money -%}
+              <span class="grid-product__price--current">{{ 'products.general.from_text_html' | t: price: price }}</span>
+            {%- else -%}
+              <span class="grid-product__price--current">{{ product.price | money }}</span>
+            {%- endif -%}
             {%- if on_sale -%}
               <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
               <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
-              <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
-            {%- endif -%}
-            {%- if product.price_varies -%}
-              {%- assign price = product.price_min | money -%}
-              {{ 'products.general.from_text_html' | t: price: price }}
-            {%- else -%}
-              {{ product.price | money }}
-            {%- endif -%}
-            {%- if on_sale -%}
-              {%- if settings.product_save_amount -%}
-                {%- if settings.product_save_type == 'dollar' -%}
-                  {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | money }}{%- endcapture -%}
-                {%- else -%}
-                  {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{%- endcapture -%}
-                {%- endif -%}
-                <span class="grid-product__price--savings">
-                  {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
-                </span>
-              {%- endif -%}
-            {%- endif -%}
-
-            {%- assign product_variant = product.selected_or_first_available_variant -%}
-            {%- if product_variant.unit_price_measurement -%}
-              <div class="product__unit-price">
-                {%- capture unit_price_base_unit -%}
-                  {%- if product_variant.unit_price_measurement -%}
-                    {%- if product_variant.unit_price_measurement.reference_value != 1 -%}
-                      {{ product_variant.unit_price_measurement.reference_value }}
-                    {%- endif -%}
-                    {{ product_variant.unit_price_measurement.reference_unit }}
-                  {%- endif -%}
-                {%- endcapture -%}
-
-                {{ product_variant.unit_price | money }}/{{ unit_price_base_unit }}
-              </div>
             {%- endif -%}
           </div>
 
