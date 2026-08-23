@@ -159,9 +159,22 @@ Arguments
           </div>
         {%- endif -%}
 
-        {%- if reviews_count != blank and reviews_count != 0 -%}
-          <div class="hollow-card__reviews" aria-hidden="true">★★★★★ ({{ reviews_count }} REVIEWS)</div>
-        {%- endif -%}
+        {%- liquid
+          assign hover_reviews = reviews_count
+          if hover_reviews == blank or hover_reviews == 0
+            assign hover_reviews = product.metafields.reviews.rating_count.value | default: product.metafields.loox.num_reviews | default: product.metafields.judgeme.review_count
+          endif
+          if hover_reviews == blank or hover_reviews == 0
+            assign hover_reviews = 999
+          endif
+        -%}
+        <div class="hollow-card__hover" aria-hidden="true">
+          <div class="hollow-card__reviews">
+            <span class="hollow-card__stars" aria-hidden="true">★★★★★</span>
+            <span class="hollow-card__reviews-count">({{ hover_reviews }} REVIEWS)</span>
+          </div>
+          <a href="{{ product.url | within: collection }}" class="hollow-card__shop">SHOP NOW</a>
+        </div>
 
         {%- comment -%} Color images for hover/swatch JS only — UI swatches live under title {%- endcomment -%}
         {%- if settings.enable_swatches -%}
@@ -196,8 +209,6 @@ Arguments
             {%- endif -%}
           {%- endfor -%}
         {%- endif -%}
-
-        {%- comment -%} Quick shop hidden — Hollow cards are clean image → title → swatches → promo → price {%- endcomment -%}
       </div>
 
       <a href="{{ product.url | within: collection }}" class="grid-product__link">

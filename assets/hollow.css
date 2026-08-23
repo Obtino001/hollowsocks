@@ -1217,6 +1217,117 @@
   display: none !important;
 }
 
+.hollow-theme .hollow-card .grid-product__image-mask {
+  position: relative;
+}
+
+/* Hover: reviews pill (top) + SHOP NOW (bottom) — match Hollow */
+.hollow-card__hover {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.hollow-theme .hollow-card:hover .hollow-card__hover,
+.hollow-theme .hollow-card:focus-within .hollow-card__hover {
+  opacity: 1;
+}
+
+.hollow-theme .hollow-card:hover .grid-product__tag,
+.hollow-theme .hollow-card:focus-within .grid-product__tag {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.hollow-card__reviews {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: calc(100% - 24px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(248, 246, 242, 0.95);
+  color: var(--hollow-black);
+  font-family: var(--hollow-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.hollow-card__stars {
+  color: var(--hollow-green);
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.hollow-card__reviews-count {
+  color: var(--hollow-black);
+}
+
+.hollow-card__shop {
+  pointer-events: auto;
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  height: 40px;
+  padding: 0 22px;
+  background: #ffffff;
+  color: var(--hollow-black) !important;
+  border: 0;
+  border-radius: 4px;
+  font-family: var(--hollow-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.hollow-card__shop:hover {
+  background: #f8f6f2;
+  color: var(--hollow-black) !important;
+}
+
+@media (hover: none) {
+  .hollow-card__hover {
+    opacity: 1;
+  }
+
+  .hollow-card__reviews {
+    display: none;
+  }
+
+  .hollow-card__shop {
+    bottom: 12px;
+    min-width: 120px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .hollow-theme .hollow-card .grid-product__tag {
+    opacity: 1;
+  }
+}
+
 /* Banners */
 .hollow-banners {
   display: grid;
@@ -1411,10 +1522,6 @@
   .hollow-reviews__stats {
     grid-template-columns: 1fr;
   }
-}
-
-.hollow-card__reviews {
-  display: none !important;
 }
 
 .hollow-theme .hollow-card .grid-product__image-mask {
@@ -2805,19 +2912,7 @@
 
 /* Gallery feature icons (right of main image) */
 .hollow-theme .hollow-pdp-features {
-  position: absolute;
-  top: 50%;
-  right: 14px;
-  z-index: 5;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  max-width: 120px;
-  pointer-events: none;
+  display: none !important; /* temporarily hidden — gallery side icons */
 }
 
 .hollow-theme .hollow-pdp-features__item {
@@ -3372,46 +3467,55 @@
 }
 
 .hollow-sticky-atc__title {
-  margin: 0 0 2px;
+  margin: 0 0 4px;
   font-family: var(--hollow-display);
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--hollow-black);
 }
 
 .hollow-sticky-atc__price {
   margin: 0;
-  font-family: var(--hollow-body);
-  font-size: 13px;
+  font-family: var(--hollow-mono);
+  font-size: 14px;
   font-weight: 600;
   color: var(--hollow-black);
 }
 
 .hollow-sticky-atc__btn {
   flex: 0 0 auto;
-  min-width: 180px;
-  min-height: 48px;
-  padding: 0 22px;
-  border: 0;
+  min-width: 200px;
+  min-height: 52px;
+  padding: 0 28px;
+  border: 1px solid var(--hollow-black);
   border-radius: 2px;
-  background: var(--hollow-red);
-  color: #ffffff;
+  background: #ffffff !important;
+  color: var(--hollow-black) !important;
   font-family: var(--hollow-display);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
 }
 
+.hollow-sticky-atc__btn:hover:not(:disabled) {
+  background: #f8f6f2 !important;
+  color: var(--hollow-black) !important;
+}
+
 .hollow-sticky-atc__btn:disabled {
-  opacity: 0.5;
+  opacity: 1;
   cursor: not-allowed;
+  background: #ffffff !important;
+  color: #8a857e !important;
+  border-color: #cfc9c0;
 }
 
 .hollow-theme.body--sticky-atc-open,
@@ -3421,22 +3525,26 @@
 
 @media only screen and (max-width: 768px) {
   .hollow-sticky-atc__title {
-    font-size: 12px;
+    font-size: 16px;
     max-width: 42vw;
+  }
+
+  .hollow-sticky-atc__price {
+    font-size: 13px;
   }
 
   .hollow-sticky-atc__btn {
     min-width: 0;
-    flex: 1 1 140px;
-    min-height: 46px;
+    flex: 1 1 150px;
+    min-height: 48px;
     font-size: 13px;
-    padding: 0 14px;
+    padding: 0 16px;
   }
 
   .hollow-sticky-atc__thumb {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
   }
 }
 
