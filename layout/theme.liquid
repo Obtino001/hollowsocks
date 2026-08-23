@@ -68,20 +68,17 @@
       --element-text-font-weight--body: 400;
     }
 
-    body.hollow-theme,
+    /* Base only — do NOT !important on span/p/a (breaks display/mono components) */
+    body.hollow-theme {
+      font-family: var(--hollow-body);
+      font-weight: 400;
+    }
+
     body.hollow-theme input,
     body.hollow-theme button,
     body.hollow-theme select,
-    body.hollow-theme textarea,
-    body.hollow-theme p,
-    body.hollow-theme li,
-    body.hollow-theme span,
-    body.hollow-theme a,
-    body.hollow-theme label,
-    body.hollow-theme td,
-    body.hollow-theme th {
-      font-family: var(--hollow-body) !important;
-      font-weight: 400;
+    body.hollow-theme textarea {
+      font-family: inherit;
     }
 
     body.hollow-theme h1,
@@ -101,14 +98,13 @@
     body.hollow-theme .product-single__title,
     body.hollow-theme .footer__title,
     body.hollow-theme .collection-header__title {
-      font-family: var(--hollow-display) !important;
-      font-weight: 700 !important;
+      font-family: var(--hollow-display);
+      font-weight: 700;
       letter-spacing: 0.02em;
       text-transform: uppercase;
       line-height: 1.05;
     }
 
-    /* Consistent heading scale — section CSS can still override with more-specific !important */
     body.hollow-theme h1,
     body.hollow-theme .h1 { font-size: clamp(32px, 5vw, 64px); }
     body.hollow-theme h2,
@@ -124,15 +120,8 @@
 
     body.hollow-theme .site-nav,
     body.hollow-theme .site-nav a,
-    body.hollow-theme .announcement-bar,
-    body.hollow-theme .hollow-offers__label,
-    body.hollow-theme .hollow-offers__each,
-    body.hollow-theme .hollow-offers__badge,
-    body.hollow-theme .hollow-variant-label,
-    body.hollow-theme .hollow-pdp-shipping-row,
-    body.hollow-theme .hollow-pdp-guarantee,
-    body.hollow-theme .hollow-pdp-guarantee__title {
-      font-family: var(--hollow-mono) !important;
+    body.hollow-theme .announcement-bar {
+      font-family: var(--hollow-mono);
     }
   </style>
 
