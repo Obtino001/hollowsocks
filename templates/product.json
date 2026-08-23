@@ -134,6 +134,50 @@
         "text_color": "#ffffff"
       }
     },
+    "custom-advantage": {
+      "type": "custom-advantage",
+      "blocks": {
+        "g1": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_3391-1.png",
+            "title": "ENDURANCE TESTED COMFORT",
+            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt."
+          }
+        },
+        "g2": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/catagory_-_trades.jpg",
+            "title": "ENGINEERED FOR VERSATILITY",
+            "text": "Designed to adapt to the changing environment of fast and agile moving hunts."
+          }
+        },
+        "g3": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Main_Image_680366b0-324b-4dde-a837-3fa70f5c864f.png",
+            "title": "EASY ON, EASY OFF",
+            "text": "Stretches wide enough to slide over feet and calves. On in seconds without the struggle."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "title": "THE HOLLOW ADVANTAGE",
+        "subtitle": "See why thousands of hunters trust Hollow Hunt Socks",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "columns_desktop": 3,
+        "image_radius": 12,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
     "custom-marquee": {
       "type": "custom-marquee",
       "blocks": {
@@ -205,50 +249,6 @@
         "padding_y": 30
       }
     },
-    "custom-advantage": {
-      "type": "custom-advantage",
-      "blocks": {
-        "g1": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle_3391-1.png",
-            "title": "ENDURANCE TESTED COMFORT",
-            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt."
-          }
-        },
-        "g2": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/catagory_-_trades.jpg",
-            "title": "ENGINEERED FOR VERSATILITY",
-            "text": "Designed to adapt to the changing environment of fast and agile moving hunts."
-          }
-        },
-        "g3": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/Main_Image_680366b0-324b-4dde-a837-3fa70f5c864f.png",
-            "title": "EASY ON, EASY OFF",
-            "text": "Stretches wide enough to slide over feet and calves. On in seconds without the struggle."
-          }
-        }
-      },
-      "block_order": [
-        "g1",
-        "g2",
-        "g3"
-      ],
-      "settings": {
-        "title": "THE HOLLOW ADVANTAGE",
-        "subtitle": "See why thousands of hunters trust Hollow Hunt Socks",
-        "bg_color": "#ffffff",
-        "text_color": "#111111",
-        "columns_desktop": 3,
-        "image_radius": 12,
-        "padding_top": 50,
-        "padding_bottom": 50
-      }
-    },
     "feature-split-scroll": {
       "type": "feature-split-scroll",
       "blocks": {
@@ -256,7 +256,6 @@
           "type": "left_feature",
           "settings": {
             "custom_svg": "",
-            "icon_image": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/a692680f-5ae6-4240-a64d-76f3c38d52b2",
             "title": "NATURALLY MOISTURE-WICKING",
             "text": "Alpaca fiber naturally wicks moisture to keep you comfortable and dry all-day."
@@ -266,7 +265,6 @@
           "type": "left_feature",
           "settings": {
             "custom_svg": "",
-            "icon_image": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/9dd05c83-10f3-4579-869d-49a5732e35a6",
             "title": "SECURED NO-SLIP FIT",
             "text": "Hollow socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down so you stay locked in and focused on performing your best."
@@ -276,7 +274,6 @@
           "type": "left_feature",
           "settings": {
             "custom_svg": "",
-            "icon_image": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/0c284065-2483-438a-8914-30dc55097956",
             "title": "ALL-SEASON TEMPERATURE CONTROL",
             "text": "Built-in temperature regulation ensures you stay warm when it's cold, and cool when it's hot. Stay comfy in any weather."
@@ -286,7 +283,6 @@
           "type": "left_feature",
           "settings": {
             "custom_svg": "",
-            "icon_image": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/5f411ca2-c8e7-4b48-8fe5-38aa02e397c2",
             "title": "PREMIUM PERUVIAN ALPACA FIBER",
             "text": "Hollow socks are made with premium alpaca fiber imported from the pristine highlands of Peru. Our bespoke precision manufacturing process guarantees you're wearing the best alpaca socks ever."
@@ -345,8 +341,8 @@
   "order": [
     "main",
     "hollow-trust",
-    "custom-marquee",
     "custom-advantage",
+    "custom-marquee",
     "feature-split-scroll",
     "product-recommendations"
   ]
