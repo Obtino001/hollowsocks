@@ -1,0 +1,261 @@
+{%- style -%}
+  .advantage-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .advantage-container-{{ section.id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .advantage-header-{{ section.id }} {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .advantage-header-{{ section.id }} h2 {
+    font-family: var(--font-heading-family), sans-serif;
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .advantage-header-{{ section.id }} p {
+    font-family: var(--font-body-family), sans-serif;
+    font-size: 18px;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  .advantage-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    gap: 30px;
+  }
+
+  .advantage-item-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .advantage-image-wrap-{{ section.id }} {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: {{ section.settings.image_radius }}px;
+    overflow: hidden;
+    position: relative;
+    /* Aspect ratio to keep images uniform */
+    padding-bottom: 100%; 
+  }
+
+  .advantage-image-wrap-{{ section.id }} img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .advantage-content-{{ section.id }} h3 {
+    font-family: var(--font-heading-family), sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 10px 0;
+    letter-spacing: -0.2px;
+  }
+
+  .advantage-content-{{ section.id }} p {
+    font-family: var(--font-body-family), sans-serif;
+    font-size: 15px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.5;
+    margin: 0;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 768px) {
+    .advantage-grid-{{ section.id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .advantage-header-{{ section.id }} p {
+      font-size: 16px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="advantage-section-{{ section.id }}">
+  <div class="advantage-container-{{ section.id }}">
+    
+    <div class="advantage-header-{{ section.id }}">
+      {%- if section.settings.title != blank -%}
+        <h2>{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p>{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="advantage-grid-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="advantage-item-{{ section.id }}" {{ block.shopify_attributes }}>
+          <div class="advantage-image-wrap-{{ section.id }}">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.image.alt | escape }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="advantage-content-{{ section.id }}">
+            {%- if block.settings.title != blank -%}
+              <h3>{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p>{{ block.settings.text }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Advantage Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "THE HOLLOW ADVANTAGE"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "See why thousands of hunters trust Hollow Hunt Socks"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns on Desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid_item",
+      "name": "Grid Item",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "ENDURANCE TESTED COMFORT"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advantage Grid",
+      "blocks": [
+        {
+          "type": "grid_item",
+          "settings": {
+            "title": "ENDURANCE TESTED COMFORT",
+            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt."
+          }
+        },
+        {
+          "type": "grid_item",
+          "settings": {
+            "title": "ENGINEERED FOR VERSATILITY",
+            "text": "Designed to adapt to the changing environment of fast and agile moving hunts."
+          }
+        },
+        {
+          "type": "grid_item",
+          "settings": {
+            "title": "EASY ON, EASY OFF",
+            "text": "Stretches wide enough to slide over feet and calves. On in seconds without the struggle."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

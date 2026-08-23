@@ -501,6 +501,8 @@
 
 .hollow-hero__copy {
   max-width: 560px;
+  margin-left: 0;
+  text-align: left;
 }
 
 .hollow-hero__kicker {
@@ -716,16 +718,16 @@
 
   .hollow-hero__content {
     justify-content: center;
-    text-align: center;
+    text-align: left;
   }
 
   .hollow-hero__copy {
-    margin: 0 auto;
+    margin: 0;
   }
 
   .hollow-hero__text {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .hollow-countdown {
@@ -1923,7 +1925,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+  color: #ffffff !important;
 }
 
 .custom-footer__menu ul {
@@ -1941,7 +1943,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .custom-footer__bottom {

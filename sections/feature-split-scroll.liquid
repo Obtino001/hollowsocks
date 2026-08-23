@@ -1,0 +1,381 @@
+{%- style -%}
+  .feature-split-section-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Left Column Styling */
+  .feature-left-{{ section.id }} {
+    background-color: {{ section.settings.left_bg_color }};
+    color: {{ section.settings.left_text_color }};
+    padding: 80px 5%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .feature-left-sticky-{{ section.id }} {
+    position: sticky;
+    top: {{ section.settings.sticky_offset }}px;
+    max-width: 550px;
+    width: 100%;
+    align-self: start; /* Crucial for sticky inside grid */
+  }
+
+  .feature-main-heading-{{ section.id }} {
+    font-family: var(--font-heading-family), sans-serif;
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    color: {{ section.settings.left_text_color }};
+    letter-spacing: -0.5px;
+  }
+
+  .feature-list-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .feature-item-{{ section.id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .feature-icon-{{ section.id }} {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-icon-{{ section.id }} img, 
+  .feature-icon-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    fill: currentColor;
+    color: {{ section.settings.left_text_color }};
+  }
+
+  .feature-text-content-{{ section.id }} h4 {
+    font-family: var(--font-heading-family), sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    color: {{ section.settings.left_text_color }};
+  }
+
+  .feature-text-content-{{ section.id }} p {
+    font-family: var(--font-body-family), sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    color: {{ section.settings.left_text_color }};
+    opacity: 0.9;
+  }
+
+  /* Right Column Styling */
+  .feature-right-{{ section.id }} {
+    background-color: {{ section.settings.right_bg_color }};
+    padding: 80px 5%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .feature-right-scroll-{{ section.id }} {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .scroll-card-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .scroll-card-image-{{ section.id }} {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .scroll-card-image-{{ section.id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .scroll-card-content-{{ section.id }} h3 {
+    font-family: var(--font-heading-family), sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    color: {{ section.settings.right_text_color }};
+  }
+
+  .scroll-card-content-{{ section.id }} p {
+    font-family: var(--font-body-family), sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    color: {{ section.settings.right_text_color }};
+  }
+
+  /* Mobile Responsive */
+  @media screen and (max-width: 900px) {
+    .feature-split-section-{{ section.id }} {
+      grid-template-columns: 1fr;
+    }
+    .feature-left-{{ section.id }},
+    .feature-right-{{ section.id }} {
+      justify-content: center;
+      padding: 50px 20px;
+    }
+    .feature-left-sticky-{{ section.id }} {
+      position: relative; /* Disable sticky on mobile */
+      top: 0;
+    }
+  }
+{%- endstyle -%}
+
+<section class="feature-split-section-{{ section.id }}">
+  
+  {%- comment -%} LEFT STICKY COLUMN {%- endcomment -%}
+  <div class="feature-left-{{ section.id }}">
+    <div class="feature-left-sticky-{{ section.id }}">
+      
+      {%- if section.settings.main_heading != blank -%}
+        <h2 class="feature-main-heading-{{ section.id }}">{{ section.settings.main_heading }}</h2>
+      {%- endif -%}
+
+      <div class="feature-list-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'left_feature' -%}
+            <div class="feature-item-{{ section.id }}" {{ block.shopify_attributes }}>
+              
+              <div class="feature-icon-{{ section.id }}">
+                {%- if block.settings.custom_svg != blank -%}
+                  {{ block.settings.custom_svg }}
+                {%- elsif block.settings.icon_image != blank -%}
+                  <img src="{{ block.settings.icon_image | image_url: width: 80 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+                {%- endif -%}
+              </div>
+              
+              <div class="feature-text-content-{{ section.id }}">
+                {%- if block.settings.title != blank -%}
+                  <h4>{{ block.settings.title }}</h4>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <p>{{ block.settings.text }}</p>
+                {%- endif -%}
+              </div>
+
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%} RIGHT SCROLLING COLUMN {%- endcomment -%}
+  <div class="feature-right-{{ section.id }}">
+    <div class="feature-right-scroll-{{ section.id }}">
+      
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'right_image_card' -%}
+          <div class="scroll-card-{{ section.id }}" {{ block.shopify_attributes }}>
+            
+            <div class="scroll-card-image-{{ section.id }}">
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+              {%- else -%}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            </div>
+            
+            <div class="scroll-card-content-{{ section.id }}">
+              {%- if block.settings.title != blank -%}
+                <h3>{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p>{{ block.settings.text }}</p>
+              {%- endif -%}
+            </div>
+
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Feature Split Scroll",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Column Settings (Sticky)"
+    },
+    {
+      "type": "color",
+      "id": "left_bg_color",
+      "label": "Left Background Color",
+      "default": "#0b3123"
+    },
+    {
+      "type": "color",
+      "id": "left_text_color",
+      "label": "Left Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "WHY HOLLOW WINS? FEATURE BY FEATURE."
+    },
+    {
+      "type": "range",
+      "id": "sticky_offset",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Sticky Top Space",
+      "info": "Space from the top of the screen when scrolling. Adjust if you have a sticky header.",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Right Column Settings (Scrolls)"
+    },
+    {
+      "type": "color",
+      "id": "right_bg_color",
+      "label": "Right Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "right_text_color",
+      "label": "Right Text Color",
+      "default": "#111111"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "left_feature",
+      "name": "Left: Feature Item",
+      "settings": [
+        {
+          "type": "html",
+          "id": "custom_svg",
+          "label": "Custom SVG Icon",
+          "info": "Paste raw SVG code here for the best quality."
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Or Image Icon",
+          "info": "Used if SVG is blank."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "NATURALLY MOISTURE-WICKING"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Alpaca fiber naturally wicks moisture to keep you comfortable and dry all-day."
+        }
+      ]
+    },
+    {
+      "type": "right_image_card",
+      "name": "Right: Image Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "DESIGNED TO PERFORM"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Alpaca fiber's natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Split Scroll",
+      "blocks": [
+        {
+          "type": "left_feature",
+          "settings": {
+            "title": "NATURALLY MOISTURE-WICKING",
+            "text": "Alpaca fiber naturally wicks moisture to keep you comfortable and dry all-day."
+          }
+        },
+        {
+          "type": "left_feature",
+          "settings": {
+            "title": "SECURED NO-SLIP FIT",
+            "text": "Hollow socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down."
+          }
+        },
+        {
+          "type": "left_feature",
+          "settings": {
+            "title": "ALL-SEASON TEMPERATURE CONTROL",
+            "text": "Built-in temperature regulation ensures you stay warm when it's cold, and cool when it's hot."
+          }
+        },
+        {
+          "type": "right_image_card",
+          "settings": {
+            "title": "DESIGNED TO PERFORM",
+            "text": "Alpaca fiber's natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
+          }
+        },
+        {
+          "type": "right_image_card",
+          "settings": {
+            "title": "BUILT FOR THE OUTDOORS",
+            "text": "Experience maximum comfort without compromising on durability."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
