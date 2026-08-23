@@ -99,6 +99,92 @@
         "product_video_style": "muted"
       }
     },
+    "custom-marquee": {
+      "type": "custom-marquee",
+      "blocks": {
+        "m1": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Temperature Regulating"
+          }
+        },
+        "m2": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/2e3af8ec-c704-4e48-aa4d-83d02d09c050",
+            "text": "Breathable & Light"
+          }
+        },
+        "m3": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/474413fa-6896-4d19-a825-5c0cea6c952d",
+            "text": "Super Soft"
+          }
+        },
+        "m4": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/900adad0-0e03-4dfe-99b4-aaa89e5a3be2",
+            "text": "Moisture Wicking"
+          }
+        },
+        "m5": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/000d6627-f069-4e3e-a5e1-6dfd7f11e281",
+            "text": "Odor Resistant"
+          }
+        }
+      },
+      "block_order": ["m1", "m2", "m3", "m4", "m5"],
+      "settings": {
+        "bg_color": "#E4DCD0",
+        "text_color": "#333333",
+        "speed": 30,
+        "font_size": 14,
+        "icon_size": 24,
+        "padding_y": 15
+      }
+    },
+    "custom-advantage": {
+      "type": "custom-advantage",
+      "blocks": {
+        "g1": {
+          "type": "grid_item",
+          "settings": {
+            "title": "ENDURANCE TESTED COMFORT",
+            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt."
+          }
+        },
+        "g2": {
+          "type": "grid_item",
+          "settings": {
+            "title": "ENGINEERED FOR VERSATILITY",
+            "text": "Designed to adapt to the changing environment of fast and agile moving hunts."
+          }
+        },
+        "g3": {
+          "type": "grid_item",
+          "settings": {
+            "title": "EASY ON, EASY OFF",
+            "text": "Stretches wide enough to slide over feet and calves. On in seconds without the struggle."
+          }
+        }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "title": "THE HOLLOW ADVANTAGE",
+        "subtitle": "See why thousands of hunters trust Hollow Hunt Socks",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "columns_desktop": 3,
+        "image_radius": 12,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
     "hollow-trust": {
       "type": "hollow-trust-bar",
       "blocks": {
@@ -122,124 +208,122 @@
             "value": "99-DAY",
             "label": "money-back guarantee"
           }
-        },
-        "stat_3JcDWK": {
-          "type": "stat",
-          "settings": {
-            "value": "27,000+",
-            "label": "5-star reviews"
-          }
         }
       },
-      "block_order": [
-        "stat-1",
-        "stat-2",
-        "stat-3",
-        "stat_3JcDWK"
-      ],
+      "block_order": ["stat-1", "stat-2", "stat-3"],
       "settings": {
         "background": "#282828",
         "text_color": "#ffffff"
       }
     },
-    "hollow-benefits": {
-      "type": "hollow-benefits",
+    "hollow-advantage": {
+      "type": "hollow-highlights",
       "blocks": {
-        "b1": {
-          "type": "benefit",
+        "h1": {
+          "type": "row",
           "settings": {
-            "icon": "temp",
-            "label": "temperature regulating"
+            "title": "Endurance Tested Comfort",
+            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt.",
+            "reverse": false
           }
         },
-        "b2": {
-          "type": "benefit",
+        "h2": {
+          "type": "row",
           "settings": {
-            "icon": "air",
-            "label": "breathable & light"
+            "title": "Engineered for versatility",
+            "text": "Designed to adapt to the changing environment of fast and agile moving hunts.",
+            "reverse": true
           }
         },
-        "b3": {
-          "type": "benefit",
+        "h3": {
+          "type": "row",
           "settings": {
-            "icon": "fiber",
-            "label": "super soft"
-          }
-        },
-        "b4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "drop",
-            "label": "moisture wicking"
-          }
-        },
-        "b5": {
-          "type": "benefit",
-          "settings": {
-            "icon": "shield",
-            "label": "odor resistant"
+            "title": "easy on, easy off",
+            "text": "Stretches wide enough to slide over feet and calves. On in seconds without the struggle.",
+            "reverse": false
           }
         }
       },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4",
-        "b5"
-      ],
+      "block_order": ["h1", "h2", "h3"],
+      "settings": {
+        "heading": "The Hollow Advantage",
+        "subheading": "See why thousands of hunters trust Hollow Hunt Socks"
+      }
+    },
+    "hollow-benefits": {
+      "type": "hollow-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "temp", "label": "temperature regulating" } },
+        "b2": { "type": "benefit", "settings": { "icon": "air", "label": "breathable & light" } },
+        "b3": { "type": "benefit", "settings": { "icon": "fiber", "label": "super soft" } },
+        "b4": { "type": "benefit", "settings": { "icon": "drop", "label": "moisture wicking" } },
+        "b5": { "type": "benefit", "settings": { "icon": "shield", "label": "odor resistant" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5"],
       "settings": {
         "title": ""
+      }
+    },
+    "feature-split-scroll": {
+      "type": "feature-split-scroll",
+      "blocks": {
+        "f1": {
+          "type": "left_feature",
+          "settings": {
+            "title": "NATURALLY MOISTURE-WICKING",
+            "text": "Alpaca fiber naturally wicks moisture to keep you comfortable and dry all-day."
+          }
+        },
+        "f2": {
+          "type": "left_feature",
+          "settings": {
+            "title": "SECURED NO-SLIP FIT",
+            "text": "Hollow socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down."
+          }
+        },
+        "f3": {
+          "type": "left_feature",
+          "settings": {
+            "title": "ALL-SEASON TEMPERATURE CONTROL",
+            "text": "Built-in temperature regulation ensures you stay warm when it's cold, and cool when it's hot."
+          }
+        },
+        "r1": {
+          "type": "right_image_card",
+          "settings": {
+            "title": "DESIGNED TO PERFORM",
+            "text": "Alpaca fiber's natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
+          }
+        },
+        "r2": {
+          "type": "right_image_card",
+          "settings": {
+            "title": "BUILT FOR THE OUTDOORS",
+            "text": "Experience maximum comfort without compromising on durability."
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3", "r1", "r2"],
+      "settings": {
+        "left_bg_color": "#0b3123",
+        "left_text_color": "#ffffff",
+        "main_heading": "WHY HOLLOW WINS? FEATURE BY FEATURE.",
+        "sticky_offset": 80,
+        "right_bg_color": "#ffffff",
+        "right_text_color": "#111111"
       }
     },
     "hollow-instagram": {
       "type": "hollow-instagram",
       "blocks": {
-        "i1": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i2": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i3": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i4": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i5": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "i6": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        }
+        "i1": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i2": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i3": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i4": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i5": { "type": "image", "settings": { "image": "", "link": "" } },
+        "i6": { "type": "image", "settings": { "image": "", "link": "" } }
       },
-      "block_order": [
-        "i1",
-        "i2",
-        "i3",
-        "i4",
-        "i5",
-        "i6"
-      ],
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6"],
       "settings": {
         "title": "Gear up for great days",
         "handle": "#hollowsocks",
@@ -257,8 +341,12 @@
   },
   "order": [
     "main",
+    "custom-marquee",
+    "custom-advantage",
     "hollow-trust",
+    "hollow-advantage",
     "hollow-benefits",
+    "feature-split-scroll",
     "hollow-instagram",
     "product-recommendations"
   ]
