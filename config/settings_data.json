@@ -37,7 +37,7 @@
     "color_image_overlay": "#282828",
     "color_image_overlay_opacity": 18,
     "color_image_overlay_text_shadow": 20,
-    "type_header_font_family": "oswald_n7",
+    "type_header_font_family": "inter_n4",
     "type_header_spacing": "20",
     "type_header_base_size": 48,
     "type_header_line_height": 1,
