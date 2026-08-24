@@ -360,11 +360,6 @@
     display: none !important;
   }
 
-  .hollow-theme .site-header,
-  .hollow-theme .header-wrapper {
-    padding: 6px 0 !important;
-    min-height: 56px;
-  }
 
   .hollow-theme .site-header .page-width {
     padding-left: 12px;
