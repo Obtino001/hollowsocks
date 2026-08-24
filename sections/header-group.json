@@ -40,9 +40,9 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo": "",
-        "desktop_logo_width": 94,
-        "mobile_logo_width": 80,
+        "logo": "shopify://shop_images/57e1ab65-0066-4773-9082-34f2630cbcd5.svg",
+        "desktop_logo_width": 180,
+        "mobile_logo_width": 130,
         "main_menu_link_list": "main-menu",
         "hover_menu": true,
         "main_menu_alignment": "left-center",
@@ -55,86 +55,10 @@
         "show_currency_flags": false,
         "show_locale_selector": false
       }
-    },
-    "hollow-subnav": {
-      "type": "hollow-subnav",
-      "blocks": {
-        "c1": {
-          "type": "item",
-          "settings": {
-            "title": "best sellers",
-            "link": "shopify://collections/best-sellers",
-            "badge": ""
-          }
-        },
-        "c2": {
-          "type": "item",
-          "settings": {
-            "title": "COMPRESSION",
-            "link": "shopify://collections/compression",
-            "badge": ""
-          }
-        },
-        "c3": {
-          "type": "item",
-          "settings": {
-            "title": "bundles",
-            "link": "shopify://collections/bundles",
-            "badge": "50% OFF"
-          }
-        },
-        "c4": {
-          "type": "item",
-          "settings": {
-            "title": "trades",
-            "link": "shopify://collections/trades",
-            "badge": ""
-          }
-        },
-        "c5": {
-          "type": "item",
-          "settings": {
-            "title": "hunting",
-            "link": "shopify://collections/hunting",
-            "badge": ""
-          }
-        },
-        "c6": {
-          "type": "item",
-          "settings": {
-            "title": "everyday",
-            "link": "shopify://collections/everyday",
-            "badge": ""
-          }
-        },
-        "c7": {
-          "type": "item",
-          "settings": {
-            "title": "running",
-            "link": "shopify://collections/running",
-            "badge": ""
-          }
-        }
-      },
-      "block_order": ["c1", "c2", "c3", "c4", "c5", "c6", "c7"],
-      "settings": {
-        "show_on_homepage": true,
-        "aria_label": "Shop by category",
-        "padding_y": 12,
-        "padding_x": 20,
-        "item_gap": 8,
-        "label_gap": 8,
-        "image_width": 88,
-        "image_height": 88,
-        "image_radius": 6,
-        "badge_bg": "#E5DCCA",
-        "badge_text_color": "#282828"
-      }
     }
   },
   "order": [
     "announcement",
-    "header",
-    "hollow-subnav"
+    "header"
   ]
 }
