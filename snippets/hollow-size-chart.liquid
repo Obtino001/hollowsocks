@@ -1,30 +1,51 @@
+{%- liquid
+  assign chart_title = section.settings.hollow_size_chart_title
+  assign chart_note = section.settings.hollow_size_chart_note
+  assign col_size = section.settings.hollow_size_col_size
+  assign col_m = section.settings.hollow_size_col_m
+  assign col_l = section.settings.hollow_size_col_l
+  assign col_xl = section.settings.hollow_size_col_xl
+  assign row_men = section.settings.hollow_size_row_men
+  assign men_m = section.settings.hollow_size_men_m
+  assign men_l = section.settings.hollow_size_men_l
+  assign men_xl = section.settings.hollow_size_men_xl
+  assign row_women = section.settings.hollow_size_row_women
+  assign women_m = section.settings.hollow_size_women_m
+  assign women_l = section.settings.hollow_size_women_l
+  assign women_xl = section.settings.hollow_size_women_xl
+-%}
+
 <div class="hollow-size-chart" id="HollowSizeChart">
   <div class="hollow-size-chart__head">
-    <h2 class="hollow-size-chart__title">SIZE CHART</h2>
-    <span class="hollow-size-chart__note">Show Size (US)</span>
+    {%- if chart_title != blank -%}
+      <h2 class="hollow-size-chart__title">{{ chart_title | escape }}</h2>
+    {%- endif -%}
+    {%- if chart_note != blank -%}
+      <span class="hollow-size-chart__note">{{ chart_note | escape }}</span>
+    {%- endif -%}
   </div>
   <div class="hollow-size-chart__table-wrap">
     <table class="hollow-size-chart__table">
       <thead>
         <tr>
-          <th scope="col">SIZE</th>
-          <th scope="col">MEDIUM</th>
-          <th scope="col">LARGE</th>
-          <th scope="col">XL</th>
+          <th scope="col">{{ col_size | escape }}</th>
+          <th scope="col">{{ col_m | escape }}</th>
+          <th scope="col">{{ col_l | escape }}</th>
+          <th scope="col">{{ col_xl | escape }}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Men</th>
-          <td>6 - 9</td>
-          <td>9.5 - 12</td>
-          <td>12.5 - 15</td>
+          <th scope="row">{{ row_men | escape }}</th>
+          <td>{{ men_m | escape }}</td>
+          <td>{{ men_l | escape }}</td>
+          <td>{{ men_xl | escape }}</td>
         </tr>
         <tr>
-          <th scope="row">Women</th>
-          <td>7 - 9.5</td>
-          <td>10 - 13</td>
-          <td>-</td>
+          <th scope="row">{{ row_women | escape }}</th>
+          <td>{{ women_m | escape }}</td>
+          <td>{{ women_l | escape }}</td>
+          <td>{{ women_xl | escape }}</td>
         </tr>
       </tbody>
     </table>

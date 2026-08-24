@@ -7,6 +7,7 @@
 
 {%- render 'product-template',
   product: product,
+  section: section,
   section_id: section.id,
   blocks: section.blocks,
   image_position: section.settings.image_position,
@@ -158,6 +159,246 @@
         }
       ],
       "info": "t:sections.main-product.settings.product_video_style.info"
+    },
+    {
+      "type": "header",
+      "content": "Hollow PDP"
+    },
+    {
+      "type": "checkbox",
+      "id": "hollow_show_rating",
+      "label": "Show star rating",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "hollow_fallback_rating",
+      "label": "Fallback rating average",
+      "info": "Used when product has no review metafields. Example: 4.86",
+      "default": "4.86"
+    },
+    {
+      "type": "text",
+      "id": "hollow_fallback_review_count",
+      "label": "Fallback review count",
+      "info": "Used when product has no review metafields. Example: 843",
+      "default": "843"
+    },
+    {
+      "type": "textarea",
+      "id": "hollow_short_description",
+      "label": "Short description",
+      "info": "Shown under the title. Product metafields (subtitle) override this when set.",
+      "default": "USA's #1 hunt sock for no slip, no sweat, & no smell."
+    },
+    {
+      "type": "checkbox",
+      "id": "hollow_show_promo_badge",
+      "label": "Show promo badge under title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "hollow_promo_badge",
+      "label": "Promo badge text",
+      "default": "BUY 2 GET 2 FREE"
+    },
+    {
+      "type": "text",
+      "id": "hollow_bestseller_badge",
+      "label": "Best seller badge text",
+      "default": "BEST SELLER"
+    },
+    {
+      "type": "text",
+      "id": "hollow_new_color_badge",
+      "label": "New color badge text",
+      "default": "NEW COLOR"
+    },
+    {
+      "type": "header",
+      "content": "Hollow offers"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offers_label",
+      "label": "Offers label",
+      "default": "QUANTITY"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offer_1_name",
+      "label": "Offer 1 name",
+      "default": "1 PAIR"
+    },
+    {
+      "type": "text",
+      "id": "hollow_per_pair_label",
+      "label": "Per pair label",
+      "default": "/PAIR"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offer_2_name",
+      "label": "Offer 2 name",
+      "default": "BUY 2 PAIRS GET 2 FREE"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offer_2_badge",
+      "label": "Offer 2 badge",
+      "default": "MOST POPULAR"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offer_2_suffix",
+      "label": "Offer 2 price suffix",
+      "default": "+ FREE SHIPPING"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offer_3_name",
+      "label": "Offer 3 name",
+      "default": "BUY 3 PAIRS GET 3 FREE"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offer_3_badge",
+      "label": "Offer 3 badge",
+      "default": "BEST VALUE"
+    },
+    {
+      "type": "text",
+      "id": "hollow_offer_3_suffix",
+      "label": "Offer 3 price suffix",
+      "default": "+ FREE SHIPPING"
+    },
+    {
+      "type": "header",
+      "content": "Hollow guarantee & shipping"
+    },
+    {
+      "type": "image_picker",
+      "id": "hollow_guarantee_image",
+      "label": "Guarantee image"
+    },
+    {
+      "type": "text",
+      "id": "hollow_guarantee_title",
+      "label": "Guarantee title",
+      "default": "99-DAY MONEY BACK GUARANTEE"
+    },
+    {
+      "type": "text",
+      "id": "hollow_ships_label",
+      "label": "Ships label",
+      "default": "SHIPS BY:"
+    },
+    {
+      "type": "text",
+      "id": "hollow_ships_value",
+      "label": "Ships value",
+      "default": "TOMORROW"
+    },
+    {
+      "type": "text",
+      "id": "hollow_fast_shipping",
+      "label": "Fast shipping text",
+      "default": "FAST US SHIPPING"
+    },
+    {
+      "type": "header",
+      "content": "Hollow size chart"
+    },
+    {
+      "type": "checkbox",
+      "id": "hollow_show_size_chart",
+      "label": "Show size chart",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_chart_title",
+      "label": "Size chart title",
+      "default": "SIZE CHART"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_chart_note",
+      "label": "Size chart note",
+      "default": "Show Size (US)"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_col_size",
+      "label": "Column: Size",
+      "default": "SIZE"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_col_m",
+      "label": "Column: Medium",
+      "default": "MEDIUM"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_col_l",
+      "label": "Column: Large",
+      "default": "LARGE"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_col_xl",
+      "label": "Column: XL",
+      "default": "XL"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_row_men",
+      "label": "Row: Men label",
+      "default": "Men"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_men_m",
+      "label": "Men — Medium",
+      "default": "6 - 9"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_men_l",
+      "label": "Men — Large",
+      "default": "9.5 - 12"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_men_xl",
+      "label": "Men — XL",
+      "default": "12.5 - 15"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_row_women",
+      "label": "Row: Women label",
+      "default": "Women"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_women_m",
+      "label": "Women — Medium",
+      "default": "7 - 9.5"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_women_l",
+      "label": "Women — Large",
+      "default": "10 - 13"
+    },
+    {
+      "type": "text",
+      "id": "hollow_size_women_xl",
+      "label": "Women — XL",
+      "default": "-"
     }
   ],
   "blocks": [{

@@ -27,15 +27,13 @@
   endfor
 
   assign show_buy2get2_badge = false
-  if has_buy_tag and has_get_tag
+  if section.settings.hollow_show_promo_badge
+    assign show_buy2get2_badge = true
+  elsif has_buy_tag and has_get_tag
+    assign show_buy2get2_badge = true
+  elsif current_variant.compare_at_price > current_variant.price
     assign show_buy2get2_badge = true
   endif
-
-  if current_variant.compare_at_price > current_variant.price
-    assign show_buy2get2_badge = true
-  endif
-
-  assign show_buy2get2_badge = true
 
   if request.design_mode or product.handle == 'hunt-socks'
     assign is_best_seller = true
@@ -47,37 +45,36 @@
     assign rating_avg = reviews_rating_raw.rating
   elsif reviews_rating_raw != blank
     assign rating_avg = reviews_rating_raw | times: 1.0
+  elsif section.settings.hollow_fallback_rating != blank
+    assign rating_avg = section.settings.hollow_fallback_rating | times: 1.0
   else
-    assign rating_avg = 4.86
+    assign rating_avg = blank
   endif
-  if rating_avg > 5
-    assign rating_avg = 5
-  endif
-  if rating_avg < 0
-    assign rating_avg = 0
+  if rating_avg != blank
+    if rating_avg > 5
+      assign rating_avg = 5
+    endif
+    if rating_avg < 0
+      assign rating_avg = 0
+    endif
   endif
 
   if reviews_rating_count == blank or reviews_rating_count == 0
-    assign review_seed = product.id | modulo: 8
-    case review_seed
-      when 0
-        assign reviews_rating_count = 8232
-      when 1
-        assign reviews_rating_count = 843
-      when 2
-        assign reviews_rating_count = 4224
-      when 3
-        assign reviews_rating_count = 1999
-      when 4
-        assign reviews_rating_count = 3754
-      when 5
-        assign reviews_rating_count = 612
-      when 6
-        assign reviews_rating_count = 1208
-      else
-        assign reviews_rating_count = 9401
-    endcase
+    assign reviews_rating_count = section.settings.hollow_fallback_review_count
   endif
+
+  assign show_pdp_rating = false
+  if section.settings.hollow_show_rating and reviews_rating_count != blank and rating_avg != blank
+    assign show_pdp_rating = true
+  endif
+
+  assign promo_badge_text = section.settings.hollow_promo_badge
+  assign bestseller_badge_text = section.settings.hollow_bestseller_badge
+  assign new_color_badge_text = section.settings.hollow_new_color_badge
+  assign guarantee_title = section.settings.hollow_guarantee_title
+  assign ships_label = section.settings.hollow_ships_label
+  assign ships_value = section.settings.hollow_ships_value
+  assign fast_shipping_text = section.settings.hollow_fast_shipping
 
   unless thumbnail_position
     assign thumbnail_position = 'beside'
@@ -107,10 +104,7 @@
     assign media_aspect = 1
   endif
 
-  assign pdp_subtitle = product.metafields.descriptors.subtitle.value | default: product.metafields.custom.subtitle.value | default: product.metafields.custom.short_description.value
-  if pdp_subtitle == blank
-    assign pdp_subtitle = "USA's #1 hunt sock for no slip, no sweat, & no smell."
-  endif
+  assign pdp_subtitle = product.metafields.descriptors.subtitle.value | default: product.metafields.custom.subtitle.value | default: product.metafields.custom.short_description.value | default: section.settings.hollow_short_description
 -%}
 
 {%- liquid
@@ -161,12 +155,12 @@
         {%- if image_position == 'left' -%}
           <div class="grid__item {{ product_image_width }} product-single__sticky hollow-pdp-gallery-wrap">
 
-            {%- if is_best_seller -%}
-              <div class="hollow-pdp-bestseller-tag">BEST SELLER</div>
-            {%- endif -%}
-            {%- if is_new_color -%}
-              <div class="hollow-pdp-newcolor-tag">NEW COLOR</div>
-            {%- endif -%}
+              {%- if is_best_seller and bestseller_badge_text != blank -%}
+              <div class="hollow-pdp-bestseller-tag">{{ bestseller_badge_text | escape }}</div>
+              {%- endif -%}
+              {%- if is_new_color and new_color_badge_text != blank -%}
+              <div class="hollow-pdp-newcolor-tag">{{ new_color_badge_text | escape }}</div>
+              {%- endif -%}
             {%- render 'hollow-pdp-gallery-features' -%}
 
             {%- render 'product-images',
@@ -200,7 +194,7 @@
                 {%- render 'breadcrumbs' -%}
               {%- endif -%}
 
-              {%- if isModal != true -%}
+              {%- if isModal != true and show_pdp_rating -%}
                 <div class="hollow-pdp-rating" aria-label="{{ rating_avg }} stars, {{ reviews_rating_count }} reviews">
                   <div class="hollow-pdp-rating__stars" aria-hidden="true">
                     {%- for i in (1..5) -%}
@@ -216,7 +210,7 @@
                         endif
                       -%}
                       <span class="hollow-pdp-rating__star">
-                        {% comment %} <span class="hollow-pdp-rating__star-outline">★</span> {% endcomment %}
+                        <span class="hollow-pdp-rating__star-outline">★</span>
                         <span class="hollow-pdp-rating__star-filled" style="--hollow-star-fill: {{ fill_pct }}%;">★</span>
                       </span>
                     {%- endfor -%}
@@ -254,8 +248,8 @@
                   {%- if pdp_subtitle != blank -%}
                     <p class="hollow-pdp-subtitle">{{ pdp_subtitle | escape }}</p>
                   {%- endif -%}
-                  {%- if show_buy2get2_badge -%}
-                    <span class="hollow-pdp-discount">BUY 2 GET 2 FREE</span>
+                  {%- if show_buy2get2_badge and promo_badge_text != blank -%}
+                    <span class="hollow-pdp-discount">{{ promo_badge_text | escape }}</span>
                   {%- endif -%}
                 {%- endunless -%}
               {%- endif -%}
@@ -294,17 +288,6 @@
                         assign force_open = true
                       endif
                     %}
-                    {% if tab_title_down == 'features' %}
-                      {% capture tab_content %}
-                        <ul class="hollow-check-list">
-                          <li>Enhanced achilles padding for superior support</li>
-                          <li>Weather adapting temperature control</li>
-                          <li>Easy on and off: slides on in seconds</li>
-                          <li>Lightweight and built-in breathable mesh vents</li>
-                          <li>Alpaca fiber: naturally soft and breathable</li>
-                        </ul>
-                      {% endcapture %}
-                    {% endif %}
                     {% unless tab_content == blank and block.settings.title == blank %}
                       <div class="product-block product-block--tab hollow-pdp-tab" {{ block.shopify_attributes }}>
                         {%- render 'tab', id: tab_id, title: block.settings.title, content: tab_content, force_open: force_open -%}
@@ -485,7 +468,11 @@
                   {%- when 'buy_buttons' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
                       {%- unless product.empty? -%}
-                        {%- render 'hollow-offer-cards', product: product, form_id: form_id -%}
+                        {%- render 'hollow-offer-cards',
+                          product: product,
+                          form_id: form_id,
+                          section: section
+                        -%}
                         <div class="product-block">
                           {%- render 'product-form',
                             form_id: form_id,
@@ -497,23 +484,37 @@
                         </div>
                       {%- endunless -%}
 
-                      <div class="hollow-pdp-guarantee">
-                      <img src="https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/57e1ab65-0066-4773-9082-34f2630cbcd5" class="r-3l3b7j" loading="lazy">
-                        <div class="hollow-pdp-guarantee__title">99-DAY MONEY BACK GUARANTEE</div>
-                      </div>
+                      {%- if guarantee_title != blank or section.settings.hollow_guarantee_image != blank -%}
+                        <div class="hollow-pdp-guarantee">
+                          {%- if section.settings.hollow_guarantee_image != blank -%}
+                            {{ section.settings.hollow_guarantee_image | image_url: width: 120 | image_tag: class: 'hollow-pdp-guarantee__img', loading: 'lazy', alt: guarantee_title }}
+                          {%- endif -%}
+                          {%- if guarantee_title != blank -%}
+                            <div class="hollow-pdp-guarantee__title">{{ guarantee_title | escape }}</div>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
 
-                      <div class="hollow-pdp-shipping-row">
-                        <span class="hollow-pdp-shipping-row__ships">
-                          <span class="hollow-pdp-shipping-row__dot"></span>
-                          SHIPS BY: <strong>TOMORROW</strong>
-                        </span>
-                        <span class="hollow-pdp-shipping-row__fast">
-                          <strong>FAST US SHIPPING</strong>
-                        </span>
-                      </div>
+                      {%- if ships_label != blank or ships_value != blank or fast_shipping_text != blank -%}
+                        <div class="hollow-pdp-shipping-row">
+                          {%- if ships_label != blank or ships_value != blank -%}
+                            <span class="hollow-pdp-shipping-row__ships">
+                              <span class="hollow-pdp-shipping-row__dot"></span>
+                              {%- if ships_label != blank -%}{{ ships_label | escape }} {% endif -%}
+                              {%- if ships_value != blank -%}<strong>{{ ships_value | escape }}</strong>{%- endif -%}
+                            </span>
+                          {%- endif -%}
+                          {%- if fast_shipping_text != blank -%}
+                            <span class="hollow-pdp-shipping-row__fast">
+                              <strong>{{ fast_shipping_text | escape }}</strong>
+                            </span>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
 
-                      {%- render 'hollow-size-chart' -%}
-
+                      {%- if section.settings.hollow_show_size_chart -%}
+                        {%- render 'hollow-size-chart', section: section -%}
+                      {%- endif -%}
                       {%- if block.settings.surface_pickup_enable -%}
                         <div data-store-availability-holder
                           data-product-name="{{ product.title | escape }}"
@@ -598,12 +599,12 @@
 
         {%- unless image_position == 'left' -%}
           <div class="grid__item {{ product_image_width }} product-single__sticky hollow-pdp-gallery-wrap">
-            {%- if is_best_seller -%}
-              <div class="hollow-pdp-bestseller-tag">BEST SELLER</div>
-            {%- endif -%}
-            {%- if is_new_color -%}
-              <div class="hollow-pdp-newcolor-tag">NEW COLOR</div>
-            {%- endif -%}
+              {%- if is_best_seller and bestseller_badge_text != blank -%}
+              <div class="hollow-pdp-bestseller-tag">{{ bestseller_badge_text | escape }}</div>
+              {%- endif -%}
+              {%- if is_new_color and new_color_badge_text != blank -%}
+              <div class="hollow-pdp-newcolor-tag">{{ new_color_badge_text | escape }}</div>
+              {%- endif -%}
             {%- render 'hollow-pdp-gallery-features' -%}
             {%- render 'product-images',
               section_id: section_id,

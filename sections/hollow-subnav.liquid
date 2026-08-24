@@ -1,20 +1,64 @@
-{%- if request.page_type == 'index' and section.blocks.size > 0 -%}
-  <nav class="hollow-subnav" aria-label="Shop by category">
-    <div class="hollow-subnav__track">
+{%- liquid
+  assign show_subnav = section.settings.show_on_homepage
+  if show_subnav == nil
+    assign show_subnav = true
+  endif
+-%}
+
+{%- if show_subnav and request.page_type == 'index' and section.blocks.size > 0 -%}
+  <nav
+    class="hollow-subnav"
+    id="HollowSubnav-{{ section.id }}"
+    aria-label="{{ section.settings.aria_label | escape }}"
+    style="
+      --subnav-pad-y: {{ section.settings.padding_y }}px;
+      --subnav-pad-x: {{ section.settings.padding_x }}px;
+      --subnav-gap: {{ section.settings.item_gap }}px;
+      --subnav-card-w: {{ section.settings.image_width }}px;
+      --subnav-card-h: {{ section.settings.image_height }}px;
+      --subnav-radius: {{ section.settings.image_radius }}px;
+      --subnav-badge-bg: {{ section.settings.badge_bg }};
+      --subnav-badge-color: {{ section.settings.badge_text_color }};
+      --subnav-label-gap: {{ section.settings.label_gap }}px;
+    "
+  >
+    <ul class="hollow-subnav__track">
       {%- for block in section.blocks -%}
-        <a class="hollow-subnav__item" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
-          <span class="hollow-subnav__media">
-            {%- if block.settings.badge != blank -%}
-              <span class="hollow-subnav__badge">{{ block.settings.badge }}</span>
-            {%- endif -%}
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '200, 320, 480' }}
-            {%- endif -%}
-          </span>
-          <span class="hollow-subnav__label">{{ block.settings.title }}</span>
-        </a>
+        {%- if block.settings.title != blank or block.settings.image != blank -%}
+          <li class="hollow-subnav__item" {{ block.shopify_attributes }}>
+            <a
+              class="hollow-subnav__link"
+              href="{{ block.settings.link | default: '#' }}"
+              {% if block.settings.title != blank %}aria-label="{{ block.settings.title | escape }}"{% endif %}
+            >
+              <span class="hollow-subnav__media">
+                {%- if block.settings.badge != blank -%}
+                  <span class="hollow-subnav__badge">{{ block.settings.badge | escape }}</span>
+                {%- endif -%}
+                {%- if block.settings.image != blank -%}
+                  {%- capture subnav_sizes -%}{{ section.settings.image_width }}px{%- endcapture -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 480
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '160, 240, 320, 480',
+                      sizes: subnav_sizes,
+                      alt: block.settings.title
+                  }}
+                {%- else -%}
+                  <span class="hollow-subnav__placeholder" aria-hidden="true"></span>
+                {%- endif -%}
+              </span>
+              {%- if block.settings.title != blank -%}
+                <span class="hollow-subnav__label">{{ block.settings.title | escape }}</span>
+              {%- endif -%}
+            </a>
+          </li>
+        {%- endif -%}
       {%- endfor -%}
-    </div>
+      <li class="hollow-subnav__spacer" aria-hidden="true"></li>
+    </ul>
   </nav>
 {%- endif -%}
 
@@ -22,16 +66,138 @@
 {
   "name": "Hollow subnav",
   "class": "hollow-subnav-section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_on_homepage",
+      "label": "Show on homepage only",
+      "default": true,
+      "info": "Mobile only. Hidden on desktop."
+    },
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Accessibility label",
+      "default": "Shop by category"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_x",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Side padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Item gap",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "label_gap",
+      "min": 0,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap under image",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 60,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Image width",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 60,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Image height",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Image corner radius",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Badge style"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Badge background",
+      "default": "#E5DCCA"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text",
+      "default": "#282828"
+    }
+  ],
   "blocks": [
     {
       "type": "item",
       "name": "Category",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
-        { "type": "text", "id": "title", "label": "Title", "default": "best sellers" },
-        { "type": "url", "id": "link", "label": "Link" },
-        { "type": "text", "id": "badge", "label": "Badge" }
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "best sellers"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge text",
+          "info": "Optional. Example: 50% OFF"
+        }
       ]
     }
   ],
@@ -40,9 +206,12 @@
       "name": "Hollow subnav",
       "blocks": [
         { "type": "item", "settings": { "title": "best sellers" } },
-        { "type": "item", "settings": { "title": "compression" } },
+        { "type": "item", "settings": { "title": "COMPRESSION" } },
         { "type": "item", "settings": { "title": "bundles", "badge": "50% OFF" } },
-        { "type": "item", "settings": { "title": "trades" } }
+        { "type": "item", "settings": { "title": "trades" } },
+        { "type": "item", "settings": { "title": "hunting" } },
+        { "type": "item", "settings": { "title": "everyday" } },
+        { "type": "item", "settings": { "title": "running" } }
       ]
     }
   ],

@@ -3,6 +3,7 @@
 {%- assign product = all_products[section.settings.featured_product] -%}
 {%- render 'product-template',
   product: product,
+  section: section,
   section_id: section.id,
   blocks: section.blocks,
   image_position: section.settings.image_position,
