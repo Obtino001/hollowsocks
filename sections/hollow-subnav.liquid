@@ -1,4 +1,4 @@
-{%- if section.blocks.size > 0 -%}
+{%- if request.page_type == 'index' and section.blocks.size > 0 -%}
   <nav class="hollow-subnav" aria-label="Shop by category">
     <div class="hollow-subnav__track">
       {%- for block in section.blocks -%}

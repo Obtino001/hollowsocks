@@ -4,12 +4,20 @@
   }
 
   function tickCountdown(root) {
-    var end = Date.parse(root.getAttribute('data-end') || '');
-    if (!end) return;
+    var configured = Date.parse(root.getAttribute('data-end') || '');
+    if (!configured) return;
 
     function render() {
-      var diff = Math.max(0, end - Date.now());
-      var hours = Math.min(99, Math.floor(diff / 3600000));
+      var now = Date.now();
+      var end = configured;
+      // Keep timer looking like Hollow (under 24h) when sale end is far away
+      if (end - now > 86400000) {
+        var eod = new Date();
+        eod.setHours(23, 59, 59, 999);
+        end = eod.getTime();
+      }
+      var diff = Math.max(0, end - now);
+      var hours = Math.floor(diff / 3600000);
       var minutes = Math.floor((diff % 3600000) / 60000);
       var seconds = Math.floor((diff % 60000) / 1000);
       var hourEl = root.querySelector('[data-unit="hours"]');

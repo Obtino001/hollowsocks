@@ -49,7 +49,9 @@
           <path d="M15 18V12C15 7.02944 19.0294 3 24 3C28.9706 3 33 7.02944 33 12V18" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"/>
         </svg>
         <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-        <span class="hollow-cart-count cart-link__bubble-num" aria-hidden="true">{{ cart.item_count }}</span>
+        {%- if cart.item_count > 0 -%}
+          <span class="hollow-cart-count cart-link__bubble-num" aria-hidden="true">{{ cart.item_count }}</span>
+        {%- endif -%}
       </span>
     </a>
   </div>
