@@ -4486,3 +4486,31 @@
   text-align: center;
   padding: 48px 20px;
 }
+.hollow-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  color: var(--hollow-black);
+}
+
+.hollow-card__rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.hollow-card__rating-stars svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+  color: var(--hollow-black);
+  fill: currentColor;
+}
+
+.hollow-card__rating-count {
+  font-family: var(--hollow-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
