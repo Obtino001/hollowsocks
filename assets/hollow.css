@@ -4367,9 +4367,7 @@
   min-width: 0;
   margin: 0 !important;
   font-family: var(--hollow-display);
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-size: 20px;
   text-transform: uppercase;
   color: var(--hollow-black);
   text-decoration: none;
