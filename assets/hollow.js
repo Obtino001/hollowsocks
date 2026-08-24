@@ -314,6 +314,67 @@
     }
   }
 
+  function initHollowQuickAdd() {
+    document.addEventListener(
+      'click',
+      function (evt) {
+        var btn = evt.target && evt.target.closest ? evt.target.closest('[data-hollow-quick-add]') : null;
+        if (!btn || btn.disabled || btn.classList.contains('is-loading')) return;
+
+        evt.preventDefault();
+        evt.stopPropagation();
+
+        var variantId = btn.getAttribute('data-variant-id');
+        if (!variantId) return;
+
+        var addUrl =
+          (window.theme && theme.routes && theme.routes.cartAdd) ||
+          (window.routes && window.routes.cart_add_url) ||
+          '/cart/add.js';
+
+        btn.classList.add('is-loading');
+
+        fetch(addUrl, {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          body: JSON.stringify({ id: Number(variantId), quantity: 1 })
+        })
+          .then(function (response) {
+            return response.json().then(function (data) {
+              return { ok: response.ok, data: data };
+            });
+          })
+          .then(function (result) {
+            btn.classList.remove('is-loading');
+            if (!result.ok || result.data.status === 422) return;
+
+            var cartType = (window.theme && theme.settings && theme.settings.cartType) || 'drawer';
+            if (cartType === 'page') {
+              window.location = (window.theme && theme.routes && theme.routes.cartPage) || '/cart';
+              return;
+            }
+
+            document.dispatchEvent(
+              new CustomEvent('ajaxProduct:added', {
+                detail: { product: result.data, addToCartBtn: btn }
+              })
+            );
+          })
+          .catch(function () {
+            btn.classList.remove('is-loading');
+          });
+      },
+      true
+    );
+  }
+
+  initHollowQuickAdd();
+
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-hollow-countdown]').forEach(tickCountdown);
     stickyAnnouncement();
