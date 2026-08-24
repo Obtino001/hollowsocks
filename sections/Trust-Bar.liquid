@@ -1,0 +1,450 @@
+<section id="trust-bar-{{ section.id }}" class="ds-trust-bar" 
+  data-marquee="{{ section.settings.marquee_desk }}" 
+  data-marquee-mob="{{ section.settings.marquee_mob }}" 
+  data-layout-mob="{{ section.settings.layout_mob }}" 
+  data-show-dots-desk="{{ section.settings.show_dots_desk }}" 
+  data-show-dots-mob="{{ section.settings.show_dots_mob }}">
+  
+  <div class="ds-trust-bar__container">
+    <div class="ds-trust-bar__content">
+      
+      <!-- Primary Group -->
+      <div class="ds-trust-bar__group">
+        {%- for block in section.blocks -%}
+          <div class="ds-trust-bar__item" {{ block.shopify_attributes }}>
+            
+            {%- if block.settings.show_stars -%}
+              <div class="ds-trust-bar__stars">
+                {%- for i in (1..5) -%}
+                  <span class="ds-icon ds-icon-star">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18.324L19.416 22.8L17.448 14.364L24 8.688L15.372 7.956L12 0L8.628 7.956L0 8.688L6.552 14.364L4.584 22.8L12 18.324Z" fill="currentColor"></path>
+                    </svg>
+                  </span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+
+            <span class="ds-trust-bar__text">{{ block.settings.text }}</span>
+          </div>
+          
+          <div class="ds-trust-bar__dot"></div>
+        {%- endfor -%}
+      </div>
+
+      <!-- Duplicate Group (For Marquee Loop) -->
+      <div class="ds-trust-bar__group ds-trust-bar__group--duplicate" aria-hidden="true">
+        {%- for block in section.blocks -%}
+          <div class="ds-trust-bar__item">
+            {%- if block.settings.show_stars -%}
+              <div class="ds-trust-bar__stars">
+                {%- for i in (1..5) -%}
+                  <span class="ds-icon ds-icon-star">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18.324L19.416 22.8L17.448 14.364L24 8.688L15.372 7.956L12 0L8.628 7.956L0 8.688L6.552 14.364L4.584 22.8L12 18.324Z" fill="currentColor"></path>
+                    </svg>
+                  </span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+
+            <span class="ds-trust-bar__text">{{ block.settings.text }}</span>
+          </div>
+          
+          <div class="ds-trust-bar__dot"></div>
+        {%- endfor -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  #trust-bar-{{ section.id }} {
+    --bg-color: {{ section.settings.bg_color }};
+    --text-color: {{ section.settings.text_color }};
+    --pt: {{ section.settings.padding_top_mob }}px;
+    --pb: {{ section.settings.padding_bottom_mob }}px;
+    --gap: 24px;
+    --speed: {{ section.settings.speed }}s;
+    
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-color);
+  }
+
+  @media (min-width: 1024px) {
+    #trust-bar-{{ section.id }} {
+      --pt: {{ section.settings.padding_top_desk }}px;
+      --pb: {{ section.settings.padding_bottom_desk }}px;
+      --gap: 16px;
+    }
+  }
+
+  @keyframes trustMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes trustBounce {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(min(0px, calc(-100% + 100vw - 40px))); }
+  }
+
+  .ds-trust-bar__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: var(--pt);
+    padding-bottom: var(--pb);
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+  }
+
+  .ds-trust-bar[data-marquee="true"] .ds-trust-bar__container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .ds-trust-bar__container {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .ds-trust-bar[data-marquee="true"] .ds-trust-bar__container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .ds-trust-bar[data-marquee-mob="true"] .ds-trust-bar__container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .ds-trust-bar[data-marquee="true"] .ds-trust-bar__container,
+  .ds-trust-bar[data-marquee-mob="true"] .ds-trust-bar__container {
+    justify-content: flex-start;
+  }
+
+  .ds-trust-bar__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ds-trust-bar__group {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    flex-shrink: 0;
+  }
+
+  .ds-trust-bar__group--duplicate {
+    display: none;
+  }
+
+  /* Desktop Marquee ON */
+  @media (min-width: 1024px) {
+    .ds-trust-bar[data-marquee="true"] .ds-trust-bar__content {
+      width: max-content;
+      justify-content: flex-start;
+      animation: trustMarquee var(--speed) linear infinite;
+    }
+    .ds-trust-bar[data-marquee="true"] .ds-trust-bar__group--duplicate {
+      display: flex;
+      padding-left: var(--gap);
+    }
+    .ds-trust-bar[data-marquee="true"] .ds-trust-bar__content:hover {
+      animation-play-state: paused; /* Changed from running to pause on hover for better UX */
+    }
+  }
+
+  /* Mobile Marquee Logic */
+  @media (max-width: 1023px) {
+    .ds-trust-bar:not([data-marquee-mob="true"]) .ds-trust-bar__group {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ds-trust-bar[data-layout-mob="column"]:not([data-marquee-mob="true"]) .ds-trust-bar__group {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ds-trust-bar[data-layout-mob="carousel"]:not([data-marquee-mob="true"]) .ds-trust-bar__container {
+      justify-content: flex-start;
+    }
+
+    .ds-trust-bar[data-layout-mob="carousel"]:not([data-marquee-mob="true"]) .ds-trust-bar__content {
+      width: max-content;
+      justify-content: flex-start;
+      animation: trustBounce var(--speed) linear infinite alternate;
+    }
+
+    .ds-trust-bar[data-layout-mob="carousel"]:not([data-marquee-mob="true"]) .ds-trust-bar__group {
+      flex-wrap: nowrap;
+    }
+
+    .ds-trust-bar[data-marquee-mob="true"] .ds-trust-bar__content {
+      width: max-content;
+      justify-content: flex-start;
+      animation: trustMarquee var(--speed) linear infinite;
+    }
+
+    .ds-trust-bar[data-marquee-mob="true"] .ds-trust-bar__group--duplicate {
+      display: flex;
+      padding-left: var(--gap);
+    }
+  }
+
+  /* Items & Icons */
+  .ds-trust-bar__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .ds-trust-bar__stars {
+    display: flex;
+    gap: 4px;
+    color: var(--text-color);
+  }
+
+  .ds-icon-star {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .ds-icon-star svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Dots */
+  .ds-trust-bar__dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .ds-trust-bar[data-show-dots-desk="false"] .ds-trust-bar__dot {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .ds-trust-bar[data-show-dots-mob="false"] .ds-trust-bar__dot {
+      display: none !important;
+    }
+  }
+
+  /* Typography */
+  .ds-trust-bar__text {
+    font-family: var(--font-graphik, "Graphik XX Condensed", sans-serif);
+    font-weight: 700;
+    line-height: 0.96;
+    letter-spacing: 0.02em;
+    font-size: 28px;
+    white-space: nowrap;
+    color: var(--text-color);
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 1024px) {
+    .ds-trust-bar__text {
+      font-size: 40px;
+    }
+  }
+
+  /* Trailing dot logic */
+  .ds-trust-bar__group .ds-trust-bar__dot:last-child {
+    display: none;
+  }
+
+  .ds-trust-bar[data-marquee="true"] .ds-trust-bar__group .ds-trust-bar__dot:last-child {
+    display: block;
+  }
+
+  @media (max-width: 1023px) {
+    .ds-trust-bar[data-marquee-mob="true"] .ds-trust-bar__group .ds-trust-bar__dot:last-child {
+      display: block;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Trust Marquee Bar",
+  "class": "shopify-section-trust-bar",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#e5dcca"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#282828"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "label": "Marquee Speed",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "marquee_desk",
+      "label": "Enable Marquee (Desktop)",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots_desk",
+      "label": "Show Separator Dots (Desktop)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desk",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desk",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "marquee_mob",
+      "label": "Enable Marquee (Mobile)",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "layout_mob",
+      "label": "Mobile Layout (If marquee is off)",
+      "options": [
+        { "value": "wrap", "label": "Wrap" },
+        { "value": "column", "label": "Column" },
+        { "value": "carousel", "label": "Bounce Carousel" }
+      ],
+      "default": "wrap"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots_mob",
+      "label": "Show Separator Dots (Mobile)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mob",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mob",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Add your trust text"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stars",
+          "label": "Show 5 Stars",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Marquee Bar",
+      "blocks": [
+        {
+          "type": "trust_item",
+          "settings": {
+            "text": "27,000+ REVIEWS",
+            "show_stars": true
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "text": "OVER 4 MILLION SOLD",
+            "show_stars": false
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "text": "99 DAY MONEY BACK GUARANTEE",
+            "show_stars": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
