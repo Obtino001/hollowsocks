@@ -219,7 +219,18 @@
   margin: 0;
   font-size: 0;
 }
-
+.hollow-theme .site-header .site-header__logo-link:not(.hollow-logo-link) img,
+.hollow-theme .site-header .site-header__logo-link:not(.hollow-logo-link) .image-element {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  display: block;
+  width: auto !important;
+  height: auto;
+  max-width: 100%;
+  max-height: 40px;
+}
 .hollow-logo {
   display: block;
   width: 94px;
