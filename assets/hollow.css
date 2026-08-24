@@ -3810,7 +3810,7 @@
   flex: 0 0 auto;
   min-width: 200px;
   /* min-height: 52px; */
-  padding: 0 28px;
+  padding: 10px 28px;
   border: 1px solid var(--hollow-black);
   border-radius: 2px;
   background: #ffffff !important;
