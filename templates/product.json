@@ -39,7 +39,7 @@
           "type": "tab",
           "settings": {
             "title": "Features",
-            "content": "<ul class=\"hollow-check-list\"><li>Enhanced achilles padding for superior support</li><li>Weather adapting temperature control</li><li>Easy on and off: slides on in seconds</li><li>Lightweight and built-in breathable mesh vents</li><li>Alpaca fiber: naturally soft and breathable</li></ul>",
+            "content": "<ul><li>Enhanced achilles padding for superior support</li><li>Weather adapting temperature control</li><li>Easy on and off: slides on in seconds</li><li>Lightweight and built-in breathable mesh vents</li><li>Alpaca fiber: naturally soft and breathable</li></ul>",
             "page": ""
           }
         },
@@ -77,8 +77,8 @@
         }
       },
       "block_order": [
-        "size_chart",
         "variant_picker",
+        "size_chart",
         "buy_buttons",
         "tab-1",
         "tab-2",
@@ -89,11 +89,11 @@
       "settings": {
         "sku_enable": false,
         "image_position": "left",
-        "image_size": "large",
+        "image_size": "medium",
         "product_zoom_enable": true,
         "thumbnail_position": "below",
-        "thumbnail_height": "flexible",
-        "thumbnail_arrows": true,
+        "thumbnail_height": "fixed",
+        "thumbnail_arrows": false,
         "mobile_layout": "full",
         "enable_video_looping": true,
         "product_video_style": "muted",
@@ -209,9 +209,9 @@
         "bg_color": "#ffffff",
         "text_color": "#111111",
         "columns_desktop": 3,
-        "image_radius": 10,
-        "padding_top": 64,
-        "padding_bottom": 64
+        "image_radius": 12,
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     },
     "custom-marquee": {
@@ -359,7 +359,7 @@
         "left_bg_color": "#0b3123",
         "left_text_color": "#ffffff",
         "main_heading": "WHY HOLLOW WINS? FEATURE BY FEATURE.",
-        "sticky_offset": 16,
+        "sticky_offset": 80,
         "right_bg_color": "#ffffff",
         "right_text_color": "#111111",
         "image_aspect_w": 4,
