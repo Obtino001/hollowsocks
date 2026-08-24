@@ -4642,3 +4642,9 @@ img.r-3l3b7j {
     display: none !important;
   }
 }
+@media only screen and (min-width: 769px) {
+  .template-index .hollow-collection-nav-section,
+  .template-index .hollow-collection-nav {
+    display: none !important;
+  }
+}
