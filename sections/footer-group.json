@@ -17,36 +17,42 @@
         "i1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/review-image2_1.png",
             "link": ""
           }
         },
         "i2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Main_Image_df265dff-b9ba-48aa-a635-9556427a7b83.png",
             "link": ""
           }
         },
         "i3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/crew_e5ce7355-3217-45c3-bfcb-f7f35dc11dcd.jpg",
             "link": ""
           }
         },
         "i4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/57373ab62c7a4a89ba039b4deafa0e1b.thumbnail.0000000000_1100x_a257b6e9-2631-4c56-b5c9-caa57dd4cf07.jpg",
             "link": ""
           }
         },
         "i5": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Main_Image_680366b0-324b-4dde-a837-3fa70f5c864f.png",
             "link": ""
           }
         },
         "i6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Image-42_1.jpg",
             "link": ""
           }
         }
