@@ -1264,17 +1264,17 @@
   justify-content: center;
   padding: 8px 0 48px;
 }
-
 .hollow-shop-all .hollow-btn--dark {
-  min-width: 200px;
-  height: 48px;
-  padding: 0 40px;
-  background: #282828;
-  color: #fff;
-  font-family: var(--hollow-mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+    border-radius: 6px;
+    min-width: 200px;
+    height: 48px;
+    padding: 0 40px;
+    background: #282828;
+    color: #fff;
+    font-family: var(--hollow-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .14em;
 }
 
 .hollow-theme .grid-product.hollow-card {
