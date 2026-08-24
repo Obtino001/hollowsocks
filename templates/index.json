@@ -97,6 +97,7 @@
         "a1": {
           "type": "activity",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_3391-1.png",
             "title": "COMPRESSION",
             "link": "",
             "badge": ""
@@ -105,6 +106,7 @@
         "a2": {
           "type": "activity",
           "settings": {
+            "image": "shopify://shop_images/Main_Image_e01ab9e7-32f3-4d3f-8287-612c6aee16fb.png",
             "title": "TRADES",
             "link": "",
             "badge": ""
@@ -113,6 +115,7 @@
         "a3": {
           "type": "activity",
           "settings": {
+            "image": "shopify://shop_images/Image-42_1.jpg",
             "title": "BUNDLES",
             "link": "",
             "badge": "50% OFF"
@@ -121,6 +124,7 @@
         "a4": {
           "type": "activity",
           "settings": {
+            "image": "shopify://shop_images/review-image4.png",
             "title": "HUNTING",
             "link": "",
             "badge": ""
@@ -140,6 +144,7 @@
       ],
       "settings": {
         "left_heading": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER.",
+        "center_image": "shopify://shop_images/67bc8f0ce4ba5ea905f94fa6911b610f0985fee2.png",
         "right_heading": "SHOP BY ACTIVITY"
       }
     },
@@ -162,6 +167,7 @@
         "banner-1": {
           "type": "banner",
           "settings": {
+            "image": "shopify://shop_images/crew_e5ce7355-3217-45c3-bfcb-f7f35dc11dcd.jpg",
             "title": "Compression",
             "text": "The perfect aid for enhanced circulation and improved comfort.",
             "link": ""
@@ -170,6 +176,7 @@
         "banner-2": {
           "type": "banner",
           "settings": {
+            "image": "shopify://shop_images/review-image5.png",
             "title": "trades",
             "text": "Socks built for the 14-hour long days on the worksite.",
             "link": ""
@@ -236,6 +243,7 @@
         "b5",
         "b6"
       ],
+      "disabled": true,
       "settings": {
         "title": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER."
       }
@@ -254,12 +262,14 @@
         "p1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Rectangle_bundle.jpg",
             "tall": true
           }
         },
         "p2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Main_Image_df265dff-b9ba-48aa-a635-9556427a7b83.png",
             "tall": true
           }
         },
@@ -274,6 +284,7 @@
         "p3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/review-image3.png",
             "tall": false
           }
         },
@@ -288,6 +299,7 @@
         "p4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/catagory_-_compression.jpg",
             "tall": true
           }
         },
@@ -328,6 +340,7 @@
       "settings": {
         "title": "Why Alpaca Fiber Outperforms Wool and Cotton",
         "eyebrow": "ethically sourced in the high altitudes of peru",
+        "image": "shopify://shop_images/Rectangle_3388.png",
         "story_title": "hollow by nature",
         "text": "Unlike cotton and wool, alpaca fiber is naturally hollow, creating breathable warmth and dry comfort without bulk.",
         "button_label": "learn more",
