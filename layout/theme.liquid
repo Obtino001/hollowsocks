@@ -34,6 +34,7 @@
   <link rel="preload" href="https://cdn.shopify.com/s/files/1/1015/4298/6071/files/HaasGrotText.woff2?v=1787481127" as="font" type="font/woff2" crossorigin>
   {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
   {{ 'hollow.css' | asset_url | stylesheet_tag }}
+  {{ 'hollow-motion.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
   <style id="hollow-font-lock">
     :root,
@@ -452,6 +453,7 @@
   -%}
 
   <script src="{{ 'hollow.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'hollow-motion.js' | asset_url }}" defer="defer"></script>
 
   {% comment %} Image markup used when building product grid item via JS {% endcomment %}
   <template id="naturalImageMarkup">

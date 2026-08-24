@@ -1,0 +1,471 @@
+/* ==========================================================================
+   Hollow Motion — sitewide animation system
+   Layout/design is never changed here: transform, opacity, clip-path & filter only.
+   All reveal states are scoped to html.hm-ready so content stays visible if JS
+   fails, is disabled, or the visitor prefers reduced motion.
+   ========================================================================== */
+
+:root {
+  --hm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --hm-ease-soft: cubic-bezier(0.33, 0, 0.2, 1);
+  --hm-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --hm-dur: 780ms;
+  --hm-dur-mid: 560ms;
+  --hm-dur-fast: 380ms;
+  --hm-dur-hover: 620ms;
+
+  --hm-shift: 22px;
+  --hm-d: 0ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------------------------------------
+   1. Reveal engine
+   -------------------------------------------------------------------------- */
+
+html.hm-ready [data-hm] {
+  transition:
+    opacity var(--hm-dur) var(--hm-ease) var(--hm-d),
+    transform var(--hm-dur) var(--hm-ease) var(--hm-d),
+    clip-path var(--hm-dur) var(--hm-ease) var(--hm-d),
+    filter var(--hm-dur-mid) var(--hm-ease) var(--hm-d);
+}
+
+html.hm-ready [data-hm]:not(.hm-in) {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+html.hm-ready [data-hm].hm-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  will-change: auto;
+}
+
+/* Fade + slide */
+html.hm-ready [data-hm='up']:not(.hm-in) {
+  transform: translate3d(0, var(--hm-shift), 0);
+}
+
+html.hm-ready [data-hm='left']:not(.hm-in) {
+  transform: translate3d(calc(var(--hm-shift) * -1.6), 0, 0);
+}
+
+html.hm-ready [data-hm='right']:not(.hm-in) {
+  transform: translate3d(calc(var(--hm-shift) * 1.6), 0, 0);
+}
+
+/* Scale in */
+html.hm-ready [data-hm='scale']:not(.hm-in) {
+  transform: scale(0.96);
+}
+
+/* Blur to sharp */
+html.hm-ready [data-hm='blur']:not(.hm-in) {
+  filter: blur(9px);
+  transform: translate3d(0, 14px, 0);
+}
+
+/* Text mask reveal — clip-path keeps the DOM untouched */
+html.hm-ready [data-hm='mask']:not(.hm-in) {
+  clip-path: inset(0 0 108% 0);
+  transform: translate3d(0, 12px, 0);
+}
+
+html.hm-ready [data-hm='mask'].hm-in {
+  clip-path: inset(-12% -6% -12% -6%);
+}
+
+/* Card reveal */
+html.hm-ready [data-hm='card']:not(.hm-in) {
+  transform: translate3d(0, 28px, 0);
+}
+
+/* Image clip reveal + settle */
+html.hm-ready [data-hm='img'] {
+  overflow: hidden;
+}
+
+html.hm-ready [data-hm='img']:not(.hm-in) {
+  clip-path: inset(0 0 100% 0);
+}
+
+html.hm-ready [data-hm='img'].hm-in {
+  clip-path: inset(0 0 0 0);
+}
+
+html.hm-ready [data-hm='img'] > img,
+html.hm-ready [data-hm='img'] > picture,
+html.hm-ready [data-hm='img'] > .image-element,
+html.hm-ready [data-hm='img'] img.image-element {
+  transition: transform 1100ms var(--hm-ease) var(--hm-d);
+}
+
+html.hm-ready [data-hm='img']:not(.hm-in) > img,
+html.hm-ready [data-hm='img']:not(.hm-in) > picture,
+html.hm-ready [data-hm='img']:not(.hm-in) > .image-element,
+html.hm-ready [data-hm='img']:not(.hm-in) img.image-element {
+  transform: scale(1.08);
+}
+
+/* Product cards: reveal the inner content so AOS image fades stay untouched */
+html.hm-ready [data-hm='prod'] > .grid-product__content {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition:
+    opacity var(--hm-dur) var(--hm-ease) var(--hm-d),
+    transform var(--hm-dur) var(--hm-ease) var(--hm-d);
+}
+
+html.hm-ready [data-hm='prod'].hm-in > .grid-product__content {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. Image hover — refined zoom inside a fixed frame
+   -------------------------------------------------------------------------- */
+
+.hm-ready .grid-product__image-mask,
+.hm-ready .hollow-banners__media,
+.hm-ready .hollow-advantage__media,
+.hm-ready .hollow-activity__media,
+.hm-ready .hollow-highlights__media,
+.hm-ready .hollow-about__fiber-media,
+.hm-ready .hollow-intro__activity-media,
+.hm-ready .hollow-social__item,
+.hm-ready [class*='scroll-card-image-'] {
+  overflow: hidden;
+}
+
+.hm-ready .grid-product__image-mask img,
+.hm-ready .hollow-banners__media img,
+.hm-ready .hollow-advantage__media img,
+.hm-ready .hollow-highlights__media img,
+.hm-ready .hollow-about__fiber-media img,
+.hm-ready .hollow-intro__activity-media img,
+.hm-ready .hollow-social__item img,
+.hm-ready [class*='scroll-card-image-'] img {
+  transition: transform var(--hm-dur-hover) var(--hm-ease);
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+.hm-ready .grid-product:hover .grid-product__image-mask img,
+.hm-ready .hollow-banners__item:hover .hollow-banners__media img,
+.hm-ready .hollow-advantage__item:hover .hollow-advantage__media img,
+.hm-ready .hollow-highlights__media:hover img,
+.hm-ready .hollow-about__fiber-media:hover img,
+.hm-ready .hollow-intro__activity-media:hover img,
+.hm-ready .hollow-social__item:hover img,
+.hm-ready [class*='scroll-card-']:hover [class*='scroll-card-image-'] img {
+  transform: scale(1.05);
+}
+
+/* Soft overlay wash on media tiles */
+.hm-ready .hollow-social__item {
+  position: relative;
+}
+
+.hm-ready .hollow-banners__media::after,
+.hm-ready .hollow-social__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.18) 100%);
+  opacity: 0;
+  transition: opacity var(--hm-dur-hover) var(--hm-ease);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hm-ready .hollow-banners__item:hover .hollow-banners__media::after,
+.hm-ready .hollow-social__item:hover::after {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. Card hover — lift, elevation, subtle scale
+   -------------------------------------------------------------------------- */
+
+.hm-ready .hollow-advantage__item,
+.hm-ready .hollow-reviews__card,
+.hm-ready .hollow-wins__item,
+.hm-ready .hollow-benefits__item,
+.hm-ready .hollow-activity__card,
+.hm-ready .hollow-about__means-item,
+.hm-ready .hollow-trust__item,
+.hm-ready [class*='scroll-card-']:not([class*='scroll-card-image-']):not([class*='scroll-card-content-']) {
+  transition:
+    transform var(--hm-dur-hover) var(--hm-ease),
+    box-shadow var(--hm-dur-hover) var(--hm-ease);
+}
+
+.hm-ready .hollow-advantage__item:hover,
+.hm-ready .hollow-reviews__card:hover,
+.hm-ready .hollow-wins__item:hover,
+.hm-ready .hollow-benefits__item:hover,
+.hm-ready .hollow-activity__card:hover,
+.hm-ready .hollow-about__means-item:hover,
+.hm-ready [class*='scroll-card-']:not([class*='scroll-card-image-']):not([class*='scroll-card-content-']):hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 18px 44px rgba(17, 17, 17, 0.09);
+}
+
+/* Product card: lift the media block so the grid never shifts */
+.hm-ready .grid-product .grid-product__image-mask {
+  transition:
+    transform var(--hm-dur-hover) var(--hm-ease),
+    box-shadow var(--hm-dur-hover) var(--hm-ease);
+}
+
+.hm-ready .grid-product:hover .grid-product__image-mask {
+  transform: translate3d(0, -5px, 0);
+  box-shadow: 0 20px 46px rgba(17, 17, 17, 0.1);
+}
+
+.hm-ready .grid-product .grid-product__meta,
+.hm-ready .hollow-card .hollow-card__rating,
+.hm-ready .hollow-card .hollow-card__swatches {
+  transition: transform var(--hm-dur-hover) var(--hm-ease);
+}
+
+.hm-ready .grid-product:hover .grid-product__meta {
+  transform: translate3d(0, -2px, 0);
+}
+
+/* Product badges */
+.hm-ready .grid-product__tag,
+.hm-ready .hollow-card__promo,
+.hm-ready .hollow-pdp-bestseller-tag,
+.hm-ready .hollow-pdp-newcolor-tag {
+  transition:
+    transform var(--hm-dur-hover) var(--hm-ease),
+    opacity var(--hm-dur-fast) var(--hm-ease);
+}
+
+.hm-ready .grid-product:hover .hollow-card__promo {
+  transform: translate3d(0, -2px, 0);
+}
+
+/* SHOP NOW overlay easing */
+.hm-ready .hollow-card__shop {
+  transition:
+    transform var(--hm-dur-fast) var(--hm-ease),
+    background-color var(--hm-dur-fast) var(--hm-ease),
+    box-shadow var(--hm-dur-fast) var(--hm-ease),
+    opacity var(--hm-dur-fast) var(--hm-ease);
+}
+
+.hm-ready .hollow-card:hover .hollow-card__shop {
+  transform: translateX(-50%) translateY(-3px);
+}
+
+.hm-ready .hollow-card__shop:active {
+  transform: translateX(-50%) translateY(-1px) scale(0.985);
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons & links — micro-interactions
+   -------------------------------------------------------------------------- */
+
+.hm-ready .btn,
+.hm-ready .hollow-btn,
+.hm-ready .hollow-btn--dark,
+.hm-ready .hollow-hero__cta,
+.hm-ready .hollow-sticky-atc__btn,
+.hm-ready .add-to-cart,
+.hm-ready [data-add-to-cart] {
+  transition:
+    transform var(--hm-dur-fast) var(--hm-ease),
+    background-color var(--hm-dur-fast) var(--hm-ease),
+    color var(--hm-dur-fast) var(--hm-ease),
+    border-color var(--hm-dur-fast) var(--hm-ease),
+    box-shadow var(--hm-dur-fast) var(--hm-ease);
+}
+
+/* Magnetic buttons drive their own transform, so they opt out of the lift. */
+.hm-ready .btn:hover:not(:disabled):not([data-hm-magnetic]),
+.hm-ready .hollow-btn:hover:not([data-hm-magnetic]),
+.hm-ready .hollow-btn--dark:hover:not([data-hm-magnetic]),
+.hm-ready .hollow-hero__cta:hover:not([data-hm-magnetic]),
+.hm-ready .hollow-sticky-atc__btn:hover:not(:disabled),
+.hm-ready .add-to-cart:hover:not(:disabled):not([data-hm-magnetic]),
+.hm-ready [data-add-to-cart]:hover:not(:disabled):not([data-hm-magnetic]) {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 0 12px 26px rgba(17, 17, 17, 0.16);
+}
+
+.hm-ready .btn:hover:not(:disabled),
+.hm-ready .hollow-btn:hover,
+.hm-ready .hollow-btn--dark:hover,
+.hm-ready .hollow-hero__cta:hover,
+.hm-ready [data-add-to-cart]:hover:not(:disabled) {
+  box-shadow: 0 12px 26px rgba(17, 17, 17, 0.16);
+}
+
+.hm-ready .btn:active:not(:disabled):not([data-hm-magnetic]),
+.hm-ready .hollow-btn:active:not([data-hm-magnetic]),
+.hm-ready .hollow-hero__cta:active:not([data-hm-magnetic]),
+.hm-ready [data-add-to-cart]:active:not(:disabled):not([data-hm-magnetic]) {
+  transform: translate3d(0, 0, 0) scale(0.988);
+}
+
+/* Magnetic buttons (pointer devices only, driven by JS) */
+@media (hover: hover) and (pointer: fine) {
+  html.hm-ready [data-hm-magnetic] {
+    transition: transform 420ms var(--hm-ease);
+  }
+
+  html.hm-ready [data-hm-magnetic].hm-magnet-active {
+    transition: transform 120ms linear;
+    transform: translate3d(var(--hm-mx, 0px), var(--hm-my, 0px), 0);
+  }
+}
+
+/* Arrow / icon nudge */
+.hm-ready .btn .icon,
+.hm-ready .hollow-btn .icon,
+.hm-ready .hollow-hero__cta .icon {
+  transition: transform var(--hm-dur-fast) var(--hm-ease);
+}
+
+.hm-ready .btn:hover .icon,
+.hm-ready .hollow-btn:hover .icon,
+.hm-ready .hollow-hero__cta:hover .icon {
+  transform: translate3d(3px, 0, 0);
+}
+
+/* Text link underline sweep. Scoped to links the theme leaves undecorated so
+   nothing gains or loses a rule at rest. */
+.hm-ready .hollow-theme .site-footer a:not(.btn) {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size var(--hm-dur-mid) var(--hm-ease);
+}
+
+.hm-ready .hollow-theme .site-footer a:not(.btn):hover {
+  background-size: 100% 1px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Navigation
+   -------------------------------------------------------------------------- */
+
+/* The theme adds .site-header--stuck once the header pins, so the shrink only
+   ever happens on a fixed element and never reflows page content. */
+.hm-ready .site-header {
+  transition:
+    padding var(--hm-dur-mid) var(--hm-ease),
+    min-height var(--hm-dur-mid) var(--hm-ease),
+    box-shadow var(--hm-dur-mid) var(--hm-ease),
+    background-color var(--hm-dur-mid) var(--hm-ease);
+}
+
+.hm-ready .hollow-theme .site-header--stuck {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  min-height: 50px;
+  box-shadow: 0 6px 22px rgba(17, 17, 17, 0.08);
+}
+
+/* Underline sweep. Uses ::before because the theme's own underline already
+   owns ::after on these links. */
+.hm-ready .hollow-theme .site-nav__link {
+  position: relative;
+}
+
+.hm-ready .hollow-theme .site-nav__link::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform var(--hm-dur-mid) var(--hm-ease);
+  pointer-events: none;
+}
+
+.hm-ready .hollow-theme .site-nav__link:hover::before,
+.hm-ready .hollow-theme .site-nav__item--active > .site-nav__link::before {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.hm-ready .hollow-theme .site-nav__link--icon::before {
+  content: none;
+}
+
+/* Drawers / mobile menu — easing upgrade only, the theme owns the transform */
+.hm-ready .drawer {
+  transition: transform 420ms var(--hm-ease);
+}
+
+/* Header icons */
+.hm-ready .site-nav__link--icon .icon {
+  transition: transform var(--hm-dur-fast) var(--hm-ease);
+}
+
+.hm-ready .site-nav__link--icon:hover .icon {
+  transform: translate3d(0, -2px, 0);
+}
+
+/* --------------------------------------------------------------------------
+   6. Parallax
+   -------------------------------------------------------------------------- */
+
+.hm-ready [data-hm-parallax] {
+  overflow: hidden;
+}
+
+.hm-ready [data-hm-parallax] > img,
+.hm-ready [data-hm-parallax] > picture,
+.hm-ready [data-hm-parallax] > .image-element,
+.hm-ready [data-hm-parallax] img.image-element {
+  will-change: transform;
+  transform: translate3d(0, var(--hm-py, 0px), 0) scale(1.12);
+}
+
+/* --------------------------------------------------------------------------
+   7. Accessibility & kill switches
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.hm-ready [data-hm],
+  html.hm-ready [data-hm]:not(.hm-in),
+  html.hm-ready [data-hm='prod'] > .grid-product__content {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .hm-ready [data-hm-parallax] > img,
+  .hm-ready [data-hm-parallax] img.image-element {
+    transform: none !important;
+  }
+}
+
+body[data-disable-animations='true'] [data-hm],
+body[data-disable-animations='true'] [data-hm]:not(.hm-in) {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+  filter: none !important;
+  transition: none !important;
+}

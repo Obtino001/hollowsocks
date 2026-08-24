@@ -18,6 +18,7 @@
   thumbnail_position: section.settings.thumbnail_position,
   thumbnail_height: section.settings.thumbnail_height,
   thumbnail_arrows: section.settings.thumbnail_arrows,
+  thumbnail_mobile: section.settings.thumbnail_mobile,
   mobile_layout: section.settings.mobile_layout,
   video_looping: section.settings.enable_video_looping,
   video_style: section.settings.product_video_style,
@@ -120,6 +121,13 @@
       "type": "checkbox",
       "id": "thumbnail_arrows",
       "label": "t:sections.main-product.settings.thumbnail_arrows.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "thumbnail_mobile",
+      "label": "Show thumbnails on mobile",
+      "info": "Thumbnails are hidden on mobile by default because the gallery already swipes.",
+      "default": false
     },
     {
       "type": "select",
