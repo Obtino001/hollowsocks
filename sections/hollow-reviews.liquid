@@ -40,28 +40,6 @@
       <a class="hollow-reviews__cta" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
     {%- endif -%}
 
-    {%- if section.settings.stat_1_value != blank or section.settings.stat_2_value != blank or section.settings.stat_3_value != blank -%}
-      <div class="hollow-reviews__stats">
-        {%- if section.settings.stat_1_value != blank -%}
-          <div class="hollow-reviews__stat">
-            <span class="hollow-reviews__stat-value">{{ section.settings.stat_1_value }}</span>
-            <span class="hollow-reviews__stat-label">{{ section.settings.stat_1_label }}</span>
-          </div>
-        {%- endif -%}
-        {%- if section.settings.stat_2_value != blank -%}
-          <div class="hollow-reviews__stat">
-            <span class="hollow-reviews__stat-value">{{ section.settings.stat_2_value }}</span>
-            <span class="hollow-reviews__stat-label">{{ section.settings.stat_2_label }}</span>
-          </div>
-        {%- endif -%}
-        {%- if section.settings.stat_3_value != blank -%}
-          <div class="hollow-reviews__stat">
-            <span class="hollow-reviews__stat-value">{{ section.settings.stat_3_value }}</span>
-            <span class="hollow-reviews__stat-label">{{ section.settings.stat_3_label }}</span>
-          </div>
-        {%- endif -%}
-      </div>
-    {%- endif -%}
   </div>
 </section>
 
@@ -74,12 +52,6 @@
     { "type": "text", "id": "title", "label": "Heading", "default": "OVER 4,000,000+ PAIRS SOLD" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "READ MORE REVIEWS —" },
     { "type": "url", "id": "button_link", "label": "Button link" },
-    { "type": "text", "id": "stat_1_value", "label": "Stat 1 value", "default": "27,000+" },
-    { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "reviews" },
-    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "OVER 4 MILLION" },
-    { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "sold" },
-    { "type": "text", "id": "stat_3_value", "label": "Stat 3 value", "default": "99 day" },
-    { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "money back guarantee" }
   ],
   "blocks": [
     {
