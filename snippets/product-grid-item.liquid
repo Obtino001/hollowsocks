@@ -59,8 +59,9 @@ Arguments
   assign reviews_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count | default: product.metafields.loox.num_reviews | default: product.metafields.judgeme.review_count
   if reviews_count == blank or reviews_count == 0
     if product.id != blank
-      assign review_seed = product.id | modulo: 8
-      case review_seed
+      assign id_string = product.id | append: ''
+      assign last_digit = id_string | slice: -1, 1 | plus: 0
+      case last_digit
         when 0
           assign reviews_count = 8232
         when 1
@@ -75,8 +76,12 @@ Arguments
           assign reviews_count = 612
         when 6
           assign reviews_count = 1208
-        else
+        when 7
           assign reviews_count = 9401
+        when 8
+          assign reviews_count = 2150
+        else
+          assign reviews_count = 534
       endcase
     else
       capture random_reviews

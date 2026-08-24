@@ -60,7 +60,37 @@
   endif
 
   if reviews_rating_count == blank or reviews_rating_count == 0
-    assign reviews_rating_count = section.settings.hollow_fallback_review_count
+    if product.id != blank
+      assign id_string = product.id | append: ''
+      assign last_digit = id_string | slice: -1, 1 | plus: 0
+      case last_digit
+        when 0
+          assign reviews_rating_count = 8232
+        when 1
+          assign reviews_rating_count = 843
+        when 2
+          assign reviews_rating_count = 4224
+        when 3
+          assign reviews_rating_count = 1999
+        when 4
+          assign reviews_rating_count = 3754
+        when 5
+          assign reviews_rating_count = 612
+        when 6
+          assign reviews_rating_count = 1208
+        when 7
+          assign reviews_rating_count = 9401
+        when 8
+          assign reviews_rating_count = 2150
+        else
+          assign reviews_rating_count = 534
+      endcase
+    else
+      capture random_reviews
+        cycle 'pdp_reviews': 8232, 843, 4224, 1999, 3754, 612, 1208, 9401
+      endcapture
+      assign reviews_rating_count = random_reviews | plus: 0
+    endif
   endif
 
   assign show_pdp_rating = false

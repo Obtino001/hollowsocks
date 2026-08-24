@@ -4632,3 +4632,9 @@
 img.r-3l3b7j {
     width: 32px;
 }
+
+@media screen and (min-width: 769px) {
+  .hollow-subnav {
+    display: none !important;
+  }
+}
