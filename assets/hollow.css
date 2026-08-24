@@ -644,7 +644,7 @@
   flex: 0 0 1px;
 }
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   .hollow-announcement {
     padding: 10px 12px !important;
   }
@@ -699,7 +699,7 @@
     width: 100px;
     height: 30px;
   }
-}
+} */
 
 /* Hero */
 .hollow-hero {
