@@ -1329,14 +1329,14 @@
 }
 
 .hollow-theme .hollow-card .grid-product__title {
-  font-family: var(--hollow-display) !important;
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
-  text-transform: uppercase !important;
-  margin: 0 0 10px !important;
-  line-height: 1.15 !important;
-  color: var(--hollow-black) !important;
+  font-family: var(--hollow-display);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  line-height: 1.15;
+  color: var(--hollow-black);
 }
 
 .hollow-theme .hollow-card .grid-product__vendor {
