@@ -760,7 +760,7 @@
 .hollow-theme .hollow-hero h2 {
   margin: 0 0 14px;
   font-family: var(--hollow-display);
-  font-size: clamp(70px, 5.2vw, 82px);
+  font-size: clamp(70px, 6.2vw, 82px);
   font-weight: 800;
   letter-spacing: 1.12px;
   line-height: 0.96;
