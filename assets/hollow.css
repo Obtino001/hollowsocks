@@ -257,13 +257,15 @@
 }
 
 @media only screen and (max-width: 768px) {
+  /* Mobile header: menu | HOLLOW | bag — no CSS grid gutters */
   .hollow-theme .header-layout--left-center {
-    display: grid !important;
-    grid-template-columns: 44px 1fr 44px;
-    align-items: center;
-    column-gap: 8px;
-    min-height: 52px;
+    display: flex !important;
     position: relative;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    column-gap: 0 !important;
+    grid-template-columns: none !important;
   }
 
   .hollow-theme .header-item--navigation {
@@ -272,64 +274,64 @@
 
   .hollow-theme .header-item--logo,
   .hollow-theme .header-layout--left-center .header-item--logo {
-    grid-column: 2;
-    grid-row: 1;
-    position: relative !important;
-    left: auto !important;
-    transform: none !important;
-    justify-self: center;
-    align-self: center;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1;
     flex: none !important;
     width: auto !important;
-    max-width: none !important;
-    z-index: 2;
-    text-align: center;
+    max-width: 140px !important;
+    margin: 0 !important;
+    pointer-events: none;
   }
 
   .hollow-theme .site-header__logo {
-    position: relative !important;
+    position: static !important;
     left: auto !important;
     transform: none !important;
-    margin: 0 auto;
+    margin: 0;
     width: auto !important;
+    pointer-events: auto;
   }
 
   .hollow-theme .site-header__logo a,
   .hollow-theme .hollow-logo-link {
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     width: auto !important;
-    max-width: 120px;
+    max-width: 120px !important;
     padding: 0 !important;
+    margin: 0 auto !important;
     font-size: 0 !important;
+    height: auto !important;
   }
 
   .hollow-theme .hollow-logo,
   .hollow-theme .hollow-logo-link .hollow-logo {
-    width: 92px !important;
-    height: 28px !important;
+    width: 100px !important;
+    height: 30px !important;
     display: block !important;
   }
 
   .hollow-theme .site-header__logo .image-element,
   .hollow-theme .site-header__logo img {
-    max-height: 28px;
+    max-height: 30px !important;
     width: auto !important;
-    max-width: 110px;
+    max-width: 120px !important;
     margin: 0 auto;
   }
 
   .hollow-theme .header-item--icons,
   .hollow-theme .header-layout--left-center .header-item--icons {
-    grid-column: 1 / -1;
-    grid-row: 1;
+    position: relative;
+    z-index: 2;
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
-    flex: none !important;
-    z-index: 3;
-    pointer-events: none;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
   }
 
   .hollow-theme .hollow-header-icons,
@@ -337,14 +339,21 @@
   .hollow-theme .header-item--icons .site-nav__icons {
     width: 100% !important;
     max-width: none !important;
+    display: flex !important;
     justify-content: space-between !important;
+    align-items: center !important;
     gap: 0 !important;
-    pointer-events: none;
   }
 
-  .hollow-theme .header-item--icons .site-nav__link {
-    pointer-events: auto;
+  .hollow-theme .header-item--icons .site-nav__link--icon {
+    width: 44px;
+    height: 44px;
     color: #111 !important;
+  }
+
+  .hollow-theme .header-item--icons .site-nav__link--icon .icon {
+    width: 22px;
+    height: 22px;
   }
 
   .hollow-theme .hollow-mobile-search {
@@ -353,13 +362,13 @@
 
   .hollow-theme .site-header,
   .hollow-theme .header-wrapper {
-    padding: 8px 0 !important;
-    min-height: 52px;
+    padding: 6px 0 !important;
+    min-height: 56px;
   }
 
   .hollow-theme .site-header .page-width {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -499,111 +508,120 @@
 .hollow-announcement {
   background: var(--hollow-red) !important;
   color: var(--hollow-white) !important;
-  padding: 8px 0;
+  padding: 10px 12px !important;
   text-align: center;
-  min-height: 0;
-  height: auto;
-  overflow: visible;
-  border: 0;
-  font-size: inherit;
-  line-height: 1;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: visible !important;
+  border: 0 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
 }
 
 .hollow-announcement__inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: nowrap;
-  padding: 0 24px;
+  padding: 0;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .hollow-announcement__copy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: inherit !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  color: #ffffff !important;
   text-decoration: none !important;
-  line-height: 1;
-  gap: 2px;
+  line-height: 1 !important;
+  gap: 4px;
+  min-width: 0;
 }
 
 .hollow-announcement__copy:hover,
 .hollow-announcement__copy:active,
 .hollow-announcement__copy:visited {
-  color: inherit !important;
+  color: #ffffff !important;
   text-decoration: none !important;
 }
 
 .hollow-announcement__title {
-  display: block;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  overflow: visible !important;
   font-family: var(--hollow-display) !important;
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 0.9;
-  text-transform: uppercase;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 0.95 !important;
+  text-transform: uppercase !important;
   color: #ffffff !important;
 }
 
 .hollow-announcement__offer {
-  display: block;
-  margin-top: 0;
+  display: block !important;
+  margin: 0 !important;
   font-family: var(--hollow-mono) !important;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
   color: #ffffff !important;
 }
 
 .hollow-countdown {
   display: inline-flex;
   align-items: flex-end;
-  gap: 8px;
-  padding: 4px 6px;
-  background: var(--hollow-cream);
-  color: var(--hollow-black);
-  border-radius: 4px;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
+  flex-shrink: 0;
 }
 
 .hollow-countdown__unit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+  gap: 3px;
 }
 
 .hollow-countdown__box {
-  min-width: 28px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 34px;
+  padding: 0 6px;
   font-family: var(--hollow-display);
-  font-size: 32px;
-  font-weight: 900;
-  line-height: 0.85;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
   text-align: center;
-  background: none;
-  color: var(--hollow-black);
-  height: auto;
-  padding: 0;
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 3px;
 }
 
 .hollow-countdown__label {
   font-family: var(--hollow-mono);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--hollow-black);
+  color: #ffffff !important;
 }
 
 .hollow-countdown__sep {
-  padding-bottom: 14px;
+  padding-bottom: 18px;
   font-family: var(--hollow-mono);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--hollow-black);
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff !important;
   line-height: 1;
 }
 
@@ -611,7 +629,7 @@
   display: none;
   width: 1px;
   align-self: stretch;
-  min-height: 36px;
+  min-height: 40px;
   background: rgba(255, 255, 255, 0.55);
   flex: 0 0 1px;
 }
@@ -622,69 +640,45 @@
   }
 
   .hollow-announcement__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) 1px minmax(0, auto);
+    display: flex !important;
     align-items: center;
-    column-gap: 10px;
-    row-gap: 0;
-    padding: 0;
+    justify-content: space-between;
+    gap: 10px;
     width: 100%;
-  }
-
-  .hollow-announcement__copy {
-    min-width: 0;
+    padding: 0;
   }
 
   .hollow-announcement__divider {
     display: block;
-    min-height: 42px;
-    height: 100%;
   }
 
   .hollow-announcement__title {
-    font-size: 22px !important;
-    letter-spacing: 0.02em;
-    line-height: 0.92;
+    font-size: 20px !important;
+    line-height: 0.95 !important;
   }
 
   .hollow-announcement__offer {
-    margin-top: 3px;
     font-size: 10px !important;
-    letter-spacing: 0.05em;
   }
 
   .hollow-countdown {
-    background: transparent;
-    padding: 0;
     gap: 4px;
-    align-items: flex-end;
-    justify-self: end;
   }
 
   .hollow-countdown__box {
-    min-width: 32px;
+    min-width: 30px;
     height: 28px;
-    padding: 0 3px;
-    line-height: 28px;
-    background: #ffffff;
-    color: #111111;
-    border-radius: 3px;
-    font-size: 18px;
-    font-weight: 800;
+    padding: 0 4px;
+    font-size: 16px;
   }
 
   .hollow-countdown__label {
-    margin-top: 3px;
-    color: #ffffff;
     font-size: 8px;
-    letter-spacing: 0.08em;
   }
 
   .hollow-countdown__sep {
-    color: #ffffff;
-    padding-bottom: 14px;
+    padding-bottom: 16px;
     font-size: 14px;
-    font-weight: 600;
   }
 
   .hollow-header-search {
@@ -692,7 +686,7 @@
   }
 
   .hollow-logo {
-    width: 88px;
+    width: 100px;
     height: 30px;
   }
 }

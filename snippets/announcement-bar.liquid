@@ -50,9 +50,13 @@
       {%- endif -%}
         {%- if heading != blank -%}
           <span class="hollow-announcement__title">{{ heading }}</span>
+        {%- else -%}
+          <span class="hollow-announcement__title">LABOR DAY SALE</span>
         {%- endif -%}
         {%- if offer != blank -%}
           <span class="hollow-announcement__offer">{{ offer }}</span>
+        {%- else -%}
+          <span class="hollow-announcement__offer">BUY 2 GET 2 FREE</span>
         {%- endif -%}
       {%- if link != blank -%}
         </a>
