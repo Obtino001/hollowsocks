@@ -1499,7 +1499,7 @@
   color: var(--hollow-black) !important;
   border: 0;
   border-radius: 4px;
-  font-family: var(--hollow-display);
+  font-family: var(--hollow-mono);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1631,6 +1631,7 @@
   column-count: 4;
   column-gap: 16px;
   text-align: left;
+  margin-bottom: 100px;
 }
 
 .hollow-reviews__card,
