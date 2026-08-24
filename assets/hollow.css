@@ -784,12 +784,12 @@
   padding: 16px 18px;
   color: var(--hollow-white);
   font-family: var(--hollow-mono);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
   background: var(--hollow-red);
+  bor
 }
 
 .hollow-hero__cta:hover,
