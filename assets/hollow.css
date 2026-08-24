@@ -1861,9 +1861,6 @@
   padding: var(--adv-pad-top, 64px) 0 var(--adv-pad-bottom, 64px);
 }
 
-.hollow-advantage__inner {
-  max-width: 1180px;
-}
 
 .hollow-advantage__header {
   text-align: center;
