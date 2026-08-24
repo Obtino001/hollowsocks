@@ -39,6 +39,7 @@
         "category_HPxpdd": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Main_Image_79ca6347-bae1-4a34-a3a2-3de3b27588d1.png",
             "title": "TRADES",
             "link": ""
           }
@@ -46,6 +47,7 @@
         "category_PrLtiF": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Main_Image_df265dff-b9ba-48aa-a635-9556427a7b83.png",
             "title": "HUNTING",
             "link": ""
           }
