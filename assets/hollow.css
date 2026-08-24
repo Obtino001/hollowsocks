@@ -781,7 +781,7 @@
   align-items: center;
   justify-content: center;
   min-width: 210px;
-  padding: 10px 18px;
+  padding: 16px 18px;
   color: var(--hollow-white);
   font-family: var(--hollow-mono);
   font-size: 12px;
@@ -790,7 +790,6 @@
   text-transform: uppercase;
   text-decoration: none;
   background: var(--hollow-red);
-  border: 0;
 }
 
 .hollow-hero__cta:hover,
