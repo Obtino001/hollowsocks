@@ -3809,14 +3809,14 @@
 .hollow-sticky-atc__btn {
   flex: 0 0 auto;
   min-width: 200px;
-  min-height: 52px;
+  /* min-height: 52px; */
   padding: 0 28px;
   border: 1px solid var(--hollow-black);
   border-radius: 2px;
   background: #ffffff !important;
   color: var(--hollow-black) !important;
   font-family: var(--hollow-display);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
