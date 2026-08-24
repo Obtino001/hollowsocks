@@ -19,7 +19,7 @@
     {%- if section.settings.title != blank or section.settings.subtitle != blank -%}
       <header class="hollow-advantage__header">
         {%- if section.settings.title != blank -%}
-          <h2 class="hollow-advantage__heading">{{ section.settings.title }}</h2>
+          <div class="hollow-advantage__heading">{{ section.settings.title }}</div>
         {%- endif -%}
         {%- if section.settings.subtitle != blank -%}
           <p class="hollow-advantage__subheading">{{ section.settings.subtitle }}</p>
@@ -47,7 +47,7 @@
           </div>
           <div class="hollow-advantage__copy">
             {%- if block.settings.title != blank -%}
-              <h3 class="hollow-advantage__title">{{ block.settings.title }}</h3>
+              <div class="hollow-advantage__title">{{ block.settings.title }}</div>
             {%- endif -%}
             {%- if block.settings.text != blank -%}
               <p class="hollow-advantage__text">{{ block.settings.text }}</p>
