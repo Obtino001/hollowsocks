@@ -321,7 +321,7 @@
 
   .hollow-theme .site-header__logo .image-element,
   .hollow-theme .site-header__logo img {
-    max-width: 90px !important;
+    max-width: 50px !important;
   }
 
   .hollow-theme .header-item--icons,
