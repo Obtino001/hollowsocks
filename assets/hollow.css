@@ -542,12 +542,12 @@
 
 .hollow-announcement__copy {
   display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
   color: #ffffff !important;
   text-decoration: none !important;
   line-height: 1 !important;
-  gap: 4px;
+  gap: 16px;
   min-width: 0;
 }
 
