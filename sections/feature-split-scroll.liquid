@@ -119,13 +119,15 @@
 
   .scroll-card-image-{{ section.id }} {
     width: 100%;
+    aspect-ratio: {{ section.settings.image_aspect_w | default: 4 }} / {{ section.settings.image_aspect_h | default: 3 }};
     border-radius: 12px;
     overflow: hidden;
+    background: #f0ece6;
   }
 
   .scroll-card-image-{{ section.id }} img {
     width: 100%;
-    height: auto;
+    height: 325px;
     display: block;
     object-fit: cover;
   }
@@ -295,6 +297,25 @@
       "id": "right_text_color",
       "label": "Right Text Color",
       "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "image_aspect_w",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Image aspect width",
+      "info": "Keeps all right-column images the same size. Default matches Hollow (432×325).",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "image_aspect_h",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Image aspect height",
+      "default": 3
     }
   ],
   "blocks": [

@@ -1482,6 +1482,11 @@
   position: relative;
 }
 
+.hollow-theme .hollow-card .grid__item-image-wrapper {
+  position: relative;
+  z-index: 5;
+}
+
 /* Hover: reviews pill (top) + SHOP NOW (bottom) — match Hollow */
 .hollow-card__hover {
   position: absolute;
@@ -1541,6 +1546,7 @@
   pointer-events: auto;
   cursor: pointer;
   position: absolute;
+  z-index: 10;
   left: 50%;
   bottom: 16px;
   transform: translateX(-50%);

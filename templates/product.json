@@ -361,7 +361,9 @@
         "main_heading": "WHY HOLLOW WINS? FEATURE BY FEATURE.",
         "sticky_offset": 16,
         "right_bg_color": "#ffffff",
-        "right_text_color": "#111111"
+        "right_text_color": "#111111",
+        "image_aspect_w": 4,
+        "image_aspect_h": 3
       }
     },
     "product-recommendations": {
