@@ -44,10 +44,10 @@
 
     <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
       <span class="cart-link">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag hollow-icon-bag" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 15V42C9 43.6569 10.3431 45 12 45H36C37.6569 45 39 43.6569 39 42V15H9Z" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"/>
-          <path d="M15 18V12C15 7.02944 19.0294 3 24 3C28.9706 3 33 7.02944 33 12V18" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"/>
-        </svg>
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+        <path d="M9 15V42C9 43.6569 10.3431 45 12 45H36C37.6569 45 39 43.6569 39 42V15H9Z" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"></path>
+        <path d="M15 18V12C15 7.02944 19.0294 3 24 3C28.9706 3 33 7.02944 33 12V18" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"></path>
+      </svg>
         <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
         {%- if cart.item_count > 0 -%}
           <span class="hollow-cart-count cart-link__bubble-num" aria-hidden="true">{{ cart.item_count }}</span>
