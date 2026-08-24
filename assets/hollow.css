@@ -1937,7 +1937,7 @@
 .hollow-advantage__title {
   margin: 0;
   font-family: var(--hollow-display);
-  font-size: clamp(16px, 3.5vw, 40px);
+  font-size: clamp(16px, 2.5vw, 30px);
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
