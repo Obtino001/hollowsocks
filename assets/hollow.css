@@ -210,15 +210,6 @@
   max-width: none !important;
 }
 
-.hollow-theme .site-header__logo,
-.hollow-theme .site-header__logo a,
-.hollow-theme .hollow-logo-link {
-  width: auto !important;
-  padding: 0 !important;
-  height: auto !important;
-  margin: 0;
-  font-size: 0;
-}
 
 .hollow-logo {
   display: block;
