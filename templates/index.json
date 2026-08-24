@@ -152,11 +152,11 @@
       "type": "featured-collection",
       "settings": {
         "title": "BEST SELLERS",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "home_featured_products": "a-line",
         "per_row": 4,
         "rows": 1,
-        "mobile_scrollable": true,
+        "mobile_scrollable": false,
         "view_all": true,
         "divider": false
       }
