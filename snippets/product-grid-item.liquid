@@ -168,12 +168,27 @@ Arguments
             assign hover_reviews = 999
           endif
         -%}
-        <div class="hollow-card__hover" aria-hidden="true">
-          <div class="hollow-card__reviews">
-            <span class="hollow-card__stars" aria-hidden="true">★★★★★</span>
+        <div class="hollow-card__hover">
+          <div class="hollow-card__reviews" aria-hidden="true">
+            <span class="hollow-card__stars">★★★★★</span>
             <span class="hollow-card__reviews-count">({{ hover_reviews }} REVIEWS)</span>
           </div>
-          <a href="{{ product.url | within: collection }}" class="hollow-card__shop">SHOP NOW</a>
+          {%- liquid
+            assign shop_variant = product.selected_or_first_available_variant
+          -%}
+          <button
+            type="button"
+            class="hollow-card__shop"
+            data-hollow-quick-add
+            data-variant-id="{{ shop_variant.id }}"
+            {% unless shop_variant.available %}disabled{% endunless %}
+          >
+            {%- if shop_variant.available -%}
+              SHOP NOW
+            {%- else -%}
+              SOLD OUT
+            {%- endif -%}
+          </button>
         </div>
 
         {%- comment -%} Color images for hover/swatch JS only — UI swatches live under title {%- endcomment -%}

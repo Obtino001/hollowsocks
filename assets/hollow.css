@@ -936,14 +936,24 @@
   }
 }
 
-.hollow-subnav-section {
-  display: none;
+/* Mobile-only category subnav — always hidden on desktop */
+.shopify-section.hollow-subnav-section,
+.hollow-subnav-section,
+.hollow-subnav {
+  display: none !important;
 }
 
-.hollow-subnav {
-  display: block;
-  background: #ffffff;
-  padding: var(--subnav-pad-y, 12px) 0;
+@media only screen and (max-width: 768px) {
+  .shopify-section.hollow-subnav-section,
+  .hollow-subnav-section {
+    display: block !important;
+  }
+
+  .hollow-subnav {
+    display: block !important;
+    background: #ffffff;
+    padding: var(--subnav-pad-y, 12px) 0;
+  }
 }
 
 .hollow-subnav__track {
@@ -1046,10 +1056,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .hollow-subnav-section {
-    display: block;
-  }
-
   .hollow-hero {
     min-height: 520px;
     height: auto;
@@ -1533,6 +1539,7 @@
 
 .hollow-card__shop {
   pointer-events: auto;
+  cursor: pointer;
   position: absolute;
   left: 50%;
   bottom: 16px;
@@ -1554,12 +1561,18 @@
   text-transform: uppercase;
   text-decoration: none !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
 }
 
-.hollow-card__shop:hover {
+.hollow-card__shop:hover:not(:disabled) {
   background: #f8f6f2;
   color: var(--hollow-black) !important;
+}
+
+.hollow-card__shop:disabled,
+.hollow-card__shop.is-loading {
+  opacity: 0.65;
+  cursor: wait;
 }
 
 @media (hover: none) {
