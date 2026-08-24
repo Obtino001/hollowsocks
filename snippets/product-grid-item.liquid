@@ -336,14 +336,14 @@ Arguments
 
           <div class="grid-product__price">
             {%- if product.price_varies -%}
-              {%- assign price = product.price_min | money -%}
+              {%- assign price = product.price_min | money_without_trailing_zeros -%}
               <span class="grid-product__price--current">{{ 'products.general.from_text_html' | t: price: price }}</span>
             {%- else -%}
-              <span class="grid-product__price--current">{{ product.price | money }}</span>
+              <span class="grid-product__price--current">{{ product.price | money_without_trailing_zeros }}</span>
             {%- endif -%}
             {%- if on_sale -%}
               <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-              <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
+              <span class="grid-product__price--original">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
             {%- endif -%}
           </div>
 

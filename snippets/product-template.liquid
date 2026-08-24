@@ -349,7 +349,7 @@
                         <span data-product-price-wrap class="{% if hide_sale_price %} hide{% endif %}">
                           <span data-compare-price class="product__price product__price--compare">
                             {%- if current_variant.compare_at_price > current_variant.price -%}
-                              {{ current_variant.compare_at_price | money }}
+                              {{ current_variant.compare_at_price | money_without_trailing_zeros }}
                             {%- endif -%}
                           </span>
                         </span>
@@ -368,21 +368,21 @@
                       <span data-product-price
                         class="product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}">
                         {%- unless product.empty? -%}
-                          {{ current_variant.price | money }}
+                          {{ current_variant.price | money_without_trailing_zeros }}
                         {%- else -%}
-                          {{ 1999 | money }}
+                          {{ 1999 | money_without_trailing_zeros }}
                         {%- endunless -%}
                       </span>
 
                       {%- if current_variant.compare_at_price > current_variant.price -%}
                         {%- assign pair_count = 4 -%}
                         {%- assign per_pair = current_variant.price | divided_by: pair_count -%}
-                        <span class="hollow-pdp-perpair">{{ per_pair | money }} PER PAIR</span>
+                        <span class="hollow-pdp-perpair">{{ per_pair | money_without_trailing_zeros }} PER PAIR</span>
                       {%- endif -%}
 
                       {%- if settings.product_save_amount -%}
                         {%- if settings.product_save_type == 'dollar' -%}
-                          {%- capture saved_amount -%}{{ current_variant.compare_at_price | minus: current_variant.price | money }}{%- endcapture -%}
+                          {%- capture saved_amount -%}{{ current_variant.compare_at_price | minus: current_variant.price | money_without_trailing_zeros }}{%- endcapture -%}
                         {%- else -%}
                           {%- capture saved_amount -%}{{ current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round }}%{%- endcapture -%}
                         {%- endif -%}
@@ -407,7 +407,7 @@
                           </span>
                         {%- endcapture -%}
 
-                        <span data-unit-price>{{ current_variant.unit_price | money }}</span>/{{ unit_price_base_unit }}
+                        <span data-unit-price>{{ current_variant.unit_price | money_without_trailing_zeros }}</span>/{{ unit_price_base_unit }}
                       </div>
 
                       {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
