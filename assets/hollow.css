@@ -2005,7 +2005,7 @@
 .hollow-advantage__title {
   margin: 0;
   font-family: var(--hollow-display);
-  font-size: clamp(16px, 2.5vw, 30px);
+  font-size: clamp(26px, 2.5vw, 30px);
 
   letter-spacing: 0.04em;
   text-transform: uppercase;
