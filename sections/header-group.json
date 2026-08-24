@@ -28,7 +28,7 @@
       ],
       "settings": {
         "announcement_compact": true,
-        "sticky_on_scroll": true,
+        "sticky_on_scroll": false,
         "sticky_on_mobile": true,
         "heading": "LABOR DAY SALE",
         "offer": "BUY 2 GET 2 FREE",
