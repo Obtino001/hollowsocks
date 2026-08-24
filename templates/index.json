@@ -9,6 +9,71 @@
  */
 {
   "sections": {
+    "hollow_collection_nav_JAUyKh": {
+      "type": "hollow-collection-nav",
+      "blocks": {
+        "category_YNdjYP": {
+          "type": "category",
+          "settings": {
+            "title": "BEST SELLERS",
+            "link": ""
+          }
+        },
+        "category_w6zAXk": {
+          "type": "category",
+          "settings": {
+            "title": "COMPRESSION",
+            "link": ""
+          }
+        },
+        "category_dWi9PF": {
+          "type": "category",
+          "settings": {
+            "title": "BUNDLES",
+            "link": ""
+          }
+        },
+        "category_HPxpdd": {
+          "type": "category",
+          "settings": {
+            "title": "TRADES",
+            "link": ""
+          }
+        },
+        "category_PrLtiF": {
+          "type": "category",
+          "settings": {
+            "title": "HUNTING",
+            "link": ""
+          }
+        },
+        "category_4fmizW": {
+          "type": "category",
+          "settings": {
+            "title": "EVERYDAY",
+            "link": ""
+          }
+        },
+        "category_a6wGW4": {
+          "type": "category",
+          "settings": {
+            "title": "RUNNING",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_YNdjYP",
+        "category_w6zAXk",
+        "category_dWi9PF",
+        "category_HPxpdd",
+        "category_PrLtiF",
+        "category_4fmizW",
+        "category_a6wGW4"
+      ],
+      "name": "Hollow collection nav",
+      "settings": {}
+    },
     "hollow-hero": {
       "type": "hollow-hero",
       "settings": {
@@ -332,6 +397,7 @@
     }
   },
   "order": [
+    "hollow_collection_nav_JAUyKh",
     "hollow-hero",
     "hollow-trust",
     "hollow-intro",
