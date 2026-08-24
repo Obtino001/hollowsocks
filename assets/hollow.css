@@ -2960,8 +2960,27 @@
 }
 
 /* PDP */
+.hollow-theme .page-content--product .grid {
+  align-items: flex-start;
+}
+
 .hollow-theme .page-content--product .grid__item {
   min-width: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .hollow-theme .product-single__sticky,
+  .hollow-theme .hollow-pdp-gallery-wrap.product-single__sticky {
+    position: sticky;
+    top: calc(
+      var(--sticky-announcement-bar-height, 0px)
+      + var(--header-height, 72px)
+      + 16px
+    );
+    align-self: flex-start;
+    height: fit-content;
+    z-index: 2;
+  }
 }
 
 .hollow-theme .product-single__meta {
@@ -3238,21 +3257,47 @@
 .hollow-theme .hollow-pdp-rating {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   margin: 0 0 8px;
 }
 
 .hollow-theme .hollow-pdp-rating__stars {
-  color: #e8a317;
-  letter-spacing: 1px;
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
   line-height: 1;
 }
 
+.hollow-theme .hollow-pdp-rating__star {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.hollow-theme .hollow-pdp-rating__star-outline {
+  color: #F0BF60;
+  opacity: 0.28;
+}
+
+.hollow-theme .hollow-pdp-rating__star-filled {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: var(--hollow-star-fill, 100%);
+  color: #F0BF60;
+  white-space: nowrap;
+}
+
 .hollow-theme .hollow-pdp-rating__count {
-  font-family: var(--hollow-mono);
-  font-size: 12px;
+  font-family: var(--hollow-body);
+  font-size: 14px;
+  font-weight: 400;
   color: var(--hollow-black);
+  line-height: 1;
 }
 
 /* Offers — 1:1 with Hollow quantity cards */
@@ -3675,11 +3720,17 @@
   transition: transform 0.28s ease, visibility 0.28s ease;
   visibility: hidden;
   padding: 10px 0 calc(10px + env(safe-area-inset-bottom, 0px));
+  display: block;
+}
+
+.hollow-sticky-atc[hidden]:not(.is-visible) {
+  display: none;
 }
 
 .hollow-sticky-atc.is-visible {
   transform: translateY(0);
   visibility: visible;
+  display: block;
 }
 
 .hollow-sticky-atc__inner {

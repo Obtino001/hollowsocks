@@ -14,11 +14,12 @@
     padding: 80px 5%;
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* required for sticky child */
+    align-self: stretch;
   }
 
   .feature-left-sticky-{{ section.id }} {
     position: sticky;
-    /* Clear sticky announcement + site header so the title never hides underneath */
     top: calc(
       var(--sticky-announcement-bar-height, 0px)
       + var(--header-height, 72px)
@@ -26,7 +27,8 @@
     );
     max-width: 550px;
     width: 100%;
-    align-self: start;
+    height: fit-content;
+    align-self: flex-start;
     z-index: 2;
   }
 

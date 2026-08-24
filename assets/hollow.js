@@ -68,15 +68,34 @@
   function initStickyAtc() {
     var bar = document.querySelector('[data-hollow-sticky-atc]');
     if (!bar) return;
-    var mainBtn = document.querySelector('.product-single__form [data-add-to-cart]');
+    var mainBtn =
+      document.querySelector('.product-single__form [data-add-to-cart]') ||
+      document.querySelector('[data-add-to-cart]');
     if (!mainBtn) return;
     var stickyBtn = bar.querySelector('[data-hollow-sticky-atc-btn]');
 
     function setVisible(on) {
-      bar.classList.toggle('is-visible', on);
-      bar.hidden = !on;
-      bar.setAttribute('aria-hidden', on ? 'false' : 'true');
-      document.body.classList.toggle('hollow-sticky-atc-open', on);
+      if (on) {
+        bar.hidden = false;
+        bar.removeAttribute('hidden');
+        bar.classList.add('is-visible');
+        bar.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('hollow-sticky-atc-open');
+      } else {
+        bar.classList.remove('is-visible');
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('hollow-sticky-atc-open');
+        window.setTimeout(function () {
+          if (!bar.classList.contains('is-visible')) {
+            bar.hidden = true;
+          }
+        }, 280);
+      }
+    }
+
+    function check() {
+      var rect = mainBtn.getBoundingClientRect();
+      setVisible(rect.bottom < 0);
     }
 
     if ('IntersectionObserver' in window) {
@@ -84,20 +103,16 @@
         function (entries) {
           var entry = entries[0];
           if (!entry) return;
-          var past = entry.boundingClientRect.bottom < 0 || (!entry.isIntersecting && entry.boundingClientRect.top < 0);
-          setVisible(past);
+          setVisible(entry.boundingClientRect.bottom < 0 || (!entry.isIntersecting && entry.boundingClientRect.top < 0));
         },
-        { threshold: 0, rootMargin: '0px' }
+        { threshold: [0, 1], rootMargin: '0px' }
       );
       observer.observe(mainBtn);
-    } else {
-      function onScroll() {
-        var rect = mainBtn.getBoundingClientRect();
-        setVisible(rect.bottom < 0);
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
     }
+
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    check();
 
     if (stickyBtn) {
       stickyBtn.addEventListener('click', function () {
