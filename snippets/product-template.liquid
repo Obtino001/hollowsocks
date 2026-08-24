@@ -216,7 +216,7 @@
                         endif
                       -%}
                       <span class="hollow-pdp-rating__star">
-                        <span class="hollow-pdp-rating__star-outline">★</span>
+                        {% comment %} <span class="hollow-pdp-rating__star-outline">★</span> {% endcomment %}
                         <span class="hollow-pdp-rating__star-filled" style="--hollow-star-fill: {{ fill_pct }}%;">★</span>
                       </span>
                     {%- endfor -%}
