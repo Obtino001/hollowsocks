@@ -1555,7 +1555,7 @@
 .hollow-banners__media {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 5;
   overflow: hidden;
   border-radius: 18px;
   background: #6a6662;
