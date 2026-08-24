@@ -189,63 +189,50 @@
       ],
       "settings": {}
     },
-    "hollow-benefits": {
-      "type": "hollow-benefits",
+    "trust_bar_NPJkyk": {
+      "type": "Trust-Bar",
       "blocks": {
-        "b1": {
-          "type": "benefit",
+        "trust_item_8VDLik": {
+          "type": "trust_item",
           "settings": {
-            "icon": "temp",
-            "label": "Temperature Regulating"
+            "text": "27,000+ REVIEWS",
+            "show_stars": true
           }
         },
-        "b2": {
-          "type": "benefit",
+        "trust_item_ekYR8A": {
+          "type": "trust_item",
           "settings": {
-            "icon": "drop",
-            "label": "moisture wicking"
+            "text": "OVER 4 MILLION SOLD",
+            "show_stars": false
           }
         },
-        "b3": {
-          "type": "benefit",
+        "trust_item_6qMmq9": {
+          "type": "trust_item",
           "settings": {
-            "icon": "air",
-            "label": "Breathable & Light"
-          }
-        },
-        "b4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "shield",
-            "label": "odor resistant"
-          }
-        },
-        "b5": {
-          "type": "benefit",
-          "settings": {
-            "icon": "fiber",
-            "label": "Soft Alpaca Fiber"
-          }
-        },
-        "b6": {
-          "type": "benefit",
-          "settings": {
-            "icon": "usa",
-            "label": "made in the usa"
+            "text": "99 DAY MONEY BACK GUARANTEE",
+            "show_stars": false
           }
         }
       },
       "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4",
-        "b5",
-        "b6"
+        "trust_item_8VDLik",
+        "trust_item_ekYR8A",
+        "trust_item_6qMmq9"
       ],
-      "disabled": true,
+      "name": "Trust Marquee Bar",
       "settings": {
-        "title": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER."
+        "bg_color": "#e5dcca",
+        "text_color": "#282828",
+        "speed": 20,
+        "marquee_desk": false,
+        "show_dots_desk": true,
+        "padding_top_desk": 24,
+        "padding_bottom_desk": 24,
+        "marquee_mob": true,
+        "layout_mob": "wrap",
+        "show_dots_mob": true,
+        "padding_top_mob": 16,
+        "padding_bottom_mob": 16
       }
     },
     "hollow-reviews": {
@@ -326,13 +313,7 @@
         "show_stars": true,
         "title": "OVER 4,000,000+ PAIRS SOLD",
         "button_label": "READ MORE REVIEWS —",
-        "button_link": "",
-        "stat_1_value": "27,000+",
-        "stat_1_label": "reviews",
-        "stat_2_value": "OVER 4 MILLION",
-        "stat_2_label": "sold",
-        "stat_3_value": "99 day",
-        "stat_3_label": "money back guarantee"
+        "button_link": ""
       }
     },
     "hollow-story": {
@@ -354,7 +335,7 @@
     "hollow-intro",
     "featured-collection",
     "hollow-banners",
-    "hollow-benefits",
+    "trust_bar_NPJkyk",
     "hollow-reviews",
     "hollow-story"
   ]
