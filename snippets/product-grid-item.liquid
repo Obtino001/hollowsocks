@@ -56,7 +56,35 @@ Arguments
     assign has_custom_label = false
   endif
 
-  assign reviews_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count
+  assign reviews_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count | default: product.metafields.loox.num_reviews | default: product.metafields.judgeme.review_count
+  if reviews_count == blank or reviews_count == 0
+    if product.id != blank
+      assign review_seed = product.id | modulo: 8
+      case review_seed
+        when 0
+          assign reviews_count = 8232
+        when 1
+          assign reviews_count = 843
+        when 2
+          assign reviews_count = 4224
+        when 3
+          assign reviews_count = 1999
+        when 4
+          assign reviews_count = 3754
+        when 5
+          assign reviews_count = 612
+        when 6
+          assign reviews_count = 1208
+        else
+          assign reviews_count = 9401
+      endcase
+    else
+      capture random_reviews
+        cycle 'reviews': 8232, 843, 4224, 1999, 3754, 612, 1208, 9401
+      endcapture
+      assign reviews_count = random_reviews | plus: 0
+    endif
+  endif
 -%}
 
 <div class="grid__item grid-product hollow-card {{ gridView }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}" data-product-handle="{{ product.handle }}" data-product-id="{{ product.id }}">
@@ -161,12 +189,6 @@ Arguments
 
         {%- liquid
           assign hover_reviews = reviews_count
-          if hover_reviews == blank or hover_reviews == 0
-            assign hover_reviews = product.metafields.reviews.rating_count.value | default: product.metafields.loox.num_reviews | default: product.metafields.judgeme.review_count
-          endif
-          if hover_reviews == blank or hover_reviews == 0
-            assign hover_reviews = 999
-          endif
         -%}
         <div class="hollow-card__hover">
           <div class="hollow-card__reviews" aria-hidden="true">
@@ -244,30 +266,6 @@ Arguments
             endif
 
             assign card_reviews = reviews_count
-            if card_reviews == blank or card_reviews == 0
-              assign card_reviews = product.metafields.reviews.rating_count.value | default: product.metafields.loox.num_reviews | default: product.metafields.judgeme.review_count
-            endif
-            if card_reviews == blank or card_reviews == 0
-              assign review_seed = product.id | modulo: 8
-              case review_seed
-                when 0
-                  assign card_reviews = 8232
-                when 1
-                  assign card_reviews = 843
-                when 2
-                  assign card_reviews = 4224
-                when 3
-                  assign card_reviews = 1999
-                when 4
-                  assign card_reviews = 3754
-                when 5
-                  assign card_reviews = 612
-                when 6
-                  assign card_reviews = 1208
-                else
-                  assign card_reviews = 9401
-              endcase
-            endif
           -%}
 
           {%- comment -%} Swatches → rating → title (Hollow card order) {%- endcomment -%}

@@ -6,6 +6,16 @@
 -%}
 
 {%- if show_subnav and request.page_type == 'index' and section.blocks.size > 0 -%}
+  <style>
+    @media screen and (min-width: 769px) {
+      #HollowSubnav-{{ section.id }} {
+        display: none !important;
+      }
+      .hollow-subnav-section {
+        display: none !important;
+      }
+    }
+  </style>
   <nav
     class="hollow-subnav"
     id="HollowSubnav-{{ section.id }}"
