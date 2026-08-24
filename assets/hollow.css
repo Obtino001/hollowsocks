@@ -789,7 +789,7 @@
   text-transform: uppercase;
   text-decoration: none;
   background: var(--hollow-red);
-  bor
+  border-radius: 6px;
 }
 
 .hollow-hero__cta:hover,
