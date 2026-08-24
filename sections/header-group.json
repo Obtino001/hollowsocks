@@ -41,6 +41,7 @@
       "type": "header",
       "settings": {
         "logo": "shopify://shop_images/57e1ab65-0066-4773-9082-34f2630cbcd5.svg",
+        "logo_inverted": "shopify://shop_images/57e1ab65-0066-4773-9082-34f2630cbcd5.svg",
         "desktop_logo_width": 180,
         "mobile_logo_width": 130,
         "main_menu_link_list": "main-menu",
