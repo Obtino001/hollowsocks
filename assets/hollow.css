@@ -257,6 +257,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   /* Mobile header: menu | HOLLOW | bag — no CSS grid gutters */
   .hollow-theme .header-layout--left-center {
     display: flex !important;
@@ -542,12 +543,12 @@
 
 .hollow-announcement__copy {
   display: flex !important;
-  flex-direction: row !important;
-  align-items: baseline !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
   color: #ffffff !important;
   text-decoration: none !important;
   line-height: 1 !important;
-  gap: 16px;
+  gap: 4px;
   min-width: 0;
 }
 
@@ -891,7 +892,7 @@
   font-family: var(--hollow-display);
   font-size: clamp(22px, 3.4vw, 44px);
   font-weight: 800;
-  
+
   line-height: 1;
   text-transform: uppercase;
 }
@@ -944,6 +945,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .shopify-section.hollow-subnav-section,
   .hollow-subnav-section {
     display: block !important;
@@ -1132,7 +1134,7 @@
   font-size: clamp(36px, 4.6vw, 56px);
   font-weight: 700;
   line-height: 0.95;
-  
+
   text-transform: uppercase;
   max-width: 12ch;
   color: var(--hollow-black);
@@ -1318,17 +1320,18 @@
   justify-content: center;
   padding: 8px 0 48px;
 }
+
 .hollow-shop-all .hollow-btn--dark {
-    border-radius: 6px;
-    min-width: 200px;
-    height: 48px;
-    padding: 0 40px;
-    background: #282828;
-    color: #fff;
-    font-family: var(--hollow-mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .14em;
+  border-radius: 6px;
+  min-width: 200px;
+  height: 48px;
+  padding: 0 40px;
+  background: #282828;
+  color: #fff;
+  font-family: var(--hollow-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
 }
 
 .hollow-theme .grid-product.hollow-card {
@@ -1469,8 +1472,8 @@
   display: none !important;
 }
 
-.hollow-theme .hollow-card + .grid-product__colors,
-.hollow-theme .hollow-card > .grid-product__colors {
+.hollow-theme .hollow-card+.grid-product__colors,
+.hollow-theme .hollow-card>.grid-product__colors {
   display: none !important;
 }
 
@@ -1591,7 +1594,7 @@
   }
 
   .hollow-card__shop {
-  display: none;
+    display: none;
   }
 
   .hollow-theme .hollow-card .grid-product__tag {
@@ -1863,7 +1866,7 @@
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 800;
   text-transform: uppercase;
-  
+
 }
 
 .hollow-highlights__subheading {
@@ -1884,7 +1887,7 @@
   direction: rtl;
 }
 
-.hollow-highlights__row.is-reverse > * {
+.hollow-highlights__row.is-reverse>* {
   direction: ltr;
 }
 
@@ -1914,6 +1917,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .hollow-highlights__row,
   .hollow-highlights__row.is-reverse {
     grid-template-columns: 1fr;
@@ -1940,7 +1944,7 @@
   font-family: var(--hollow-display);
   font-size: clamp(28px, 3.6vw, 42px);
   font-weight: 800;
-  
+
   text-transform: uppercase;
   line-height: 1;
   color: inherit;
@@ -2316,8 +2320,13 @@
 }
 
 @keyframes hollow-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -2456,12 +2465,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.45) 42%,
-    rgba(0, 0, 0, 0.08) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.45) 42%,
+      rgba(0, 0, 0, 0.08) 100%);
   z-index: 1;
 }
 
@@ -2477,7 +2484,7 @@
   font-size: clamp(28px, 2.6vw, 36px);
   font-weight: 800;
   line-height: 0.95;
-  
+
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -2750,6 +2757,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .hollow-about__timeline,
   .hollow-about__means-grid {
     grid-template-columns: 1fr;
@@ -2988,14 +2996,11 @@
 }
 
 @media only screen and (min-width: 769px) {
+
   .hollow-theme .product-single__sticky,
   .hollow-theme .hollow-pdp-gallery-wrap.product-single__sticky {
     position: sticky;
-    top: calc(
-      var(--sticky-announcement-bar-height, 0px)
-      + var(--header-height, 72px)
-      + 16px
-    );
+    top: calc(var(--sticky-announcement-bar-height, 0px) + var(--header-height, 72px) + 16px);
     align-self: flex-start;
     height: fit-content;
     z-index: 2;
@@ -3143,6 +3148,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .hollow-theme .hollow-pdp-gallery-wrap .product__thumbs--below .product__thumb-item,
   .hollow-theme .hollow-pdp-gallery-wrap .product__thumb {
     flex-basis: 72px;
@@ -3200,7 +3206,8 @@
 
 /* Gallery feature icons (right of main image) */
 .hollow-theme .hollow-pdp-features {
-  display: none !important; /* temporarily hidden — gallery side icons */
+  display: none !important;
+  /* temporarily hidden — gallery side icons */
 }
 
 .hollow-theme .hollow-pdp-features__item {
@@ -3612,8 +3619,8 @@
   display: none !important;
 }
 
-.hollow-theme .variant-input input:checked + label,
-.hollow-theme .variant-input-wrap input:checked + label {
+.hollow-theme .variant-input input:checked+label,
+.hollow-theme .variant-input-wrap input:checked+label {
   background: var(--hollow-tan) !important;
   border-color: var(--hollow-black) !important;
   border-width: 2px !important;
@@ -3950,7 +3957,7 @@
   margin: 0 !important;
 }
 
-.hollow-theme .hollow-pdp-tab + .hollow-pdp-tab {
+.hollow-theme .hollow-pdp-tab+.hollow-pdp-tab {
   margin: 0 !important;
 }
 
@@ -3980,7 +3987,7 @@
   border-bottom: 1px solid var(--hollow-black) !important;
 }
 
-.hollow-theme .hollow-pdp-tab .collapsible-trigger-btn--borders + .collapsible-content .collapsible-content__inner {
+.hollow-theme .hollow-pdp-tab .collapsible-trigger-btn--borders+.collapsible-content .collapsible-content__inner {
   padding: 0 0 18px !important;
   border: 0 !important;
 }
@@ -4598,6 +4605,7 @@
   text-align: center;
   padding: 48px 20px;
 }
+
 .hollow-card__rating {
   display: flex;
   align-items: center;
@@ -4630,7 +4638,7 @@
 
 
 img.r-3l3b7j {
-    width: 32px;
+  width: 32px;
 }
 
 @media screen and (min-width: 769px) {
