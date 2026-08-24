@@ -4582,11 +4582,7 @@
 
 .hollow-theme .hollow-cart-trust__text {
   font-family: var(--hollow-mono);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 1.3;
+  font-size: 14px;
   color: var(--hollow-black);
 }
 
