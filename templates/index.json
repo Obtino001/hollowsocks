@@ -189,52 +189,6 @@
       ],
       "settings": {}
     },
-    "trust_bar_NPJkyk": {
-      "type": "Trust-Bar",
-      "blocks": {
-        "trust_item_8VDLik": {
-          "type": "trust_item",
-          "settings": {
-            "text": "27,000+ REVIEWS",
-            "show_stars": true
-          }
-        },
-        "trust_item_ekYR8A": {
-          "type": "trust_item",
-          "settings": {
-            "text": "OVER 4 MILLION SOLD",
-            "show_stars": false
-          }
-        },
-        "trust_item_6qMmq9": {
-          "type": "trust_item",
-          "settings": {
-            "text": "99 DAY MONEY BACK GUARANTEE",
-            "show_stars": false
-          }
-        }
-      },
-      "block_order": [
-        "trust_item_8VDLik",
-        "trust_item_ekYR8A",
-        "trust_item_6qMmq9"
-      ],
-      "name": "Trust Marquee Bar",
-      "settings": {
-        "bg_color": "#e5dcca",
-        "text_color": "#282828",
-        "speed": 20,
-        "marquee_desk": false,
-        "show_dots_desk": true,
-        "padding_top_desk": 24,
-        "padding_bottom_desk": 24,
-        "marquee_mob": true,
-        "layout_mob": "wrap",
-        "show_dots_mob": true,
-        "padding_top_mob": 16,
-        "padding_bottom_mob": 16
-      }
-    },
     "hollow-reviews": {
       "type": "hollow-reviews",
       "blocks": {
@@ -316,6 +270,52 @@
         "button_link": ""
       }
     },
+    "trust_bar_NPJkyk": {
+      "type": "Trust-Bar",
+      "blocks": {
+        "trust_item_8VDLik": {
+          "type": "trust_item",
+          "settings": {
+            "text": "27,000+ REVIEWS",
+            "show_stars": true
+          }
+        },
+        "trust_item_ekYR8A": {
+          "type": "trust_item",
+          "settings": {
+            "text": "OVER 4 MILLION SOLD",
+            "show_stars": false
+          }
+        },
+        "trust_item_6qMmq9": {
+          "type": "trust_item",
+          "settings": {
+            "text": "99 DAY MONEY BACK GUARANTEE",
+            "show_stars": false
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_8VDLik",
+        "trust_item_ekYR8A",
+        "trust_item_6qMmq9"
+      ],
+      "name": "Trust Marquee Bar",
+      "settings": {
+        "bg_color": "#e5dcca",
+        "text_color": "#282828",
+        "speed": 20,
+        "marquee_desk": false,
+        "show_dots_desk": true,
+        "padding_top_desk": 24,
+        "padding_bottom_desk": 24,
+        "marquee_mob": true,
+        "layout_mob": "wrap",
+        "show_dots_mob": true,
+        "padding_top_mob": 16,
+        "padding_bottom_mob": 16
+      }
+    },
     "hollow-story": {
       "type": "hollow-story",
       "settings": {
@@ -337,8 +337,8 @@
     "hollow-intro",
     "featured-collection",
     "hollow-banners",
-    "trust_bar_NPJkyk",
     "hollow-reviews",
+    "trust_bar_NPJkyk",
     "hollow-story"
   ]
 }
