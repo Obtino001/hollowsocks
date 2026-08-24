@@ -1524,10 +1524,7 @@
   }
 
   .hollow-card__shop {
-    bottom: 12px;
-    min-width: 120px;
-    height: 36px;
-    font-size: 12px;
+  display: none;
   }
 
   .hollow-theme .hollow-card .grid-product__tag {
