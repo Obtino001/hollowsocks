@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Graphik XX Cond";
   src: url("https://cdn.shopify.com/s/files/1/1015/4298/6071/files/GraphikXXCond-Bold.woff2?v=1787481112") format("woff2");
-  font-weight: 800;
+
   font-style: normal;
   font-display: swap;
 }
@@ -610,7 +610,7 @@
   padding: 0 6px;
   font-family: var(--hollow-display);
   font-size: 24px;
-  font-weight: 800;
+
   line-height: 1;
   text-align: center;
   background: #ffffff !important;
@@ -772,7 +772,7 @@
   margin: 0 0 14px;
   font-family: var(--hollow-display);
   font-size: clamp(70px, 6.2vw, 82px);
-  font-weight: 800;
+
   letter-spacing: 1.12px;
   line-height: 0.96;
   text-transform: uppercase;
@@ -891,7 +891,7 @@
 .hollow-trust__value {
   font-family: var(--hollow-display);
   font-size: clamp(32px, 3.4vw, 44px);
-  font-weight: 800;
+
 
   line-height: 1;
   text-transform: uppercase;
@@ -1779,7 +1779,7 @@
   display: block;
   font-family: var(--hollow-display);
   font-size: clamp(22px, 3vw, 32px);
-  font-weight: 800;
+
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -1864,7 +1864,7 @@
   margin: 0 0 10px;
   font-family: var(--hollow-display);
   font-size: clamp(32px, 4vw, 52px);
-  font-weight: 800;
+
   text-transform: uppercase;
 
 }
@@ -1942,8 +1942,8 @@
 .hollow-advantage__heading {
   margin: 0 0 12px;
   font-family: var(--hollow-display);
-  font-size: clamp(28px, 3.6vw, 42px);
-  font-weight: 800;
+  font-size: clamp(38px, 3.6vw, 42px);
+
 
   text-transform: uppercase;
   line-height: 1;
@@ -2006,7 +2006,7 @@
   margin: 0;
   font-family: var(--hollow-display);
   font-size: clamp(16px, 2.5vw, 30px);
-  font-weight: 800;
+
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.15;
@@ -2357,7 +2357,7 @@
   animation: hollow-marquee 22s linear infinite;
   font-family: var(--hollow-display);
   font-size: 18px;
-  font-weight: 800;
+
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -2482,7 +2482,7 @@
   margin: 0 0 10px;
   font-family: var(--hollow-display);
   font-size: clamp(28px, 2.6vw, 36px);
-  font-weight: 800;
+
   line-height: 0.95;
 
   text-transform: uppercase;
@@ -4152,7 +4152,7 @@
 .hollow-theme .hollow-cart-drawer__title {
   font-family: var(--hollow-display);
   font-size: 22px;
-  font-weight: 800;
+
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: 0;
