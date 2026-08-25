@@ -1,0 +1,271 @@
+<div class="custom-split-faq-wrapper">
+  <div class="split-faq-image-container">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1000 | image_tag: class: 'split-faq-img', alt: section.settings.image.alt, loading: 'lazy' }}
+    {% else %}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg split-faq-img' }}
+    {% endif %}
+  </div>
+
+  <div class="split-faq-content-container">
+    <div class="split-faq-inner-content">
+      {% if section.settings.title != blank %}
+        <h2 class="split-faq-title">{{ section.settings.title | newline_to_br }}</h2>
+      {% endif %}
+
+      <div class="split-faq-accordion">
+        {% for block in section.blocks %}
+          <div class="split-faq-item" {{ block.shopify_attributes }}>
+            <button class="split-faq-question-btn" aria-expanded="false">
+              <span class="split-faq-question-text">{{ block.settings.question }}</span>
+              <span class="split-faq-icon">+</span>
+            </button>
+            <div class="split-faq-answer">
+              <div class="split-faq-answer-inner">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.settings.button_text != blank %}
+        <div class="split-faq-button-wrapper">
+          <a href="{{ section.settings.button_link | default: '#' }}" class="split-faq-btn">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-split-faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #F8F8F5; /* Matches the off-white background */
+  }
+
+  .split-faq-image-container {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .split-faq-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .split-faq-content-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+
+  .split-faq-inner-content {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .split-faq-title {
+    text-align: center;
+    font-family: var(--hollow-display, 'Oswald', sans-serif); /* Condensed font similar to reference */
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
+  .split-faq-item {
+    border-top: 1px solid #ccc;
+  }
+
+  .split-faq-item:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .split-faq-question-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 18px 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--hollow-display, 'Oswald', sans-serif);
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+
+  .split-faq-icon {
+    font-size: 20px;
+    font-weight: 300;
+    color: #555;
+    transition: transform 0.3s ease;
+  }
+
+  .split-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .split-faq-answer-inner {
+    padding-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .split-faq-button-wrapper {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .split-faq-btn {
+    display: inline-block;
+    background-color: #0b2e1f; /* Matches the dark green button */
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 12px 30px;
+    transition: opacity 0.3s ease;
+  }
+
+  .split-faq-btn:hover {
+    opacity: 0.8;
+  }
+
+  /* Desktop Layout */
+  @media screen and (min-width: 769px) {
+    .custom-split-faq-wrapper {
+      flex-direction: row;
+      min-height: 600px;
+    }
+
+    .split-faq-image-container {
+      width: 50%;
+      min-height: 100%;
+    }
+
+    .split-faq-content-container {
+      width: 50%;
+      padding: 60px 40px;
+    }
+
+    .split-faq-title {
+      font-size: 42px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    // Scoped to this section instance so it survives theme editor re-renders
+    // and never touches accordions from other sections.
+    var scope = document.currentScript
+      ? document.currentScript.closest('.shopify-section') || document
+      : document;
+    var faqButtons = scope.querySelectorAll('.split-faq-question-btn');
+
+    faqButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        var answer = this.nextElementSibling;
+        var icon = this.querySelector('.split-faq-icon');
+
+        // Close all others
+        faqButtons.forEach(function (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.nextElementSibling.style.maxHeight = null;
+          btn.querySelector('.split-faq-icon').textContent = '+';
+        });
+
+        // Toggle current
+        if (!expanded) {
+          this.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.textContent = '−'; // minus sign
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Image with FAQs",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Heading",
+      "default": "YOUR QUESTIONS\nANSWERED"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "READ ALL FAQS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "WHY DOES ALPACA PERFORM BETTER?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with FAQs",
+      "blocks": [
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" }
+      ]
+    }
+  ]
+}
+{% endschema %}
