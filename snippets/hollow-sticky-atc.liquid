@@ -2,6 +2,15 @@
   {%- liquid
     assign sticky_variant = product.selected_or_first_available_variant
     assign sticky_image = sticky_variant.featured_media | default: product.featured_media
+
+    assign button_label = section.settings.hollow_sticky_button_label | default: 'SHOP NOW'
+    assign sold_out_label = section.settings.hollow_sticky_sold_out_label | default: 'SOLD OUT'
+    assign guarantee = section.settings.hollow_sticky_guarantee
+
+    assign variant_label = ''
+    unless product.has_only_default_variant
+      assign variant_label = sticky_variant.title | replace: ' / ', ', '
+    endunless
   -%}
   <div
     class="hollow-sticky-atc"
@@ -11,7 +20,7 @@
   >
     <div class="hollow-sticky-atc__inner page-width">
       <div class="hollow-sticky-atc__product">
-        {%- if sticky_image != blank -%}
+        {%- if section.settings.hollow_sticky_show_thumb and sticky_image != blank -%}
           <div class="hollow-sticky-atc__thumb">
             {{
               sticky_image
@@ -24,24 +33,32 @@
             }}
           </div>
         {%- endif -%}
-        <div class="hollow-sticky-atc__meta">
-          <p class="hollow-sticky-atc__title">{{ product.title }}</p>
-          <p class="hollow-sticky-atc__price" data-hollow-sticky-price>
-            {{ sticky_variant.price | money }}
-          </p>
-        </div>
+        <p class="hollow-sticky-atc__title">
+          <span class="hollow-sticky-atc__name">{{ product.title }}</span>
+          <span class="hollow-sticky-atc__variant" data-hollow-sticky-variant>
+            {%- if variant_label != blank -%}({{ variant_label }}){%- endif -%}
+          </span>
+        </p>
       </div>
+
+      {%- if guarantee != blank -%}
+        <p class="hollow-sticky-atc__note">{{ guarantee }}</p>
+      {%- endif -%}
+
       <button
         type="button"
         class="hollow-sticky-atc__btn"
         data-hollow-sticky-atc-btn
+        data-label="{{ button_label | escape }}"
+        data-sold-out-label="{{ sold_out_label | escape }}"
         {% unless sticky_variant.available %}disabled{% endunless %}
       >
-        {% if sticky_variant.available %}
-          ADD TO CART
-        {% else %}
-          SOLD OUT
-        {% endif %}
+        <span class="hollow-sticky-atc__btn-label" data-hollow-sticky-label>
+          {%- if sticky_variant.available -%}{{ button_label }}{%- else -%}{{ sold_out_label }}{%- endif -%}
+        </span>
+        <span class="hollow-sticky-atc__btn-price" data-hollow-sticky-price>
+          {%- if sticky_variant.available -%}{{ sticky_variant.price | money }}{%- endif -%}
+        </span>
       </button>
     </div>
   </div>
