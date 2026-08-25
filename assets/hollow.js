@@ -122,6 +122,40 @@
         }
       });
     }
+
+    var priceEl = bar.querySelector('[data-hollow-sticky-price]');
+    var labelEl = bar.querySelector('[data-hollow-sticky-label]');
+    var variantEl = bar.querySelector('[data-hollow-sticky-variant]');
+
+    function syncVariant(variant) {
+      if (!stickyBtn) return;
+      var available = !!(variant && variant.available);
+
+      stickyBtn.disabled = !available;
+
+      if (labelEl) {
+        labelEl.textContent = available
+          ? stickyBtn.getAttribute('data-label')
+          : stickyBtn.getAttribute('data-sold-out-label');
+      }
+
+      if (priceEl) {
+        if (available && window.theme && theme.Currency) {
+          priceEl.innerHTML = theme.Currency.formatMoney(variant.price, theme.settings.moneyFormat);
+        } else {
+          priceEl.textContent = '';
+        }
+      }
+
+      if (variantEl) {
+        var title = variant && variant.title ? variant.title.replace(/ \/ /g, ', ') : '';
+        variantEl.textContent = title && title !== 'Default Title' ? '(' + title + ')' : '';
+      }
+    }
+
+    document.addEventListener('variant:change', function (evt) {
+      if (evt.detail) syncVariant(evt.detail.variant);
+    });
   }
 
   function initOffers() {
