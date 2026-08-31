@@ -225,7 +225,7 @@
       "settings": {
         "title": "BEST SELLERS",
         "heading_size": "h1",
-        "home_featured_products": "a-line",
+        "home_featured_products": "maend-1",
         "per_row": 4,
         "rows": 1,
         "mobile_scrollable": false,
