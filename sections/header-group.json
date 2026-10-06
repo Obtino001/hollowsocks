@@ -30,10 +30,10 @@
         "announcement_compact": true,
         "sticky_on_scroll": false,
         "sticky_on_mobile": true,
-        "heading": "LABOR DAY SALE",
+        "heading": "ÅBENT KØB TIL 30. DECEMBER — køb julegaverne i god tid",
         "offer": "BUY 2 GET 2 FREE",
         "link": "",
-        "enable_countdown": true,
+        "enable_countdown": false,
         "end_datetime": "2026-09-07T23:59:59"
       }
     },

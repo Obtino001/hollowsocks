@@ -23,7 +23,7 @@
     "color_large_image_bg": "#ffffff",
     "color_header": "#ffffff",
     "color_header_text": "#282828",
-    "color_announcement": "#991b1b",
+    "color_announcement": "#2F4438",
     "color_announcement_text": "#ffffff",
     "color_footer": "#ffffff",
     "color_footer_text": "#282828",
@@ -106,6 +106,35 @@
     "checkout_button_color": "#111111",
     "checkout_error_color": "#ff6d6d",
     "breadcrumb": false,
+    "sections": {
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "blocks": {
+          "newsletter-popup-0": {
+            "type": "header",
+            "settings": {
+              "reminder_label": "Get 10% off"
+            }
+          }
+        },
+        "block_order": [
+          "newsletter-popup-0"
+        ],
+        "settings": {
+          "disable_for_account_holders": true,
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "heading_size": "h3",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.</p>",
+          "image_position": "left",
+          "show_social_icons": false,
+          "enable_newsletter": true,
+          "button_label": "Optional button",
+          "button_link": ""
+        }
+      }
+    },
     "content_for_index": []
   },
   "installed_preset_name": "Impulse",
