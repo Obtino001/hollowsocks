@@ -101,10 +101,10 @@
         "hollow_show_rating": true,
         "hollow_fallback_rating": "4.86",
         "hollow_fallback_review_count": "843",
-        "hollow_short_description": "USA's #1 hunt sock for no slip, no sweat, & no smell.",
+        "hollow_short_description": "Tykt uldgarn — ikke den slags, der er til pynt",
         "hollow_show_promo_badge": true,
-        "hollow_promo_badge": "BUY 2 GET 2 FREE",
-        "hollow_bestseller_badge": "BEST SELLER",
+        "hollow_promo_badge": "Fri fragt fra 2 par",
+        "hollow_bestseller_badge": "",
         "hollow_new_color_badge": "NEW COLOR",
         "hollow_offers_label": "QUANTITY",
         "hollow_offer_1_name": "1 PAIR",
@@ -120,6 +120,10 @@
         "hollow_ships_label": "SHIPS BY:",
         "hollow_ships_value": "TOMORROW",
         "hollow_fast_shipping": "FAST US SHIPPING",
+        "hollow_sticky_button_label": "SHOP NOW",
+        "hollow_sticky_sold_out_label": "SOLD OUT",
+        "hollow_sticky_guarantee": "99-DAY MONEY BACK GUARANTEE",
+        "hollow_sticky_show_thumb": false,
         "hollow_show_size_chart": true,
         "hollow_size_chart_title": "SIZE CHART",
         "hollow_size_chart_note": "Show Size (US)",
@@ -381,16 +385,32 @@
       "type": "custom-split-faq",
       "blocks": {
         "faq-1": {
-          "type": "faq"
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES ALPACA PERFORM BETTER?",
+            "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
+          }
         },
         "faq-2": {
-          "type": "faq"
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES ALPACA PERFORM BETTER?",
+            "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
+          }
         },
         "faq-3": {
-          "type": "faq"
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES ALPACA PERFORM BETTER?",
+            "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
+          }
         },
         "faq-4": {
-          "type": "faq"
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES ALPACA PERFORM BETTER?",
+            "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
+          }
         }
       },
       "block_order": [
@@ -400,6 +420,9 @@
         "faq-4"
       ],
       "settings": {
+        "title": "YOUR QUESTIONS\nANSWERED",
+        "button_text": "READ ALL FAQS",
+        "button_link": ""
       }
     }
   },
