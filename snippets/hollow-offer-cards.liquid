@@ -3,7 +3,8 @@
     <p class="hollow-offers__label">{{ section.settings.hollow_offers_label | escape }}</p>
   {%- endif -%}
 
-  <div class="hollow-offers__card">
+  <label class="hollow-offers__card is-selected" style="cursor: pointer;">
+    <input class="hollow-offers__radio" type="radio" name="id" value="{{ product.variants[0].id }}" checked>
     <span class="hollow-offers__body">
       <span class="hollow-offers__left">
         <span class="hollow-offers__name">1 PAR</span>
@@ -13,9 +14,10 @@
         <span class="hollow-offers__price">299,00 KR</span>
       </span>
     </span>
-  </div>
+  </label>
 
-  <div class="hollow-offers__card">
+  <label class="hollow-offers__card" style="cursor: pointer;">
+    <input class="hollow-offers__radio" type="radio" name="id" value="{{ product.variants[1].id }}">
     <span class="hollow-offers__badge">MEST POPULÆRE</span>
     <span class="hollow-offers__body">
       <span class="hollow-offers__left">
@@ -27,9 +29,10 @@
         <s class="hollow-offers__was">1.196,00 KR</s>
       </span>
     </span>
-  </div>
+  </label>
 
-  <div class="hollow-offers__card">
+  <label class="hollow-offers__card" style="cursor: pointer;">
+    <input class="hollow-offers__radio" type="radio" name="id" value="{{ product.variants[2].id }}">
     <span class="hollow-offers__badge hollow-offers__badge--value">BEDSTE VÆRDI</span>
     <span class="hollow-offers__body">
       <span class="hollow-offers__left">
@@ -41,5 +44,5 @@
         <s class="hollow-offers__was">1.794,00 KR</s>
       </span>
     </span>
-  </div>
+  </label>
 </div>
