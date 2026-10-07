@@ -70,8 +70,8 @@
         "tab-5": {
           "type": "tab",
           "settings": {
-            "title": "shipping",
-            "content": "<p>Free US shipping on orders over $79</p>",
+            "title": "FRAGT",
+            "content": "<p>Fri fragt ved køb over 500 kr.&nbsp;</p><p>Fragt 59 kr. ved enkelt par<br/><br/></p>",
             "page": ""
           }
         }
