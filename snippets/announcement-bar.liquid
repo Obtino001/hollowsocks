@@ -34,6 +34,8 @@
     assign show_announcement = true
   endif
   assign end_date = section.settings.end_datetime | default: '2026-09-07T23:59:59'
+  assign announcement_bg = section.settings.bg_color | default: settings.color_announcement
+  assign announcement_text = section.settings.text_color | default: settings.color_announcement_text
 -%}
 
 {% if show_announcement %}
@@ -41,6 +43,7 @@
     class="announcement-bar hollow-announcement"
     data-sticky="{{ section.settings.sticky_on_scroll }}"
     data-sticky-mobile="{{ section.settings.sticky_on_mobile }}"
+    style="--hollow-announcement-bg: {{ announcement_bg }}; --hollow-announcement-text: {{ announcement_text }};"
   >
     <div class="hollow-announcement__inner">
       {%- if link != blank -%}

@@ -505,8 +505,8 @@
 /* Announcement — sitewide */
 .hollow-theme .announcement-bar.hollow-announcement,
 .hollow-announcement {
-  background: var(--hollow-red) !important;
-  color: var(--hollow-white) !important;
+  background: var(--hollow-announcement-bg, var(--colorAnnouncement)) !important;
+  color: var(--hollow-announcement-text, var(--colorAnnouncementText)) !important;
   padding: 10px 12px !important;
   text-align: center;
   min-height: 0 !important;
@@ -533,7 +533,7 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  color: #ffffff !important;
+  color: var(--hollow-announcement-text, var(--colorAnnouncementText)) !important;
   text-decoration: none !important;
   line-height: 1 !important;
   gap: 4px;
@@ -543,7 +543,7 @@
 .hollow-announcement__copy:hover,
 .hollow-announcement__copy:active,
 .hollow-announcement__copy:visited {
-  color: #ffffff !important;
+  color: var(--hollow-announcement-text, var(--colorAnnouncementText)) !important;
   text-decoration: none !important;
 }
 
@@ -559,7 +559,7 @@
   letter-spacing: 0.02em !important;
   line-height: 0.95 !important;
   text-transform: uppercase !important;
-  color: #ffffff !important;
+  color: var(--hollow-announcement-text, var(--colorAnnouncementText)) !important;
 }
 
 .hollow-announcement__offer {
@@ -570,7 +570,7 @@
   font-weight: 500 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
-  color: #ffffff !important;
+  color: var(--hollow-announcement-text, var(--colorAnnouncementText)) !important;
 }
 
 .hollow-countdown {
@@ -612,7 +612,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffffff !important;
+  color: var(--hollow-announcement-text, var(--colorAnnouncementText)) !important;
 }
 
 .hollow-countdown__sep {
@@ -620,7 +620,7 @@
   font-family: var(--hollow-mono);
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff !important;
+  color: var(--hollow-announcement-text, var(--colorAnnouncementText)) !important;
   line-height: 1;
 }
 
