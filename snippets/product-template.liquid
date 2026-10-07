@@ -226,7 +226,7 @@
               {%- endif -%}
 
               {%- if isModal != true and show_pdp_rating -%}
-                <div class="hollow-pdp-rating" aria-label="{{ rating_avg }} stars, {{ reviews_rating_count }} reviews">
+                <a href="#hollow-reviews-section" class="hollow-pdp-rating" aria-label="{{ rating_avg }} stars, {{ reviews_rating_count }} reviews">
                   <div class="hollow-pdp-rating__stars" aria-hidden="true">
                     {%- for i in (1..5) -%}
                       {%- liquid
@@ -247,7 +247,7 @@
                     {%- endfor -%}
                   </div>
                   <span class="hollow-pdp-rating__count">({{ reviews_rating_count }})</span>
-                </div>
+                </a>
               {%- endif -%}
 
               {%- if settings.vendor_enable -%}

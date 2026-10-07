@@ -273,46 +273,27 @@
     var progress = document.querySelector('[data-hollow-cart-progress]');
     if (!progress) return;
 
-    var threshold = Number(progress.getAttribute('data-threshold') || 2);
-    var free = Number(progress.getAttribute('data-free') || 2);
-    var remaining = Math.max(0, threshold - n);
     var msgEl = progress.querySelector('[data-hollow-progress-message]');
-    var bar = progress.querySelector('[data-hollow-progress-bar]');
-    var incomplete = progress.getAttribute('data-msg-incomplete') || '';
-    var complete = progress.getAttribute('data-msg-complete') || '';
 
     if (msgEl) {
-      if (n >= threshold) {
-        msgEl.textContent = complete;
+      if (n < 4) {
+        msgEl.textContent = 'Tilføj ' + (4 - n) + ' par mere og betal 599 kr for alle fire';
+      } else if (n < 6) {
+        msgEl.textContent = 'Tilføj ' + (6 - n) + ' par mere og betal 899 kr for alle seks';
       } else {
-        msgEl.textContent = incomplete
-          .replace('[remaining]', String(remaining))
-          .replace('[free]', String(free));
+        msgEl.textContent = 'Du får den bedste pris!';
       }
     }
 
+    var bar = progress.querySelector('[data-hollow-progress-bar]');
     if (bar) {
       var pct = 0;
-      if (n >= threshold) pct = 100;
+      if (n >= 6) pct = 100;
       else if (n <= 0) pct = 0;
-      else if (n === 1) pct = 33;
-      else pct = Math.min(99, Math.round((n / threshold) * 100));
+      else pct = Math.min(99, Math.round((n / 6) * 100));
       bar.style.width = pct + '%';
-      progress.classList.toggle('is-complete', n >= threshold);
+      progress.classList.toggle('is-complete', n >= 6);
     }
-
-    progress.querySelectorAll('.hollow-cart-progress__step').forEach(function (step) {
-      var stepNum = Number(step.getAttribute('data-step') || 0);
-      var active = false;
-      if (stepNum === 1) active = n >= 1;
-      else if (stepNum === 2) active = n >= 2;
-      else active = n >= threshold;
-      step.classList.toggle('is-active', active);
-
-      var label = step.querySelector('[data-step-label]');
-      if (label && stepNum === 1) label.textContent = n >= 1 ? 'IN CART' : 'PAIR 1';
-      if (label && stepNum === 2) label.textContent = n >= 2 ? 'IN CART' : 'ADD 1';
-    });
 
     progress.setAttribute('data-count', String(n));
   }

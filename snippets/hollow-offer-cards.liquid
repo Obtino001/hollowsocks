@@ -1,84 +1,45 @@
-{%- liquid
-  assign price = product.price
-  assign compare = product.compare_at_price
-  if compare == blank or compare <= price
-    assign compare = price | times: 2
-  endif
-  assign two_price = price | times: 2
-  assign two_compare = compare | times: 4
-  assign three_price = price | times: 3
-  assign three_compare = compare | times: 6
-
-  assign offers_label = section.settings.hollow_offers_label
-  assign offer_1_name = section.settings.hollow_offer_1_name
-  assign per_pair_label = section.settings.hollow_per_pair_label
-  assign offer_2_name = section.settings.hollow_offer_2_name
-  assign offer_2_badge = section.settings.hollow_offer_2_badge
-  assign offer_2_suffix = section.settings.hollow_offer_2_suffix
-  assign offer_3_name = section.settings.hollow_offer_3_name
-  assign offer_3_badge = section.settings.hollow_offer_3_badge
-  assign offer_3_suffix = section.settings.hollow_offer_3_suffix
--%}
-
 <div class="hollow-offers" data-hollow-offers>
-  {%- if offers_label != blank -%}
-    <p class="hollow-offers__label">{{ offers_label | escape }}</p>
+  {%- if section.settings.hollow_offers_label != blank -%}
+    <p class="hollow-offers__label">{{ section.settings.hollow_offers_label | escape }}</p>
   {%- endif -%}
-  <input type="hidden" name="quantity" value="1" form="{{ form_id }}" data-hollow-qty>
 
-  <label class="hollow-offers__card is-selected">
-    <input class="hollow-offers__radio" type="radio" name="hollow-offer-{{ product.id }}" value="1" data-qty="1" checked>
-    <span class="hollow-offers__radio-ui" aria-hidden="true"></span>
+  <div class="hollow-offers__card">
     <span class="hollow-offers__body">
       <span class="hollow-offers__left">
-        {%- if offer_1_name != blank -%}
-          <span class="hollow-offers__name">{{ offer_1_name | escape }}</span>
-        {%- endif -%}
-        <span class="hollow-offers__each">{{ price | money }}{% if per_pair_label != blank %}{{ per_pair_label | escape }}{% endif %}</span>
+        <span class="hollow-offers__name">1 PAR</span>
+        <span class="hollow-offers__each">299,00 KR/PAR + 39,00 KR I FRAGT</span>
       </span>
       <span class="hollow-offers__right">
-        <span class="hollow-offers__price">{{ price | money }}</span>
+        <span class="hollow-offers__price">299,00 KR</span>
       </span>
     </span>
-  </label>
+  </div>
 
-  <label class="hollow-offers__card">
-    <input class="hollow-offers__radio" type="radio" name="hollow-offer-{{ product.id }}" value="4" data-qty="4">
-    <span class="hollow-offers__radio-ui" aria-hidden="true"></span>
-    {%- if offer_2_badge != blank -%}
-      <span class="hollow-offers__badge">{{ offer_2_badge | escape }}</span>
-    {%- endif -%}
+  <div class="hollow-offers__card">
+    <span class="hollow-offers__badge">MEST POPULÆRE</span>
     <span class="hollow-offers__body">
       <span class="hollow-offers__left">
-        {%- if offer_2_name != blank -%}
-          <span class="hollow-offers__name">{{ offer_2_name | escape }}</span>
-        {%- endif -%}
-        <span class="hollow-offers__each">{{ two_price | divided_by: 4 | money }}{% if per_pair_label != blank %}{{ per_pair_label | escape }}{% endif %}{% if offer_2_suffix != blank %} {{ offer_2_suffix | escape }}{% endif %}</span>
+        <span class="hollow-offers__name">KØB 2, FÅ 2 GRATIS</span>
+        <span class="hollow-offers__each">150,00 KR/PAR + FRI FRAGT</span>
       </span>
       <span class="hollow-offers__right">
-        <span class="hollow-offers__price">{{ two_price | money }}</span>
-        <s class="hollow-offers__was">{{ two_compare | money }}</s>
+        <span class="hollow-offers__price">599,00 KR</span>
+        <s class="hollow-offers__was">1.196,00 KR</s>
       </span>
     </span>
-  </label>
+  </div>
 
-  <label class="hollow-offers__card">
-    <input class="hollow-offers__radio" type="radio" name="hollow-offer-{{ product.id }}" value="6" data-qty="6">
-    <span class="hollow-offers__radio-ui" aria-hidden="true"></span>
-    {%- if offer_3_badge != blank -%}
-      <span class="hollow-offers__badge hollow-offers__badge--value">{{ offer_3_badge | escape }}</span>
-    {%- endif -%}
+  <div class="hollow-offers__card">
+    <span class="hollow-offers__badge hollow-offers__badge--value">BEDSTE VÆRDI</span>
     <span class="hollow-offers__body">
       <span class="hollow-offers__left">
-        {%- if offer_3_name != blank -%}
-          <span class="hollow-offers__name">{{ offer_3_name | escape }}</span>
-        {%- endif -%}
-        <span class="hollow-offers__each">{{ three_price | divided_by: 6 | money }}{% if per_pair_label != blank %}{{ per_pair_label | escape }}{% endif %}{% if offer_3_suffix != blank %} {{ offer_3_suffix | escape }}{% endif %}</span>
+        <span class="hollow-offers__name">KØB 3, FÅ 3 GRATIS</span>
+        <span class="hollow-offers__each">150,00 KR/PAR + FRI FRAGT</span>
       </span>
       <span class="hollow-offers__right">
-        <span class="hollow-offers__price">{{ three_price | money }}</span>
-        <s class="hollow-offers__was">{{ three_compare | money }}</s>
+        <span class="hollow-offers__price">899,00 KR</span>
+        <s class="hollow-offers__was">1.794,00 KR</s>
       </span>
     </span>
-  </label>
+  </div>
 </div>

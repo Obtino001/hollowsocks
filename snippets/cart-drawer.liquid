@@ -29,51 +29,22 @@
         <div class="drawer__scrollable">
           {%- if settings.hollow_cart_progress_enable -%}
             <div
-              class="hollow-cart-progress{% if hollow_count >= hollow_threshold %} is-complete{% endif %}"
+              class="hollow-cart-progress{% if hollow_count >= 6 %} is-complete{% endif %}"
               data-hollow-cart-progress
-              data-threshold="{{ hollow_threshold }}"
-              data-free="{{ hollow_free }}"
               data-count="{{ hollow_count }}"
-              data-msg-incomplete="{{ settings.hollow_cart_progress_message | escape }}"
-              data-msg-complete="{{ settings.hollow_cart_progress_complete | escape }}"
             >
               <p class="hollow-cart-progress__message" data-hollow-progress-message>
-                {%- if hollow_count >= hollow_threshold -%}
-                  {{ settings.hollow_cart_progress_complete }}
+                {%- if hollow_count < 4 -%}
+                  Tilføj {{ 4 | minus: hollow_count }} par mere og betal 599 kr for alle fire
+                {%- elsif hollow_count < 6 -%}
+                  Tilføj {{ 6 | minus: hollow_count }} par mere og betal 899 kr for alle seks
                 {%- else -%}
-                  {{ settings.hollow_cart_progress_message | replace: '[remaining]', hollow_remaining | replace: '[free]', hollow_free }}
+                  Du får den bedste pris!
                 {%- endif -%}
               </p>
 
               <div class="hollow-cart-progress__track" aria-hidden="true">
-                <div class="hollow-cart-progress__bar" data-hollow-progress-bar style="width: {% if hollow_count >= hollow_threshold %}100{% elsif hollow_count == 1 %}33{% elsif hollow_count > 1 %}{% assign pct = hollow_count | times: 100 | divided_by: hollow_threshold %}{{ pct }}{% else %}0{% endif %}%;"></div>
-
-                <div class="hollow-cart-progress__steps">
-                  <div class="hollow-cart-progress__step{% if hollow_count >= 1 %} is-active{% endif %}" data-step="1">
-                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--sock">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 2h6v10.5c0 .8.3 1.5.9 2.1l3.6 3.6c1.2 1.2 1.2 3.1 0 4.2-1.2 1.2-3.1 1.2-4.2 0l-5.1-5.1C8.4 16.5 8 15.5 8 14.4V2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 6h6" stroke="currentColor" stroke-width="1.8"/></svg>
-                    </span>
-                    <span class="hollow-cart-progress__label" data-step-label="1">{% if hollow_count >= 1 %}IN CART{% else %}PAIR 1{% endif %}</span>
-                  </div>
-                  <div class="hollow-cart-progress__step{% if hollow_count >= 2 %} is-active{% endif %}" data-step="2">
-                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--sock">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 2h6v10.5c0 .8.3 1.5.9 2.1l3.6 3.6c1.2 1.2 1.2 3.1 0 4.2-1.2 1.2-3.1 1.2-4.2 0l-5.1-5.1C8.4 16.5 8 15.5 8 14.4V2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 6h6" stroke="currentColor" stroke-width="1.8"/></svg>
-                    </span>
-                    <span class="hollow-cart-progress__label" data-step-label="2">{% if hollow_count >= 2 %}IN CART{% else %}ADD 1{% endif %}</span>
-                  </div>
-                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_count >= hollow_threshold %} is-active{% endif %}" data-step="3">
-                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--gift">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10h16v10H4V10zM3 7h18v3H3V7zM12 7v13M8.5 4.5c1 0 2 .8 3.5 2.5C13.5 5.3 14.5 4.5 15.5 4.5 17 4.5 18 5.5 18 7H6c0-1.5 1-2.5 2.5-2.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                    </span>
-                    <span class="hollow-cart-progress__label">FREE</span>
-                  </div>
-                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_count >= hollow_threshold %} is-active{% endif %}" data-step="4">
-                    <span class="hollow-cart-progress__icon hollow-cart-progress__icon--gift">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10h16v10H4V10zM3 7h18v3H3V7zM12 7v13M8.5 4.5c1 0 2 .8 3.5 2.5C13.5 5.3 14.5 4.5 15.5 4.5 17 4.5 18 5.5 18 7H6c0-1.5 1-2.5 2.5-2.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                    </span>
-                    <span class="hollow-cart-progress__label">FREE</span>
-                  </div>
-                </div>
+                <div class="hollow-cart-progress__bar" data-hollow-progress-bar style="width: {% if hollow_count >= 6 %}100{% elsif hollow_count <= 0 %}0{% else %}{% assign pct = hollow_count | times: 100 | divided_by: 6 %}{{ pct }}{% endif %}%;"></div>
               </div>
             </div>
           {%- endif -%}
