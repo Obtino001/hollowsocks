@@ -3342,42 +3342,10 @@
   box-sizing: border-box;
 }
 
-.hollow-offers__card.is-selected {
+.hollow-offers__card--featured {
   background: var(--hollow-tan);
   border: 2px solid var(--hollow-black);
   padding: 13px 13px 13px 11px;
-}
-
-.hollow-offers__radio {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  pointer-events: none;
-}
-
-.hollow-offers__radio-ui {
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid #8a857e;
-  border-radius: 50%;
-  background: #ffffff;
-  display: block;
-  position: relative;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.hollow-offers__card.is-selected .hollow-offers__radio-ui {
-  border-color: var(--hollow-black);
-}
-
-.hollow-offers__card.is-selected .hollow-offers__radio-ui::after {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  border-radius: 50%;
-  background: var(--hollow-black);
 }
 
 .hollow-offers__body {

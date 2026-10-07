@@ -158,20 +158,6 @@
     });
   }
 
-  function initOffers() {
-    document.querySelectorAll('[data-hollow-offers]').forEach(function (root) {
-      var qty = root.querySelector('[data-hollow-qty]');
-      root.querySelectorAll('input[type="radio"]').forEach(function (input) {
-        input.addEventListener('change', function () {
-          root.querySelectorAll('.hollow-offers__card').forEach(function (card) {
-            card.classList.toggle('is-selected', card.contains(input) && input.checked);
-          });
-          if (qty) qty.value = input.getAttribute('data-qty') || '1';
-        });
-      });
-    });
-  }
-
   function initHollowPdpVariants() {
     document.querySelectorAll('.hollow-variant--size').forEach(function (wrap) {
       var selected = wrap.querySelector('[data-hollow-size-selected]');
@@ -396,7 +382,6 @@
     syncStickyHeaderHeight();
     window.addEventListener('scroll', syncStickyHeaderHeight, { passive: true });
     window.addEventListener('resize', syncStickyHeaderHeight);
-    initOffers();
     initStickyAtc();
     initHollowPdpVariants();
     initLuck();

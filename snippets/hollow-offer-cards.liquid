@@ -1,48 +1,45 @@
-<div class="hollow-offers" data-hollow-offers>
+<section class="hollow-offers" aria-label="Mængderabat">
   {%- if section.settings.hollow_offers_label != blank -%}
     <p class="hollow-offers__label">{{ section.settings.hollow_offers_label | escape }}</p>
   {%- endif -%}
 
-  <label class="hollow-offers__card is-selected" style="cursor: pointer;">
-    <input class="hollow-offers__radio" type="radio" name="id" value="{{ product.variants[0].id }}" checked>
-    <span class="hollow-offers__body">
-      <span class="hollow-offers__left">
+  <div class="hollow-offers__card hollow-offers__card--featured">
+    <div class="hollow-offers__body">
+      <div class="hollow-offers__left">
         <span class="hollow-offers__name">1 PAR</span>
         <span class="hollow-offers__each">299,00 KR/PAR + 39,00 KR I FRAGT</span>
-      </span>
-      <span class="hollow-offers__right">
+      </div>
+      <div class="hollow-offers__right">
         <span class="hollow-offers__price">299,00 KR</span>
-      </span>
-    </span>
-  </label>
+      </div>
+    </div>
+  </div>
 
-  <label class="hollow-offers__card" style="cursor: pointer;">
-    <input class="hollow-offers__radio" type="radio" name="id" value="{{ product.variants[1].id }}">
+  <div class="hollow-offers__card">
     <span class="hollow-offers__badge">MEST POPULÆRE</span>
-    <span class="hollow-offers__body">
-      <span class="hollow-offers__left">
+    <div class="hollow-offers__body">
+      <div class="hollow-offers__left">
         <span class="hollow-offers__name">KØB 2, FÅ 2 GRATIS</span>
         <span class="hollow-offers__each">150,00 KR/PAR + FRI FRAGT</span>
-      </span>
-      <span class="hollow-offers__right">
+      </div>
+      <div class="hollow-offers__right">
         <span class="hollow-offers__price">599,00 KR</span>
         <s class="hollow-offers__was">1.196,00 KR</s>
-      </span>
-    </span>
-  </label>
+      </div>
+    </div>
+  </div>
 
-  <label class="hollow-offers__card" style="cursor: pointer;">
-    <input class="hollow-offers__radio" type="radio" name="id" value="{{ product.variants[2].id }}">
+  <div class="hollow-offers__card">
     <span class="hollow-offers__badge hollow-offers__badge--value">BEDSTE VÆRDI</span>
-    <span class="hollow-offers__body">
-      <span class="hollow-offers__left">
+    <div class="hollow-offers__body">
+      <div class="hollow-offers__left">
         <span class="hollow-offers__name">KØB 3, FÅ 3 GRATIS</span>
         <span class="hollow-offers__each">150,00 KR/PAR + FRI FRAGT</span>
-      </span>
-      <span class="hollow-offers__right">
+      </div>
+      <div class="hollow-offers__right">
         <span class="hollow-offers__price">899,00 KR</span>
         <s class="hollow-offers__was">1.794,00 KR</s>
-      </span>
-    </span>
-  </label>
-</div>
+      </div>
+    </div>
+  </div>
+</section>
