@@ -4001,9 +4001,15 @@
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 25px;
   height: 25px;
-  inset-inline-end: 0;
+  top: 50%;
+  inset-inline-end: 0 !important;
+  transform: translateY(-50%);
+  line-height: 0;
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon img {
