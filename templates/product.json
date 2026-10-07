@@ -443,6 +443,20 @@
         "button_text": "READ ALL FAQS",
         "button_link": ""
       }
+    },
+    "featured_collection_KCAmpg": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "home_featured_products": "",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
     }
   },
   "order": [
@@ -452,6 +466,7 @@
     "custom-marquee",
     "feature-split-scroll",
     "product-recommendations",
-    "custom-split-faq"
+    "custom-split-faq",
+    "featured_collection_KCAmpg"
   ]
 }
