@@ -3985,15 +3985,15 @@
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   inset-inline-end: 0;
 }
 
-.hollow-theme .hollow-pdp-tab .collapsible-trigger__icon svg {
+.hollow-theme .hollow-pdp-tab .collapsible-trigger__icon img {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon .hollow-pdp-tab__minus {

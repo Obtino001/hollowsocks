@@ -12,8 +12,8 @@
       {{ title }}
       {%- if icon_style == 'plus_minus' -%}
         <span class="collapsible-trigger__icon" aria-hidden="true">
-          <svg class="hollow-pdp-tab__plus" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
-          <svg class="hollow-pdp-tab__minus" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M4 10h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+          <img class="hollow-pdp-tab__plus" src="{{ 'hollow-accordion-plus.svg' | asset_url }}" width="25" height="25" alt="">
+          <img class="hollow-pdp-tab__minus" src="{{ 'hollow-accordion-minus.svg' | asset_url }}" width="25" height="25" alt="">
         </span>
       {%- else -%}
         {%- render 'collapsible-icons' -%}
