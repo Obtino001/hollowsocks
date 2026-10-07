@@ -116,13 +116,13 @@
         "hollow_offer_3_badge": "BEST VALUE",
         "hollow_offer_3_suffix": "+ FREE SHIPPING",
         "hollow_guarantee_image": "shopify://shop_images/57e1ab65-0066-4773-9082-34f2630cbcd5.svg",
-        "hollow_guarantee_title": "99-DAY MONEY BACK GUARANTEE",
-        "hollow_ships_label": "SHIPS BY:",
-        "hollow_ships_value": "TOMORROW",
-        "hollow_fast_shipping": "FAST US SHIPPING",
+        "hollow_guarantee_title": "ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.",
+        "hollow_ships_label": "AFSENDES:",
+        "hollow_ships_value": "NÆSTE HVERDAG",
+        "hollow_fast_shipping": "PAKKES OG SENDES FRA RINGSTED",
         "hollow_sticky_button_label": "SHOP NOW",
         "hollow_sticky_sold_out_label": "SOLD OUT",
-        "hollow_sticky_guarantee": "99-DAY MONEY BACK GUARANTEE",
+        "hollow_sticky_guarantee": "ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.",
         "hollow_sticky_show_thumb": false,
         "hollow_show_size_chart": true,
         "hollow_size_chart_title": "SIZE CHART",
@@ -184,7 +184,7 @@
           "settings": {
             "image": "shopify://shop_images/Rectangle_3391-1.png",
             "title": "ENDURANCE TESTED COMFORT",
-            "text": "Rain or shine. Hot or cold. No matter the environment Hollow Hunt Socks stays comfortable so you can focus on the hunt."
+            "text": "Rain or shine. Hot or cold. No matter the environment Strikkestuen Hunt Socks stays comfortable so you can focus on the hunt."
           }
         },
         "g2": {
@@ -210,8 +210,8 @@
         "g3"
       ],
       "settings": {
-        "title": "THE HOLLOW ADVANTAGE",
-        "subtitle": "See why thousands of hunters trust Hollow Hunt Socks",
+        "title": "THE STRIKKESTUEN ADVANTAGE",
+        "subtitle": "See why thousands of hunters trust Strikkestuen Hunt Socks",
         "bg_color": "#ffffff",
         "text_color": "#111111",
         "columns_desktop": 3,
@@ -309,7 +309,7 @@
             "custom_svg": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/9dd05c83-10f3-4579-869d-49a5732e35a6",
             "title": "SECURED NO-SLIP FIT",
-            "text": "Hollow socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down so you stay locked in and focused on performing your best."
+            "text": "Strikkestuen socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down so you stay locked in and focused on performing your best."
           }
         },
         "f3": {
@@ -327,7 +327,7 @@
             "custom_svg": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/5f411ca2-c8e7-4b48-8fe5-38aa02e397c2",
             "title": "PREMIUM PERUVIAN ALPACA FIBER",
-            "text": "Hollow socks are made with premium alpaca fiber imported from the pristine highlands of Peru. Our bespoke precision manufacturing process guarantees you're wearing the best alpaca socks ever."
+            "text": "Strikkestuen socks are made with premium alpaca fiber imported from the pristine highlands of Peru. Our bespoke precision manufacturing process guarantees you're wearing the best alpaca socks ever."
           }
         },
         "r1": {
@@ -364,7 +364,7 @@
       "settings": {
         "left_bg_color": "#0b3123",
         "left_text_color": "#ffffff",
-        "main_heading": "WHY HOLLOW WINS? FEATURE BY FEATURE.",
+        "main_heading": "WHY STRIKKESTUEN WINS? FEATURE BY FEATURE.",
         "sticky_offset": 80,
         "right_bg_color": "#ffffff",
         "right_text_color": "#111111",

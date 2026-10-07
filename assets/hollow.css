@@ -3334,14 +3334,10 @@
 
 .hollow-offers__card {
   position: relative;
-  display: grid;
-  grid-template-columns: 22px minmax(0, 1fr);
-  align-items: center;
-  column-gap: 12px;
+  display: block;
   padding: 14px 14px 14px 12px;
   border: 1px solid #cfc9c0;
   background: #ffffff;
-  cursor: pointer;
   border-radius: 2px;
   box-sizing: border-box;
 }

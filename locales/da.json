@@ -7,4 +7,11 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{}
+{
+  "products": {
+    "product": {
+      "add_to_cart": "LÆG I KURV",
+      "sold_out": "UDSOLGT"
+    }
+  }
+}

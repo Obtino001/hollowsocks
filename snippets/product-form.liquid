@@ -23,14 +23,14 @@
   {%- endif -%}
 
     {%- liquid
-      assign default_text = 'products.product.add_to_cart' | t
-      assign button_text = 'products.product.add_to_cart' | t
+      assign default_text = 'LÆG I KURV'
+      assign button_text = 'LÆG I KURV'
       if template contains 'preorder'
         assign default_text = 'products.product.preorder' | t
         assign button_text = 'products.product.preorder' | t
       endif
       unless current_variant.available
-        assign button_text = 'products.product.sold_out' | t
+        assign button_text = 'UDSOLGT'
       endunless
     -%}
 
@@ -39,6 +39,7 @@
       name="add"
       data-add-to-cart
       class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--secondary{% endif %}"
+      style="background-color: #2F4438; border-color: #2F4438; color: #fff;"
       {% unless current_variant.available %} disabled="disabled"{% endunless %}>
       <span data-add-to-cart-text data-default-text="{{ default_text }}">
         {{ button_text }}

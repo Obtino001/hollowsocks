@@ -47,7 +47,7 @@
       </div>
 
       <div class="custom-footer__right">
-        <div class="custom-footer__brand" aria-label="{{ section.settings.brand_text | default: 'Hollow' | escape }}">
+        <div class="custom-footer__brand" aria-label="{{ section.settings.brand_text | default: 'Strikkestuen' | escape }}">
           <svg class="custom-footer__brand-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93 32" aria-hidden="true" focusable="false">
             <path fill="currentColor" d="M93 0H88.4799L85.5149 12.6526L82.5381 0H78.187L75.2097 12.6526L72.2329 0H67.7247L73.0159 22.5861L73.004 22.6465H77.4154L77.4035 22.5861L80.3562 9.98187L83.3211 22.5861L83.3093 22.6465H87.6964L87.7448 22.5982L87.7087 22.5861L93 0Z"/>
             <path fill="currentColor" d="M36.1351 32L41.2817 28.3746V0H36.1351V32Z"/>
@@ -56,7 +56,7 @@
             <path fill="currentColor" d="M10.5584 8.95471H5.44792V0H0V22.6465H5.44792V13.148H10.5584V22.6465H15.705V0H10.5584V8.95471Z"/>
             <path fill="currentColor" d="M62.0366 7.63745C62.0243 10.1027 62.0243 12.8701 62.0124 15.3474C62.0124 15.5529 62.0124 15.7583 62.0005 15.9517C61.9882 16.2296 61.9279 16.5196 61.8315 16.7855C61.5546 17.4985 60.8191 17.994 60.0598 18.0423C58.2758 18.1511 57.7819 16.6042 57.7819 15.142V7.68581C57.7819 7.16616 57.782 6.63443 57.9748 6.15105C58.1315 5.75227 58.3964 5.4139 58.7459 5.17221C59.0954 4.93052 59.5175 4.80966 59.9392 4.80966C60.3613 4.80966 60.7711 4.9547 61.1206 5.19639C61.4701 5.43808 61.7232 5.78854 61.8676 6.18732C62.0366 6.64652 62.0366 7.14198 62.0366 7.63745ZM65.0016 1.90937C64.399 1.30514 63.6758 0.821753 62.8923 0.495468C62.0969 0.169184 61.2531 0 60.3974 0H59.168C57.4443 0 55.7933 0.688823 54.5758 1.92145C53.3583 3.142 52.6716 4.80966 52.6835 6.53779V16.3746C52.7557 18.0665 53.467 19.6616 54.6722 20.8338C55.8897 22.006 58.2397 22.6586 59.915 22.6586C61.8799 22.6586 63.7 22.006 64.9171 20.8338C66.1227 19.6616 66.8336 18.0665 66.8939 16.3746V6.5257C66.8939 5.66768 66.7253 4.82175 66.3996 4.02418C66.0862 3.22659 65.6042 2.5136 65.0016 1.90937Z"/>
           </svg>
-          <span class="visually-hidden">{{ section.settings.brand_text | default: 'HOLLOW' }}</span>
+          <span class="visually-hidden">{{ section.settings.brand_text | default: 'STRIKKESTUEN' }}</span>
         </div>
 
         <div class="custom-footer__menus">
@@ -82,7 +82,7 @@
 
     <div class="custom-footer__bottom">
       <div class="custom-footer__bottom-left">
-        <span>&copy;{{ section.settings.brand_text | default: 'HOLLOW' | upcase }} {{ 'now' | date: '%Y' }}</span>
+        <span>&copy;{{ section.settings.brand_text | default: 'STRIKKESTUEN' | upcase }} {{ 'now' | date: '%Y' }}</span>
         {%- if section.settings.bottom_menu != blank -%}
           {%- for link in section.settings.bottom_menu.links -%}
             <span class="custom-footer__dot" aria-hidden="true">&middot;</span>
@@ -110,7 +110,7 @@
 
 {% schema %}
 {
-  "name": "Hollow footer",
+  "name": "Strikkestuen footer",
   "class": "hollow-footer-section",
   "settings": [
     {
@@ -126,7 +126,7 @@
       "type": "text",
       "id": "newsletter_heading",
       "label": "Heading",
-      "default": "JOIN THE HOLLOW CREW"
+      "default": "JOIN THE STRIKKESTUEN CREW"
     },
     {
       "type": "text",
@@ -148,7 +148,7 @@
       "type": "text",
       "id": "brand_text",
       "label": "Brand name (copyright)",
-      "default": "HOLLOW"
+      "default": "STRIKKESTUEN"
     },
     {
       "type": "header",
@@ -188,7 +188,7 @@
   ],
   "presets": [
     {
-      "name": "Hollow footer",
+      "name": "Strikkestuen footer",
       "blocks": [
         { "type": "link_list", "settings": { "heading": "SHOP" } },
         { "type": "link_list", "settings": { "heading": "LEARN" } },

@@ -78,7 +78,7 @@
         "category_4fmizW",
         "category_a6wGW4"
       ],
-      "name": "Hollow collection nav",
+      "name": "Strikkestuen collection nav",
       "settings": {}
     },
     "hollow-hero": {
@@ -215,7 +215,7 @@
         "a4"
       ],
       "settings": {
-        "left_heading": "HOLLOW SOCKS ARE MADE WITH ALPACA FIBER.",
+        "left_heading": "STRIKKESTUEN SOCKS ARE MADE WITH ALPACA FIBER.",
         "center_image": "shopify://shop_images/67bc8f0ce4ba5ea905f94fa6911b610f0985fee2.png",
         "right_heading": "SHOP BY ACTIVITY"
       }
@@ -410,7 +410,6 @@
     "hollow-intro",
     "featured-collection",
     "hollow-banners",
-    "hollow-reviews",
     "trust_bar_NPJkyk",
     "hollow-story"
   ]

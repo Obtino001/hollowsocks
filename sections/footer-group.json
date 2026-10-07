@@ -11,6 +11,9 @@
   "type": "footer",
   "name": "t:sections.footer-group.name",
   "sections": {
+    "hollow-reviews": {
+      "type": "hollow-reviews"
+    },
     "hollow-instagram": {
       "type": "hollow-instagram",
       "blocks": {
@@ -101,16 +104,17 @@
       ],
       "settings": {
         "newsletter_image": "shopify://shop_images/review-image1.png",
-        "newsletter_heading": "JOIN THE HOLLOW CREW",
+        "newsletter_heading": "JOIN THE STRIKKESTUEN CREW",
         "newsletter_subheading": "Stay connected for new releases and exclusive offers.",
         "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"/policies/terms-of-service\">View Terms & Privacy</a>.</p>",
-        "brand_text": "HOLLOW",
+        "brand_text": "STRIKKESTUEN",
         "bottom_menu": "footer",
         "follow_label": "FOLLOW ALONG"
       }
     }
   },
   "order": [
+    "hollow-reviews",
     "hollow-instagram",
     "footer-promotions",
     "footer"
