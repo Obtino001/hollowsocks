@@ -3604,11 +3604,17 @@
 }
 
 .hollow-theme .hollow-pdp-guarantee__seal,
-.hollow-theme .hollow-pdp-guarantee__seal-svg,
-.hollow-theme .hollow-pdp-guarantee__img {
+.hollow-theme .hollow-pdp-guarantee__seal-svg {
   width: 36px;
   height: 36px;
   flex: 0 0 36px;
+  object-fit: contain;
+}
+
+.hollow-theme .hollow-pdp-guarantee__img {
+  width: 50px;
+  height: auto;
+  flex: 0 0 50px;
   object-fit: contain;
 }
 

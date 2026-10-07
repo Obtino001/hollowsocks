@@ -139,11 +139,9 @@
 
 {%- liquid
   assign connect_to_sizechart = false
-  assign hollow_size_chart_block = blank
 
   for block in section.blocks
     if block.type == 'size_chart'
-      assign hollow_size_chart_block = block
       assign sizechart_index = forloop.index0
       assign next_block_index = sizechart_index | plus: 1
       assign variant_block = section.blocks[next_block_index]
@@ -433,25 +431,11 @@
                       </div>
                     </div>
                   {%- when 'size_chart' -%}
-                    {% if connect_to_sizechart == false %}
-                      {%- capture size_chart_title -%}
-                        {{ 'products.general.size_chart' | t }}<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-size-chart" viewBox="0 0 64 64"><path d="M22.39 33.53c-7.46 0-13.5-3.9-13.5-8.72s6-8.72 13.5-8.72 13.5 3.9 13.5 8.72a12 12 0 0 1-.22 1.73"/><ellipse cx="22.39" cy="24.81" rx="3.28" ry="2.12"/><path d="M8.89 24.81V38.5c0 7.9 6.4 9.41 14.3 9.41h31.92V33.53H22.39"/><path d="M46.78 33.53v7.44"/><path d="M38.65 33.53v7.44"/><path d="M30.52 33.53v7.44"/><path d="M22.39 33.53v7.44"/></svg>
-                      {%- endcapture -%}
-
-                      <div class="size-chart__standalone" {{ block.shopify_attributes }}>
-                        {%- render
-                          'tool-tip-trigger',
-                          title: size_chart_title,
-                          content: block.settings.size_chart.content,
-                          context: 'size-chart'
-                        -%}
-                        {% style %}
-                          tool-tip-trigger {
-                            text-transform: uppercase;
-                          }
-                        {% endstyle %}
-                      </div>
-                    {% endif %}
+                    <div class="product-block hollow-size-chart-block" {{ block.shopify_attributes }}>
+                      {%- if block.settings.hollow_show_size_chart -%}
+                        {%- render 'hollow-size-chart', block: block -%}
+                      {%- endif -%}
+                    </div>
                   {%- when 'variant_picker' -%}
                     <div class="product-block" {% if block.settings.product_dynamic_variants_enable %}data-dynamic-variants-enabled{% endif %} {{ block.shopify_attributes }}>
                       {%- unless product.has_only_default_variant -%}
@@ -514,10 +498,7 @@
                       {%- endunless -%}
 
                       <div class="hollow-pdp-guarantee">
-                        <svg class="hollow-pdp-guarantee__img" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M20 4s-10.75 3.5-12.25 4.25v9.5c0 8.75 12.25 18.25 12.25 18.25s12.25-9.5 12.25-18.25v-9.5C30.75 7.5 20 4 20 4z" stroke="currentColor" stroke-width="2"/>
-                          <text x="20" y="25" text-anchor="middle" font-size="19" font-family="Arial, sans-serif" font-weight="900" fill="currentColor">12</text>
-                        </svg>
+                        <img class="hollow-pdp-guarantee__img" src="https://cdn.shopify.com/s/files/1/1015/4298/6071/files/icon_12.png?v=1791377572" width="50" height="50" alt="">
                         <div class="hollow-pdp-guarantee__title">ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.</div>
                       </div>
 
@@ -538,9 +519,6 @@
                         </div>
                       {%- endif -%}
 
-                      {%- if hollow_size_chart_block != blank and hollow_size_chart_block.settings.hollow_show_size_chart -%}
-                        {%- render 'hollow-size-chart', block: hollow_size_chart_block -%}
-                      {%- endif -%}
                       {%- if block.settings.surface_pickup_enable -%}
                         <div data-store-availability-holder
                           data-product-name="{{ product.title | escape }}"

@@ -24,7 +24,6 @@
         "size_chart": {
           "type": "size_chart",
           "settings": {
-            "size_chart": "size-chart",
             "hollow_show_size_chart": true,
             "hollow_size_chart_image_alt": "Size chart",
             "hollow_size_chart_title": "SIZE CHART",
@@ -94,8 +93,8 @@
       },
       "block_order": [
         "variant_picker",
-        "size_chart",
         "buy_buttons",
+        "size_chart",
         "tab-1",
         "tab-2",
         "tab-3",
