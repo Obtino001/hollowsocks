@@ -3274,6 +3274,12 @@
   align-items: center;
   gap: 6px;
   margin: 0 0 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#hollow-reviews-section {
+  scroll-margin-top: calc(var(--sticky-announcement-bar-height, 0px) + var(--header-height, 72px) + 16px);
 }
 
 .hollow-theme .hollow-pdp-rating__stars {

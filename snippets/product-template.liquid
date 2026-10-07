@@ -39,7 +39,10 @@
     assign is_best_seller = true
   endif
 
-  assign reviews_rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count | default: product.metafields.loox.num_reviews | default: product.metafields.judgeme.review_count
+  assign reviews_rating_count = section.settings.hollow_fallback_review_count | strip
+  if reviews_rating_count == blank
+    assign reviews_rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count | default: product.metafields.loox.num_reviews | default: product.metafields.judgeme.review_count
+  endif
   assign reviews_rating_raw = product.metafields.reviews.rating.value | default: product.metafields.reviews.rating
   if reviews_rating_raw.rating != blank
     assign rating_avg = reviews_rating_raw.rating
