@@ -199,8 +199,8 @@
         "title": "Der er 24 mønstre at vælge imellem",
         "heading_size": "h2",
         "home_featured_products": "alle-monstre",
-        "per_row": 4,
-        "rows": 1,
+        "per_row": 5,
+        "rows": 2,
         "mobile_scrollable": true,
         "view_all": true,
         "divider": false
