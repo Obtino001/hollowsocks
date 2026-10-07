@@ -139,9 +139,11 @@
 
 {%- liquid
   assign connect_to_sizechart = false
+  assign hollow_size_chart_block = blank
 
   for block in section.blocks
     if block.type == 'size_chart'
+      assign hollow_size_chart_block = block
       assign sizechart_index = forloop.index0
       assign next_block_index = sizechart_index | plus: 1
       assign variant_block = section.blocks[next_block_index]
@@ -536,8 +538,8 @@
                         </div>
                       {%- endif -%}
 
-                      {%- if section.settings.hollow_show_size_chart -%}
-                        {%- render 'hollow-size-chart', section: section -%}
+                      {%- if hollow_size_chart_block != blank and hollow_size_chart_block.settings.hollow_show_size_chart -%}
+                        {%- render 'hollow-size-chart', block: hollow_size_chart_block -%}
                       {%- endif -%}
                       {%- if block.settings.surface_pickup_enable -%}
                         <div data-store-availability-holder

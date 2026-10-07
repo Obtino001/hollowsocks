@@ -24,7 +24,23 @@
         "size_chart": {
           "type": "size_chart",
           "settings": {
-            "size_chart": "size-chart"
+            "size_chart": "size-chart",
+            "hollow_show_size_chart": true,
+            "hollow_size_chart_image_alt": "Size chart",
+            "hollow_size_chart_title": "SIZE CHART",
+            "hollow_size_chart_note": "Show Size (US)",
+            "hollow_size_col_size": "SIZE",
+            "hollow_size_col_m": "MEDIUM",
+            "hollow_size_col_l": "LARGE",
+            "hollow_size_col_xl": "XL",
+            "hollow_size_row_men": "Men",
+            "hollow_size_men_m": "6 - 9",
+            "hollow_size_men_l": "9.5 - 12",
+            "hollow_size_men_xl": "12.5 - 15",
+            "hollow_size_row_women": "Women",
+            "hollow_size_women_m": "7 - 9.5",
+            "hollow_size_women_l": "10 - 13",
+            "hollow_size_women_xl": "-"
           }
         },
         "buy_buttons": {
