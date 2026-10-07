@@ -69,8 +69,8 @@
         "i6"
       ],
       "settings": {
-        "title": "Gear up for great days",
-        "handle": "#hollowsocks",
+        "title": "Bliv klar til gode dage",
+        "handle": "#strikkestuen",
         "handle_link": ""
       }
     },
@@ -104,12 +104,12 @@
       ],
       "settings": {
         "newsletter_image": "shopify://shop_images/review-image1.png",
-        "newsletter_heading": "JOIN THE STRIKKESTUEN CREW",
-        "newsletter_subheading": "Stay connected for new releases and exclusive offers.",
-        "newsletter_disclaimer": "<p>You can unsubscribe at any time. <a href=\"/policies/terms-of-service\">View Terms & Privacy</a>.</p>",
+        "newsletter_heading": "TILMELD DIG STRIKKESTUEN",
+        "newsletter_subheading": "Hold dig opdateret med nye udgivelser og eksklusive tilbud.",
+        "newsletter_disclaimer": "<p>Du kan til enhver tid afmelde dig. <a href=\"/policies/terms-of-service\">Se betingelser og privatlivspolitik</a>.</p>",
         "brand_text": "STRIKKESTUEN",
         "bottom_menu": "footer",
-        "follow_label": "FOLLOW ALONG"
+        "follow_label": "FØLG MED"
       }
     }
   },

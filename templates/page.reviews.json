@@ -6,48 +6,48 @@
         "r1": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable. Just what I needed for long walks with my dog. Highly recommend them to anyone who is looking for a great pair of socks.",
+            "quote": "Jeg er meget tilfreds med dette køb, de er af høj kvalitet. De føles fantastiske og er meget behagelige. Lige hvad jeg havde brug for til lange gåture med min hund. Kan varmt anbefale dem til alle, der leder efter et fantastisk par strømper.",
             "author": "Steve J",
-            "meta": "verified buyer"
+            "meta": "verificeret køber"
           }
         },
         "r2": {
           "type": "review",
           "settings": {
-            "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet. I gave it 5 stars because even in the hot weather they feel very comfortable!",
+            "quote": "Jeg ledte efter en kompressionsstrømpe i ankelstørrelse, der var behagelig, havde en god kompression og var nem at tage på. Jeg gav den 5 stjerner, fordi de føles meget behagelige selv i varmt vejr!",
             "author": "Michael W",
-            "meta": "verified buyer"
+            "meta": "verificeret køber"
           }
         },
         "r3": {
           "type": "review",
           "settings": {
-            "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible. My legs feel 30 years younger and I am not in pain.",
+            "quote": "Disse kompressionsstrømper er FANTASTISKE. Jeg har gået med kompressionsstrømper i 10 år, og det er første gang, jeg ikke tager dem af så hurtigt som muligt. Mine ben føles 30 år yngre, og jeg har ingen smerter.",
             "author": "drew s",
-            "meta": "verified buyer"
+            "meta": "verificeret køber"
           }
         },
         "r4": {
           "type": "review",
           "settings": {
-            "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.",
+            "quote": "Efter årevis med svedige, blærede fødder gennem utallige typer strømper, fungerer disse banebrydende alpaca strømper endelig.",
             "author": "Raymond L.",
-            "meta": "verified buyer"
+            "meta": "verificeret køber"
           }
         }
       },
       "block_order": ["r1", "r2", "r3", "r4"],
       "settings": {
         "show_stars": true,
-        "title": "OVER 4,000,000+ PAIRS SOLD",
+        "title": "OVER 4.000.000 PAR SOLGT",
         "button_label": "",
         "button_link": "",
-        "stat_1_value": "27,000+",
-        "stat_1_label": "reviews",
-        "stat_2_value": "OVER 4 MILLION",
-        "stat_2_label": "sold",
-        "stat_3_value": "99 day",
-        "stat_3_label": "money back guarantee"
+        "stat_1_value": "27.000+",
+        "stat_1_label": "anmeldelser",
+        "stat_2_value": "OVER 4 MILLIONER",
+        "stat_2_label": "solgt",
+        "stat_3_value": "1-års",
+        "stat_3_label": "garanti"
       }
     }
   },
