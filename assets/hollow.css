@@ -3342,11 +3342,11 @@
   box-sizing: border-box;
 }
 
-.hollow-offers__card--featured {
+/* .hollow-offers__card--featured {
   background: var(--hollow-tan);
   border: 2px solid var(--hollow-black);
   padding: 13px 13px 13px 11px;
-}
+} */
 
 .hollow-offers__body {
   display: flex;
@@ -4001,15 +4001,9 @@
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 25px;
   height: 25px;
-  top: 50%;
-  inset-inline-end: 0 !important;
-  transform: translateY(-50%);
-  line-height: 0;
+  inset-inline-end: 0;
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon img {
