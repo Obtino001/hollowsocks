@@ -379,6 +379,7 @@
         "right_image_card_ek6ngP",
         "r2"
       ],
+      "disabled": true,
       "settings": {
         "left_bg_color": "#0b3123",
         "left_text_color": "#ffffff",
