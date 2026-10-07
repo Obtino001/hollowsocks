@@ -3905,6 +3905,16 @@
   color: var(--hollow-black);
 }
 
+.hollow-theme .hollow-size-chart__image-wrap {
+  width: 100%;
+}
+
+.hollow-theme .hollow-size-chart__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .hollow-theme .hollow-size-chart__table {
   width: 100%;
   border-collapse: collapse;
