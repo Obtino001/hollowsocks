@@ -317,8 +317,8 @@
           "settings": {
             "custom_svg": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/a692680f-5ae6-4240-a64d-76f3c38d52b2",
-            "title": "NATURALLY MOISTURE-WICKING",
-            "text": "Alpaca fiber naturally wicks moisture to keep you comfortable and dry all-day."
+            "title": "BLØD MOD HUDEN",
+            "text": "Uld behøver ikke kradse. Garnet her er blødt nok til at have på uden noget under — og kløen er den eneste grund til, at folk holdt op med at bruge dem."
           }
         },
         "f2": {
@@ -326,8 +326,8 @@
           "settings": {
             "custom_svg": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/9dd05c83-10f3-4579-869d-49a5732e35a6",
-            "title": "SECURED NO-SLIP FIT",
-            "text": "Strikkestuen socks comfortably stays locked in at the cuff to prevent them from loosening or rolling down so you stay locked in and focused on performing your best."
+            "title": "FORSTÆRKET HÆL OG TÅ",
+            "text": "Der er lagt ekstra garn præcis de to steder, hvor sokker går hul. Det er derfor, vi tør give et års garanti."
           }
         },
         "f3": {
@@ -335,8 +335,8 @@
           "settings": {
             "custom_svg": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/0c284065-2483-438a-8914-30dc55097956",
-            "title": "ALL-SEASON TEMPERATURE CONTROL",
-            "text": "Built-in temperature regulation ensures you stay warm when it's cold, and cool when it's hot. Stay comfy in any weather."
+            "title": "TÅLER MASKINVASK",
+            "text": "30 grader på uldprogram. De krymper ikke, og de skal ikke håndvaskes. Så ender de ikke i en skuffe."
           }
         },
         "f4": {
@@ -344,8 +344,8 @@
           "settings": {
             "custom_svg": "",
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/5f411ca2-c8e7-4b48-8fe5-38aa02e397c2",
-            "title": "PREMIUM PERUVIAN ALPACA FIBER",
-            "text": "Strikkestuen socks are made with premium alpaca fiber imported from the pristine highlands of Peru. Our bespoke precision manufacturing process guarantees you're wearing the best alpaca socks ever."
+            "title": "TYKT ULDGARN",
+            "text": "Tykkere end det meste. De holder varmen, også når de er fugtige — og de er ikke til pynt."
           }
         },
         "r1": {
@@ -382,7 +382,7 @@
       "settings": {
         "left_bg_color": "#0b3123",
         "left_text_color": "#ffffff",
-        "main_heading": "WHY STRIKKESTUEN WINS? FEATURE BY FEATURE.",
+        "main_heading": "Det samme som dengang — bortset fra fire ting",
         "sticky_offset": 80,
         "right_bg_color": "#ffffff",
         "right_text_color": "#111111",
