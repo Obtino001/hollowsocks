@@ -4167,9 +4167,7 @@
 
 .hollow-theme .hollow-cart-drawer__title {
   font-family: var(--hollow-display);
-  font-size: 22px;
-
-  letter-spacing: 0.04em;
+  font-size: 22px !important;
   text-transform: uppercase;
   margin: 0;
   line-height: 1;
