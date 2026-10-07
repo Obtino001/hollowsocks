@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hollow-reviews": {
@@ -36,20 +45,21 @@
           }
         }
       },
-      "block_order": ["r1", "r2", "r3", "r4"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
       "settings": {
         "show_stars": true,
         "title": "OVER 4.000.000 PAR SOLGT",
         "button_label": "",
-        "button_link": "",
-        "stat_1_value": "27.000+",
-        "stat_1_label": "anmeldelser",
-        "stat_2_value": "OVER 4 MILLIONER",
-        "stat_2_label": "solgt",
-        "stat_3_value": "1-års",
-        "stat_3_label": "garanti"
+        "button_link": ""
       }
     }
   },
-  "order": ["hollow-reviews"]
+  "order": [
+    "hollow-reviews"
+  ]
 }
