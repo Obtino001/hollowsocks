@@ -200,22 +200,6 @@ Arguments
             <span class="hollow-card__stars">★★★★★</span>
             <span class="hollow-card__reviews-count">({{ hover_reviews }} REVIEWS)</span>
           </div>
-          {%- liquid
-            assign shop_variant = product.selected_or_first_available_variant
-          -%}
-          <button
-            type="button"
-            class="hollow-card__shop"
-            data-hollow-quick-add
-            data-variant-id="{{ shop_variant.id }}"
-            {% unless shop_variant.available %}disabled{% endunless %}
-          >
-            {%- if shop_variant.available -%}
-              SHOP NOW
-            {%- else -%}
-              SOLD OUT
-            {%- endif -%}
-          </button>
         </div>
 
         {%- comment -%} Color images for hover/swatch JS only — UI swatches live under title {%- endcomment -%}

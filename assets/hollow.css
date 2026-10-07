@@ -1309,17 +1309,25 @@
   padding: 8px 0 48px;
 }
 
-.hollow-shop-all .hollow-btn--dark {
+.hollow-view-all-button {
   border-radius: 6px;
   min-width: 200px;
   height: 48px;
   padding: 0 40px;
-  background: #282828;
-  color: #fff;
+  background: #2F4438 !important;
+  border-color: #2F4438 !important;
+  color: #fff !important;
   font-family: var(--hollow-mono);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: .14em;
+}
+
+.hollow-view-all-button:hover,
+.hollow-view-all-button:visited {
+  background: #2F4438 !important;
+  border-color: #2F4438 !important;
+  color: #fff !important;
 }
 
 .hollow-theme .grid-product.hollow-card {
@@ -1478,7 +1486,7 @@
   z-index: 5;
 }
 
-/* Hover: reviews pill (top) + SHOP NOW (bottom) — match Hollow */
+/* Product-card hover review count */
 .hollow-card__hover {
   position: absolute;
   inset: 0;
@@ -1527,6 +1535,18 @@
   font-size: 11px;
   letter-spacing: 1px;
   line-height: 1;
+}
+
+/* Review stars are intentionally hidden storewide; review counts remain visible. */
+.hollow-pdp-rating__stars,
+.hollow-card__stars,
+.hollow-card__rating-stars,
+.hollow-reviews__stars,
+.hollow-reviews__card-stars,
+.hollow-cart-trust__stars,
+.testimonial-stars,
+.ds-trust-bar__stars {
+  display: none !important;
 }
 
 .hollow-card__reviews-count {
