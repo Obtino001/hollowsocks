@@ -193,7 +193,6 @@ html.hm-ready [data-hm='prod'].hm-in > .grid-product__content {
    3. Card hover — lift, elevation, subtle scale
    -------------------------------------------------------------------------- */
 
-.hm-ready .hollow-advantage__item,
 .hm-ready .hollow-reviews__card,
 .hm-ready .hollow-wins__item,
 .hm-ready .hollow-benefits__item,
@@ -206,7 +205,6 @@ html.hm-ready [data-hm='prod'].hm-in > .grid-product__content {
     box-shadow var(--hm-dur-hover) var(--hm-ease);
 }
 
-.hm-ready .hollow-advantage__item:hover,
 .hm-ready .hollow-reviews__card:hover,
 .hm-ready .hollow-wins__item:hover,
 .hm-ready .hollow-benefits__item:hover,
