@@ -4,6 +4,17 @@
       border-bottom: 1px solid;
     }
   {%- endif -%}
+  {%- if section.settings.bg_color != blank or section.settings.text_color != blank -%}
+    .announcement-bar, .hollow-announcement {
+      {%- if section.settings.bg_color != blank -%}background-color: {{ section.settings.bg_color }} !important;{%- endif -%}
+      {%- if section.settings.text_color != blank -%}color: {{ section.settings.text_color }} !important;{%- endif -%}
+    }
+    {%- if section.settings.text_color != blank -%}
+    .announcement-bar *, .hollow-announcement * {
+      color: {{ section.settings.text_color }} !important;
+    }
+    {%- endif -%}
+  {%- endif -%}
 </style>
 
 {%- render 'announcement-bar', section: section -%}
@@ -64,6 +75,16 @@
       "label": "Countdown end (ISO)",
       "info": "Example: 2026-09-07T23:59:59",
       "default": "2026-08-20T23:59:59"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
     }
   ],
   "blocks": [
