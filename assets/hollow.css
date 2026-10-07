@@ -4001,15 +4001,24 @@
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon {
-  width: 25px;
-  height: 25px;
-  inset-inline-end: 0;
+  position: absolute !important;
+  display: grid !important;
+  place-items: center;
+  width: 25px !important;
+  height: 25px !important;
+  top: 50% !important;
+  inset-inline-end: 0 !important;
+  transform: translateY(-50%) !important;
+  line-height: 0;
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon img {
+  position: absolute;
+  inset: 0;
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 25px !important;
+  height: 25px !important;
+  margin: auto;
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon .hollow-pdp-tab__minus {
