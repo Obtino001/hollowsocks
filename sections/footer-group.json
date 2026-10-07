@@ -12,7 +12,8 @@
   "name": "t:sections.footer-group.name",
   "sections": {
     "hollow-reviews": {
-      "type": "hollow-reviews"
+      "type": "hollow-reviews",
+      "settings": {}
     },
     "hollow-instagram": {
       "type": "hollow-instagram",
