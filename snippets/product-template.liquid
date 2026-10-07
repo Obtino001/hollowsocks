@@ -321,7 +321,7 @@
                     %}
                     {% unless tab_content == blank and block.settings.title == blank %}
                       <div class="product-block product-block--tab hollow-pdp-tab" {{ block.shopify_attributes }}>
-                        {%- render 'tab', id: tab_id, title: block.settings.title, content: tab_content, force_open: force_open -%}
+                        {%- render 'tab', id: tab_id, title: block.settings.title, content: tab_content, force_open: force_open, icon_style: 'plus_minus' -%}
                       </div>
                     {% endunless %}
                   {%- when 'contact' -%}

@@ -4017,27 +4017,27 @@
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-trigger__icon {
-  width: auto;
-  height: auto;
+  width: 20px;
+  height: 20px;
   inset-inline-end: 0;
 }
 
-.hollow-theme .hollow-pdp-tab .collapsible-trigger__icon .icon {
-  display: none !important;
-}
-
-.hollow-theme .hollow-pdp-tab .collapsible-trigger__icon::before {
-  content: "+";
+.hollow-theme .hollow-pdp-tab .collapsible-trigger__icon svg {
   display: block;
-  font-family: var(--hollow-display);
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--hollow-black);
+  width: 20px;
+  height: 20px;
 }
 
-.hollow-theme .hollow-pdp-tab .collapsible-trigger.is-open .collapsible-trigger__icon::before {
-  content: "−";
+.hollow-theme .hollow-pdp-tab .collapsible-trigger__icon .hollow-pdp-tab__minus {
+  display: none;
+}
+
+.hollow-theme .hollow-pdp-tab .collapsible-trigger.is-open .hollow-pdp-tab__plus {
+  display: none;
+}
+
+.hollow-theme .hollow-pdp-tab .collapsible-trigger.is-open .hollow-pdp-tab__minus {
+  display: block;
 }
 
 .hollow-theme .hollow-pdp-tab .collapsible-content__inner,

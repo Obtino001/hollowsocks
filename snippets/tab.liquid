@@ -10,7 +10,14 @@
       class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height{% if force_open %} is-open{% endif %}" aria-controls="Product-content-{{ id }}"
       {% if force_open %}aria-expanded="true"{% endif %}>
       {{ title }}
-      {%- render 'collapsible-icons' -%}
+      {%- if icon_style == 'plus_minus' -%}
+        <span class="collapsible-trigger__icon" aria-hidden="true">
+          <svg class="hollow-pdp-tab__plus" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+          <svg class="hollow-pdp-tab__minus" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M4 10h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+        </span>
+      {%- else -%}
+        {%- render 'collapsible-icons' -%}
+      {%- endif -%}
     </button>
     <div id="Product-content-{{ id }}"
       class="collapsible-content collapsible-content--all{% if force_open %} is-open{% endif %}"
