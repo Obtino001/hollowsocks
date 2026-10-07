@@ -4593,10 +4593,12 @@
   line-height: 0;
 }
 
-.hollow-theme .hollow-cart-trust__badge svg {
+.hollow-theme .hollow-cart-trust__badge svg,
+.hollow-theme .hollow-cart-trust__badge img {
   width: 28px;
   height: 28px;
   display: block;
+  object-fit: contain;
 }
 
 .hollow-theme .hollow-cart-trust__text {

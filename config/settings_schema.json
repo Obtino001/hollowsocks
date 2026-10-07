@@ -887,37 +887,6 @@
         "default": true
       },
       {
-        "type": "range",
-        "id": "hollow_cart_threshold",
-        "label": "Pairs needed to unlock free pairs",
-        "min": 1,
-        "max": 4,
-        "step": 1,
-        "default": 2
-      },
-      {
-        "type": "range",
-        "id": "hollow_cart_free_pairs",
-        "label": "Free pairs unlocked",
-        "min": 1,
-        "max": 4,
-        "step": 1,
-        "default": 2
-      },
-      {
-        "type": "text",
-        "id": "hollow_cart_progress_message",
-        "label": "Progress message (incomplete)",
-        "default": "ADD [remaining] PAIR MORE TO UNLOCK [free] FREE PAIRS",
-        "info": "Use [remaining] and [free] placeholders"
-      },
-      {
-        "type": "text",
-        "id": "hollow_cart_progress_complete",
-        "label": "Progress message (complete)",
-        "default": "YOU'VE UNLOCKED 2 FREE PAIRS!"
-      },
-      {
         "type": "text",
         "id": "hollow_cart_checkout_label",
         "label": "Checkout button label",

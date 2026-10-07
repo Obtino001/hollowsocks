@@ -276,10 +276,21 @@
       var pct = 0;
       if (n >= 6) pct = 100;
       else if (n <= 0) pct = 0;
-      else pct = Math.min(99, Math.round((n / 6) * 100));
+      else pct = Math.round((n / 6) * 100);
       bar.style.width = pct + '%';
       progress.classList.toggle('is-complete', n >= 6);
     }
+
+    progress.querySelectorAll('[data-step]').forEach(function (step) {
+      var stepNumber = parseInt(step.getAttribute('data-step'), 10) || 0;
+      step.classList.toggle('is-active', n >= stepNumber);
+
+      var label = step.querySelector('[data-step-label]');
+      if (label) {
+        if (n >= stepNumber) label.textContent = 'IN CART';
+        else label.textContent = stepNumber === 1 ? 'PAIR 1' : 'ADD 1';
+      }
+    });
 
     progress.setAttribute('data-count', String(n));
   }
