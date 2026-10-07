@@ -35,8 +35,8 @@
         "link": "",
         "enable_countdown": false,
         "end_datetime": "2026-09-07T23:59:59",
-        "bg_color": "#282828",
-        "text_color": "#FFFFFF"
+        "bg_color": "#2F4438",
+        "text_color": "#ffffff"
       }
     },
     "header": {
