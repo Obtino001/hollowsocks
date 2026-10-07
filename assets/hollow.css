@@ -3342,12 +3342,6 @@
   box-sizing: border-box;
 }
 
-.hollow-offers__card--featured {
-  background: var(--hollow-tan);
-  border: 2px solid var(--hollow-black);
-  padding: 13px 13px 13px 11px;
-}
-
 .hollow-offers__body {
   display: flex;
   align-items: flex-start;
