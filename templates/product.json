@@ -147,22 +147,22 @@
         "stat-1": {
           "type": "stat",
           "settings": {
-            "value": "27,000+",
-            "label": "5-star reviews"
+            "value": "24",
+            "label": "MØNSTRE FRA DANSKE EGNE"
           }
         },
         "stat-2": {
           "type": "stat",
           "settings": {
-            "value": "4 MILLION+",
-            "label": "pairs sold"
+            "value": "12",
+            "label": "GARANTI PÅ HOLDBARHED"
           }
         },
         "stat-3": {
           "type": "stat",
           "settings": {
-            "value": "99-DAY",
-            "label": "money-back guarantee"
+            "value": "SMÅ PARTIER",
+            "label": "IKKE MASSEPRODUKTION"
           }
         }
       },
@@ -172,7 +172,7 @@
         "stat-3"
       ],
       "settings": {
-        "background": "#282828",
+        "background": "#2F4438",
         "text_color": "#ffffff"
       }
     },
