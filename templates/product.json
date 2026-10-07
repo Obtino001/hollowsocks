@@ -241,6 +241,7 @@
       "blocks": {
         "m1": {
           "type": "marquee_item",
+          "disabled": true,
           "settings": {
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
             "text": "Temperature Regulating"
@@ -248,6 +249,7 @@
         },
         "marquee_item_PaQpyt": {
           "type": "marquee_item",
+          "disabled": true,
           "settings": {
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
             "text": "Temperature Regulating"
@@ -257,35 +259,35 @@
           "type": "marquee_item",
           "settings": {
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
-            "text": "Temperature Regulating"
-          }
-        },
-        "m2": {
-          "type": "marquee_item",
-          "settings": {
-            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/2e3af8ec-c704-4e48-aa4d-83d02d09c050",
-            "text": "Breathable & Light"
+            "text": "Holder varmen"
           }
         },
         "m3": {
           "type": "marquee_item",
           "settings": {
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/474413fa-6896-4d19-a825-5c0cea6c952d",
-            "text": "Super Soft"
+            "text": "Blød mod huden"
           }
         },
         "m4": {
           "type": "marquee_item",
           "settings": {
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/900adad0-0e03-4dfe-99b4-aaa89e5a3be2",
-            "text": "Moisture Wicking"
+            "text": "KRADSER IKKE"
+          }
+        },
+        "m2": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/2e3af8ec-c704-4e48-aa4d-83d02d09c050",
+            "text": "Varm uden at svede"
           }
         },
         "m5": {
           "type": "marquee_item",
           "settings": {
             "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/000d6627-f069-4e3e-a5e1-6dfd7f11e281",
-            "text": "Odor Resistant"
+            "text": "FORSTÆRKET HÆL"
           }
         }
       },
@@ -293,9 +295,9 @@
         "m1",
         "marquee_item_PaQpyt",
         "marquee_item_FPNckM",
-        "m2",
         "m3",
         "m4",
+        "m2",
         "m5"
       ],
       "settings": {
