@@ -21,6 +21,14 @@
             "color_swatches": true
           }
         },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
         "size_chart": {
           "type": "size_chart",
           "settings": {
@@ -40,14 +48,6 @@
             "hollow_size_women_m": "7 - 9.5",
             "hollow_size_women_l": "10 - 13",
             "hollow_size_women_xl": "-"
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false,
-            "show_gift_card_recipient": false
           }
         },
         "tab-1": {
@@ -114,8 +114,8 @@
         "enable_video_looping": true,
         "product_video_style": "muted",
         "hollow_show_rating": true,
-        "hollow_fallback_rating": "4.9",
-        "hollow_fallback_review_count": "930",
+        "hollow_fallback_rating": "4.0",
+        "hollow_fallback_review_count": "",
         "hollow_short_description": "Som dem du havde som barn. Bare uden kløen",
         "hollow_show_promo_badge": true,
         "hollow_promo_badge": "Fri fragt, når du tager mere end ét par",
@@ -131,7 +131,6 @@
         "hollow_offer_3_name": "BUY 3 PAIRS GET 3 FREE",
         "hollow_offer_3_badge": "BEST VALUE",
         "hollow_offer_3_suffix": "+ FREE SHIPPING",
-        "hollow_guarantee_image": "shopify://shop_images/57e1ab65-0066-4773-9082-34f2630cbcd5.svg",
         "hollow_guarantee_title": "ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.",
         "hollow_ships_label": "AFSENDES:",
         "hollow_ships_value": "NÆSTE HVERDAG",
@@ -141,6 +140,7 @@
         "hollow_sticky_guarantee": "ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.",
         "hollow_sticky_show_thumb": false,
         "hollow_show_size_chart": true,
+        "hollow_size_chart_image_alt": "Size chart",
         "hollow_size_chart_title": "SIZE CHART",
         "hollow_size_chart_note": "Show Size (US)",
         "hollow_size_col_size": "SIZE",
@@ -188,7 +188,7 @@
         "stat-3"
       ],
       "settings": {
-        "background": "#2F4438",
+        "background": "#2f4438",
         "text_color": "#ffffff"
       }
     },
