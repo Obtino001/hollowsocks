@@ -13,7 +13,73 @@
   "sections": {
     "hollow-reviews": {
       "type": "hollow-reviews",
-      "settings": {}
+      "blocks": {
+        "review_MQHcCX": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_BNgUD4": {
+          "type": "image",
+          "settings": {
+            "tall": true
+          }
+        },
+        "review_h6tzDm": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_midNpx": {
+          "type": "image",
+          "settings": {
+            "tall": true
+          }
+        },
+        "review_b7BTRQ": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_zhNfA4": {
+          "type": "image",
+          "settings": {
+            "tall": true
+          }
+        },
+        "review_4VctfN": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        }
+      },
+      "block_order": [
+        "review_MQHcCX",
+        "image_BNgUD4",
+        "review_h6tzDm",
+        "image_midNpx",
+        "review_b7BTRQ",
+        "image_zhNfA4",
+        "review_4VctfN"
+      ],
+      "settings": {
+        "show_stars": true,
+        "title": "OVER 4,000,000+ PAIRS SOLD",
+        "button_label": "READ MORE REVIEWS —",
+        "button_link": ""
+      }
     },
     "hollow-instagram": {
       "type": "hollow-instagram",
