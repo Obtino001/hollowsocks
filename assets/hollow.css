@@ -3585,8 +3585,9 @@
 
 .hollow-theme .product-single__form .add-to-cart,
 .hollow-theme .element-button[type="submit"] {
-  background: var(--hollow-red) !important;
+  background: #2F4438 !important;
   border: 0 !important;
+  border-color: #2F4438 !important;
   color: var(--hollow-white) !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
