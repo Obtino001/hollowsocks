@@ -202,7 +202,7 @@ html.hm-ready [data-hm='prod'].hm-in > .grid-product__content {
 .hm-ready [class*='scroll-card-']:not([class*='scroll-card-image-']):not([class*='scroll-card-content-']) {
   transition:
     transform var(--hm-dur-hover) var(--hm-ease),
-    box-shadow var(--hm-dur-hover) var(--hm-ease);
+    /* box-shadow var(--hm-dur-hover) var(--hm-ease); */
 }
 
 .hm-ready .hollow-reviews__card:hover,
@@ -212,7 +212,7 @@ html.hm-ready [data-hm='prod'].hm-in > .grid-product__content {
 .hm-ready .hollow-about__means-item:hover,
 .hm-ready [class*='scroll-card-']:not([class*='scroll-card-image-']):not([class*='scroll-card-content-']):hover {
   transform: translate3d(0, -6px, 0);
-  box-shadow: 0 18px 44px rgba(17, 17, 17, 0.09);
+  /* box-shadow: 0 18px 44px rgba(17, 17, 17, 0.09); */
 }
 
 /* Product card: lift the media block so the grid never shifts */
