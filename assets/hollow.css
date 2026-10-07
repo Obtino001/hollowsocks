@@ -3323,12 +3323,22 @@
 }
 
 .hollow-offers__label {
-  margin: 0 0 4px;
-  font-family: var(--hollow-mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  margin: 0;
+  font-family: var(--hollow-body);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
+  color: var(--hollow-black);
+}
+
+.hollow-offers__subtitle {
+  margin: -8px 0 4px;
+  font-family: var(--hollow-body);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
   color: var(--hollow-black);
 }
 
@@ -3341,12 +3351,6 @@
   border-radius: 2px;
   box-sizing: border-box;
 }
-
-/* .hollow-offers__card--featured {
-  background: var(--hollow-tan);
-  border: 2px solid var(--hollow-black);
-  padding: 13px 13px 13px 11px;
-} */
 
 .hollow-offers__body {
   display: flex;

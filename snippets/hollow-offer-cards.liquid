@@ -2,8 +2,11 @@
   {%- if section.settings.hollow_offers_label != blank -%}
     <p class="hollow-offers__label">{{ section.settings.hollow_offers_label | escape }}</p>
   {%- endif -%}
+  {%- if section.settings.hollow_offers_subtitle != blank -%}
+    <p class="hollow-offers__subtitle">{{ section.settings.hollow_offers_subtitle | escape }}</p>
+  {%- endif -%}
 
-  <div class="hollow-offers__card hollow-offers__card--featured">
+  <div class="hollow-offers__card">
     <div class="hollow-offers__body">
       <div class="hollow-offers__left">
         <span class="hollow-offers__name">1 PAR</span>
