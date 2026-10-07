@@ -1,6 +1,8 @@
 {%- liquid
   assign chart_title = section.settings.hollow_size_chart_title
   assign chart_note = section.settings.hollow_size_chart_note
+  assign chart_image = section.settings.hollow_size_chart_image
+  assign chart_image_alt = section.settings.hollow_size_chart_image_alt
   assign col_size = section.settings.hollow_size_col_size
   assign col_m = section.settings.hollow_size_col_m
   assign col_l = section.settings.hollow_size_col_l
@@ -24,30 +26,44 @@
       <span class="hollow-size-chart__note">{{ chart_note | escape }}</span>
     {%- endif -%}
   </div>
-  <div class="hollow-size-chart__table-wrap">
-    <table class="hollow-size-chart__table">
-      <thead>
-        <tr>
-          <th scope="col">{{ col_size | escape }}</th>
-          <th scope="col">{{ col_m | escape }}</th>
-          <th scope="col">{{ col_l | escape }}</th>
-          <th scope="col">{{ col_xl | escape }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">{{ row_men | escape }}</th>
-          <td>{{ men_m | escape }}</td>
-          <td>{{ men_l | escape }}</td>
-          <td>{{ men_xl | escape }}</td>
-        </tr>
-        <tr>
-          <th scope="row">{{ row_women | escape }}</th>
-          <td>{{ women_m | escape }}</td>
-          <td>{{ women_l | escape }}</td>
-          <td>{{ women_xl | escape }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  {%- if chart_image != blank -%}
+    <div class="hollow-size-chart__image-wrap">
+      {{ chart_image
+        | image_url: width: 1600
+        | image_tag:
+          class: 'hollow-size-chart__image',
+          loading: 'lazy',
+          widths: '400, 600, 800, 1000, 1200, 1600',
+          sizes: '(max-width: 768px) calc(100vw - 40px), 620px',
+          alt: chart_image_alt
+      }}
+    </div>
+  {%- else -%}
+    <div class="hollow-size-chart__table-wrap">
+      <table class="hollow-size-chart__table">
+        <thead>
+          <tr>
+            <th scope="col">{{ col_size | escape }}</th>
+            <th scope="col">{{ col_m | escape }}</th>
+            <th scope="col">{{ col_l | escape }}</th>
+            <th scope="col">{{ col_xl | escape }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ row_men | escape }}</th>
+            <td>{{ men_m | escape }}</td>
+            <td>{{ men_l | escape }}</td>
+            <td>{{ men_xl | escape }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ row_women | escape }}</th>
+            <td>{{ women_m | escape }}</td>
+            <td>{{ women_l | escape }}</td>
+            <td>{{ women_xl | escape }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  {%- endif -%}
 </div>
