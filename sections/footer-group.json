@@ -115,50 +115,63 @@
         "i5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Main_Image_680366b0-324b-4dde-a837-3fa70f5c864f.png",
+            "image": "shopify://shop_images/hf_20261008_181918_1ecf615f-c50f-4ffe-8ed2-e1394926d96e.jpg",
             "link": ""
           }
         },
         "i6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Image-42_1.jpg",
+            "image": "shopify://shop_images/hf_20261008_182309_b150fd34-572d-41c4-955a-244a9299ae5f.jpg",
             "link": ""
           }
         },
         "image_f6iVLK": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_182545_741f413f-e27c-4f4d-8f79-fd543a21ff68.jpg",
             "link": ""
           }
         },
         "image_qjmrbp": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_182656_5cb903dd-6105-455c-89e0-99b3c794c843.jpg",
             "link": ""
           }
         },
         "image_kAMLGP": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_182911_af8631d8-52ed-4865-8dbb-3ec72263a2fd.jpg",
             "link": ""
           }
         },
         "image_8ig4RD": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_191727_24f104d0-92e8-4e85-addb-d2df6d3e16ac.jpg",
             "link": ""
           }
         },
         "image_8KHYBw": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_192406_5d92adaf-47c3-48f2-9477-9897de235985.jpg",
             "link": ""
           }
         },
         "image_dbM8dH": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_193015_f498505c-fd4e-4fbb-86ac-1276bd80838b.jpg",
+            "link": ""
+          }
+        },
+        "image_Amtkip": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261008_194038_61ef11e0-fdcc-4a5c-9933-d2c1af549259.jpg",
             "link": ""
           }
         }
@@ -175,7 +188,8 @@
         "image_kAMLGP",
         "image_8ig4RD",
         "image_8KHYBw",
-        "image_dbM8dH"
+        "image_dbM8dH",
+        "image_Amtkip"
       ],
       "settings": {
         "title": "Bliv klar til gode dage",
