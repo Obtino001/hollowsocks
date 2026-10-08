@@ -25,6 +25,7 @@
         "image_BNgUD4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
             "tall": true
           }
         },
@@ -75,7 +76,6 @@
         "review_4VctfN"
       ],
       "settings": {
-        "show_stars": true,
         "title": "OVER 4,000,000+ PAIRS SOLD",
         "button_label": "READ MORE REVIEWS —",
         "button_link": ""
