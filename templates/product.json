@@ -418,6 +418,13 @@
     "custom-split-faq": {
       "type": "custom-split-faq",
       "blocks": {
+        "faq_RtcxJX": {
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES ALPACA PERFORM BETTER?",
+            "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
+          }
+        },
         "faq-1": {
           "type": "faq",
           "settings": {
@@ -455,6 +462,7 @@
         }
       },
       "block_order": [
+        "faq_RtcxJX",
         "faq-1",
         "faq-2",
         "faq-3",
@@ -464,7 +472,7 @@
       "settings": {
         "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
         "title": "Spørgsmål vi får",
-        "button_text": "READ ALL FAQS",
+        "button_text": "",
         "button_link": ""
       }
     }
