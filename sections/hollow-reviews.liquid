@@ -1,12 +1,5 @@
 <section id="hollow-reviews-section" class="hollow-reviews" data-section-id="{{ section.id }}">
   <div class="page-width">
-    {%- if section.settings.show_stars -%}
-      <div class="hollow-reviews__stars" aria-hidden="true">
-        {%- for i in (1..5) -%}
-          {%- render 'hollow-icon', icon: 'star' -%}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
     {%- if section.settings.title != blank -%}
       <h2 class="hollow-reviews__title">{{ section.settings.title }}</h2>
     {%- endif -%}
@@ -15,7 +8,6 @@
       {%- for block in section.blocks -%}
         {%- if block.type == 'review' -%}
           <blockquote class="hollow-reviews__card" {{ block.shopify_attributes }}>
-            <div class="hollow-reviews__card-stars" aria-hidden="true">★★★★★</div>
             <p class="hollow-reviews__quote">{{ block.settings.quote }}</p>
             {%- if block.settings.author != blank -%}
               <div class="hollow-reviews__author">{{ block.settings.author }}</div>
@@ -48,7 +40,6 @@
   "name": "Strikkestuen reviews",
   "class": "hollow-reviews-section",
   "settings": [
-    { "type": "checkbox", "id": "show_stars", "label": "Show stars", "default": true },
     { "type": "text", "id": "title", "label": "Heading", "default": "OVER 4,000,000+ PAIRS SOLD" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "READ MORE REVIEWS —" },
     { "type": "url", "id": "button_link", "label": "Button link" },

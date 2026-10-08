@@ -229,26 +229,7 @@
               {%- endif -%}
 
               {%- if isModal != true and show_pdp_rating -%}
-                <a href="#hollow-reviews-section" class="hollow-pdp-rating" aria-label="{{ rating_avg }} stars, {{ reviews_rating_count }} reviews">
-                  <div class="hollow-pdp-rating__stars" aria-hidden="true">
-                    {%- for i in (1..5) -%}
-                      {%- liquid
-                        assign star_base = i | minus: 1
-                        assign fill_raw = rating_avg | minus: star_base
-                        if fill_raw <= 0
-                          assign fill_pct = 0
-                        elsif fill_raw >= 1
-                          assign fill_pct = 100
-                        else
-                          assign fill_pct = fill_raw | times: 100.0
-                        endif
-                      -%}
-                      <span class="hollow-pdp-rating__star">
-                        <span class="hollow-pdp-rating__star-outline">★</span>
-                        <span class="hollow-pdp-rating__star-filled" style="--hollow-star-fill: {{ fill_pct }}%;">★</span>
-                      </span>
-                    {%- endfor -%}
-                  </div>
+                <a href="#hollow-reviews-section" class="hollow-pdp-rating" aria-label="{{ reviews_rating_count }} reviews">
                   <span class="hollow-pdp-rating__count">({{ reviews_rating_count }})</span>
                 </a>
               {%- endif -%}
