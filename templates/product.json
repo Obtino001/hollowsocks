@@ -203,6 +203,7 @@
         "rows": 2,
         "mobile_scrollable": true,
         "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
         "divider": false
       }
     },
@@ -453,7 +454,8 @@
         "faq-4"
       ],
       "settings": {
-        "title": "YOUR QUESTIONS\nANSWERED",
+        "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
+        "title": "Spørgsmål vi får",
         "button_text": "READ ALL FAQS",
         "button_link": ""
       }
