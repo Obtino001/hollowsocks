@@ -247,11 +247,12 @@ Arguments
               endif
             endfor
             if promo_text == blank
-              if on_sale
-                assign promo_text = '50% OFF'
-              else
+              unless on_sale
                 assign promo_text = 'BUY 2 GET 2 FREE'
-              endif
+              endunless
+            endif
+            if promo_text contains '50%'
+              assign promo_text = ''
             endif
 
             assign card_reviews = reviews_count
