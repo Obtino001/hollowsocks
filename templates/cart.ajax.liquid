@@ -13,12 +13,14 @@
 {%- liquid
   assign hollow_bundle_count = 0
   assign hollow_bundle_total = 0
+  assign hollow_bundle_discount = 0
   for item in cart.items
     if item.original_price == 29900
       for item_collection in item.product.collections
         if item_collection.handle == 'alle-monstre'
           assign hollow_bundle_count = hollow_bundle_count | plus: item.quantity
           assign hollow_bundle_total = hollow_bundle_total | plus: item.final_line_price
+          assign hollow_bundle_discount = hollow_bundle_discount | plus: item.line_level_total_discount
           break
         endif
       endfor
@@ -29,7 +31,8 @@
   data-count="{{ cart.item_count }}"
   data-cart-subtotal="{{ cart.total_price }}"
   data-bundle-count="{{ hollow_bundle_count }}"
-  data-bundle-total="{{ hollow_bundle_total }}">
+  data-bundle-total="{{ hollow_bundle_total }}"
+  data-bundle-discount="{{ hollow_bundle_discount }}">
   {% for item in cart.items %}
     {%- render 'cart-item', product: item, sizes: '100px', -%}
   {% endfor %}

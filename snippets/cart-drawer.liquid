@@ -3,12 +3,14 @@
     assign hollow_count = cart.item_count
     assign hollow_bundle_count = 0
     assign hollow_bundle_total = 0
+    assign hollow_bundle_discount = 0
     for item in cart.items
       if item.original_price == 29900
         for item_collection in item.product.collections
           if item_collection.handle == 'alle-monstre'
             assign hollow_bundle_count = hollow_bundle_count | plus: item.quantity
             assign hollow_bundle_total = hollow_bundle_total | plus: item.final_line_price
+            assign hollow_bundle_discount = hollow_bundle_discount | plus: item.line_level_total_discount
             break
           endif
         endfor
@@ -40,7 +42,7 @@
         <div class="drawer__scrollable">
           {%- if settings.hollow_cart_progress_enable -%}
             <div
-              class="hollow-cart-progress{% if hollow_bundle_count == 6 and hollow_bundle_total == 89900 %} is-complete{% endif %}"
+              class="hollow-cart-progress{% if hollow_bundle_count >= 6 and hollow_bundle_discount >= 89500 %} is-complete{% endif %}"
               data-hollow-cart-progress
               data-count="{{ hollow_bundle_count }}"
             >
@@ -76,13 +78,13 @@
                     </span>
                     <span class="hollow-cart-progress__label" data-step-label="2">{% if hollow_bundle_count >= 2 %}IN CART{% else %}ADD 1{% endif %}</span>
                   </div>
-                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_bundle_count >= 3 %} is-active{% endif %}" data-step="3">
+                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_bundle_count >= 4 and hollow_bundle_discount >= 59700 %} is-active{% endif %}" data-step="3">
                     <span class="hollow-cart-progress__icon hollow-cart-progress__icon--gift">
                       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10h16v10H4V10zM3 7h18v3H3V7zM12 7v13M8.5 4.5c1 0 2 .8 3.5 2.5C13.5 5.3 14.5 4.5 15.5 4.5 17 4.5 18 5.5 18 7H6c0-1.5 1-2.5 2.5-2.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
                     </span>
                     <span class="hollow-cart-progress__label">FREE</span>
                   </div>
-                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_bundle_count >= 4 %} is-active{% endif %}" data-step="4">
+                  <div class="hollow-cart-progress__step hollow-cart-progress__step--free{% if hollow_bundle_count >= 4 and hollow_bundle_discount >= 59700 %} is-active{% endif %}" data-step="4">
                     <span class="hollow-cart-progress__icon hollow-cart-progress__icon--gift">
                       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10h16v10H4V10zM3 7h18v3H3V7zM12 7v13M8.5 4.5c1 0 2 .8 3.5 2.5C13.5 5.3 14.5 4.5 15.5 4.5 17 4.5 18 5.5 18 7H6c0-1.5 1-2.5 2.5-2.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
                     </span>

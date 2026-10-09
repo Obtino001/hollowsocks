@@ -7,44 +7,44 @@
   {%- endif -%}
 
   <button type="button" class="hollow-offers__card is-selected" data-bundle-quantity="1" aria-pressed="true">
-    <div class="hollow-offers__body">
-      <div class="hollow-offers__left">
+    <span class="hollow-offers__body">
+      <span class="hollow-offers__left">
         <span class="hollow-offers__name">{{ section.settings.hollow_offer_1_name | default: 'ENKELT PAR' | escape }}</span>
         <span class="hollow-offers__each">299 kr. pr. par · + 59 kr. i FRAGT</span>
-      </div>
-      <div class="hollow-offers__right">
+      </span>
+      <span class="hollow-offers__right">
         <span class="hollow-offers__price">299 kr</span>
-      </div>
-    </div>
+      </span>
+    </span>
   </button>
 
   <button type="button" class="hollow-offers__card" data-bundle-quantity="4" aria-pressed="false">
     <span class="hollow-offers__badge">{{ section.settings.hollow_offer_2_badge | default: 'MEST POPULÆRE' | escape }}</span>
-    <div class="hollow-offers__body">
-      <div class="hollow-offers__left">
+    <span class="hollow-offers__body">
+      <span class="hollow-offers__left">
         <span class="hollow-offers__name">{{ section.settings.hollow_offer_2_name | default: 'KØB 2 — FÅ 2 MED' | escape }}</span>
         <span class="hollow-offers__package">FAMILIEPAKKEN · 4 par</span>
         <span class="hollow-offers__each">150 kr pr. par · {{ section.settings.hollow_offer_2_suffix | default: 'FRI FRAGT' | escape }}</span>
-      </div>
-      <div class="hollow-offers__right">
+      </span>
+      <span class="hollow-offers__right">
         <span class="hollow-offers__price">599 kr</span>
         <s class="hollow-offers__was">1.196 kr</s>
-      </div>
-    </div>
+      </span>
+    </span>
   </button>
 
   <button type="button" class="hollow-offers__card" data-bundle-quantity="6" aria-pressed="false">
     <span class="hollow-offers__badge hollow-offers__badge--value">{{ section.settings.hollow_offer_3_badge | default: 'BEDSTE VÆRDI' | escape }}</span>
-    <div class="hollow-offers__body">
-      <div class="hollow-offers__left">
+    <span class="hollow-offers__body">
+      <span class="hollow-offers__left">
         <span class="hollow-offers__name">{{ section.settings.hollow_offer_3_name | default: 'KØB 3 — FÅ 3 MED' | escape }}</span>
         <span class="hollow-offers__package">STORFAMILIEN · 6 par</span>
         <span class="hollow-offers__each">150 kr pr. par · {{ section.settings.hollow_offer_3_suffix | default: 'FRI FRAGT' | escape }}</span>
-      </div>
-      <div class="hollow-offers__right">
+      </span>
+      <span class="hollow-offers__right">
         <span class="hollow-offers__price">899 kr</span>
         <s class="hollow-offers__was">1.794 kr</s>
-      </div>
-    </div>
+      </span>
+    </span>
   </button>
 </section>

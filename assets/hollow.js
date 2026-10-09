@@ -255,7 +255,7 @@
     });
   }
 
-  function updateHollowCartUI(count, bundleCount, bundleTotal) {
+  function updateHollowCartUI(count, bundleCount, bundleTotal, bundleDiscount) {
     var n = typeof count === 'number' ? count : 0;
     document.querySelectorAll('[data-hollow-cart-count]').forEach(function (el) {
       el.textContent = String(n);
@@ -292,12 +292,14 @@
       else if (eligible <= 0) pct = 0;
       else pct = Math.round((eligible / 6) * 100);
       bar.style.width = pct + '%';
-      progress.classList.toggle('is-complete', eligible >= 6 && bundleTotal === 89900);
+      progress.classList.toggle('is-complete', eligible >= 6 && bundleDiscount >= 89500);
     }
 
     progress.querySelectorAll('[data-step]').forEach(function (step) {
       var stepNumber = parseInt(step.getAttribute('data-step'), 10) || 0;
-      step.classList.toggle('is-active', eligible >= stepNumber);
+      step.classList.toggle('is-active', stepNumber >= 3
+        ? eligible >= 4 && bundleDiscount >= 59700
+        : eligible >= stepNumber);
 
       var label = step.querySelector('[data-step-label]');
       if (label) {
@@ -311,11 +313,14 @@
 
   function initHollowBundleOffers() {
     document.querySelectorAll('[data-hollow-offers]').forEach(function (offers) {
+      if (offers.dataset.bundleReady === 'true') return;
       var form = offers.parentElement.querySelector('.product-single__form');
       if (!form) return;
+      offers.dataset.bundleReady = 'true';
 
       var target = 1;
       var pending = false;
+      var queuedTarget = null;
       var completed = null;
       var addButton = form.querySelector('[data-add-to-cart]');
 
@@ -327,6 +332,12 @@
             option.classList.toggle('is-selected', selected);
             option.setAttribute('aria-pressed', String(selected));
           });
+          if (pending) {
+            queuedTarget = target;
+          } else if (target > 1 && addButton && !addButton.disabled) {
+            if (form.requestSubmit) form.requestSubmit(addButton);
+            else addButton.click();
+          }
         });
       });
 
@@ -361,9 +372,9 @@
             var container = document.createElement('div');
             container.innerHTML = markup;
             var items = container.querySelector('.cart__items');
-            if (!items || !items.hasAttribute('data-bundle-count')) throw new Error('Cart could not be checked. Please try again.');
+            if (!items || !items.hasAttribute('data-bundle-count')) throw new Error('Kurven kunne ikke kontrolleres. Prøv igen.');
             var current = Number(items.getAttribute('data-bundle-count'));
-            if (!Number.isFinite(current)) throw new Error('Cart could not be checked. Please try again.');
+            if (!Number.isFinite(current)) throw new Error('Kurven kunne ikke kontrolleres. Prøv igen.');
             var missing = requestedTarget - current;
             if (missing <= 0) {
               completed = { target: requestedTarget, variantId: variantId };
@@ -380,7 +391,7 @@
             }).then(function (response) {
               return response.json().then(function (product) {
                 if (!response.ok || product.status === 422) {
-                  throw new Error(product.description || product.message || 'Could not add the bundle.');
+                  throw new Error(product.description || product.message || 'Pakken kunne ikke lægges i kurven.');
                 }
                 completed = product.quantity >= missing
                   ? { target: requestedTarget, variantId: variantId }
@@ -395,12 +406,19 @@
           .catch(function (error) {
             var message = document.createElement('div');
             message.className = 'errors text-center';
-            message.textContent = error.message || 'Could not add the bundle. Please try again.';
+            message.textContent = error.message || 'Pakken kunne ikke lægges i kurven. Prøv igen.';
             form.appendChild(message);
           })
           .finally(function () {
             pending = false;
             addButton.classList.remove('btn--loading');
+            if (queuedTarget && queuedTarget !== requestedTarget && queuedTarget > 1) {
+              queuedTarget = null;
+              if (form.requestSubmit) form.requestSubmit(addButton);
+              else addButton.click();
+            } else {
+              queuedTarget = null;
+            }
           });
       }, true);
     });
@@ -418,7 +436,7 @@
       window.setTimeout(function () {
         var items = document.querySelector('#CartDrawerForm [data-products] .cart__items');
         if (items && items.dataset.count) {
-          updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal));
+          updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal), Number(items.dataset.bundleDiscount));
         }
       }, 50);
     });
@@ -428,7 +446,7 @@
     var observer = new MutationObserver(function () {
       var items = form.querySelector('[data-products] .cart__items');
       if (items && items.dataset.count) {
-        updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal));
+        updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal), Number(items.dataset.bundleDiscount));
       }
     });
     var products = form.querySelector('[data-products]');
@@ -507,6 +525,7 @@
     initStickyAtc();
     initHollowPdpVariants();
     initHollowBundleOffers();
+    document.addEventListener('shopify:section:load', initHollowBundleOffers);
     initLuck();
     duplicateMarquee();
     window.addEventListener('resize', duplicateMarquee);
