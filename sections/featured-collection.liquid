@@ -13,17 +13,12 @@
   data-section-id="{{ section.id }}"
   data-section-type="collection-grid"
   data-context="featured-collection">
-  {%- if section.settings.title != blank or section.settings.view_all -%}
+  {%- if section.settings.title != blank -%}
     <div class="page-width">
-      <div class="section-header{% if section.settings.view_all %}{% unless settings.type_headers_align_text == 'center' %} section-header--with-link{% endunless %}{% endif %}">
+      <div class="section-header">
         <h2 class="section-header__title {{ section.settings.heading_size }}">
           {{ section.settings.title }}
         </h2>
-        {%- if section.settings.view_all -%}
-          {%- if section.settings.rows == 1 or section.settings.mobile_scrollable -%}
-            <a href="{{ collections[section.settings.home_featured_products].url }}" class="btn btn--secondary btn--small section-header__link{% if section.settings.mobile_scrollable and section.settings.rows > 1 %} medium-up--hide{% endif %}">{{ 'collections.general.all_of_collection' | t }}</a>
-          {%- endif -%}
-        {%- endif -%}
       </div>
     </div>
   {%- endif -%}
@@ -82,16 +77,6 @@
               force_bestseller_badge: true,
             -%}
           {%- endfor -%}
-
-          {%- if section.settings.view_all -%}
-
-            {%- if section.settings.rows > 1 -%}
-              <div class="grid__item text-center{% if mobile_scrollable %} small--hide{% endif %}">
-                <a href="{{ collections[section.settings.home_featured_products].url }}" class="btn hollow-view-all-button">{{ section.settings.view_all_label | default: 'SE ALLE MØNSTRE' }}</a>
-              </div>
-            {%- endif -%}
-
-          {%- endif -%}
 
         {%- endif -%}
       </div>
