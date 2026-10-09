@@ -31,20 +31,21 @@
         "t3": {
           "type": "timeline",
           "settings": {
-            "year": "2023",
-            "title": "The Result",
-            "text": "Today, we proudly supply trustworthy performance socks using our unique alpaca fiber blend to adventurers around the country. Our socks keep feet everywhere dry and comfortable."
+            "year": "",
+            "title": "OM MØNSTRENE",
+            "text": "Der findes ikke ét dansk strikkemønster. Der findes mange, og de er forskellige\nfra egn til egn, fordi kvinderne på Fanø ikke strikkede som kvinderne på Læsø.\n\nHvert par, du finder her, følger ét bestemt mønster fra ét bestemt sted.\n\nDet er ikke pynt. Det er et mønster, nogen sad med i hånden for hundrede år siden,\nfordi det var sådan, man gjorde det, hvor de kom fra."
           }
         },
         "f1": {
           "type": "feature",
           "settings": {
-            "title": "TEMPERATURE REGULATING",
-            "text": "Alpaca fibers have a semi-hollow core that act like natural insulation allowing the fibers to trap warm air when it’s cold, and release heat when warm."
+            "title": "HVORFOR JEG GØR DET",
+            "text": "eg tror ikke, folk savner uldsokker.\n\nJeg tror, de savner at få noget, som nogen har brugt tid på.\n\nDer er en hel generation, der ikke får et par igen. Ikke fordi de ikke vil have\ndem, men fordi den, der lavede dem, er holdt op — og fordi ingen af os lærte det.\n\nJeg kunne ikke lære det. Det her er det, jeg kunne gøre i stedet."
           }
         },
         "f2": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "BREATHABLE & LIGHT",
             "text": "Alpaca fiber is naturally lightweight and breathable allowing it to adapt to any temperature while keeping you comfortable even in the harshest conditions."
@@ -52,6 +53,7 @@
         },
         "f3": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "SOFT ALPACA FIBER",
             "text": "Alpaca fibers are naturally smooth, and have a lower scale structure—meaning no coarse, or itchy feeling you get with wool."
@@ -59,6 +61,7 @@
         },
         "f4": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "MOISTURE WICKING",
             "text": "Alpaca fibers naturally repel moisture thanks to their low absorption rate, about 8% versus wool’s 30%, and cotton’s 60%."
@@ -66,6 +69,7 @@
         },
         "f5": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "ODOR RESISTANT",
             "text": "Unlike synthetic socks that trap moisture and odor over time, alpaca fibers make bacterial growth difficult, reducing the root cause of foot odor."
@@ -96,11 +100,11 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "best sellers",
+        "title": "SE MØNSTRENE",
         "heading_size": "h2",
-        "home_featured_products": "",
-        "per_row": 4,
-        "rows": 2,
+        "home_featured_products": "alle-monstre",
+        "per_row": 5,
+        "rows": 4,
         "mobile_scrollable": true,
         "view_all": true,
         "view_all_label": "SE ALLE MØNSTRE",
