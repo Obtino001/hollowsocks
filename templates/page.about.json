@@ -99,6 +99,7 @@
     },
     "background_image_text_j7J84e": {
       "type": "background-image-text",
+      "disabled": true,
       "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
       "settings": {
         "subtitle": "Just launched",
