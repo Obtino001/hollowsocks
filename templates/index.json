@@ -28,21 +28,20 @@
             "link": "shopify://collections/gavesaet"
           }
         },
+        "category_HPxpdd": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261009_210645_e5e54495-9ab9-4760-bffd-870b07466155_1.jpg",
+            "title": "ADVENTSKALENDER",
+            "link": "shopify://collections/adventskalender"
+          }
+        },
         "category_dWi9PF": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/hf_20261007_183813_60a994a6-5272-4942-bb32-c0b615d9aa1f_1.jpg",
             "title": "HISTORIEN",
             "link": "shopify://pages/historien"
-          }
-        },
-        "category_HPxpdd": {
-          "type": "category",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Main_Image_79ca6347-bae1-4a34-a3a2-3de3b27588d1.png",
-            "title": "HÅNDVÆRK",
-            "link": ""
           }
         },
         "category_PrLtiF": {
@@ -76,8 +75,8 @@
       "block_order": [
         "category_YNdjYP",
         "category_w6zAXk",
-        "category_dWi9PF",
         "category_HPxpdd",
+        "category_dWi9PF",
         "category_PrLtiF",
         "category_4fmizW",
         "category_a6wGW4"
