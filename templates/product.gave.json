@@ -1,0 +1,490 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "size_chart": {
+          "type": "size_chart",
+          "settings": {
+            "hollow_show_size_chart": true,
+            "hollow_size_chart_image_alt": "",
+            "hollow_size_chart_title": "Størrelsesguide",
+            "hollow_size_chart_note": "*Danske størrelser",
+            "hollow_size_col_size": "S",
+            "hollow_size_col_m": "M",
+            "hollow_size_col_l": "L",
+            "hollow_size_col_xl": "XL",
+            "hollow_size_row_men": "35-38",
+            "hollow_size_men_m": "39-42",
+            "hollow_size_men_l": "42-44",
+            "hollow_size_men_xl": "44-46",
+            "hollow_size_row_women": "",
+            "hollow_size_women_m": "",
+            "hollow_size_women_l": "",
+            "hollow_size_women_xl": ""
+          }
+        },
+        "tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Detaljer",
+            "content": "<ul><li><strong>Blød mod huden</strong> — ikke den kradsende uld, du husker fra barndommen</li><li><strong>Forstærket hæl og tå</strong> — ekstra garn præcis hvor sokker normalt går hul</li><li><strong>Tåler maskinvask</strong> — 30 grader på uldprogram, krymper ikke</li><li><strong>Tykt uldgarn</strong> — holder varmen, også når den er fugtig</li><li><strong>12 måneders garanti</strong> — holder de ikke, får du nye</li></ul>",
+            "page": ""
+          }
+        },
+        "tab-2": {
+          "type": "tab",
+          "settings": {
+            "title": "Materialer",
+            "content": "<p><strong>Dansk design, udsøgt håndværk</strong></p><ul><li>Uld<br/></li><li>Nylon<br/></li><li>Elastan</li></ul>",
+            "page": ""
+          }
+        },
+        "tab-3": {
+          "type": "tab",
+          "settings": {
+            "title": "Vaskeanvisning",
+            "content": "<p>30 grader på uldprogram<br/><br/></p>",
+            "page": ""
+          }
+        },
+        "tab-4": {
+          "type": "tab",
+          "settings": {
+            "title": "12 måneders garanti",
+            "content": "<p>Holder de ikke, får du nye. Går de hul i hæl eller tå inden for tolv måneder ved normal brug, sender vi et nyt par — du skal ikke sende de gamle tilbage.<br/><br/></p>",
+            "page": ""
+          }
+        },
+        "tab-5": {
+          "type": "tab",
+          "settings": {
+            "title": "FRAGT",
+            "content": "<p>Fri fragt ved køb over 500 kr.&nbsp;</p><p>Fragt 59 kr. ved enkelt par<br/><br/></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "variant_picker",
+        "buy_buttons",
+        "size_chart",
+        "tab-1",
+        "tab-2",
+        "tab-3",
+        "tab-4",
+        "tab-5"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": false,
+        "thumbnail_position": "below",
+        "thumbnail_height": "fixed",
+        "thumbnail_arrows": false,
+        "thumbnail_mobile": true,
+        "mobile_layout": "full",
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "hollow_show_rating": true,
+        "hollow_fallback_rating": "4.0",
+        "hollow_fallback_review_count": "1891",
+        "hollow_short_description": "Som dem du havde som barn. Bare uden kløen",
+        "hollow_show_promo_badge": true,
+        "hollow_promo_badge": "Fri fragt, når du tager mere end ét par",
+        "hollow_bestseller_badge": "",
+        "hollow_new_color_badge": "NEW COLOR",
+        "hollow_offers_label": "BLAND SOM DU VIL",
+        "hollow_offers_subtitle": "Vælg frit mellem alle mønstre — rabatten lægges på automatisk i kurven.",
+        "hollow_offer_1_name": "ENKELT PAR",
+        "hollow_per_pair_label": "/PAIR",
+        "hollow_offer_2_name": "KØB 2 — FÅ 2 MED",
+        "hollow_offer_2_badge": "MEST POPULÆRE",
+        "hollow_offer_2_suffix": "FRI FRAGT",
+        "hollow_offer_3_name": "KØB 3 — FÅ 3 MED",
+        "hollow_offer_3_badge": "BEDSTE VÆRDI",
+        "hollow_offer_3_suffix": "FRI FRAGT",
+        "hollow_guarantee_title": "12 MÅNEDERS GARANTI. Holder de ikke, får du nye. Du skal ikke sende de gamle tilbage.",
+        "hollow_ships_label": "AFSENDES:",
+        "hollow_ships_value": "NÆSTE HVERDAG",
+        "hollow_fast_shipping": "PAKKES OG SENDES FRA RINGSTED",
+        "hollow_sticky_button_label": "SHOP NOW",
+        "hollow_sticky_sold_out_label": "SOLD OUT",
+        "hollow_sticky_guarantee": "ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.",
+        "hollow_sticky_show_thumb": false,
+        "hollow_show_size_chart": true,
+        "hollow_size_chart_image_alt": "Size chart",
+        "hollow_size_chart_title": "SIZE CHART",
+        "hollow_size_chart_note": "Show Size (US)",
+        "hollow_size_col_size": "SIZE",
+        "hollow_size_col_m": "MEDIUM",
+        "hollow_size_col_l": "LARGE",
+        "hollow_size_col_xl": "XL",
+        "hollow_size_row_men": "Men",
+        "hollow_size_men_m": "6 - 9",
+        "hollow_size_men_l": "9.5 - 12",
+        "hollow_size_men_xl": "12.5 - 15",
+        "hollow_size_row_women": "Women",
+        "hollow_size_women_m": "7 - 9.5",
+        "hollow_size_women_l": "10 - 13",
+        "hollow_size_women_xl": "-"
+      }
+    },
+    "hollow-trust": {
+      "type": "hollow-trust-bar",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "24",
+            "label": "MØNSTRE FRA DANSKE EGNE"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "12",
+            "label": "GARANTI PÅ HOLDBARHED"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "SMÅ PARTIER",
+            "label": "IKKE MASSEPRODUKTION"
+          }
+        }
+      },
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
+      "settings": {
+        "background": "#2f4438",
+        "text_color": "#ffffff"
+      }
+    },
+    "featured_collection_KCAmpg": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "title": "Der er 24 mønstre at vælge imellem",
+        "heading_size": "h2",
+        "home_featured_products": "alle-monstre",
+        "per_row": 5,
+        "rows": 2,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
+        "divider": false
+      }
+    },
+    "custom-advantage": {
+      "type": "custom-advantage",
+      "blocks": {
+        "g1": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261007_185139_ae49af45-04d6-4f60-9477-5691fd528961.jpg",
+            "title": "Fra en skuffe",
+            "text": "Da vi tømte min mormors lejlighed, lå der en bunke opskrifter skrevet i hånden. Forkortelser, som kun hun forstod."
+          }
+        },
+        "g2": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261007_183813_60a994a6-5272-4942-bb32-c0b615d9aa1f_1.jpg",
+            "title": "Nogen husker stadig hvordan",
+            "text": "Jeg fandt kvinder, der kunne læse opskrifterne uden at tøve. De lærte det af deres mødre, som lærte det af deres."
+          }
+        },
+        "g3": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260904_160451_1_1_774ddd3a-6480-4482-b139-f405f67f35b9.jpg",
+            "title": "Man giver dem videre",
+            "text": "Man lavede dem ikke til sig selv. Man lavede dem til en, man ville holde varm."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "title": "Hvert sted i landet havde sit eget mønster",
+        "subtitle": "Man kunne se på et par sokker, hvor de kom fra.",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "columns_desktop": 3,
+        "image_radius": 12,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "custom-marquee": {
+      "type": "custom-marquee",
+      "blocks": {
+        "m1": {
+          "type": "marquee_item",
+          "disabled": true,
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Temperature Regulating"
+          }
+        },
+        "marquee_item_PaQpyt": {
+          "type": "marquee_item",
+          "disabled": true,
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Temperature Regulating"
+          }
+        },
+        "marquee_item_FPNckM": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Holder varmen"
+          }
+        },
+        "m3": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/474413fa-6896-4d19-a825-5c0cea6c952d",
+            "text": "Blød mod huden"
+          }
+        },
+        "m4": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/900adad0-0e03-4dfe-99b4-aaa89e5a3be2",
+            "text": "KRADSER IKKE"
+          }
+        },
+        "m2": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/2e3af8ec-c704-4e48-aa4d-83d02d09c050",
+            "text": "Varm uden at svede"
+          }
+        },
+        "m5": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/000d6627-f069-4e3e-a5e1-6dfd7f11e281",
+            "text": "FORSTÆRKET HÆL"
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "marquee_item_PaQpyt",
+        "marquee_item_FPNckM",
+        "m3",
+        "m4",
+        "m2",
+        "m5"
+      ],
+      "settings": {
+        "bg_color": "#e4dcd0",
+        "text_color": "#333333",
+        "speed": 60,
+        "font_size": 14,
+        "icon_size": 24,
+        "padding_y": 30
+      }
+    },
+    "feature-split-scroll": {
+      "type": "feature-split-scroll",
+      "blocks": {
+        "f1": {
+          "type": "left_feature",
+          "settings": {
+            "custom_svg": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/a692680f-5ae6-4240-a64d-76f3c38d52b2",
+            "title": "BLØD MOD HUDEN",
+            "text": "Uld behøver ikke kradse. Garnet her er blødt nok til at have på uden noget under — og kløen er den eneste grund til, at folk holdt op med at bruge dem."
+          }
+        },
+        "f2": {
+          "type": "left_feature",
+          "settings": {
+            "custom_svg": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/9dd05c83-10f3-4579-869d-49a5732e35a6",
+            "title": "FORSTÆRKET HÆL OG TÅ",
+            "text": "Der er lagt ekstra garn præcis de to steder, hvor sokker går hul. Det er derfor, vi tør give et års garanti."
+          }
+        },
+        "f3": {
+          "type": "left_feature",
+          "settings": {
+            "custom_svg": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/0c284065-2483-438a-8914-30dc55097956",
+            "title": "TÅLER MASKINVASK",
+            "text": "30 grader på uldprogram. De krymper ikke, og de skal ikke håndvaskes. Så ender de ikke i en skuffe."
+          }
+        },
+        "f4": {
+          "type": "left_feature",
+          "settings": {
+            "custom_svg": "",
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/5f411ca2-c8e7-4b48-8fe5-38aa02e397c2",
+            "title": "TYKT ULDGARN",
+            "text": "Tykkere end det meste. De holder varmen, også når de er fugtige — og de er ikke til pynt."
+          }
+        },
+        "r1": {
+          "type": "right_image_card",
+          "settings": {
+            "title": "DESIGNED TO PERFORM",
+            "text": "Alpaca fiber's natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
+          }
+        },
+        "right_image_card_ek6ngP": {
+          "type": "right_image_card",
+          "settings": {
+            "title": "DESIGNED TO PERFORM",
+            "text": "Alpaca fiber's natural properties allows it to adapt to any temperature. Pair that with our bespoke engineering process and you get socks that keep you comfortable even in the harshest conditions."
+          }
+        },
+        "r2": {
+          "type": "right_image_card",
+          "settings": {
+            "title": "BUILT FOR THE OUTDOORS",
+            "text": "Experience maximum comfort without compromising on durability."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "r1",
+        "right_image_card_ek6ngP",
+        "r2"
+      ],
+      "disabled": true,
+      "settings": {
+        "left_bg_color": "#0b3123",
+        "left_text_color": "#ffffff",
+        "main_heading": "Det samme som dengang — bortset fra fire ting",
+        "sticky_offset": 80,
+        "right_bg_color": "#ffffff",
+        "right_text_color": "#111111",
+        "image_aspect_w": 4,
+        "image_aspect_h": 3
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 4,
+        "products_per_row": 4
+      }
+    },
+    "custom-split-faq": {
+      "type": "custom-split-faq",
+      "blocks": {
+        "faq_RtcxJX": {
+          "type": "faq",
+          "settings": {
+            "question": "WHY DOES ALPACA PERFORM BETTER?",
+            "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
+          }
+        },
+        "faq-1": {
+          "type": "faq",
+          "settings": {
+            "question": "Kradser de?",
+            "answer": "<p><br/>Nej. Garnet er blødt nok til at have på uden noget under. Kløe er den eneste grund til, at folk holdt op med at bruge uldsokker — og det problem er løst.<br/><br/></p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq",
+          "settings": {
+            "question": "Kan jeg vælge forskellige mønstre i et sæt?",
+            "answer": "<p><br/>Ja. Du må gerne blande frit. Rabatten beregnes på antal par, ikke på mønster.<br/><br/></p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq",
+          "settings": {
+            "question": "Kan de vaskes i maskine?",
+            "answer": "<p>Ja, 30 grader på uldprogram. Brug uldvaskemiddel og læg dem fladt til tørre. Ikke i tørretumbler — det er det eneste, der kan ødelægge dem.<br/><br/></p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq",
+          "settings": {
+            "question": "Hvilken størrelse skal jeg vælge?",
+            "answer": "<p>Vælg den, der passer til din normale skostørrelse. Er du lige mellem to, så tag den største.<br/><br/></p>"
+          }
+        },
+        "faq_pURaxa": {
+          "type": "faq",
+          "settings": {
+            "question": "Hvad hvis de går hul?",
+            "answer": "<p>Så sender vi et nyt par. Garantien løber i 12 måneder, og du skal ikke sende de gamle retur.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_RtcxJX",
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq_pURaxa"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
+        "title": "Spørgsmål vi får",
+        "button_text": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hollow-trust",
+    "featured_collection_KCAmpg",
+    "custom-advantage",
+    "custom-marquee",
+    "feature-split-scroll",
+    "product-recommendations",
+    "custom-split-faq"
+  ]
+}
