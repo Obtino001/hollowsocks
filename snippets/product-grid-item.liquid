@@ -298,10 +298,6 @@ Arguments
             <div class="grid-product__vendor">{{ product.vendor }}</div>
           {%- endif -%}
 
-          {%- if promo_text != blank -%}
-            <div class="hollow-card__promo">{{ promo_text }}</div>
-          {%- endif -%}
-
           <div class="grid-product__price">
             {%- if product.price_varies -%}
               {%- assign price = product.price_min | money_without_trailing_zeros -%}
