@@ -6,10 +6,10 @@
     <header class="hollow-mix-dialog__header">
       <div>
         <p class="hollow-mix-dialog__eyebrow">STRIKKESTUEN</p>
-        <h2 class="hollow-mix-dialog__title" id="HollowMixTitle">MIX & MATCH</h2>
+        <h2 class="hollow-mix-dialog__title" id="HollowMixTitle">BLAND SELV</h2>
         <p class="hollow-mix-dialog__description" id="HollowMixDescription" data-hollow-mix-description></p>
       </div>
-      <button type="button" class="hollow-mix-dialog__close" data-hollow-mix-close aria-label="Close Mix & Match">
+      <button type="button" class="hollow-mix-dialog__close" data-hollow-mix-close aria-label="Luk Bland selv">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
       </button>
     </header>
@@ -28,8 +28,8 @@
                 <h3 class="hollow-mix-product__title">{{ sock.title | escape }}</h3>
                 {%- if sock.variants.size > 1 -%}
                   <label class="hollow-mix-product__variant-label">
-                    <span>SIZE</span>
-                    <select data-hollow-mix-variant aria-label="Choose size for {{ sock.title | escape }}">
+                    <span>STØRRELSE</span>
+                    <select data-hollow-mix-variant aria-label="Vælg størrelse til {{ sock.title | escape }}">
                       {%- for variant in sock.variants -%}
                         {%- if variant.available -%}
                           <option value="{{ variant.id }}">{{ variant.title | escape }}</option>
@@ -40,26 +40,26 @@
                 {%- else -%}
                   <input type="hidden" data-hollow-mix-variant value="{{ sock.selected_or_first_available_variant.id }}">
                 {%- endif -%}
-                <div class="hollow-mix-product__quantity" aria-label="Quantity for {{ sock.title | escape }}">
-                  <button type="button" data-hollow-mix-minus aria-label="Remove one {{ sock.title | escape }}">−</button>
+                <div class="hollow-mix-product__quantity" aria-label="Antal {{ sock.title | escape }}">
+                  <button type="button" data-hollow-mix-minus aria-label="Fjern ét par {{ sock.title | escape }}">−</button>
                   <output data-hollow-mix-quantity aria-live="polite">0</output>
-                  <button type="button" data-hollow-mix-plus aria-label="Add one {{ sock.title | escape }}">+</button>
+                  <button type="button" data-hollow-mix-plus aria-label="Tilføj ét par {{ sock.title | escape }}">+</button>
                 </div>
               </div>
             </article>
           {%- endif -%}
         {%- endfor -%}
       </div>
-      <p class="hollow-mix-dialog__empty" data-hollow-mix-empty{% if mix_collection.products.size > 0 %} hidden{% endif %}>No sock designs are available right now.</p>
+      <p class="hollow-mix-dialog__empty" data-hollow-mix-empty{% if mix_collection.products.size > 0 %} hidden{% endif %}>Ingen sokkemønstre er tilgængelige lige nu.</p>
     </div>
 
     <footer class="hollow-mix-dialog__footer">
       <div class="hollow-mix-dialog__selection">
         <strong data-hollow-mix-progress aria-live="polite">0 / 2</strong>
-        <span data-hollow-mix-summary aria-live="polite">Choose your designs</span>
+        <span data-hollow-mix-summary aria-live="polite">Vælg dine mønstre</span>
       </div>
       <p class="hollow-mix-dialog__error" data-hollow-mix-error role="alert" hidden></p>
-      <button type="button" class="btn hollow-mix-dialog__confirm" data-hollow-mix-confirm disabled>ADD MY 2 EXTRA PAIRS</button>
+      <button type="button" class="btn hollow-mix-dialog__confirm" data-hollow-mix-confirm disabled>LÆG MINE 2 EKSTRA PAR I KURV</button>
     </footer>
   </div>
 </dialog>

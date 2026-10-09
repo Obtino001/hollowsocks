@@ -261,7 +261,7 @@
       el.textContent = String(n);
     });
     document.querySelectorAll('[data-hollow-subtotal-label]').forEach(function (el) {
-      el.textContent = n === 1 ? '1 ITEM' : n + ' ITEMS';
+      el.textContent = n === 1 ? '1 VARE' : n + ' VARER';
     });
     if (!Number.isFinite(bundleCount)) return;
     var eligible = bundleCount;
@@ -272,14 +272,14 @@
     var msgEl = progress.querySelector('[data-hollow-progress-message]');
 
     if (msgEl) {
-      if (eligible === 0) msgEl.textContent = 'Add 2 pairs to unlock your special offer.';
-      else if (eligible === 1) msgEl.textContent = 'Add 1 more pair to unlock your special offer.';
-      else if (eligible === 2) msgEl.textContent = 'Choose your 2 extra pairs!';
-      else if (eligible === 3) msgEl.textContent = 'Add 1 more pair to complete your 4-pair bundle.';
-      else if (eligible === 4 && bundleTotal === 59900) msgEl.textContent = '4-pair bundle active: 599 kr.';
-      else if (eligible === 5) msgEl.textContent = 'Add 1 more pair for the 6-pair offer.';
-      else if (eligible === 6 && bundleTotal === 89900) msgEl.textContent = '6-pair bundle active: 899 kr.';
-      else msgEl.textContent = 'See your discount and subtotal below.';
+      if (eligible === 0) msgEl.textContent = 'Læg 2 par i kurven for at låse op for dit tilbud.';
+      else if (eligible === 1) msgEl.textContent = 'Læg 1 par mere i kurven for at låse op for dit tilbud.';
+      else if (eligible === 2) msgEl.textContent = 'Vælg dine 2 ekstra par!';
+      else if (eligible === 3) msgEl.textContent = 'Læg 1 par mere i kurven for at fuldende pakken med 4 par.';
+      else if (eligible === 4 && bundleTotal === 59900) msgEl.textContent = 'Pakken med 4 par er aktiv: 599 kr.';
+      else if (eligible === 5) msgEl.textContent = 'Læg 1 par mere i kurven for at få tilbuddet med 6 par.';
+      else if (eligible === 6 && bundleTotal === 89900) msgEl.textContent = 'Pakken med 6 par er aktiv: 899 kr.';
+      else msgEl.textContent = 'Se din rabat og delsum nedenfor.';
     }
 
     var action = progress.querySelector('[data-hollow-choose-extras]');
@@ -301,8 +301,8 @@
 
       var label = step.querySelector('[data-step-label]');
       if (label) {
-        if (stepNumber >= 3) label.textContent = eligible >= 4 && bundleDiscount >= 59700 ? 'FREE' : 'PAIR ' + stepNumber;
-        else label.textContent = eligible >= stepNumber ? 'IN CART' : 'PAIR ' + stepNumber;
+        if (stepNumber >= 3) label.textContent = eligible >= 4 && bundleDiscount >= 59700 ? 'GRATIS' : 'PAR ' + stepNumber;
+        else label.textContent = eligible >= stepNumber ? 'I KURV' : 'PAR ' + stepNumber;
       }
     });
 
@@ -358,15 +358,15 @@
       var needed = missingCount();
       var chosen = selectedCount();
       description.textContent = target === 4 && current === 2
-        ? "You've unlocked 2 extra pairs! Choose your designs."
-        : 'Choose ' + needed + ' ' + (needed === 1 ? 'pair' : 'pairs') + ' to complete your ' + target + '-pair bundle.';
+        ? 'Du har låst op for 2 ekstra par! Vælg dine mønstre.'
+        : 'Vælg ' + needed + ' par for at fuldende din pakke med ' + target + ' par.';
       progressText.textContent = chosen + ' / ' + needed;
       summary.textContent = chosen
         ? Array.from(selected.values()).map(function (item) {
           return item.title + (item.label && item.label !== 'Default Title' ? ' · ' + item.label : '') + ' ×' + item.quantity;
         }).join(', ')
-        : 'Choose your designs';
-      confirmButton.textContent = target === 4 && needed === 2 ? 'ADD MY 2 EXTRA PAIRS' : 'ADD MY ' + needed + ' PAIRS';
+        : 'Vælg dine mønstre';
+      confirmButton.textContent = target === 4 && needed === 2 ? 'LÆG MINE 2 EKSTRA PAR I KURV' : 'LÆG ' + needed + ' PAR I KURV';
       confirmButton.disabled = busy || needed === 0 || chosen !== needed || cards.length === 0;
       confirmButton.classList.toggle('btn--loading', busy);
 
@@ -460,12 +460,12 @@
           var container = document.createElement('div');
           container.innerHTML = markup;
           var items = container.querySelector('.cart__items');
-          if (!items || !items.hasAttribute('data-bundle-count')) throw new Error('Could not check your cart. Please try again.');
+          if (!items || !items.hasAttribute('data-bundle-count')) throw new Error('Kunne ikke kontrollere din kurv. Prøv igen.');
           var latestCount = Number(items.dataset.bundleCount);
-          if (!Number.isFinite(latestCount)) throw new Error('Could not check your cart. Please try again.');
+          if (!Number.isFinite(latestCount)) throw new Error('Kunne ikke kontrollere din kurv. Prøv igen.');
           if (latestCount !== current || target - latestCount !== selectedCount()) {
             current = latestCount;
-            throw new Error('Your cart changed. Please review your selection.');
+            throw new Error('Din kurv er ændret. Gennemgå dine valg.');
           }
           addAttempted = true;
           return fetch(theme.routes.cartAdd, {
@@ -476,7 +476,9 @@
           }).then(function (response) {
             return response.json().then(function (result) {
               if (!response.ok || result.status === 422) {
-                throw new Error(typeof result.description === 'string' ? result.description : result.message || 'Some designs are unavailable. Please choose again.');
+                throw new Error(response.status === 422 || result.status === 422
+                  ? 'Et eller flere valgte mønstre er udsolgt. Vælg igen.'
+                  : 'Kunne ikke tilføje dine par. Prøv igen.');
               }
               return result;
             });
@@ -492,7 +494,9 @@
           }));
         })
         .catch(function (error) {
-          showError(error.message || 'Could not add your pairs. Please try again.');
+          showError(error instanceof TypeError || error instanceof SyntaxError
+            ? 'Kunne ikke tilføje dine par. Prøv igen.'
+            : error.message || 'Kunne ikke tilføje dine par. Prøv igen.');
           if (addAttempted) document.dispatchEvent(new CustomEvent('cart:build'));
         })
         .finally(function () {
