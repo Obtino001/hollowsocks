@@ -88,12 +88,12 @@
     "hollow-hero": {
       "type": "hollow-hero",
       "settings": {
-        "image": "shopify://shop_images/hero-homepage-DESKTOP-04_84a98fa5-fae1-48c4-a6b7-117d942f9e67.jpg",
+        "image": "shopify://shop_images/hf_20260904_160451_1_1_774ddd3a-6480-4482-b139-f405f67f35b9.jpg",
         "overlay_opacity": 12,
-        "kicker": "STRIKKET I USA",
-        "heading": "UDSALG",
-        "text": "Alpaca fiber fra Peru, strikket ind i hvert par her i USA.",
-        "button_label": "SHOP MEST SOLGTE —",
+        "kicker": "Der var engang 100 mønstre i Danmark",
+        "heading": "VI HAR FUNDET 24",
+        "text": "",
+        "button_label": "SE MØNSTRENE",
         "button_link": ""
       }
     },
