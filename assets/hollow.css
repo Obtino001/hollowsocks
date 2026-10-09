@@ -1538,8 +1538,7 @@
   line-height: 1;
 }
 
-/* Review stars are intentionally hidden storewide; review counts remain visible. */
-.hollow-pdp-rating__stars,
+/* Keep stars hidden in other review placements; the product rating shows its stars. */
 .hollow-card__stars,
 .hollow-card__rating-stars,
 .hollow-reviews__stars,
