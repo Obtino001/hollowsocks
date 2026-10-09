@@ -40,7 +40,7 @@
           "type": "feature",
           "settings": {
             "title": "HVORFOR JEG GØR DET",
-            "text": "eg tror ikke, folk savner uldsokker.\n\nJeg tror, de savner at få noget, som nogen har brugt tid på.\n\nDer er en hel generation, der ikke får et par igen. Ikke fordi de ikke vil have\ndem, men fordi den, der lavede dem, er holdt op — og fordi ingen af os lærte det.\n\nJeg kunne ikke lære det. Det her er det, jeg kunne gøre i stedet."
+            "text": "Jeg tror ikke, folk savner uldsokker.\n\nJeg tror, de savner at få noget, som nogen har brugt tid på.\n\nDer er en hel generation, der ikke får et par igen. Ikke fordi de ikke vil have\ndem, men fordi den, der lavede dem, er holdt op — og fordi ingen af os lærte det.\n\nJeg kunne ikke lære det. Det her er det, jeg kunne gøre i stedet."
           }
         },
         "f2": {
@@ -97,6 +97,23 @@
         "means_heading": ""
       }
     },
+    "background_image_text_j7J84e": {
+      "type": "background-image-text",
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "Just launched",
+        "title": "Step into what’s next",
+        "heading_size": "h2",
+        "text": "<p>Fresh arrivals designed with purpose and built to perform. Explore what just landed.</p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": true,
+        "parallax_direction": "top"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -114,6 +131,7 @@
   },
   "order": [
     "about",
+    "background_image_text_j7J84e",
     "featured-collection"
   ]
 }
