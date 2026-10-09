@@ -788,7 +788,7 @@
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  background: var(--hollow-red);
+  background: var(--hollow-cta-green);
   border-radius: 6px;
 }
 
@@ -817,6 +817,10 @@
     max-width: 340px;
     text-align: center;
     align-self: center;
+  }
+
+  .hollow-hero--button-only .hollow-hero__copy {
+    transform: translateY(56px);
   }
 
   .hollow-hero__kicker {

@@ -1,8 +1,12 @@
 {%- liquid
   assign overlay_alpha = section.settings.overlay_opacity | divided_by: 100.0
+  assign button_only = false
+  if section.settings.kicker == blank and section.settings.heading == blank and section.settings.text == blank
+    assign button_only = true
+  endif
 -%}
 
-<section class="hollow-hero" data-section-id="{{ section.id }}">
+<section class="hollow-hero{% if button_only %} hollow-hero--button-only{% endif %}" data-section-id="{{ section.id }}">
   {%- if section.settings.image != blank -%}
     <div class="hollow-hero__media">
       {%- render 'image-element',
