@@ -134,10 +134,7 @@
             <div data-subtotal>{{ cart.total_price | money }}</div>
           </div>
 
-          <div class="hollow-cart-drawer__shipping cart__item-row">
-            <span>FRAGT</span>
-            <span>{{ settings.hollow_cart_shipping_text | default: 'BEREGNES VED BETALING' }}</span>
-          </div>
+
 
           {% if settings.cart_terms_conditions_enable %}
             <div class="cart__item-row cart__terms">
