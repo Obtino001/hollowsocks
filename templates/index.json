@@ -90,11 +90,11 @@
       "settings": {
         "image": "shopify://shop_images/hf_20261009_115220_79052827-22ff-4607-9bcb-f94e4977394a.jpg",
         "overlay_opacity": 0,
-        "kicker": "",
-        "heading": "",
+        "kicker": "Der var engang 100 mønstre i Danmark",
+        "heading": "VI HAR FUNDET 24",
         "text": "",
         "button_label": "SE MØNSTRENE",
-        "button_link": "shopify://collections/alle-monstre"
+        "button_link": ""
       }
     },
     "hollow_trust_bar_49CJx9": {
@@ -218,6 +218,7 @@
         "a3",
         "a4"
       ],
+      "disabled": true,
       "settings": {
         "left_heading": "STRIKKESTUEN STRØMPER ER LAVET AF ALPACA FIBER.",
         "center_image": "shopify://shop_images/67bc8f0ce4ba5ea905f94fa6911b610f0985fee2.png",
@@ -227,7 +228,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "MEST SOLGTE",
+        "title": "24 egne. 24 mønstre.",
         "heading_size": "h1",
         "home_featured_products": "a-line",
         "per_row": 4,
@@ -405,6 +406,21 @@
         "button_label": "læs mere",
         "button_link": ""
       }
+    },
+    "featured_collection_ghU4LG": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "home_featured_products": "",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
+        "divider": false
+      }
     }
   },
   "order": [
@@ -416,6 +432,7 @@
     "hollow-banners",
     "hollow-reviews",
     "trust_bar_NPJkyk",
-    "hollow-story"
+    "hollow-story",
+    "featured_collection_ghU4LG"
   ]
 }
