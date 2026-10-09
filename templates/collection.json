@@ -19,15 +19,9 @@
     "collection-nav": {
       "type": "hollow-collection-nav",
       "blocks": {
-        "cat-1": {
-          "type": "category",
-          "settings": {
-            "title": "BEST SELLERS",
-            "link": "shopify://collections/best-sellers"
-          }
-        },
         "cat-2": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "title": "COMPRESSION",
             "link": "shopify://collections/compression"
@@ -35,6 +29,7 @@
         },
         "cat-3": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "title": "BUNDLES",
             "link": "shopify://collections/bundles"
@@ -42,6 +37,7 @@
         },
         "cat-4": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "title": "TRADES",
             "link": "shopify://collections/trades"
@@ -57,8 +53,9 @@
         "cat-6": {
           "type": "category",
           "settings": {
-            "title": "EVERYDAY",
-            "link": "shopify://collections/everyday"
+            "image": "shopify://shop_images/hf_20261009_092407_d944a589-525f-466d-a03e-8b8c238e018d.jpg",
+            "title": "GAVESÆT",
+            "link": "shopify://collections/gavesaet"
           }
         },
         "cat-7": {
@@ -70,7 +67,6 @@
         }
       },
       "block_order": [
-        "cat-1",
         "cat-2",
         "cat-3",
         "cat-4",
