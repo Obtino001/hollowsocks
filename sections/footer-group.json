@@ -75,6 +75,7 @@
         "image_zhNfA4",
         "review_4VctfN"
       ],
+      "disabled": true,
       "settings": {
         "title": "OVER 4,000,000+ PAIRS SOLD",
         "button_label": "READ MORE REVIEWS —",
@@ -209,7 +210,7 @@
         "menu-shop": {
           "type": "link_list",
           "settings": {
-            "heading": "SHOP",
+            "heading": "Se mønstrene",
             "menu": "k-b-produkter-til-daglig-sundhed"
           }
         },
