@@ -51,17 +51,19 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">{{ row_men | escape }}</th>
+            <td>{{ row_men | escape }}</td>
             <td>{{ men_m | escape }}</td>
             <td>{{ men_l | escape }}</td>
             <td>{{ men_xl | escape }}</td>
           </tr>
-          <tr>
-            <th scope="row">{{ row_women | escape }}</th>
-            <td>{{ women_m | escape }}</td>
-            <td>{{ women_l | escape }}</td>
-            <td>{{ women_xl | escape }}</td>
-          </tr>
+          {%- if row_women != blank or women_m != blank or women_l != blank or women_xl != blank -%}
+            <tr>
+              <td>{{ row_women | escape }}</td>
+              <td>{{ women_m | escape }}</td>
+              <td>{{ women_l | escape }}</td>
+              <td>{{ women_xl | escape }}</td>
+            </tr>
+          {%- endif -%}
         </tbody>
       </table>
     </div>

@@ -483,7 +483,7 @@
 
                       <div class="hollow-pdp-guarantee">
                         <img class="hollow-pdp-guarantee__img" src="https://cdn.shopify.com/s/files/1/1015/4298/6071/files/icon_12.png?v=1791377572" width="50" height="50" alt="">
-                        <div class="hollow-pdp-guarantee__title">ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.</div>
+                        <div class="hollow-pdp-guarantee__title">{{ guarantee_title | escape }}</div>
                       </div>
 
                       {%- if ships_label != blank or ships_value != blank or fast_shipping_text != blank -%}
@@ -620,5 +620,4 @@
     </div>
   </div>
 
-  {%- render 'hollow-sticky-atc', product: product, isModal: isModal, section: section -%}
 </div>

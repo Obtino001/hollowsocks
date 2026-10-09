@@ -3666,6 +3666,8 @@
   letter-spacing: 0.08em;
   margin: 0;
   color: var(--hollow-black);
+  text-transform: none;
+  min-width: 0;
 }
 
 .hollow-theme .hollow-pdp-guarantee__text {
@@ -3980,14 +3982,6 @@
   text-transform: uppercase;
 }
 
-.hollow-theme .hollow-size-chart__table tbody th {
-  font-family: var(--hollow-body);
-  font-weight: 600;
-  text-align: left;
-  padding-left: 14px;
-  background: #ffffff;
-}
-
 .hollow-theme .size-chart__standalone {
   display: none !important;
 }
@@ -4135,6 +4129,20 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .hollow-theme .hollow-pdp-shipping-row {
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+
+  .hollow-theme .hollow-pdp-shipping-row__ships,
+  .hollow-theme .hollow-pdp-shipping-row__fast {
+    padding: 0;
+    border: 0;
+    white-space: normal;
+  }
+
   .hollow-theme .hollow-size-chart__title {
     font-size: 26px;
   }
