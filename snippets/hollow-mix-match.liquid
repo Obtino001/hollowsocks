@@ -1,0 +1,64 @@
+{%- assign mix_collection = collections['alle-monstre'] -%}
+
+<dialog class="hollow-mix-dialog" data-hollow-mix-dialog aria-labelledby="HollowMixTitle" aria-describedby="HollowMixDescription">
+  <div class="hollow-mix-dialog__panel">
+    <header class="hollow-mix-dialog__header">
+      <div>
+        <p class="hollow-mix-dialog__eyebrow">STRIKKESTUEN</p>
+        <h2 class="hollow-mix-dialog__title" id="HollowMixTitle">MIX & MATCH</h2>
+        <p class="hollow-mix-dialog__description" id="HollowMixDescription" data-hollow-mix-description></p>
+      </div>
+      <button type="button" class="hollow-mix-dialog__close" data-hollow-mix-close aria-label="Close Mix & Match">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+      </button>
+    </header>
+
+    <div class="hollow-mix-dialog__scroll">
+      <div class="hollow-mix-dialog__grid" data-hollow-mix-grid>
+        {%- for sock in mix_collection.products limit: 50 -%}
+          {%- if sock.available and sock.price == 29900 -%}
+            <article class="hollow-mix-product" data-hollow-mix-product data-product-title="{{ sock.title | escape }}">
+              <div class="hollow-mix-product__image">
+                {%- if sock.featured_image != blank -%}
+                  {{ sock.featured_image | image_url: width: 360 | image_tag: loading: 'lazy', widths: '180, 270, 360', alt: sock.title }}
+                {%- endif -%}
+              </div>
+              <div class="hollow-mix-product__info">
+                <h3 class="hollow-mix-product__title">{{ sock.title | escape }}</h3>
+                {%- if sock.variants.size > 1 -%}
+                  <label class="hollow-mix-product__variant-label">
+                    <span>SIZE</span>
+                    <select data-hollow-mix-variant aria-label="Choose size for {{ sock.title | escape }}">
+                      {%- for variant in sock.variants -%}
+                        {%- if variant.available -%}
+                          <option value="{{ variant.id }}">{{ variant.title | escape }}</option>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </select>
+                  </label>
+                {%- else -%}
+                  <input type="hidden" data-hollow-mix-variant value="{{ sock.selected_or_first_available_variant.id }}">
+                {%- endif -%}
+                <div class="hollow-mix-product__quantity" aria-label="Quantity for {{ sock.title | escape }}">
+                  <button type="button" data-hollow-mix-minus aria-label="Remove one {{ sock.title | escape }}">−</button>
+                  <output data-hollow-mix-quantity aria-live="polite">0</output>
+                  <button type="button" data-hollow-mix-plus aria-label="Add one {{ sock.title | escape }}">+</button>
+                </div>
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <p class="hollow-mix-dialog__empty" data-hollow-mix-empty{% if mix_collection.products.size > 0 %} hidden{% endif %}>No sock designs are available right now.</p>
+    </div>
+
+    <footer class="hollow-mix-dialog__footer">
+      <div class="hollow-mix-dialog__selection">
+        <strong data-hollow-mix-progress aria-live="polite">0 / 2</strong>
+        <span data-hollow-mix-summary aria-live="polite">Choose your designs</span>
+      </div>
+      <p class="hollow-mix-dialog__error" data-hollow-mix-error role="alert" hidden></p>
+      <button type="button" class="btn hollow-mix-dialog__confirm" data-hollow-mix-confirm disabled>ADD MY 2 EXTRA PAIRS</button>
+    </footer>
+  </div>
+</dialog>

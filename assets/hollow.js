@@ -272,187 +272,286 @@
     var msgEl = progress.querySelector('[data-hollow-progress-message]');
 
     if (msgEl) {
-      if (eligible < 4) {
-        msgEl.textContent = 'Tilføj ' + (4 - eligible) + ' par mere for at nå 4-pars tilbuddet';
-      } else if (eligible < 6) {
-        msgEl.textContent = eligible === 4 && bundleTotal === 59900
-          ? '4-pars tilbuddet er aktivt! Tilføj 2 par mere for at nå 6-pars tilbuddet'
-          : 'Tilføj ' + (6 - eligible) + ' par mere for at nå 6-pars tilbuddet';
-      } else if (eligible === 6 && bundleTotal === 89900) {
-        msgEl.textContent = '6-pars tilbuddet er aktivt!';
-      } else {
-        msgEl.textContent = 'Se din rabat og subtotal nedenfor';
-      }
+      if (eligible === 0) msgEl.textContent = 'Add 2 pairs to unlock your special offer.';
+      else if (eligible === 1) msgEl.textContent = 'Add 1 more pair to unlock your special offer.';
+      else if (eligible === 2) msgEl.textContent = 'Choose your 2 extra pairs!';
+      else if (eligible === 3) msgEl.textContent = 'Add 1 more pair to complete your 4-pair bundle.';
+      else if (eligible === 4 && bundleTotal === 59900) msgEl.textContent = '4-pair bundle active: 599 kr.';
+      else if (eligible === 5) msgEl.textContent = 'Add 1 more pair for the 6-pair offer.';
+      else if (eligible === 6 && bundleTotal === 89900) msgEl.textContent = '6-pair bundle active: 899 kr.';
+      else msgEl.textContent = 'See your discount and subtotal below.';
     }
+
+    var action = progress.querySelector('[data-hollow-choose-extras]');
+    if (action) action.hidden = eligible !== 2 && eligible !== 3;
 
     var bar = progress.querySelector('[data-hollow-progress-bar]');
     if (bar) {
       var pct = 0;
-      if (eligible >= 6) pct = 100;
+      if (eligible >= 4) pct = 100;
       else if (eligible <= 0) pct = 0;
-      else pct = Math.round((eligible / 6) * 100);
+      else pct = Math.round((eligible / 4) * 100);
       bar.style.width = pct + '%';
-      progress.classList.toggle('is-complete', eligible >= 6 && bundleDiscount >= 89500);
+      progress.classList.toggle('is-complete', eligible >= 4 && bundleDiscount >= 59700);
     }
 
     progress.querySelectorAll('[data-step]').forEach(function (step) {
       var stepNumber = parseInt(step.getAttribute('data-step'), 10) || 0;
-      step.classList.toggle('is-active', stepNumber >= 3
-        ? eligible >= 4 && bundleDiscount >= 59700
-        : eligible >= stepNumber);
+      step.classList.toggle('is-active', eligible >= stepNumber);
 
       var label = step.querySelector('[data-step-label]');
       if (label) {
-        if (eligible >= stepNumber) label.textContent = 'IN CART';
-        else label.textContent = stepNumber === 1 ? 'PAIR 1' : 'ADD 1';
+        if (stepNumber >= 3) label.textContent = eligible >= 4 && bundleDiscount >= 59700 ? 'FREE' : 'PAIR ' + stepNumber;
+        else label.textContent = eligible >= stepNumber ? 'IN CART' : 'PAIR ' + stepNumber;
       }
     });
 
     progress.setAttribute('data-count', String(eligible));
   }
 
-  function initHollowBundleOffers() {
+  function initHollowMixMatch() {
+    var dialog = document.querySelector('[data-hollow-mix-dialog]');
+    var progress = document.querySelector('[data-hollow-cart-progress]');
+    if (!dialog || !progress || !dialog.showModal) return null;
+
+    var cards = Array.from(dialog.querySelectorAll('[data-hollow-mix-product]'));
+    var closeButton = dialog.querySelector('[data-hollow-mix-close]');
+    var description = dialog.querySelector('[data-hollow-mix-description]');
+    var progressText = dialog.querySelector('[data-hollow-mix-progress]');
+    var summary = dialog.querySelector('[data-hollow-mix-summary]');
+    var confirmButton = dialog.querySelector('[data-hollow-mix-confirm]');
+    var errorText = dialog.querySelector('[data-hollow-mix-error]');
+    var emptyText = dialog.querySelector('[data-hollow-mix-empty]');
+    var selected = new Map();
+    var current = Number(progress.dataset.count) || 0;
+    var target = 4;
+    var busy = false;
+    var returnFocus = null;
+    var handoffToCart = false;
+
+    emptyText.hidden = cards.length > 0;
+
+    function selectedCount() {
+      var total = 0;
+      selected.forEach(function (item) { total += item.quantity; });
+      return total;
+    }
+
+    function missingCount() {
+      return Math.max(0, target - current);
+    }
+
+    function variantFor(card) {
+      var input = card.querySelector('[data-hollow-mix-variant]');
+      if (!input || !input.value) return null;
+      var label = input.tagName === 'SELECT' ? input.options[input.selectedIndex].textContent.trim() : '';
+      return { id: input.value, title: card.dataset.productTitle, label: label };
+    }
+
+    function showError(message) {
+      errorText.textContent = message || '';
+      errorText.hidden = !message;
+    }
+
+    function render() {
+      var needed = missingCount();
+      var chosen = selectedCount();
+      progressText.textContent = chosen + ' / ' + needed;
+      summary.textContent = chosen
+        ? Array.from(selected.values()).map(function (item) {
+          return item.title + (item.label && item.label !== 'Default Title' ? ' · ' + item.label : '') + ' ×' + item.quantity;
+        }).join(', ')
+        : 'Choose your designs';
+      confirmButton.textContent = target === 4 && needed === 2 ? 'ADD MY 2 EXTRA PAIRS' : 'ADD MY ' + needed + ' PAIRS';
+      confirmButton.disabled = busy || needed === 0 || chosen !== needed || cards.length === 0;
+      confirmButton.classList.toggle('btn--loading', busy);
+
+      cards.forEach(function (card) {
+        var variant = variantFor(card);
+        var quantity = variant && selected.has(variant.id) ? selected.get(variant.id).quantity : 0;
+        card.querySelector('[data-hollow-mix-quantity]').textContent = String(quantity);
+        card.classList.toggle('is-selected', quantity > 0);
+        card.querySelector('[data-hollow-mix-minus]').disabled = busy || quantity === 0;
+        card.querySelector('[data-hollow-mix-plus]').disabled = busy || chosen >= needed || !variant;
+        card.querySelector('[data-hollow-mix-variant]').disabled = busy;
+      });
+    }
+
+    function open(bundleTarget, trigger) {
+      if (busy || dialog.open) return;
+      target = bundleTarget;
+      current = Number(progress.dataset.count) || 0;
+      if (current >= target) {
+        document.dispatchEvent(new CustomEvent('cart:open'));
+        return;
+      }
+      selected.clear();
+      showError('');
+      returnFocus = trigger || document.activeElement;
+      description.textContent = target === 4 && current === 2
+        ? "You've unlocked 2 extra pairs! Choose your designs."
+        : 'Choose ' + missingCount() + ' ' + (missingCount() === 1 ? 'pair' : 'pairs') + ' to complete your ' + target + '-pair bundle.';
+      render();
+      var drawer = document.getElementById('CartDrawer');
+      if (drawer && drawer.classList.contains('drawer--is-open')) {
+        document.dispatchEvent(new CustomEvent('cart:close'));
+      }
+      dialog.showModal();
+      document.documentElement.classList.add('hollow-mix-open');
+      closeButton.focus();
+      window.setTimeout(function () { if (dialog.open) closeButton.focus(); }, 550);
+    }
+
+    function sync(eligibleCount) {
+      if (!Number.isFinite(eligibleCount)) return;
+      current = eligibleCount;
+      if (dialog.open) {
+        if (current >= target) dialog.close();
+        else render();
+      }
+    }
+
+    cards.forEach(function (card) {
+      card.querySelector('[data-hollow-mix-variant]').addEventListener('change', render);
+      ['plus', 'minus'].forEach(function (direction) {
+        card.querySelector('[data-hollow-mix-' + direction + ']').addEventListener('click', function () {
+          if (busy) return;
+          var variant = variantFor(card);
+          if (!variant) return;
+          var item = selected.get(variant.id);
+          var quantity = item ? item.quantity : 0;
+          if (direction === 'plus' && selectedCount() < missingCount()) quantity += 1;
+          else if (direction === 'minus' && quantity > 0) quantity -= 1;
+          else return;
+          if (quantity === 0) selected.delete(variant.id);
+          else selected.set(variant.id, { quantity: quantity, title: variant.title, label: variant.label });
+          showError('');
+          render();
+        });
+      });
+    });
+
+    closeButton.addEventListener('click', function () { if (!busy) dialog.close(); });
+    dialog.addEventListener('click', function (event) { if (event.target === dialog && !busy) dialog.close(); });
+    dialog.addEventListener('cancel', function (event) { if (busy) event.preventDefault(); });
+    dialog.addEventListener('close', function () {
+      document.documentElement.classList.remove('hollow-mix-open');
+      if (!handoffToCart && returnFocus && returnFocus.isConnected && returnFocus.offsetParent !== null) returnFocus.focus();
+      handoffToCart = false;
+    });
+
+    confirmButton.addEventListener('click', function () {
+      var needed = missingCount();
+      if (busy || needed === 0 || selectedCount() !== needed) return;
+      var itemsToAdd = Array.from(selected.entries()).map(function (entry) {
+        return { id: Number(entry[0]), quantity: entry[1].quantity };
+      });
+      var addAttempted = false;
+      busy = true;
+      showError('');
+      render();
+
+      theme.cart.getCartProductMarkup()
+        .then(function (markup) {
+          var container = document.createElement('div');
+          container.innerHTML = markup;
+          var items = container.querySelector('.cart__items');
+          if (!items || !items.hasAttribute('data-bundle-count')) throw new Error('Could not check your cart. Please try again.');
+          var latestCount = Number(items.dataset.bundleCount);
+          if (!Number.isFinite(latestCount)) throw new Error('Could not check your cart. Please try again.');
+          if (latestCount !== current || target - latestCount !== selectedCount()) {
+            current = latestCount;
+            throw new Error('Your cart changed. Please review your selection.');
+          }
+          addAttempted = true;
+          return fetch(theme.routes.cartAdd, {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+            body: JSON.stringify({ items: itemsToAdd })
+          }).then(function (response) {
+            return response.json().then(function (result) {
+              if (!response.ok || result.status === 422) {
+                throw new Error(typeof result.description === 'string' ? result.description : result.message || 'Some designs are unavailable. Please choose again.');
+              }
+              return result;
+            });
+          });
+        })
+        .then(function (result) {
+          handoffToCart = true;
+          dialog.close();
+          document.dispatchEvent(new CustomEvent('ajaxProduct:added', {
+            detail: { product: result, addToCartBtn: confirmButton }
+          }));
+        })
+        .catch(function (error) {
+          showError(error.message || 'Could not add your pairs. Please try again.');
+          if (addAttempted) document.dispatchEvent(new CustomEvent('cart:build'));
+        })
+        .finally(function () {
+          busy = false;
+          if (dialog.open) render();
+        });
+    });
+
+    return { open: open, sync: sync, isOpen: function () { return dialog.open; } };
+  }
+
+  function initHollowBundleOffers(mixMatch) {
     document.querySelectorAll('[data-hollow-offers]').forEach(function (offers) {
       if (offers.dataset.bundleReady === 'true') return;
       var form = offers.parentElement.querySelector('.product-single__form');
       if (!form) return;
       offers.dataset.bundleReady = 'true';
-
       var target = 1;
-      var pending = false;
-      var queuedTarget = null;
-      var completed = null;
-      var addButton = form.querySelector('[data-add-to-cart]');
 
       offers.querySelectorAll('[data-bundle-quantity]').forEach(function (card) {
         card.addEventListener('click', function () {
           target = Number(card.getAttribute('data-bundle-quantity')) || 1;
           offers.querySelectorAll('[data-bundle-quantity]').forEach(function (option) {
-            var selected = option === card;
-            option.classList.toggle('is-selected', selected);
-            option.setAttribute('aria-pressed', String(selected));
+            var active = option === card;
+            option.classList.toggle('is-selected', active);
+            option.setAttribute('aria-pressed', String(active));
           });
-          if (pending) {
-            queuedTarget = target;
-          } else if (target > 1 && addButton && !addButton.disabled) {
-            if (form.requestSubmit) form.requestSubmit(addButton);
-            else addButton.click();
-          }
+          if (target > 1 && mixMatch) mixMatch.open(target, card);
         });
-      });
-
-      document.addEventListener('cart:updated', function () { completed = null; });
-      document.addEventListener('ajaxProduct:added', function (event) {
-        if (!event.detail || !event.detail.bundleTarget) completed = null;
       });
 
       form.addEventListener('submit', function (event) {
         if (target === 1) return;
         event.preventDefault();
         event.stopImmediatePropagation();
-        if (pending || !addButton || addButton.disabled) return;
-
-        var requestedTarget = target;
-        var variantInput = form.querySelector('[name="id"]');
-        var variantId = variantInput && variantInput.value;
-        if (!variantId) return;
-        if (completed && completed.target === requestedTarget && completed.variantId === variantId) {
-          document.dispatchEvent(new CustomEvent('cart:open'));
-          return;
-        }
-
-        pending = true;
-        var data = new FormData(form);
-        addButton.classList.add('btn--loading');
-        var existingError = form.querySelector('.errors');
-        if (existingError) existingError.remove();
-
-        theme.cart.getCartProductMarkup()
-          .then(function (markup) {
-            var container = document.createElement('div');
-            container.innerHTML = markup;
-            var items = container.querySelector('.cart__items');
-            if (!items || !items.hasAttribute('data-bundle-count')) throw new Error('Kurven kunne ikke kontrolleres. Prøv igen.');
-            var current = Number(items.getAttribute('data-bundle-count'));
-            if (!Number.isFinite(current)) throw new Error('Kurven kunne ikke kontrolleres. Prøv igen.');
-            var missing = requestedTarget - current;
-            if (missing <= 0) {
-              completed = { target: requestedTarget, variantId: variantId };
-              document.dispatchEvent(new CustomEvent('cart:open'));
-              return null;
-            }
-
-            data.set('quantity', String(missing));
-            return fetch(theme.routes.cartAdd, {
-              method: 'POST',
-              credentials: 'same-origin',
-              body: data,
-              headers: { 'X-Requested-With': 'XMLHttpRequest' }
-            }).then(function (response) {
-              return response.json().then(function (product) {
-                if (!response.ok || product.status === 422) {
-                  throw new Error(product.description || product.message || 'Pakken kunne ikke lægges i kurven.');
-                }
-                completed = product.quantity >= missing
-                  ? { target: requestedTarget, variantId: variantId }
-                  : null;
-                form.dispatchEvent(new CustomEvent('ajaxProduct:added', {
-                  bubbles: true,
-                  detail: { product: product, addToCartBtn: addButton, bundleTarget: requestedTarget }
-                }));
-              });
-            });
-          })
-          .catch(function (error) {
-            var message = document.createElement('div');
-            message.className = 'errors text-center';
-            message.textContent = error.message || 'Pakken kunne ikke lægges i kurven. Prøv igen.';
-            form.appendChild(message);
-          })
-          .finally(function () {
-            pending = false;
-            addButton.classList.remove('btn--loading');
-            if (queuedTarget && queuedTarget !== requestedTarget && queuedTarget > 1) {
-              queuedTarget = null;
-              if (form.requestSubmit) form.requestSubmit(addButton);
-              else addButton.click();
-            } else {
-              queuedTarget = null;
-            }
-          });
+        if (mixMatch) mixMatch.open(target, form.querySelector('[data-add-to-cart]'));
       }, true);
     });
   }
 
-  function initHollowCartDrawer() {
-    document.addEventListener('cart:updated', function (evt) {
-      var cart = evt && evt.detail && evt.detail.cart;
-      if (cart && typeof cart.item_count !== 'undefined') {
-        updateHollowCartUI(cart.item_count);
-      }
-    });
-
-    document.addEventListener('cart:build', function () {
-      window.setTimeout(function () {
-        var items = document.querySelector('#CartDrawerForm [data-products] .cart__items');
-        if (items && items.dataset.count) {
-          updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal), Number(items.dataset.bundleDiscount));
-        }
-      }, 50);
-    });
-
+  function initHollowCartDrawer(mixMatch) {
     var form = document.getElementById('CartDrawerForm');
     if (!form) return;
-    var observer = new MutationObserver(function () {
-      var items = form.querySelector('[data-products] .cart__items');
-      if (items && items.dataset.count) {
-        updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal), Number(items.dataset.bundleDiscount));
-      }
-    });
     var products = form.querySelector('[data-products]');
-    if (products) {
-      observer.observe(products, { childList: true, subtree: true });
+    var progress = form.querySelector('[data-hollow-cart-progress]');
+    if (!products || !progress) return;
+    var previousCount = Number(progress.dataset.count) || 0;
+    var action = progress.querySelector('[data-hollow-choose-extras]');
+    if (action && mixMatch) action.addEventListener('click', function () { mixMatch.open(4, action); });
+
+    function syncFromMarkup() {
+      var items = products.querySelector('.cart__items');
+      if (!items) return;
+      var eligible = Number(items.dataset.bundleCount);
+      if (!Number.isFinite(eligible)) return;
+      updateHollowCartUI(Number(items.dataset.count) || 0, eligible, Number(items.dataset.bundleTotal), Number(items.dataset.bundleDiscount));
+      if (mixMatch) {
+        mixMatch.sync(eligible);
+        if (previousCount < 2 && eligible === 2 && !mixMatch.isOpen()) mixMatch.open(4, document.activeElement);
+      }
+      previousCount = eligible;
     }
+
+    new MutationObserver(syncFromMarkup).observe(products, { childList: true });
+    syncFromMarkup();
   }
 
   function initHollowQuickAdd() {
@@ -524,12 +623,13 @@
     window.addEventListener('resize', syncStickyHeaderHeight);
     initStickyAtc();
     initHollowPdpVariants();
-    initHollowBundleOffers();
-    document.addEventListener('shopify:section:load', initHollowBundleOffers);
+    var mixMatch = initHollowMixMatch();
+    initHollowBundleOffers(mixMatch);
+    document.addEventListener('shopify:section:load', function () { initHollowBundleOffers(mixMatch); });
     initLuck();
     duplicateMarquee();
     window.addEventListener('resize', duplicateMarquee);
     document.addEventListener('shopify:section:load', duplicateMarquee);
-    initHollowCartDrawer();
+    initHollowCartDrawer(mixMatch);
   });
 })();

@@ -4308,6 +4308,26 @@
   line-height: 1.35;
 }
 
+.hollow-cart-progress__action {
+  display: block;
+  margin: -6px auto 16px;
+  padding: 3px 0;
+  border: 0;
+  background: transparent;
+  color: var(--hollow-green);
+  font-family: var(--hollow-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hollow-cart-progress__action[hidden] {
+  display: none;
+}
+
 .hollow-theme .hollow-cart-progress__track {
   position: relative;
   padding: 0 8px;
@@ -4756,5 +4776,286 @@ img.r-3l3b7j {
   .template-index .hollow-collection-nav-section,
   .template-index .hollow-collection-nav {
     display: none !important;
+  }
+}
+
+/* Mix & Match uses the existing Hollow colors, type and button treatment. */
+.hollow-mix-open {
+  overflow: hidden;
+}
+
+.hollow-mix-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(780px, calc(100vw - 24px));
+  max-width: none;
+  max-height: min(88vh, 850px);
+  max-height: min(88dvh, 850px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: var(--hollow-cream);
+  color: var(--hollow-black);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+}
+
+.hollow-mix-dialog[open] {
+  display: flex;
+  animation: hollow-mix-enter 220ms ease-out both;
+}
+
+.hollow-mix-dialog::backdrop {
+  background: rgba(18, 25, 21, 0.68);
+}
+
+.hollow-mix-dialog__panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+
+.hollow-mix-dialog__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 0 0 auto;
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid #ded8cf;
+}
+
+.hollow-mix-dialog__eyebrow {
+  margin: 0 0 5px;
+  color: var(--hollow-green);
+  font: 700 10px/1.2 var(--hollow-mono);
+  letter-spacing: 0.14em;
+}
+
+.hollow-mix-dialog__title {
+  margin: 0 0 7px;
+  color: var(--hollow-black);
+  font: 700 38px/0.95 var(--hollow-display);
+  text-transform: uppercase;
+}
+
+.hollow-mix-dialog__description {
+  margin: 0;
+  font: 400 14px/1.4 var(--hollow-body);
+}
+
+.hollow-mix-dialog__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #cfc9c0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--hollow-black);
+  cursor: pointer;
+}
+
+.hollow-mix-dialog__scroll {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 20px 28px;
+}
+
+.hollow-mix-dialog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hollow-mix-product {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d7d1c8;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.hollow-mix-product.is-selected {
+  border-color: var(--hollow-green);
+  box-shadow: 0 0 0 1px var(--hollow-green);
+}
+
+.hollow-mix-product__image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #eeeae5;
+}
+
+.hollow-mix-product__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hollow-mix-product__info {
+  padding: 12px;
+}
+
+.hollow-mix-product__title {
+  margin: 0 0 10px;
+  color: var(--hollow-black);
+  font: 700 16px/1.1 var(--hollow-display);
+  text-transform: uppercase;
+}
+
+.hollow-mix-product__variant-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--hollow-black);
+  font: 700 9px/1.2 var(--hollow-mono);
+  letter-spacing: 0.08em;
+}
+
+.hollow-mix-product__variant-label select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 24px 6px 8px;
+  border: 1px solid #d7d1c8;
+  border-radius: 2px;
+  background: #fff;
+  color: var(--hollow-black);
+  font: 500 12px/1.2 var(--hollow-mono);
+}
+
+.hollow-mix-product__quantity {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cfc9c0;
+  border-radius: 2px;
+}
+
+.hollow-mix-product__quantity button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--hollow-black);
+  font: 600 18px/1 var(--hollow-body);
+  cursor: pointer;
+}
+
+.hollow-mix-product__quantity button:disabled {
+  color: #aaa49d;
+  cursor: not-allowed;
+}
+
+.hollow-mix-product__quantity output {
+  min-width: 22px;
+  text-align: center;
+  font: 700 12px/1 var(--hollow-mono);
+}
+
+.hollow-mix-dialog__footer {
+  flex: 0 0 auto;
+  padding: 16px 28px 22px;
+  border-top: 1px solid #ded8cf;
+  background: var(--hollow-cream);
+}
+
+.hollow-mix-dialog__selection {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+  margin-bottom: 12px;
+  font-family: var(--hollow-mono);
+}
+
+.hollow-mix-dialog__selection strong {
+  flex: 0 0 auto;
+  color: var(--hollow-green);
+  font-size: 15px;
+}
+
+.hollow-mix-dialog__selection span {
+  overflow: hidden;
+  color: #6f6a64;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hollow-mix-dialog__error {
+  margin: 0 0 10px;
+  color: var(--hollow-red);
+  font: 600 12px/1.3 var(--hollow-body);
+}
+
+.hollow-mix-dialog__confirm {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background: var(--hollow-cta-green);
+  border-color: var(--hollow-cta-green);
+  color: #fff;
+  font-family: var(--hollow-mono);
+}
+
+.hollow-mix-dialog__confirm:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hollow-mix-dialog button:focus-visible,
+.hollow-mix-dialog select:focus-visible,
+.hollow-cart-progress__action:focus-visible {
+  outline: 2px solid var(--hollow-green);
+  outline-offset: 2px;
+}
+
+@keyframes hollow-mix-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-mix-dialog {
+    width: calc(100vw - 16px);
+    max-height: calc(100vh - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .hollow-mix-dialog__header {
+    padding: 18px 16px 14px;
+  }
+
+  .hollow-mix-dialog__title {
+    font-size: 32px;
+  }
+
+  .hollow-mix-dialog__scroll {
+    padding: 14px 16px;
+  }
+
+  .hollow-mix-dialog__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .hollow-mix-product__info {
+    padding: 10px;
+  }
+
+  .hollow-mix-dialog__footer {
+    padding: 13px 16px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hollow-mix-dialog[open] {
+    animation: none;
   }
 }
