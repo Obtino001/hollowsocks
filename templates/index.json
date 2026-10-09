@@ -97,38 +97,38 @@
         "button_link": ""
       }
     },
-    "hollow-trust": {
+    "hollow_trust_bar_49CJx9": {
       "type": "hollow-trust-bar",
       "blocks": {
-        "stat-1": {
+        "stat_bxgzDY": {
           "type": "stat",
           "settings": {
-            "value": "27,000+",
-            "label": "5-STJERNET ANMELDELSER"
+            "value": "24",
+            "label": "MØNSTRE FRA DANSKE EGNE"
           }
         },
-        "stat-2": {
+        "stat_XxLA8b": {
           "type": "stat",
           "settings": {
-            "value": "4 MILLIONER+",
-            "label": "PAR SOLGT"
+            "value": "12",
+            "label": "GARANTI PÅ HOLDBARHED"
           }
         },
-        "stat-3": {
+        "stat_7qH6CN": {
           "type": "stat",
           "settings": {
-            "value": "1-ÅRS",
-            "label": "GARANTI. HOLDER DE IKKE, FÅR DU NYE."
+            "value": "SMÅ PARTIER",
+            "label": "IKKE MASSEPRODUKTION"
           }
         }
       },
       "block_order": [
-        "stat-1",
-        "stat-2",
-        "stat-3"
+        "stat_bxgzDY",
+        "stat_XxLA8b",
+        "stat_7qH6CN"
       ],
       "settings": {
-        "background": "#282828",
+        "background": "#2f4438",
         "text_color": "#ffffff"
       }
     },
@@ -410,7 +410,7 @@
   "order": [
     "hollow_collection_nav_JAUyKh",
     "hollow-hero",
-    "hollow-trust",
+    "hollow_trust_bar_49CJx9",
     "hollow-intro",
     "featured-collection",
     "hollow-banners",
