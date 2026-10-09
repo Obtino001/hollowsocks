@@ -328,6 +328,7 @@
     var busy = false;
     var returnFocus = null;
     var handoffToCart = false;
+    var reopenDrawer = false;
 
     emptyText.hidden = cards.length > 0;
 
@@ -356,6 +357,9 @@
     function render() {
       var needed = missingCount();
       var chosen = selectedCount();
+      description.textContent = target === 4 && current === 2
+        ? "You've unlocked 2 extra pairs! Choose your designs."
+        : 'Choose ' + needed + ' ' + (needed === 1 ? 'pair' : 'pairs') + ' to complete your ' + target + '-pair bundle.';
       progressText.textContent = chosen + ' / ' + needed;
       summary.textContent = chosen
         ? Array.from(selected.values()).map(function (item) {
@@ -388,12 +392,10 @@
       selected.clear();
       showError('');
       returnFocus = trigger || document.activeElement;
-      description.textContent = target === 4 && current === 2
-        ? "You've unlocked 2 extra pairs! Choose your designs."
-        : 'Choose ' + missingCount() + ' ' + (missingCount() === 1 ? 'pair' : 'pairs') + ' to complete your ' + target + '-pair bundle.';
       render();
       var drawer = document.getElementById('CartDrawer');
-      if (drawer && drawer.classList.contains('drawer--is-open')) {
+      reopenDrawer = Boolean(drawer && drawer.classList.contains('drawer--is-open'));
+      if (reopenDrawer) {
         document.dispatchEvent(new CustomEvent('cart:close'));
       }
       dialog.showModal();
@@ -436,8 +438,10 @@
     dialog.addEventListener('cancel', function (event) { if (busy) event.preventDefault(); });
     dialog.addEventListener('close', function () {
       document.documentElement.classList.remove('hollow-mix-open');
-      if (!handoffToCart && returnFocus && returnFocus.isConnected && returnFocus.offsetParent !== null) returnFocus.focus();
+      if (!handoffToCart && reopenDrawer) document.dispatchEvent(new CustomEvent('cart:open'));
+      else if (!handoffToCart && returnFocus && returnFocus.isConnected && returnFocus.offsetParent !== null) returnFocus.focus();
       handoffToCart = false;
+      reopenDrawer = false;
     });
 
     confirmButton.addEventListener('click', function () {
@@ -481,7 +485,9 @@
         .then(function (result) {
           handoffToCart = true;
           dialog.close();
-          document.dispatchEvent(new CustomEvent('ajaxProduct:added', {
+          dialog.querySelector('[data-hollow-mix-event-variant]').value = String(itemsToAdd[0].id);
+          dialog.dispatchEvent(new CustomEvent('ajaxProduct:added', {
+            bubbles: true,
             detail: { product: result, addToCartBtn: confirmButton }
           }));
         })

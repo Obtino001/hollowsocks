@@ -4789,6 +4789,8 @@ img.r-3l3b7j {
   inset: 0;
   width: min(780px, calc(100vw - 24px));
   max-width: none;
+  height: min(88vh, 850px);
+  height: min(88dvh, 850px);
   max-height: min(88vh, 850px);
   max-height: min(88dvh, 850px);
   margin: auto;
@@ -4814,6 +4816,7 @@ img.r-3l3b7j {
   flex-direction: column;
   min-height: 0;
   width: 100%;
+  height: 100%;
 }
 
 .hollow-mix-dialog__header {
@@ -4860,6 +4863,7 @@ img.r-3l3b7j {
 }
 
 .hollow-mix-dialog__scroll {
+  flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -5024,6 +5028,8 @@ img.r-3l3b7j {
 @media only screen and (max-width: 768px) {
   .hollow-mix-dialog {
     width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+    height: calc(100dvh - 16px);
     max-height: calc(100vh - 16px);
     max-height: calc(100dvh - 16px);
   }
