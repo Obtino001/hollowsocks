@@ -86,7 +86,7 @@
 
 {%- if section.settings.view_all -%}
   <div class="hollow-shop-all page-width">
-    <a href="{{ collections[section.settings.home_featured_products].url | default: routes.all_products_collection_url }}" class="hollow-btn hollow-btn--dark hollow-view-all-button">{{ section.settings.view_all_label | default: 'SE ALLE MØNSTRE' }}</a>
+    <a href="{{ collections[section.settings.home_featured_products].url | default: routes.all_products_collection_url }}" class="hollow-btn hollow-view-all-button">{{ section.settings.view_all_label | default: 'SE ALLE MØNSTRE' | escape }}</a>
   </div>
 {%- endif -%}
 

@@ -230,6 +230,7 @@
         "rows": 1,
         "mobile_scrollable": false,
         "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
         "divider": false
       }
     },

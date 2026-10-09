@@ -95,6 +95,7 @@
   --hollow-cream: #f8f6f2;
   --hollow-tan: #e5dcca;
   --hollow-green: #073026;
+  --hollow-cta-green: #2F4438;
   --hollow-muted: #6b6b6b;
   /* Fallbacks stay in the Hollow family — never Impact / Courier */
   --hollow-display: "Graphik XX Cond", "Haas Grot Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1314,8 +1315,8 @@
   min-width: 200px;
   height: 48px;
   padding: 0 40px;
-  background: #2F4438 !important;
-  border-color: #2F4438 !important;
+  background: var(--hollow-cta-green) !important;
+  border-color: var(--hollow-cta-green) !important;
   color: #fff !important;
   font-family: var(--hollow-mono);
   font-size: 12px;
@@ -1325,8 +1326,8 @@
 
 .hollow-view-all-button:hover,
 .hollow-view-all-button:visited {
-  background: #2F4438 !important;
-  border-color: #2F4438 !important;
+  background: var(--hollow-cta-green) !important;
+  border-color: var(--hollow-cta-green) !important;
   color: #fff !important;
 }
 
@@ -3646,9 +3647,9 @@
 
 .hollow-theme .product-single__form .add-to-cart,
 .hollow-theme .element-button[type="submit"] {
-  background: #2F4438 !important;
+  background: var(--hollow-cta-green) !important;
   border: 0 !important;
-  border-color: #2F4438 !important;
+  border-color: var(--hollow-cta-green) !important;
   color: var(--hollow-white) !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
