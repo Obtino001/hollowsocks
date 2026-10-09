@@ -30,6 +30,12 @@
   if offer == blank
     assign offer = 'BUY 2 GET 2 FREE'
   endif
+  if request.page_type == 'collection'
+    assign offer_lower = offer | downcase
+    if offer_lower contains 'buy 2 get 2' or offer_lower contains 'køb 2'
+      assign offer = blank
+    endif
+  endif
   if heading != blank or offer != blank
     assign show_announcement = true
   endif
@@ -58,8 +64,6 @@
         {%- endif -%}
         {%- if offer != blank -%}
           <span class="hollow-announcement__offer">{{ offer }}</span>
-        {%- else -%}
-          <span class="hollow-announcement__offer">BUY 2 GET 2 FREE</span>
         {%- endif -%}
       {%- if link != blank -%}
         </a>

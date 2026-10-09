@@ -235,10 +235,16 @@ Arguments
                 assign promo_text = tag | replace: '_promo_', ''
               endif
             endfor
-            if promo_text == blank
+            if promo_text == blank and request.page_type != 'collection'
               unless on_sale
                 assign promo_text = 'BUY 2 GET 2 FREE'
               endunless
+            endif
+            if request.page_type == 'collection'
+              assign promo_text_lower = promo_text | downcase
+              if promo_text_lower contains 'buy 2 get 2' or promo_text_lower contains 'køb 2'
+                assign promo_text = ''
+              endif
             endif
             if promo_text contains '50%'
               assign promo_text = ''
