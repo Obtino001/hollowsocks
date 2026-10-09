@@ -3404,6 +3404,20 @@
   background: #ffffff;
   border-radius: 2px;
   box-sizing: border-box;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hollow-offers__card.is-selected {
+  border-color: var(--hollow-green);
+}
+
+.hollow-offers__card:focus-visible {
+  outline: 2px solid var(--hollow-green);
+  outline-offset: 2px;
 }
 
 .hollow-offers__body {

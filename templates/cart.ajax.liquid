@@ -10,9 +10,26 @@
 {% endcomment %}
 {% layout none %}
 
+{%- liquid
+  assign hollow_bundle_count = 0
+  assign hollow_bundle_total = 0
+  for item in cart.items
+    if item.original_price == 29900
+      for item_collection in item.product.collections
+        if item_collection.handle == 'alle-monstre'
+          assign hollow_bundle_count = hollow_bundle_count | plus: item.quantity
+          assign hollow_bundle_total = hollow_bundle_total | plus: item.final_line_price
+          break
+        endif
+      endfor
+    endif
+  endfor
+-%}
 <div class="cart__items"
   data-count="{{ cart.item_count }}"
-  data-cart-subtotal="{{ cart.total_price }}">
+  data-cart-subtotal="{{ cart.total_price }}"
+  data-bundle-count="{{ hollow_bundle_count }}"
+  data-bundle-total="{{ hollow_bundle_total }}">
   {% for item in cart.items %}
     {%- render 'cart-item', product: item, sizes: '100px', -%}
   {% endfor %}

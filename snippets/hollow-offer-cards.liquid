@@ -1,4 +1,4 @@
-<section class="hollow-offers" aria-label="Mængderabat">
+<section class="hollow-offers" aria-label="Mængderabat" data-hollow-offers>
   {%- if section.settings.hollow_offers_label != blank -%}
     <p class="hollow-offers__label">{{ section.settings.hollow_offers_label | escape }}</p>
   {%- endif -%}
@@ -6,7 +6,7 @@
     <p class="hollow-offers__subtitle">{{ section.settings.hollow_offers_subtitle | escape }}</p>
   {%- endif -%}
 
-  <div class="hollow-offers__card">
+  <button type="button" class="hollow-offers__card is-selected" data-bundle-quantity="1" aria-pressed="true">
     <div class="hollow-offers__body">
       <div class="hollow-offers__left">
         <span class="hollow-offers__name">{{ section.settings.hollow_offer_1_name | default: 'ENKELT PAR' | escape }}</span>
@@ -16,9 +16,9 @@
         <span class="hollow-offers__price">299 kr</span>
       </div>
     </div>
-  </div>
+  </button>
 
-  <div class="hollow-offers__card">
+  <button type="button" class="hollow-offers__card" data-bundle-quantity="4" aria-pressed="false">
     <span class="hollow-offers__badge">{{ section.settings.hollow_offer_2_badge | default: 'MEST POPULÆRE' | escape }}</span>
     <div class="hollow-offers__body">
       <div class="hollow-offers__left">
@@ -31,9 +31,9 @@
         <s class="hollow-offers__was">1.196 kr</s>
       </div>
     </div>
-  </div>
+  </button>
 
-  <div class="hollow-offers__card">
+  <button type="button" class="hollow-offers__card" data-bundle-quantity="6" aria-pressed="false">
     <span class="hollow-offers__badge hollow-offers__badge--value">{{ section.settings.hollow_offer_3_badge | default: 'BEDSTE VÆRDI' | escape }}</span>
     <div class="hollow-offers__body">
       <div class="hollow-offers__left">
@@ -46,5 +46,5 @@
         <s class="hollow-offers__was">1.794 kr</s>
       </div>
     </div>
-  </div>
+  </button>
 </section>

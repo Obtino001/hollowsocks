@@ -255,7 +255,7 @@
     });
   }
 
-  function updateHollowCartUI(count) {
+  function updateHollowCartUI(count, bundleCount, bundleTotal) {
     var n = typeof count === 'number' ? count : 0;
     document.querySelectorAll('[data-hollow-cart-count]').forEach(function (el) {
       el.textContent = String(n);
@@ -263,6 +263,8 @@
     document.querySelectorAll('[data-hollow-subtotal-label]').forEach(function (el) {
       el.textContent = n === 1 ? '1 ITEM' : n + ' ITEMS';
     });
+    if (!Number.isFinite(bundleCount)) return;
+    var eligible = bundleCount;
 
     var progress = document.querySelector('[data-hollow-cart-progress]');
     if (!progress) return;
@@ -270,37 +272,138 @@
     var msgEl = progress.querySelector('[data-hollow-progress-message]');
 
     if (msgEl) {
-      if (n < 4) {
-        msgEl.textContent = 'Tilføj ' + (4 - n) + ' par mere og betal 599 kr for alle fire';
-      } else if (n < 6) {
-        msgEl.textContent = 'Tilføj ' + (6 - n) + ' par mere og betal 899 kr for alle seks';
+      if (eligible < 4) {
+        msgEl.textContent = 'Tilføj ' + (4 - eligible) + ' par mere for at nå 4-pars tilbuddet';
+      } else if (eligible < 6) {
+        msgEl.textContent = eligible === 4 && bundleTotal === 59900
+          ? '4-pars tilbuddet er aktivt! Tilføj 2 par mere for at nå 6-pars tilbuddet'
+          : 'Tilføj ' + (6 - eligible) + ' par mere for at nå 6-pars tilbuddet';
+      } else if (eligible === 6 && bundleTotal === 89900) {
+        msgEl.textContent = '6-pars tilbuddet er aktivt!';
       } else {
-        msgEl.textContent = 'Du får den bedste pris!';
+        msgEl.textContent = 'Se din rabat og subtotal nedenfor';
       }
     }
 
     var bar = progress.querySelector('[data-hollow-progress-bar]');
     if (bar) {
       var pct = 0;
-      if (n >= 6) pct = 100;
-      else if (n <= 0) pct = 0;
-      else pct = Math.round((n / 6) * 100);
+      if (eligible >= 6) pct = 100;
+      else if (eligible <= 0) pct = 0;
+      else pct = Math.round((eligible / 6) * 100);
       bar.style.width = pct + '%';
-      progress.classList.toggle('is-complete', n >= 6);
+      progress.classList.toggle('is-complete', eligible >= 6 && bundleTotal === 89900);
     }
 
     progress.querySelectorAll('[data-step]').forEach(function (step) {
       var stepNumber = parseInt(step.getAttribute('data-step'), 10) || 0;
-      step.classList.toggle('is-active', n >= stepNumber);
+      step.classList.toggle('is-active', eligible >= stepNumber);
 
       var label = step.querySelector('[data-step-label]');
       if (label) {
-        if (n >= stepNumber) label.textContent = 'IN CART';
+        if (eligible >= stepNumber) label.textContent = 'IN CART';
         else label.textContent = stepNumber === 1 ? 'PAIR 1' : 'ADD 1';
       }
     });
 
-    progress.setAttribute('data-count', String(n));
+    progress.setAttribute('data-count', String(eligible));
+  }
+
+  function initHollowBundleOffers() {
+    document.querySelectorAll('[data-hollow-offers]').forEach(function (offers) {
+      var form = offers.parentElement.querySelector('.product-single__form');
+      if (!form) return;
+
+      var target = 1;
+      var pending = false;
+      var completed = null;
+      var addButton = form.querySelector('[data-add-to-cart]');
+
+      offers.querySelectorAll('[data-bundle-quantity]').forEach(function (card) {
+        card.addEventListener('click', function () {
+          target = Number(card.getAttribute('data-bundle-quantity')) || 1;
+          offers.querySelectorAll('[data-bundle-quantity]').forEach(function (option) {
+            var selected = option === card;
+            option.classList.toggle('is-selected', selected);
+            option.setAttribute('aria-pressed', String(selected));
+          });
+        });
+      });
+
+      document.addEventListener('cart:updated', function () { completed = null; });
+      document.addEventListener('ajaxProduct:added', function (event) {
+        if (!event.detail || !event.detail.bundleTarget) completed = null;
+      });
+
+      form.addEventListener('submit', function (event) {
+        if (target === 1) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (pending || !addButton || addButton.disabled) return;
+
+        var requestedTarget = target;
+        var variantInput = form.querySelector('[name="id"]');
+        var variantId = variantInput && variantInput.value;
+        if (!variantId) return;
+        if (completed && completed.target === requestedTarget && completed.variantId === variantId) {
+          document.dispatchEvent(new CustomEvent('cart:open'));
+          return;
+        }
+
+        pending = true;
+        var data = new FormData(form);
+        addButton.classList.add('btn--loading');
+        var existingError = form.querySelector('.errors');
+        if (existingError) existingError.remove();
+
+        theme.cart.getCartProductMarkup()
+          .then(function (markup) {
+            var container = document.createElement('div');
+            container.innerHTML = markup;
+            var items = container.querySelector('.cart__items');
+            if (!items || !items.hasAttribute('data-bundle-count')) throw new Error('Cart could not be checked. Please try again.');
+            var current = Number(items.getAttribute('data-bundle-count'));
+            if (!Number.isFinite(current)) throw new Error('Cart could not be checked. Please try again.');
+            var missing = requestedTarget - current;
+            if (missing <= 0) {
+              completed = { target: requestedTarget, variantId: variantId };
+              document.dispatchEvent(new CustomEvent('cart:open'));
+              return null;
+            }
+
+            data.set('quantity', String(missing));
+            return fetch(theme.routes.cartAdd, {
+              method: 'POST',
+              credentials: 'same-origin',
+              body: data,
+              headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            }).then(function (response) {
+              return response.json().then(function (product) {
+                if (!response.ok || product.status === 422) {
+                  throw new Error(product.description || product.message || 'Could not add the bundle.');
+                }
+                completed = product.quantity >= missing
+                  ? { target: requestedTarget, variantId: variantId }
+                  : null;
+                form.dispatchEvent(new CustomEvent('ajaxProduct:added', {
+                  bubbles: true,
+                  detail: { product: product, addToCartBtn: addButton, bundleTarget: requestedTarget }
+                }));
+              });
+            });
+          })
+          .catch(function (error) {
+            var message = document.createElement('div');
+            message.className = 'errors text-center';
+            message.textContent = error.message || 'Could not add the bundle. Please try again.';
+            form.appendChild(message);
+          })
+          .finally(function () {
+            pending = false;
+            addButton.classList.remove('btn--loading');
+          });
+      }, true);
+    });
   }
 
   function initHollowCartDrawer() {
@@ -315,7 +418,7 @@
       window.setTimeout(function () {
         var items = document.querySelector('#CartDrawerForm [data-products] .cart__items');
         if (items && items.dataset.count) {
-          updateHollowCartUI(parseInt(items.dataset.count, 10) || 0);
+          updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal));
         }
       }, 50);
     });
@@ -325,7 +428,7 @@
     var observer = new MutationObserver(function () {
       var items = form.querySelector('[data-products] .cart__items');
       if (items && items.dataset.count) {
-        updateHollowCartUI(parseInt(items.dataset.count, 10) || 0);
+        updateHollowCartUI(parseInt(items.dataset.count, 10) || 0, Number(items.dataset.bundleCount), Number(items.dataset.bundleTotal));
       }
     });
     var products = form.querySelector('[data-products]');
@@ -403,6 +506,7 @@
     window.addEventListener('resize', syncStickyHeaderHeight);
     initStickyAtc();
     initHollowPdpVariants();
+    initHollowBundleOffers();
     initLuck();
     duplicateMarquee();
     window.addEventListener('resize', duplicateMarquee);
