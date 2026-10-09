@@ -2584,6 +2584,15 @@
   line-height: 0;
 }
 
+.custom-footer__brand-text {
+  display: block;
+  font-family: var(--hollow-display);
+  font-size: clamp(48px, 14vw, 190px);
+  line-height: 0.85;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
 .custom-footer__brand-svg {
   display: block;
   width: 100%;
@@ -2699,12 +2708,15 @@
 
   .custom-footer__brand {
     margin: 0 0 28px;
+    text-align: center;
+    width: 100%;
   }
 
   .custom-footer__menus {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 28px;
+    width: 100%;
   }
 
   .custom-footer__menu ul {

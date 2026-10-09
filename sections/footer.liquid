@@ -48,7 +48,7 @@
 
       <div class="custom-footer__right">
         <div class="custom-footer__brand" aria-label="{{ section.settings.brand_text | default: 'Strikkestuen' | escape }}">
-          <span style="display: block; font-family: var(--hollow-display); font-size: clamp(60px, 14vw, 190px); line-height: 0.85; text-transform: uppercase; margin-bottom: 20px;">{{ section.settings.brand_text | default: 'STRIKKESTUEN' }}</span>
+          <span class="custom-footer__brand-text">{{ section.settings.brand_text | default: 'STRIKKESTUEN' | escape }}</span>
         </div>
 
         <div class="custom-footer__menus">
