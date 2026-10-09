@@ -121,6 +121,7 @@
         "hollow_promo_badge": "Fri fragt, når du tager mere end ét par",
         "hollow_bestseller_badge": "",
         "hollow_new_color_badge": "NEW COLOR",
+        "hollow_show_offers": true,
         "hollow_offers_label": "BLAND SOM DU VIL",
         "hollow_offers_subtitle": "Vælg frit mellem alle mønstre — rabatten lægges på automatisk i kurven.",
         "hollow_offer_1_name": "ENKELT PAR",
@@ -420,6 +421,7 @@
       "blocks": {
         "faq_RtcxJX": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "question": "WHY DOES ALPACA PERFORM BETTER?",
             "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
