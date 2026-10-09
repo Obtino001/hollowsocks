@@ -108,8 +108,8 @@
         "button_label": "",
         "button_link": "",
         "layout": "left",
-        "height": 550,
-        "framed": false,
+        "height": 450,
+        "framed": true,
         "parallax": true,
         "parallax_direction": "top"
       }
