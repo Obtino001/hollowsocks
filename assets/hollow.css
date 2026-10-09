@@ -3211,7 +3211,7 @@
   color: var(--hollow-black);
 }
 
-.hollow-theme .product-block--price {
+body.hollow-theme:not(.template-product-gave) .product-block--price {
   display: none;
 }
 
