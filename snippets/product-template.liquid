@@ -229,17 +229,7 @@
               {%- endif -%}
 
               {%- if isModal != true and show_pdp_rating -%}
-                <a href="#hollow-reviews-section" class="hollow-pdp-rating" aria-label="{{ rating_avg }} ud af 5 stjerner, {{ reviews_rating_count }} anmeldelser">
-                  <span class="hollow-pdp-rating__stars" aria-hidden="true">
-                    {%- for star in (1..5) -%}
-                      {%- assign star_index = star | minus: 1 -%}
-                      {%- assign star_fill = rating_avg | minus: star_index | times: 100 | at_most: 100 | at_least: 0 -%}
-                      <span class="hollow-pdp-rating__star">
-                        <span class="hollow-pdp-rating__star-outline">★</span>
-                        <span class="hollow-pdp-rating__star-filled" style="--hollow-star-fill: {{ star_fill }}%;">★</span>
-                      </span>
-                    {%- endfor -%}
-                  </span>
+                <a href="#hollow-reviews-section" class="hollow-pdp-rating" aria-label="{{ reviews_rating_count }} reviews">
                   <span class="hollow-pdp-rating__count">({{ reviews_rating_count }})</span>
                 </a>
               {%- endif -%}
