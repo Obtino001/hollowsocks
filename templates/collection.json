@@ -45,6 +45,7 @@
         },
         "cat-5": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "title": "HUNTING",
             "link": "shopify://collections/hunting"
@@ -61,7 +62,8 @@
         "cat-7": {
           "type": "category",
           "settings": {
-            "title": "RUNNING",
+            "image": "shopify://shop_images/hf_20261007_185139_ae49af45-04d6-4f60-9477-5691fd528961.jpg",
+            "title": "HISTORIEN",
             "link": "shopify://collections/running"
           }
         }
@@ -78,6 +80,7 @@
     },
     "collection-header": {
       "type": "collection-header",
+      "disabled": true,
       "settings": {
         "enable": true,
         "collection_image_enable": false,
