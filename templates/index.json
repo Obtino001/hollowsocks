@@ -267,86 +267,6 @@
       ],
       "settings": {}
     },
-    "hollow-reviews": {
-      "type": "hollow-reviews",
-      "blocks": {
-        "r1": {
-          "type": "review",
-          "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable. Just what I needed for long walks with my dog. Highly recommend them to anyone who is looking for a great pair of socks.",
-            "author": "Steve J",
-            "meta": "verified buyer"
-          }
-        },
-        "p1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle_bundle.jpg",
-            "tall": true
-          }
-        },
-        "p2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Main_Image_df265dff-b9ba-48aa-a635-9556427a7b83.png",
-            "tall": true
-          }
-        },
-        "r2": {
-          "type": "review",
-          "settings": {
-            "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet. I gave it 5 stars because even in the hot weather they feel very comfortable!",
-            "author": "Michael W",
-            "meta": "verified buyer"
-          }
-        },
-        "p3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/review-image3.png",
-            "tall": false
-          }
-        },
-        "r3": {
-          "type": "review",
-          "settings": {
-            "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible. My legs feel 30 years younger and I am not in pain.",
-            "author": "drew s",
-            "meta": "verified buyer"
-          }
-        },
-        "p4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/catagory_-_compression.jpg",
-            "tall": true
-          }
-        },
-        "r4": {
-          "type": "review",
-          "settings": {
-            "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.",
-            "author": "Raymond L.",
-            "meta": "verified buyer"
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "p1",
-        "p2",
-        "r2",
-        "p3",
-        "r3",
-        "p4",
-        "r4"
-      ],
-      "settings": {
-        "title": "OVER 4.000.000 PAR SOLGT",
-        "button_label": "LÆS FLERE ANMELDELSER —",
-        "button_link": ""
-      }
-    },
     "custom_marquee_6fVU3j": {
       "type": "custom-marquee",
       "blocks": {
@@ -505,7 +425,6 @@
     "hollow-intro",
     "featured-collection",
     "hollow-banners",
-    "hollow-reviews",
     "custom_marquee_6fVU3j",
     "trust_bar_NPJkyk",
     "hollow-story",
