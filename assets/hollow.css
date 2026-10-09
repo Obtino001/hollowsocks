@@ -2343,9 +2343,24 @@
     align-items: flex-start;
   }
 
+  .hollow-social__track {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+
+  .hollow-social__row {
+    animation: none;
+  }
+
   .hollow-social__item {
     width: 160px;
     flex-basis: 160px;
+    scroll-snap-align: start;
+  }
+
+  .hollow-social__item[data-hollow-marquee-clone] {
+    display: none;
   }
 }
 

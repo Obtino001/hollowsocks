@@ -192,16 +192,6 @@ Arguments
           </div>
         {%- endif -%}
 
-        {%- liquid
-          assign hover_reviews = reviews_count
-        -%}
-        <div class="hollow-card__hover">
-          <div class="hollow-card__reviews" aria-hidden="true">
-            <span class="hollow-card__reviews-count">({{ hover_reviews }} REVIEWS)</span>
-          </div>
-        </div>
-
-        {%- comment -%} Color images for hover/swatch JS only — UI swatches live under title {%- endcomment -%}
         {%- if settings.enable_swatches -%}
           {%- assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase -%}
           {%- for option in product.options_with_values -%}
