@@ -245,19 +245,19 @@
         "banner-1": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/crew_e5ce7355-3217-45c3-bfcb-f7f35dc11dcd.jpg",
+            "image": "shopify://shop_images/hf_20260905_220037_335e5a80-658f-49cb-a77f-e86687b8dd94_1.jpg",
             "title": "Kompression",
             "text": "Den perfekte hjælp til forbedret blodcirkulation og øget komfort.",
-            "link": ""
+            "link": "shopify://collections/alle-monstre"
           }
         },
         "banner-2": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/review-image5.png",
+            "image": "shopify://shop_images/hf_20261009_121708_5b3eb8ae-cc01-462b-bc7c-2b6dde762204.jpg",
             "title": "håndværk",
             "text": "Strømper bygget til 14-timers lange dage på arbejdspladsen.",
-            "link": ""
+            "link": "shopify://collections/alle-monstre"
           }
         }
       },
