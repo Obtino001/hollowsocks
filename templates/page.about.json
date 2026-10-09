@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "about": {
@@ -63,16 +72,25 @@
           }
         }
       },
-      "block_order": ["t1", "t2", "t3", "f1", "f2", "f3", "f4", "f5"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5"
+      ],
       "settings": {
-        "hero_heading": "The Magic of Alpaca",
-        "hero_text": "After two years of real-world testing, alpaca stood above everything else for comfort and performance.",
-        "fiber_title": "Only the Best Fiber Makes the Cut",
-        "fiber_eyebrow": "ethically sourced in the high altitudes of peru",
-        "fiber_story_title": "Precision in Every knit",
-        "fiber_text": "Made in the USA using time tested techniques to create the best socks ever",
-        "fiber_image": "",
-        "means_heading": "WHAT BETTER REALLY MEANS"
+        "hero_heading": "MIN MORMOR STRIKKEDE SOKKER TIL HELE FAMILIEN. JEG LÆRTE DET ALDRIG.",
+        "hero_text": "Mormor sad i den samme stol hver aften og strikkede, mens hun kiggede på os. Vi fik et par hver til jul. Hvert eneste år. Ingen af os sagde rigtig tak for dem.\nDe var bare der, som noget der altid ville være der.",
+        "fiber_title": "Hun holdt op i 2011, fordi hendes hænder ikke kunne mere.",
+        "fiber_eyebrow": "",
+        "fiber_story_title": "Ingen i familien har fået et par siden.",
+        "fiber_text": "Da vi tømte hendes lejlighed, fandt jeg en skuffe med hendes opskrifter.\nHåndskrevne. Nogle af dem på papir, der var revet ud af regnskabsbøger fra\nhalvfjerdserne.",
+        "fiber_image": "shopify://shop_images/hf_20261007_185139_ae49af45-04d6-4f60-9477-5691fd528961.jpg",
+        "means_heading": ""
       }
     },
     "featured-collection": {
@@ -85,9 +103,13 @@
         "rows": 2,
         "mobile_scrollable": true,
         "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
         "divider": false
       }
     }
   },
-  "order": ["about", "featured-collection"]
+  "order": [
+    "about",
+    "featured-collection"
+  ]
 }
