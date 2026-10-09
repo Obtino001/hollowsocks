@@ -38,6 +38,7 @@
         },
         "category_HPxpdd": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Main_Image_79ca6347-bae1-4a34-a3a2-3de3b27588d1.png",
             "title": "HÅNDVÆRK",
@@ -46,6 +47,7 @@
         },
         "category_PrLtiF": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Main_Image_df265dff-b9ba-48aa-a635-9556427a7b83.png",
             "title": "JAGT",
@@ -54,6 +56,7 @@
         },
         "category_4fmizW": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/3c1de2ac47ea2e09cea2cff8f859646aee6e281b.jpg",
             "title": "HVERDAG",
@@ -62,6 +65,7 @@
         },
         "category_a6wGW4": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/hero-homepage-DESKTOP-04_84a98fa5-fae1-48c4-a6b7-117d942f9e67.jpg",
             "title": "LØB",
