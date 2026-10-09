@@ -230,7 +230,7 @@
       "settings": {
         "title": "24 egne. 24 mønstre.",
         "heading_size": "h1",
-        "home_featured_products": "a-line",
+        "home_featured_products": "alle-monstre",
         "per_row": 4,
         "rows": 1,
         "mobile_scrollable": false,
