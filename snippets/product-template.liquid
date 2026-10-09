@@ -469,7 +469,9 @@
                   {%- when 'buy_buttons' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
                       {%- unless product.empty? -%}
-                        {%- render 'hollow-offer-cards', section: section -%}
+                        {%- if section.settings.hollow_show_offers -%}
+                          {%- render 'hollow-offer-cards', section: section -%}
+                        {%- endif -%}
                         <div class="product-block">
                           {%- render 'product-form',
                             form_id: form_id,
