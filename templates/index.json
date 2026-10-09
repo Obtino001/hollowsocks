@@ -347,6 +347,79 @@
         "button_link": ""
       }
     },
+    "custom_marquee_6fVU3j": {
+      "type": "custom-marquee",
+      "blocks": {
+        "marquee_item_HLgwAM": {
+          "type": "marquee_item",
+          "disabled": true,
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Temperature Regulating"
+          }
+        },
+        "marquee_item_FtQPnG": {
+          "type": "marquee_item",
+          "disabled": true,
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Temperature Regulating"
+          }
+        },
+        "marquee_item_fjBaPA": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/3e8f3d93-0842-415f-980d-8c2339426715",
+            "text": "Holder varmen"
+          }
+        },
+        "marquee_item_9rFFGi": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/474413fa-6896-4d19-a825-5c0cea6c952d",
+            "text": "Blød mod huden"
+          }
+        },
+        "marquee_item_6R3Rpd": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/900adad0-0e03-4dfe-99b4-aaa89e5a3be2",
+            "text": "KRADSER IKKE"
+          }
+        },
+        "marquee_item_aRRmVp": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/2e3af8ec-c704-4e48-aa4d-83d02d09c050",
+            "text": "Varm uden at svede"
+          }
+        },
+        "marquee_item_kX9Vaa": {
+          "type": "marquee_item",
+          "settings": {
+            "icon_url": "https://assets.replocdn.com/projects/5b831aa6-e971-4295-ba6f-1ddadda85b7f/000d6627-f069-4e3e-a5e1-6dfd7f11e281",
+            "text": "FORSTÆRKET HÆL"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_item_HLgwAM",
+        "marquee_item_FtQPnG",
+        "marquee_item_fjBaPA",
+        "marquee_item_9rFFGi",
+        "marquee_item_6R3Rpd",
+        "marquee_item_aRRmVp",
+        "marquee_item_kX9Vaa"
+      ],
+      "settings": {
+        "bg_color": "#e4dcd0",
+        "text_color": "#333333",
+        "speed": 60,
+        "font_size": 14,
+        "icon_size": 24,
+        "padding_y": 30
+      }
+    },
     "trust_bar_NPJkyk": {
       "type": "Trust-Bar",
       "blocks": {
@@ -377,6 +450,7 @@
         "trust_item_ekYR8A",
         "trust_item_6qMmq9"
       ],
+      "disabled": true,
       "name": "Trust Marquee Bar",
       "settings": {
         "bg_color": "#e5dcca",
@@ -431,6 +505,7 @@
     "featured-collection",
     "hollow-banners",
     "hollow-reviews",
+    "custom_marquee_6fVU3j",
     "trust_bar_NPJkyk",
     "hollow-story",
     "featured_collection_ghU4LG"
