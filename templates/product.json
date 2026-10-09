@@ -419,6 +419,13 @@
     "custom-split-faq": {
       "type": "custom-split-faq",
       "blocks": {
+        "faq_wiEMbF": {
+          "type": "faq",
+          "settings": {
+            "question": "Hvordan virker rabatten?",
+            "answer": "<p>Du lægger bare de par i kurven, du vil have. Prisen falder automatisk, når du når fire — og igen ved seks. Du skal ikke bruge en kode.</p><p>Mønstrene må gerne være forskellige.</p>"
+          }
+        },
         "faq_RtcxJX": {
           "type": "faq",
           "disabled": true,
@@ -437,7 +444,7 @@
         "faq-2": {
           "type": "faq",
           "settings": {
-            "question": "Kan jeg vælge forskellige mønstre i et sæt?",
+            "question": "Kan jeg vælge forskellige mønstre?",
             "answer": "<p><br/>Ja. Du må gerne blande frit. Rabatten beregnes på antal par, ikke på mønster.<br/><br/></p>"
           }
         },
@@ -464,6 +471,7 @@
         }
       },
       "block_order": [
+        "faq_wiEMbF",
         "faq_RtcxJX",
         "faq-1",
         "faq-2",
