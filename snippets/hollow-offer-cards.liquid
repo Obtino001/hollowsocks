@@ -9,39 +9,41 @@
   <div class="hollow-offers__card">
     <div class="hollow-offers__body">
       <div class="hollow-offers__left">
-        <span class="hollow-offers__name">1 PAR</span>
-        <span class="hollow-offers__each">299,00 KR/PAR + 39,00 KR I FRAGT</span>
+        <span class="hollow-offers__name">{{ section.settings.hollow_offer_1_name | default: 'ENKELT PAR' | escape }}</span>
+        <span class="hollow-offers__each">299 kr pr. par · + 59 kr. i FRAGT</span>
       </div>
       <div class="hollow-offers__right">
-        <span class="hollow-offers__price">299,00 KR</span>
+        <span class="hollow-offers__price">299 kr</span>
       </div>
     </div>
   </div>
 
   <div class="hollow-offers__card">
-    <span class="hollow-offers__badge">MEST POPULÆRE</span>
+    <span class="hollow-offers__badge">{{ section.settings.hollow_offer_2_badge | default: 'MEST POPULÆRE' | escape }}</span>
     <div class="hollow-offers__body">
       <div class="hollow-offers__left">
-        <span class="hollow-offers__name">KØB 2, FÅ 2 GRATIS</span>
-        <span class="hollow-offers__each">150,00 KR/PAR + FRI FRAGT</span>
+        <span class="hollow-offers__name">{{ section.settings.hollow_offer_2_name | default: 'KØB 2 — FÅ 2 MED' | escape }}</span>
+        <span class="hollow-offers__package">FAMILIEPAKKEN · 4 par</span>
+        <span class="hollow-offers__each">150 kr pr. par · {{ section.settings.hollow_offer_2_suffix | default: 'FRI FRAGT' | escape }}</span>
       </div>
       <div class="hollow-offers__right">
-        <span class="hollow-offers__price">599,00 KR</span>
-        <s class="hollow-offers__was">1.196,00 KR</s>
+        <span class="hollow-offers__price">599 kr</span>
+        <s class="hollow-offers__was">1.196 kr</s>
       </div>
     </div>
   </div>
 
   <div class="hollow-offers__card">
-    <span class="hollow-offers__badge hollow-offers__badge--value">BEDSTE VÆRDI</span>
+    <span class="hollow-offers__badge hollow-offers__badge--value">{{ section.settings.hollow_offer_3_badge | default: 'BEDSTE VÆRDI' | escape }}</span>
     <div class="hollow-offers__body">
       <div class="hollow-offers__left">
-        <span class="hollow-offers__name">KØB 3, FÅ 3 GRATIS</span>
-        <span class="hollow-offers__each">150,00 KR/PAR + FRI FRAGT</span>
+        <span class="hollow-offers__name">{{ section.settings.hollow_offer_3_name | default: 'KØB 3 — FÅ 3 MED' | escape }}</span>
+        <span class="hollow-offers__package">STORFAMILIEN · 6 par</span>
+        <span class="hollow-offers__each">150 kr pr. par · {{ section.settings.hollow_offer_3_suffix | default: 'FRI FRAGT' | escape }}</span>
       </div>
       <div class="hollow-offers__right">
-        <span class="hollow-offers__price">899,00 KR</span>
-        <s class="hollow-offers__was">1.794,00 KR</s>
+        <span class="hollow-offers__price">899 kr</span>
+        <s class="hollow-offers__was">1.794 kr</s>
       </div>
     </div>
   </div>
