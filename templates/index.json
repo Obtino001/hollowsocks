@@ -483,6 +483,7 @@
     },
     "featured_collection_ghU4LG": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "title": "Featured collection",
