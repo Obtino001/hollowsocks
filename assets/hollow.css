@@ -4998,19 +4998,29 @@ img.r-3l3b7j {
   font: 600 12px/1.3 var(--hollow-body);
 }
 
-.hollow-mix-dialog__confirm {
+.hollow-mix-dialog .btn.hollow-mix-dialog__confirm,
+.hollow-mix-dialog .btn.hollow-mix-dialog__confirm:hover {
   display: block;
   width: 100%;
   margin: 0;
-  background: var(--hollow-cta-green);
+  background-color: var(--hollow-cta-green);
   border-color: var(--hollow-cta-green);
   color: #fff;
   font-family: var(--hollow-mono);
 }
 
-.hollow-mix-dialog__confirm:disabled {
-  opacity: 0.45;
+.hollow-mix-dialog .btn.hollow-mix-dialog__confirm:disabled,
+.hollow-mix-dialog .btn.hollow-mix-dialog__confirm:disabled:hover {
+  background-color: #65786d;
+  border-color: #65786d;
+  color: #fff;
+  opacity: 1;
   cursor: not-allowed;
+}
+
+.hollow-mix-dialog .btn.hollow-mix-dialog__confirm.btn--loading::before {
+  border-color: #fff;
+  border-top-color: transparent;
 }
 
 .hollow-mix-dialog button:focus-visible,
