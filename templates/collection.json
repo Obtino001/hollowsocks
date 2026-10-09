@@ -43,20 +43,20 @@
             "link": "shopify://collections/trades"
           }
         },
-        "cat-5": {
-          "type": "category",
-          "disabled": true,
-          "settings": {
-            "title": "HUNTING",
-            "link": "shopify://collections/hunting"
-          }
-        },
         "cat-6": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/hf_20261009_092407_d944a589-525f-466d-a03e-8b8c238e018d.jpg",
             "title": "GAVESÆT",
             "link": "shopify://collections/gavesaet"
+          }
+        },
+        "cat-5": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261009_210645_e5e54495-9ab9-4760-bffd-870b07466155_1.jpg",
+            "title": "ADVENTSKALENDER",
+            "link": "shopify://collections/adventskalender"
           }
         },
         "cat-7": {
@@ -72,8 +72,8 @@
         "cat-2",
         "cat-3",
         "cat-4",
-        "cat-5",
         "cat-6",
+        "cat-5",
         "cat-7"
       ],
       "settings": {}
