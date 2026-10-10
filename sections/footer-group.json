@@ -107,15 +107,16 @@
         "image_3XmtaE": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261010_105750_90ac6284-d76b-4e31-ab40-74053b5bb8f1.jpg",
             "tall": false
           }
         },
         "review_Cr3FxE": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
+            "quote": "Jeg har ødelagt to uldtrøjer i maskinen, så jeg turde ikke vaske dem først. Men der stod 30 grader på uldprogram, så jeg prøvede. De er præcis samme størrelse som før. Det tager dog et par dage før de er helt tørre, så man skal være lidt tålmodig..",
+            "author": "Kirsten, Esbjerg",
+            "meta": ""
           }
         },
         "image_VMzHQU": {
