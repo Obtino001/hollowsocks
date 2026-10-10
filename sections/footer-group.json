@@ -167,14 +167,15 @@
         "review_AphYHi": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
+            "quote": "Vores hus er fra 1954. Der er to grader forskel på stuen og gangen.\n\nJeg har prøvet tøfler, men de sidder ikke fast, og man kan ikke have dem på i sengen. De her kan jeg have på hele dagen.",
+            "author": "Marianne, Haderslev",
+            "meta": ""
           }
         },
         "image_Yny7cT": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261010_112040_95cba69c-14d5-4f08-8736-89e89c2fe4ab.jpg",
             "tall": false
           }
         }
