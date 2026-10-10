@@ -224,18 +224,19 @@
             "meta": ""
           }
         },
-        "image_GWmc7D": {
-          "type": "image",
-          "settings": {
-            "tall": false
-          }
-        },
         "review_darbNT": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
+            "quote": "Jeg er sygeplejerske og går tolv timer på et linoleumsgulv.\n\nHar prøvet alt muligt. De her er de første, der ikke er klemt flade efter fire timer. Jeg har et par i skabet på arbejdet nu.",
+            "author": "Camilla, Odense",
+            "meta": ""
+          }
+        },
+        "image_GWmc7D": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_114027_7c2d8949-0513-4af1-aee2-ecc561776eb5.jpg",
+            "tall": false
           }
         }
       },
@@ -268,8 +269,8 @@
         "image_RC7bFT",
         "image_y9WLy8",
         "review_V83t8P",
-        "image_GWmc7D",
-        "review_darbNT"
+        "review_darbNT",
+        "image_GWmc7D"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
