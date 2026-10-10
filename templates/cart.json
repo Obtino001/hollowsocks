@@ -23,13 +23,14 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Popular picks",
+        "title": "ALLE MØNSTRE",
         "heading_size": "h2",
-        "home_featured_products": "",
+        "home_featured_products": "alle-monstre",
         "per_row": 4,
         "rows": 1,
         "mobile_scrollable": true,
         "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
         "divider": false
       }
     }
