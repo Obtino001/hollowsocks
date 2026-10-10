@@ -269,18 +269,19 @@
             "tall": false
           }
         },
-        "review_JTDWjA": {
-          "type": "review",
-          "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
-          }
-        },
         "image_36FQVR": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261010_124124_4922c846-7a41-4893-a854-6c431117fa15.jpg",
             "tall": false
+          }
+        },
+        "review_JTDWjA": {
+          "type": "review",
+          "settings": {
+            "quote": "Købte først fire til mig selv.",
+            "author": "Dorthe, Hillerød",
+            "meta": ""
           }
         }
       },
@@ -319,8 +320,8 @@
         "review_dfPUYn",
         "review_tzDWw4",
         "image_PhzYhG",
-        "review_JTDWjA",
-        "image_36FQVR"
+        "image_36FQVR",
+        "review_JTDWjA"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
