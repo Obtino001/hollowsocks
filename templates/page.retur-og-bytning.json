@@ -12,9 +12,47 @@
     "main": {
       "type": "main-page",
       "settings": {}
+    },
+    "rich_text_m6cpTQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6hpgUm": {
+          "type": "heading",
+          "settings": {
+            "title": "Retur og bytning",
+            "heading_size": "h2"
+          }
+        },
+        "text_N4Krgh": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h1>Retur og bytning</h1><p>Passer de ikke, eller er de ikke til dig alligevel? Det ordner vi.</p><p>Du har <strong>30 dages retur- og bytteret</strong> fra den dag, du modtager din pakke. Det er ud over den lovpligtige fortrydelsesret på 14 dage.</p><h2>Sådan gør du</h2><p><strong>1. Skriv til os</strong><br/>Send en mail til <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a> med dit ordrenummer, og skriv om du vil returnere eller bytte. Vil du bytte, så skriv hvilken størrelse eller hvilket mønster du ønsker i stedet.</p><p><strong>2. Du får returadressen</strong><br/>Vi sender dig adressen og en kort vejledning på mail, typisk samme dag.</p><p><strong>3. Send pakken afsted</strong><br/>Pak strømperne forsvarligt og læg dit ordrenummer i. Brug en sporbar forsendelse og gem kvitteringen.</p><p><strong>4. Vi tager os af resten</strong><br/>Når vi har modtaget og godkendt varen, sender vi byttevaren afsted eller refunderer dit køb inden for 14 dage.</p><p>Send ikke pakken retur uden at skrive til os først — vi kan ikke behandle returneringer, vi ikke ved er på vej.</p><h2>Krav til varen</h2><p>For at vi kan tage strømperne retur, skal de være:</p><ul><li>Ubrugte og uvaskede</li><li>Uden lugt, snavs eller hår</li><li>Med mærker, bånd og original emballage intakt</li></ul><p><strong>Prøv dem indendørs</strong>, på rene fødder, og helst med et par tynde undersokker eller strømpefødder på. Så er du fri, hvis de alligevel ikke passer.</p><p>Strømper, der er båret udendørs eller vasket, kan vi desværre ikke tage retur. Det er et hygiejnekrav, ikke en teknikalitet.</p><h2>Hvis du har købt et pakketilbud</h2><p>Har du købt flere par som en samlet pakke — for eksempel køb 3, få 4 — skal hele pakken sendes retur, hvis du vil have hele beløbet tilbage.</p><p>Beholder du nogle af parrene, refunderer vi forskellen mellem det, du betalte, og den almindelige enkeltpris for de par, du beholder.</p><h2>Bytning: det praktiske</h2><p>Vi bytter til en anden størrelse eller et andet mønster, så længe varen er på lager.</p><p>Er den ønskede vare udsolgt, tilbyder vi enten noget andet til samme værdi, et gavekort, eller at refundere dit køb. Du vælger.</p><p>Bytter du til noget dyrere, sender vi dig et betalingslink på forskellen. Bytter du til noget billigere, får du forskellen tilbage på samme kort eller konto, du betalte med.</p><h2>Noget galt med strømperne?</h2><p>Har du fået det forkerte produkt, eller er der en fejl ved varen, så skriv til <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a> med dit ordrenummer og et billede. Så ordner vi det, og du betaler ingen fragt i nogen retning.</p><p>Du har <strong>24 måneders reklamationsret</strong> på fejl og mangler, der var der ved leveringen.</p><p>Bemærk: Hvert par er strikket i hånden, så der er små forskelle i masker, mønsterforløb og farvenuance fra par til par. Det er varens karakter, ikke en fejl. Og uld krymper, hvis den vaskes for varmt — følg vaskeanvisningen i pakken, så holder de længe.</p><h2>Fortrydelsesret</h2><p>Ud over vores 30 dages returret har du som forbruger 14 dages fortrydelsesret efter forbrugeraftaleloven, regnet fra den dag du modtog varen. Du gør brug af den ved at skrive til <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a> inden fristen udløber.</p><h2>Spørgsmål?</h2><p>Skriv til <a href=\"mailto:hej@strikkestuen.dk\"><strong>hej@strikkestuen.dk</strong></a>, Vi svarer som regel inden for en arbejdsdag.</p><p>De fulde vilkår står i vores <a href=\"/handelsbetingelser\">handelsbetingelser</a>.</p>"
+          }
+        },
+        "button_7GPrBF": {
+          "type": "button",
+          "settings": {
+            "link_text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_6hpgUm",
+        "text_N4Krgh",
+        "button_7GPrBF"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_m6cpTQ"
   ]
 }
