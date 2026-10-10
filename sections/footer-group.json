@@ -212,15 +212,16 @@
         "image_y9WLy8": {
           "type": "image",
           "settings": {
-            "tall": false
+            "image": "shopify://shop_images/hf_20261010_113243_fd651b2b-fd32-45f2-bd89-c9cf0b7ecf73.jpg",
+            "tall": true
           }
         },
         "review_V83t8P": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
+            "quote": "Jeg ledte overhovedet ikke efter sokker. Jeg så en annonce om, at ingen strikker dem længere. Min mormor strikkede til os alle sammen, indtil hun ikke kunne mere. Jeg har ikke haft et par siden. Bestilte fire på stedet.",
+            "author": "Pernille, Slagelse",
+            "meta": ""
           }
         },
         "image_GWmc7D": {
