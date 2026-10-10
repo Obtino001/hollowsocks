@@ -11,10 +11,49 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "rich_text_KbFxEE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YDDdfq": {
+          "type": "heading",
+          "settings": {
+            "title": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_8Xh7NJ": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h1>Privatlivspolitik for Strikkestuen</h1><p>Senest opdateret: 11. august 2026</p><h2>1. Dataansvarlig</h2><p>Strikkestuen er dataansvarlig for behandlingen af de personoplysninger, vi modtager om dig.</p><p>Virksomhed: STRIKKESTUEN<br/></p><p>Har du spørgsmål til, hvordan vi behandler dine oplysninger, eller ønsker du at gøre brug af dine rettigheder, kan du altid skrive til <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a>.</p><h2>2. Hvilke oplysninger vi indsamler</h2><h3>2.1 Når du handler hos os</h3><p>Når du afgiver en ordre på strikkestuen.dk, indsamler og behandler vi:</p><ul><li>Navn</li><li>Leveringsadresse og faktureringsadresse</li><li>E-mailadresse</li><li>Telefonnummer</li><li>Ordreoplysninger: hvilke varer, antal, beløb og ordrenummer</li><li>Oplysninger om betalingen, herunder betalingsmetode og transaktions-ID</li></ul><p>Vi modtager og opbevarer <strong>ikke</strong> dine fulde kortoplysninger. Betalingen håndteres af vores betalingsudbyder, som er selvstændigt ansvarlig for behandlingen af disse oplysninger.</p><h3>2.2 Når du kontakter os</h3><p>Skriver eller ringer du til os, behandler vi dit navn, din e-mailadresse eller dit telefonnummer samt indholdet af din henvendelse.</p><h3>2.3 Når du tilmelder dig nyhedsbrevet</h3><p>Tilmelder du dig vores nyhedsbrev, behandler vi din e-mailadresse, dit navn hvis du oplyser det, og oplysninger om, hvornår og hvordan du har givet samtykke.</p><p>Vi registrerer desuden, om du åbner vores mails og klikker på links i dem, så vi kan tilpasse indholdet.</p><h3>2.4 Når du besøger hjemmesiden</h3><p>Når du bruger strikkestuen.dk, indsamles der automatisk oplysninger via cookies og lignende teknologier, herunder IP-adresse, browsertype, enhedstype, besøgte sider, klik og tidspunkter.</p><p>Se punkt 7 om cookies og punkt 5 om de tjenester, vi deler disse oplysninger med.</p><h2>3. Formål og retsgrundlag</h2><p>FormålRetsgrundlagAt behandle og levere din ordreOpfyldelse af aftale, databeskyttelsesforordningen art. 6, stk. 1, litra bAt håndtere returnering, bytning og reklamationOpfyldelse af aftale, art. 6, stk. 1, litra bAt svare på din henvendelseLegitim interesse, art. 6, stk. 1, litra fAt opbevare regnskabsbilagRetlig forpligtelse, art. 6, stk. 1, litra c, jf. bogføringslovenAt sende nyhedsbreveDit samtykke, art. 6, stk. 1, litra a, jf. markedsføringslovens § 10Statistik og forbedring af hjemmesidenDit samtykke til cookies, art. 6, stk. 1, litra aMarkedsføring og annonceringDit samtykke til cookies, art. 6, stk. 1, litra aAt forebygge svindel og misbrugLegitim interesse, art. 6, stk. 1, litra f<br/><br/></p><h2>4. Hvor længe vi opbevarer dine oplysninger</h2><p><strong>Ordreoplysninger og regnskabsbilag</strong> opbevares i 5 år fra udgangen af det regnskabsår, oplysningerne vedrører. Det følger af bogføringsloven.</p><p><strong>Kundehenvendelser</strong> opbevares i op til 2 år efter sidste kontakt, så vi kan hjælpe dig, hvis du skriver igen om samme sag.</p><p><strong>Nyhedsbrev</strong>: din e-mailadresse opbevares, indtil du framelder dig. Dokumentation for dit samtykke opbevares i 2 år efter tilbagekaldelsen, så vi kan dokumentere, at samtykket var gyldigt.</p><p><strong>Cookieoplysninger</strong> opbevares i den periode, der fremgår af vores cookiepolitik, og som anført i punkt 7.</p><p>Når oplysningerne ikke længere er nødvendige, slettes eller anonymiseres de.</p><h2>5. Hvem vi deler dine oplysninger med</h2><p>Vi sælger aldrig dine personoplysninger.</p><p>Vi videregiver eller overlader oplysninger til følgende typer af modtagere, i det omfang det er nødvendigt:</p><ul><li><strong>Vores webshopplatform</strong>, som hoster strikkestuen.dk og behandler ordrer</li><li><strong>Betalingsudbydere</strong>, som gennemfører og sikrer betalingen</li><li><strong>Fragtpartnere</strong>, som leverer din pakke, og som modtager navn, adresse, e-mail og telefonnummer</li><li><strong>Leverandør og pakkecentral</strong>, som pakker og afsender din ordre</li><li><strong>E-mailudbyder</strong>, som udsender ordrebekræftelser og nyhedsbreve</li><li><strong>Analyse- og annonceringstjenester</strong>, hvis du har givet samtykke til det, jf. punkt 7</li><li><strong>Vores revisor og eventuelle rådgivere</strong>, i det omfang det er nødvendigt</li><li><strong>Offentlige myndigheder</strong>, hvis vi er forpligtet til det ved lov</li></ul><p>De leverandører, der behandler oplysninger på vores vegne, er databehandlere, og vi har indgået databehandleraftaler med dem.</p><h2>6. Overførsel til lande uden for EU/EØS</h2><p>Nogle af vores leverandører er etableret uden for EU/EØS, eller behandler oplysninger dér. Det gælder blandt andet visse analyse-, annoncerings- og e-mailtjenester samt vores leverandør af varer.</p><p>Sker der overførsel til et land uden for EU/EØS, sikrer vi et gyldigt overførselsgrundlag, typisk EU-Kommissionens standardkontraktbestemmelser eller en afgørelse om tilstrækkeligt beskyttelsesniveau.</p><p>Du kan få oplyst det konkrete overførselsgrundlag ved at skrive til <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a>.</p><h2>7. Cookies</h2><p>Strikkestuen.dk anvender cookies og lignende teknologier.</p><p><strong>Nødvendige cookies</strong> er påkrævede for, at siden fungerer — for eksempel for at huske din indkøbskurv og din session. De sættes uden samtykke.</p><p><strong>Funktionelle, statistiske og markedsføringsmæssige cookies</strong> sættes kun, hvis du giver samtykke i cookiebanneret, når du besøger siden første gang.</p><p>Markedsføringscookies bruges blandt andet til at måle effekten af vores annoncer og til at vise dig relevante annoncer på sociale medier og andre platforme.</p><p>Du kan til enhver tid ændre eller trække dit samtykke tilbage via cookieindstillingerne på siden. Du kan også slette cookies i din browsers indstillinger.</p><p>En fuld oversigt over de enkelte cookies, deres formål og levetid findes i vores <a href=\"/cookiepolitik\">cookiepolitik</a>.</p><h2>8. Nyhedsbrev</h2><p>Tilmelder du dig vores nyhedsbrev, sender vi dig mails om nye produkter, tilbud og indhold fra Strikkestuen.</p><p>Du kan til enhver tid framelde dig ved at klikke på afmeldingslinket nederst i enhver mail fra os, eller ved at skrive til <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a>. Frameldingen træder i kraft hurtigst muligt.</p><p>Framelder du dig, bruger vi ikke længere din e-mailadresse til markedsføring. Vi sender fortsat de mails, der hører til en konkret ordre, såsom ordrebekræftelse og forsendelsesbesked.</p><h2>9. Dine rettigheder</h2><p>Efter databeskyttelsesforordningen har du følgende rettigheder:</p><p><strong>Indsigt.</strong> Du kan få at vide, hvilke oplysninger vi behandler om dig, og få en kopi af dem.</p><p><strong>Berigtigelse.</strong> Du kan få urigtige oplysninger om dig rettet.</p><p><strong>Sletning.</strong> Du kan i visse tilfælde få slettet oplysninger om dig, før vores almindelige sletningstidspunkt. Vi kan dog være forpligtede til at gemme regnskabsbilag i 5 år.</p><p><strong>Begrænsning.</strong> Du kan i visse tilfælde få behandlingen af dine oplysninger begrænset, så vi kun opbevarer dem.</p><p><strong>Indsigelse.</strong> Du kan gøre indsigelse mod en behandling, der sker på grundlag af vores legitime interesse. Du kan altid gøre indsigelse mod behandling til brug for direkte markedsføring.</p><p><strong>Dataportabilitet.</strong> Du kan i visse tilfælde få de oplysninger, du selv har givet os, udleveret i et struktureret, almindeligt anvendt og maskinlæsbart format, eller få dem overført til en anden dataansvarlig.</p><p><strong>Tilbagekaldelse af samtykke.</strong> Har du givet samtykke, kan du til enhver tid trække det tilbage. Det påvirker ikke lovligheden af den behandling, der skete før tilbagekaldelsen.</p><p>Du gør brug af dine rettigheder ved at skrive til <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a>. Vi svarer som udgangspunkt inden for en måned. Der kan være betingelser eller begrænsninger knyttet til de enkelte rettigheder.</p><h2>10. Sikkerhed</h2><p>Vi har truffet passende tekniske og organisatoriske foranstaltninger for at beskytte dine oplysninger mod hændeligt eller ulovligt tab, offentliggørelse eller uvedkommendes adgang.</p><p>Al kommunikation med strikkestuen.dk sker over krypteret forbindelse. Adgang til personoplysninger er begrænset til de personer, der har brug for den.</p><h2>11. Klage</h2><p>Er du utilfreds med den måde, vi behandler dine personoplysninger på, hører vi gerne fra dig først på <a href=\"mailto:hej@strikkestuen.dk\">hej@strikkestuen.dk</a> — så vi kan rette op på det.</p><p>Du kan også klage til:</p><p><strong>Datatilsynet</strong><br/>Carl Jacobsens Vej 35<br/>2500 Valby<br/>Telefon: 33 19 32 00<br/><a href=\"http://www.datatilsynet.dk\">www.datatilsynet.dk</a></p><h2>12. Ændringer af denne politik</h2><p>Vi kan opdatere denne privatlivspolitik, for eksempel hvis vi ændrer vores systemer eller får nye leverandører. Den til enhver tid gældende version findes på strikkestuen.dk, og datoen for seneste opdatering fremgår øverst.</p>"
+          }
+        },
+        "button_cMtzAF": {
+          "type": "button",
+          "settings": {
+            "link_text": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_YDDdfq",
+        "text_8Xh7NJ",
+        "button_cMtzAF"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_KbFxEE"
   ]
 }
