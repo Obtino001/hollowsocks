@@ -5075,3 +5075,35 @@ img.r-3l3b7j {
     animation: none;
   }
 }
+
+.payment-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 6px;
+}
+.pdp-payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    /* padding: 12px 0 4px; */
+    margin: 0;
+}
+.pdp-payment-icons li {
+    display: flex;
+    align-items: center;
+}
+.payment-icons svg, .payment-icons img, .payment-icons .payment-icon {
+    height: 24px;
+    width: auto;
+    max-width: 42px;
+    object-fit: contain;
+    border-radius: 4px;
+    vertical-align: middle;
+    transition: transform 0.15s ease;
+}

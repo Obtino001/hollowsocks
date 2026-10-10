@@ -175,15 +175,7 @@
             </div>
             
             <div class="hollow-cart-payment-icons text-center" style="margin-top: 15px;">
-              {%- unless shop.enabled_payment_types == empty -%}
-                <ul class="inline-list payment-icons" style="display: flex; justify-content: center; gap: 8px; padding: 0; list-style: none;">
-                  {%- for type in shop.enabled_payment_types -%}
-                    <li class="icon--payment">
-                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              {%- endunless -%}
+              {% render 'payment-icons-custom' %}
             </div>
           {%- endif -%}
         </div>
