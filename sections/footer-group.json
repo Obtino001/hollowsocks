@@ -77,15 +77,16 @@
         "image_b4TAWQ": {
           "type": "image",
           "settings": {
-            "tall": false
+            "image": "shopify://shop_images/hf_20261010_104942_ff01585a-bd9a-40c2-965b-4b5e3cdf8170.jpg",
+            "tall": true
           }
         },
         "review_BGVfzz": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
+            "quote": "Jeg valgte Mols, fordi min farmor kom derfra. Det betød mere, end jeg regnede med. Jeg bruger mine hele tiden. Kan varmt anbefale!",
+            "author": "Thomas, København",
+            "meta": ""
           }
         },
         "image_Jp6teU": {
