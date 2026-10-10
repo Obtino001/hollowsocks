@@ -279,7 +279,7 @@
       else if (eligible === 4 && bundleTotal === 59900) msgEl.textContent = 'Pakken med 4 par er aktiv: 599 kr.';
       else if (eligible === 5) msgEl.textContent = 'Læg 1 par mere i kurven for at få tilbuddet med 6 par.';
       else if (eligible === 6 && bundleTotal === 89900) msgEl.textContent = 'Pakken med 6 par er aktiv: 899 kr.';
-      else msgEl.textContent = 'Se din rabat og delsum nedenfor.';
+      else msgEl.textContent = 'Se din rabat og total nedenfor.';
     }
 
     var action = progress.querySelector('[data-hollow-choose-extras]');

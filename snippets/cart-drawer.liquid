@@ -62,7 +62,7 @@
                 {%- elsif hollow_bundle_count == 6 and hollow_bundle_total == 89900 -%}
                   Pakken med 6 par er aktiv: 899 kr.
                 {%- else -%}
-                  Se din rabat og delsum nedenfor.
+                  Se din rabat og total nedenfor.
                 {%- endif -%}
               </p>
 
@@ -129,7 +129,7 @@
 
           <div class="cart__item-sub cart__item-row hollow-cart-drawer__subtotal">
             <div class="ajaxcart__subtotal">
-              DELSUM: <span data-hollow-subtotal-label>{% if hollow_count == 1 %}1 VARE{% else %}{{ hollow_count }} VARER{% endif %}</span>
+              TOTAL: <span data-hollow-subtotal-label>{% if hollow_count == 1 %}1 VARE{% else %}{{ hollow_count }} VARER{% endif %}</span>
             </div>
             <div data-subtotal>{{ cart.total_price | money }}</div>
           </div>
