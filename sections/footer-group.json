@@ -283,6 +283,36 @@
             "author": "Dorthe, Hillerød",
             "meta": ""
           }
+        },
+        "image_9mDdK7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_124404_7a68e6af-8446-4c63-ae36-bdd252d4c272.jpg",
+            "tall": false
+          }
+        },
+        "review_6UFYym": {
+          "type": "review",
+          "settings": {
+            "quote": "Fik et par af en kollega, der havde købt for mange. Jeg vidste ikke, der var forskel på uldsokker. Det er der. Har bestilt fire selv nu, og min mor skal have to af dem.",
+            "author": "Rikke, Esbjerg",
+            "meta": ""
+          }
+        },
+        "image_8QbFyC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_125202_e7792885-25fc-45cd-82b2-0cd50ed66191_1.jpg",
+            "tall": true
+          }
+        },
+        "review_fRzmCk": {
+          "type": "review",
+          "settings": {
+            "quote": "Kan varmt anbefale dem de er så hyggelige og behagelige",
+            "author": "Dorthe, Hem",
+            "meta": ""
+          }
         }
       },
       "block_order": [
@@ -321,7 +351,11 @@
         "review_tzDWw4",
         "image_PhzYhG",
         "image_36FQVR",
-        "review_JTDWjA"
+        "review_JTDWjA",
+        "image_9mDdK7",
+        "review_6UFYym",
+        "image_8QbFyC",
+        "review_fRzmCk"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
