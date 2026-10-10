@@ -24,9 +24,9 @@
         "review_1": {
           "type": "review",
           "settings": {
-            "quote": "Jeg er meget tilfreds med dette køb, de er af høj kvalitet. De føles fantastiske og er meget behagelige. Lige hvad jeg havde brug for til lange gåture med min hund. Kan varmt anbefale dem til alle, der leder efter et fantastisk par strømper.",
-            "author": "STEVE J",
-            "meta": "VERIFICERET KØBER"
+            "quote": "Jeg har altid frosset om fødderne om vinteren. Jeg troede bare, det var sådan, det var.\n\nHar haft dem på hver aften siden de kom. Det er første år, jeg ikke sidder med tæppe over benene i stuen.",
+            "author": "Hanne, Aalborg",
+            "meta": ""
           }
         },
         "review_2": {
@@ -59,6 +59,13 @@
             "meta": "VERIFICERET KØBER"
           }
         },
+        "image_4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261008_180936_14276477-aaaa-4611-b715-a0060384bd19.jpg",
+            "tall": false
+          }
+        },
         "review_4": {
           "type": "review",
           "settings": {
@@ -67,11 +74,88 @@
             "meta": "VERIFICERET KØBER"
           }
         },
-        "image_4": {
+        "image_b4TAWQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hf_20261008_180936_14276477-aaaa-4611-b715-a0060384bd19.jpg",
             "tall": false
+          }
+        },
+        "review_BGVfzz": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_Jp6teU": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_RwmycX": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_3XmtaE": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_Cr3FxE": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_VMzHQU": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_8jmg9x": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_94HcpE": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_V69xDR": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_MzDHFL": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_hnhLBK": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
           }
         }
       },
@@ -82,8 +166,20 @@
         "image_2",
         "image_3",
         "review_3",
+        "image_4",
         "review_4",
-        "image_4"
+        "image_b4TAWQ",
+        "review_BGVfzz",
+        "image_Jp6teU",
+        "review_RwmycX",
+        "image_3XmtaE",
+        "review_Cr3FxE",
+        "image_VMzHQU",
+        "review_8jmg9x",
+        "image_94HcpE",
+        "review_V69xDR",
+        "image_MzDHFL",
+        "review_hnhLBK"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
