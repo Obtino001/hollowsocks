@@ -279,7 +279,7 @@
         "review_JTDWjA": {
           "type": "review",
           "settings": {
-            "quote": "Købte først fire til mig selv.",
+            "quote": "Købte fire til mig selv. De er gode",
             "author": "Dorthe, Hillerød",
             "meta": ""
           }
@@ -299,19 +299,19 @@
             "meta": ""
           }
         },
-        "image_8QbFyC": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20261010_125202_e7792885-25fc-45cd-82b2-0cd50ed66191_1.jpg",
-            "tall": true
-          }
-        },
         "review_fRzmCk": {
           "type": "review",
           "settings": {
             "quote": "Kan varmt anbefale dem de er så hyggelige og behagelige",
             "author": "Dorthe, Hem",
             "meta": ""
+          }
+        },
+        "image_8QbFyC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_125202_e7792885-25fc-45cd-82b2-0cd50ed66191_1.jpg",
+            "tall": true
           }
         }
       },
@@ -354,8 +354,8 @@
         "review_JTDWjA",
         "image_9mDdK7",
         "review_6UFYym",
-        "image_8QbFyC",
-        "review_fRzmCk"
+        "review_fRzmCk",
+        "image_8QbFyC"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
