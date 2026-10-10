@@ -149,18 +149,33 @@
             "meta": ""
           }
         },
+        "review_hnhLBK": {
+          "type": "review",
+          "settings": {
+            "quote": "Fik dem af min datter. Jeg havde ikke bedt om noget, og jeg manglede heller ikke noget.\nNu står de ved døren, og jeg tager dem på, så snart jeg kommer hjem. Hun siger, hun har bestilt flere til jul",
+            "author": "Erik, Viborg",
+            "meta": ""
+          }
+        },
         "image_MzDHFL": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261010_111437_02feea29-6621-4bcf-8226-2eb8d4b87073.jpg",
             "tall": false
           }
         },
-        "review_hnhLBK": {
+        "review_AphYHi": {
           "type": "review",
           "settings": {
             "quote": "I’m very happy with this purchase, they are a quality product.",
             "author": "Steve J",
             "meta": "verified buyer"
+          }
+        },
+        "image_Yny7cT": {
+          "type": "image",
+          "settings": {
+            "tall": false
           }
         }
       },
@@ -183,8 +198,10 @@
         "image_VMzHQU",
         "image_94HcpE",
         "review_V69xDR",
+        "review_hnhLBK",
         "image_MzDHFL",
-        "review_hnhLBK"
+        "review_AphYHi",
+        "image_Yny7cT"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
