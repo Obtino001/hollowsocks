@@ -89,18 +89,19 @@
             "meta": ""
           }
         },
-        "image_Jp6teU": {
-          "type": "image",
-          "settings": {
-            "tall": false
-          }
-        },
         "review_RwmycX": {
           "type": "review",
           "settings": {
             "quote": "I’m very happy with this purchase, they are a quality product.",
             "author": "Steve J",
             "meta": "verified buyer"
+          }
+        },
+        "image_Jp6teU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_105230_59126d5b-ab3c-48c2-9a1c-15aa5d3a64d9.jpg",
+            "tall": false
           }
         },
         "image_3XmtaE": {
@@ -171,8 +172,8 @@
         "image_4",
         "image_b4TAWQ",
         "review_BGVfzz",
-        "image_Jp6teU",
         "review_RwmycX",
+        "image_Jp6teU",
         "image_3XmtaE",
         "review_Cr3FxE",
         "image_VMzHQU",
