@@ -134,7 +134,7 @@
       "shipping_at_checkout": "Shipping, taxes, and discount codes calculated at checkout.",
       "update": "Update cart",
       "checkout": "SECURE CHECKOUT",
-      "empty": "Your cart is currently empty.",
+      "empty": "SE ALLE MØNSTRE",
       "continue_browsing_html": "<a href='{{ url }}'>Continue shopping</a>",
       "close_cart": "Close cart",
       "reduce_quantity": "Reduce item quantity by one",
