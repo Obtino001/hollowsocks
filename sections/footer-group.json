@@ -59,19 +59,19 @@
             "meta": ""
           }
         },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "quote": "Tredje gang jeg bestiller. Nu har hele familien fået et par. Har vasket de første fire-fem gange. De har ikke ændret sig. Bestiller julegaverne her igen i år.",
+            "author": "Lone, Vejle",
+            "meta": ""
+          }
+        },
         "image_4": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/hf_20261008_180936_14276477-aaaa-4611-b715-a0060384bd19.jpg",
             "tall": false
-          }
-        },
-        "review_4": {
-          "type": "review",
-          "settings": {
-            "quote": "Efter årevis med svedige, blærede fødder gennem utallige typer strømper, fungerer disse banebrydende alpaca strømper endelig.",
-            "author": "RAYMOND L.",
-            "meta": "VERIFICERET KØBER"
           }
         },
         "image_b4TAWQ": {
@@ -166,8 +166,8 @@
         "image_2",
         "image_3",
         "review_3",
-        "image_4",
         "review_4",
+        "image_4",
         "image_b4TAWQ",
         "review_BGVfzz",
         "image_Jp6teU",
