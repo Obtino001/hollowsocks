@@ -2127,8 +2127,8 @@
 
 @media only screen and (max-width: 900px) {
   .hollow-reviews__track {
-    column-count: 1;
-    display: flex;
+    column-count: 2;
+    display: block;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 8px;
@@ -2136,9 +2136,11 @@
 
   .hollow-reviews__card,
   .hollow-reviews__photo {
-    flex: 0 0 min(80vw, 320px);
-    scroll-snap-align: start;
+    margin: 0 0 12px;
+    width: 100%;
+    padding: 0;
   }
+  .hollow-reviews__card { padding: 12px; }
 }
 
 /* Fiber story */
