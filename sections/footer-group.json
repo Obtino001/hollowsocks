@@ -17,58 +17,34 @@
         "review_1": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
             "quote": "Jeg er meget tilfreds med dette køb, de er af høj kvalitet. De føles fantastiske og er meget behagelige. Lige hvad jeg havde brug for til lange gåture med min hund. Kan varmt anbefale dem til alle, der leder efter et fantastisk par strømper.",
             "author": "STEVE J",
             "meta": "VERIFICERET KØBER"
           }
         },
-        "image_1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
-            "tall": true
-          }
-        },
-        "image_2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20261008_174843_3aa25497-b3e6-4ac8-9425-cd2cd70bc9d7.jpg",
-            "tall": true
-          }
-        },
         "review_2": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_174843_3aa25497-b3e6-4ac8-9425-cd2cd70bc9d7.jpg",
             "quote": "Jeg ledte efter en kompressionsstrømpe i ankelstørrelse, der var behagelig, havde en god kompression og var nem at tage på. Jeg gav den 5 stjerner, fordi de føles meget behagelige selv i varmt vejr!",
             "author": "MICHAEL W",
             "meta": "VERIFICERET KØBER"
           }
         },
-        "image_3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20261008_180627_d559d00b-06e0-4675-9c43-f5d5902ab1b0.jpg",
-            "tall": false
-          }
-        },
         "review_3": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_180627_d559d00b-06e0-4675-9c43-f5d5902ab1b0.jpg",
             "quote": "Disse kompressionsstrømper er FANTASTISKE. Jeg har gået med kompressionsstrømper i 10 år, og det er første gang, jeg ikke tager dem af så hurtigt som muligt. Mine ben føles 30 år yngre, og jeg har ingen smerter.",
             "author": "DREW S",
             "meta": "VERIFICERET KØBER"
           }
         },
-        "image_4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20261008_180936_14276477-aaaa-4611-b715-a0060384bd19.jpg",
-            "tall": false
-          }
-        },
         "review_4": {
           "type": "review",
           "settings": {
+            "image": "shopify://shop_images/hf_20261008_180936_14276477-aaaa-4611-b715-a0060384bd19.jpg",
             "quote": "Efter årevis med svedige, blærede fødder gennem utallige typer strømper, fungerer disse banebrydende alpaca strømper endelig.",
             "author": "RAYMOND L.",
             "meta": "VERIFICERET KØBER"
@@ -77,12 +53,8 @@
       },
       "block_order": [
         "review_1",
-        "image_1",
-        "image_2",
         "review_2",
-        "image_3",
         "review_3",
-        "image_4",
         "review_4"
       ],
       "settings": {
