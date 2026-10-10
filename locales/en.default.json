@@ -174,10 +174,10 @@
   },
   "contact": {
     "form": {
-      "name": "Name",
-      "email": "Email",
+      "name": "Navn",
+      "email": "E-mail",
       "phone": "Phone number",
-      "message": "Message",
+      "message": "Besked",
       "send": "Send",
       "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
     }

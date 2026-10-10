@@ -11,36 +11,12 @@
       </button>
     {%- endif -%}
 
-    {%- if settings.search_enable -%}
-      <form
-        action="{{ routes.search_url }}"
-        method="get"
-        role="search"
-        class="hollow-header-search small--hide"
-      >
-        <label for="HollowHeaderSearch" class="visually-hidden">{{ 'general.search.title' | t }}</label>
-        <input
-          id="HollowHeaderSearch"
-          type="search"
-          name="q"
-          placeholder="SEARCH"
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-        >
-        <input name="options[prefix]" type="hidden" value="last">
-        <button type="submit" aria-label="{{ 'general.search.submit' | t }}">
-          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64">
-            <path fill="none" stroke="currentColor" stroke-width="2" d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/>
-          </svg>
-        </button>
-      </form>
-
-      <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header medium-up--hide hollow-mobile-search">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><title>icon-search</title><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
-        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
-      </a>
-    {%- endif -%}
+    <div class="site-nav__link site-nav__link--icon" style="display: flex; align-items: center;" aria-label="Dansk">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 28" width="24" height="24">
+        <rect width="37" height="28" fill="#C60C30"/>
+        <path d="M12 0h4v28h-4zM0 12h37v4H0z" fill="#FFF"/>
+      </svg>
+    </div>
 
     <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
       <span class="cart-link">

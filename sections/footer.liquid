@@ -28,7 +28,7 @@
                 id="FooterEmail-{{ section.id }}"
                 type="email"
                 name="contact[email]"
-                placeholder="EMAIL ADDRESS"
+                placeholder="Din e-mail"
                 autocomplete="email"
                 required
               >
@@ -91,7 +91,7 @@
       </div>
 
       <div class="custom-footer__bottom-right">
-        <span class="custom-footer__follow-label">{{ section.settings.follow_label | default: 'FOLLOW ALONG' }}</span>
+
         <div class="custom-footer__social">
           {%- render 'social-icons', additional_classes: 'custom-footer__social-list' -%}
         </div>
@@ -150,12 +150,6 @@
       "type": "link_list",
       "id": "bottom_menu",
       "label": "Legal links menu"
-    },
-    {
-      "type": "text",
-      "id": "follow_label",
-      "label": "Social label",
-      "default": "FOLLOW ALONG"
     }
   ],
   "blocks": [
