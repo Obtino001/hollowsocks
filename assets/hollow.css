@@ -1724,41 +1724,21 @@
 
 .hollow-reviews__card {
   background: var(--hollow-white);
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.hollow-reviews__card:nth-child(even) {
-  flex-direction: column-reverse;
-}
-
-.hollow-reviews__card-text {
-  padding: 20px;
-}
-
-.hollow-reviews__card-image {
-  width: 100%;
-}
-
-.hollow-reviews__card-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  padding: 24px;
 }
 
 .hollow-reviews__photo img,
 .hollow-reviews__photo-fallback {
   display: block;
   width: 100%;
-  min-height: 220px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   background: #d4cec4;
 }
 
+.hollow-reviews__photo.is-tall img,
 .hollow-reviews__photo.is-tall .hollow-reviews__photo-fallback {
-  min-height: 340px;
+  aspect-ratio: 4 / 5;
 }
 
 .hollow-reviews__card-stars {
@@ -1781,12 +1761,21 @@
 }
 
 .hollow-reviews__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 4px;
   font-family: var(--hollow-mono);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--hollow-muted);
+}
+
+.hollow-reviews__meta svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 .hollow-reviews__cta {
@@ -2148,20 +2137,47 @@
 
 @media only screen and (max-width: 900px) {
   .hollow-reviews__track {
-    column-count: 2;
-    display: block;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 8px;
+    column-count: unset;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 40px;
+    overflow: visible;
   }
 
   .hollow-reviews__card,
   .hollow-reviews__photo {
-    margin: 0 0 12px;
+    margin: 0;
     width: 100%;
-    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
   }
-  .hollow-reviews__card { padding: 12px; }
+
+  .hollow-reviews__card {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hollow-reviews__photo img,
+  .hollow-reviews__photo-fallback {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hollow-reviews__card {
+    padding: 12px;
+  }
+  .hollow-reviews__quote {
+    font-size: 13px;
+    line-height: 1.45;
+  }
 }
 
 /* Fiber story */
