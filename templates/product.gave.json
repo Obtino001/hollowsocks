@@ -54,11 +54,11 @@
             "hollow_size_women_xl": ""
           }
         },
-        "tab-1": {
+        "tab_L4Y3Lk": {
           "type": "tab",
           "settings": {
-            "title": "Detaljer",
-            "content": "<ul><li><strong>Blød mod huden</strong> — ikke den kradsende uld, du husker fra barndommen</li><li><strong>Forstærket hæl og tå</strong> — ekstra garn præcis hvor sokker normalt går hul</li><li><strong>Tåler maskinvask</strong> — 30 grader på uldprogram, krymper ikke</li><li><strong>Tykt uldgarn</strong> — holder varmen, også når den er fugtig</li><li><strong>12 måneders garanti</strong> — holder de ikke, får du nye</li></ul>",
+            "title": "Historien bag",
+            "content": "<p>Der var engang en tid, hvor man ikke købte den slags. Man fik dem.</p><p>De blev strikket om aftenen, af en der kendte dig. Hvert sted i landet havde sine egne mønstre — kvinderne på Fanø strikkede ikke som kvinderne på Læsø, og man kunne se på et par sokker, hvor de kom fra.</p><p>Mønstrene blev givet videre. Fra mor til datter, fra nabo til nabo, skrevet ned i hånden på papir, der nu ligger i en skuffe. Ikke som noget særligt. Bare som noget, man gjorde.</p><p>Så holdt de op.</p><p>Ikke på én gang — men lidt efter lidt blev der færre, der kunne, og færre, der lærte det. I dag er der en hel generation, der aldrig får et par igen. Ikke fordi de ikke vil have dem. Men fordi den, der lavede dem, ikke er der mere.</p><p>Det er derfor, vi laver dem.</p><p>Lavet i små partier, efter de gamle mønstre. Blød mod huden — ikke som dem, du husker. Forstærket hæl og tå, så den holder til at blive brugt. Og den tåler maskinvask, så den ikke skal ligge og blive gemt.</p><p>Hvert mønster i kollektionen bærer navn efter en dansk egn.</p>",
             "page": ""
           }
         },
@@ -66,7 +66,15 @@
           "type": "tab",
           "settings": {
             "title": "Materialer",
-            "content": "<p><strong>Dansk design, udsøgt håndværk</strong></p><ul><li>Uld<br/></li><li>Nylon<br/></li><li>Elastan</li></ul>",
+            "content": "<p><strong>Dansk design, udsøgt håndværk</strong></p><ul><li>Merino Uld<br/></li><li>Nylon<br/></li><li>Elastan</li></ul>",
+            "page": ""
+          }
+        },
+        "tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Detaljer",
+            "content": "<ul><li><strong>Blød mod huden</strong> — ikke den kradsende uld, du husker fra barndommen</li><li><strong>Forstærket hæl og tå</strong> — ekstra garn præcis hvor sokker normalt går hul</li><li><strong>Tåler maskinvask</strong> — 30 grader på uldprogram, krymper ikke</li><li><strong>Tykt uldgarn</strong> — holder varmen, også når den er fugtig</li><li><strong>12 måneders garanti</strong> — holder de ikke, får du nye</li></ul>",
             "page": ""
           }
         },
@@ -90,7 +98,7 @@
           "type": "tab",
           "settings": {
             "title": "FRAGT",
-            "content": "<p>Fri fragt ved køb over 500 kr.&nbsp;</p><p>Fragt 59 kr. ved enkelt par<br/><br/></p>",
+            "content": "<p>Fri fragt, når du tager mere end ét par.</p><p>Fragt 59 kr. ved enkelt par.<br/><br/></p>",
             "page": ""
           }
         }
@@ -100,8 +108,9 @@
         "variant_picker",
         "buy_buttons",
         "size_chart",
-        "tab-1",
+        "tab_L4Y3Lk",
         "tab-2",
+        "tab-1",
         "tab-3",
         "tab-4",
         "tab-5"
