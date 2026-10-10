@@ -28,21 +28,20 @@
             "link": "shopify://collections/gavesaet"
           }
         },
+        "category_HPxpdd": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261009_210645_e5e54495-9ab9-4760-bffd-870b07466155_1.jpg",
+            "title": "ADVENTSKALENDER",
+            "link": "shopify://collections/adventskalender"
+          }
+        },
         "category_dWi9PF": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/hf_20261007_183813_60a994a6-5272-4942-bb32-c0b615d9aa1f_1.jpg",
             "title": "HISTORIEN",
-            "link": ""
-          }
-        },
-        "category_HPxpdd": {
-          "type": "category",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Main_Image_79ca6347-bae1-4a34-a3a2-3de3b27588d1.png",
-            "title": "HÅNDVÆRK",
-            "link": ""
+            "link": "shopify://pages/historien"
           }
         },
         "category_PrLtiF": {
@@ -76,8 +75,8 @@
       "block_order": [
         "category_YNdjYP",
         "category_w6zAXk",
-        "category_dWi9PF",
         "category_HPxpdd",
+        "category_dWi9PF",
         "category_PrLtiF",
         "category_4fmizW",
         "category_a6wGW4"
@@ -94,7 +93,7 @@
         "heading": "VI HAR FUNDET 24",
         "text": "",
         "button_label": "SE MØNSTRENE",
-        "button_link": ""
+        "button_link": "shopify://collections/alle-monstre"
       }
     },
     "hollow_trust_bar_49CJx9": {
@@ -111,7 +110,7 @@
           "type": "stat",
           "settings": {
             "value": "12",
-            "label": "GARANTI PÅ HOLDBARHED"
+            "label": "MÅNEDERS GARANTI PÅ HOLDBARHEDEN"
           }
         },
         "stat_7qH6CN": {
@@ -267,86 +266,6 @@
       ],
       "settings": {}
     },
-    "hollow-reviews": {
-      "type": "hollow-reviews",
-      "blocks": {
-        "r1": {
-          "type": "review",
-          "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product. They feel great and are very comfortable. Just what I needed for long walks with my dog. Highly recommend them to anyone who is looking for a great pair of socks.",
-            "author": "Steve J",
-            "meta": "verified buyer"
-          }
-        },
-        "p1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle_bundle.jpg",
-            "tall": true
-          }
-        },
-        "p2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Main_Image_df265dff-b9ba-48aa-a635-9556427a7b83.png",
-            "tall": true
-          }
-        },
-        "r2": {
-          "type": "review",
-          "settings": {
-            "quote": "I was looking for an ankle size compression sock that was comfortable and was a good compression that was easy to put on my feet. I gave it 5 stars because even in the hot weather they feel very comfortable!",
-            "author": "Michael W",
-            "meta": "verified buyer"
-          }
-        },
-        "p3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/review-image3.png",
-            "tall": false
-          }
-        },
-        "r3": {
-          "type": "review",
-          "settings": {
-            "quote": "These compression socks are FANTASTIC. I have been wearing compression stocking for 10 years and this is the first time I am not taking them off as soon as possible. My legs feel 30 years younger and I am not in pain.",
-            "author": "drew s",
-            "meta": "verified buyer"
-          }
-        },
-        "p4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/catagory_-_compression.jpg",
-            "tall": true
-          }
-        },
-        "r4": {
-          "type": "review",
-          "settings": {
-            "quote": "After years of struggling with sweaty, blistered feet through countless sock types, these game-changing alpaca socks finally work.",
-            "author": "Raymond L.",
-            "meta": "verified buyer"
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "p1",
-        "p2",
-        "r2",
-        "p3",
-        "r3",
-        "p4",
-        "r4"
-      ],
-      "settings": {
-        "title": "OVER 4.000.000 PAR SOLGT",
-        "button_label": "LÆS FLERE ANMELDELSER —",
-        "button_link": ""
-      }
-    },
     "custom_marquee_6fVU3j": {
       "type": "custom-marquee",
       "blocks": {
@@ -470,19 +389,20 @@
     "hollow-story": {
       "type": "hollow-story",
       "settings": {
-        "title": "Hvorfor mønstrene ser forskellige ud",
+        "title": "Lavet til det vejr vi har",
         "eyebrow": "FANØ · LÆSØ · THY · SKAGEN",
-        "image": "shopify://shop_images/Rectangle_3388.png",
-        "circle_1": "shopify://shop_images/crew_e5ce7355-3217-45c3-bfcb-f7f35dc11dcd.jpg",
-        "circle_2": "shopify://shop_images/Main_Image_e01ab9e7-32f3-4d3f-8287-612c6aee16fb.png",
-        "story_title": "naturligt hule",
-        "text": "I modsætning til bomuld og uld er alpaca fiber naturligt hult, hvilket skaber åndbar varme og tør komfort uden fylde.",
-        "button_label": "læs mere",
-        "button_link": ""
+        "image": "shopify://shop_images/hf_20261009_124405_39668845-5a71-4f73-90c0-89a9df8a6998.jpg",
+        "circle_1": "shopify://shop_images/hf_20261009_174623_b823472c-2d12-4302-b58b-35ab1056b7ac.jpg",
+        "circle_2": "shopify://shop_images/hf_20260904_145842_b00714e6-9688-43c5-b9d6-92c564a50e27.jpg",
+        "story_title": "Tre ting vi har rettet",
+        "text": "Fanø. Læsø. Thy. Det er steder, hvor det blæser fra vest, og hvor husene aldrig rigtig bliver varme. Det er også de steder, mønstrene kommer fra.\n\nSokkerne er lavet derefter. Ekstra garn i hæl og tå, hvor de ellers går hul. Maskinvask ved 30 grader, så de ikke ender i en skuffe. Og garn, der er blødt nok til at have på uden noget under — for kløen var den eneste grund til, at folk holdt op med at bruge dem.",
+        "button_label": "læs historien",
+        "button_link": "shopify://pages/historien"
       }
     },
     "featured_collection_ghU4LG": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
         "title": "Featured collection",
@@ -504,7 +424,6 @@
     "hollow-intro",
     "featured-collection",
     "hollow-banners",
-    "hollow-reviews",
     "custom_marquee_6fVU3j",
     "trust_bar_NPJkyk",
     "hollow-story",

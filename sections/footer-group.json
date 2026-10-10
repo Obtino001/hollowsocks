@@ -75,6 +75,7 @@
         "image_zhNfA4",
         "review_4VctfN"
       ],
+      "disabled": true,
       "settings": {
         "title": "OVER 4,000,000+ PAIRS SOLD",
         "button_label": "READ MORE REVIEWS —",
@@ -209,7 +210,7 @@
         "menu-shop": {
           "type": "link_list",
           "settings": {
-            "heading": "SHOP",
+            "heading": "Se mønstrene",
             "menu": "k-b-produkter-til-daglig-sundhed"
           }
         },
@@ -226,13 +227,13 @@
         "menu-support"
       ],
       "settings": {
-        "newsletter_image": "shopify://shop_images/review-image1.png",
-        "newsletter_heading": "TILMELD DIG STRIKKESTUEN",
-        "newsletter_subheading": "Hold dig opdateret med nye udgivelser og eksklusive tilbud.",
+        "newsletter_image": "shopify://shop_images/hf_20261007_183910_399b23ca-86be-4451-9e34-2a20f5b97db4.jpg",
+        "newsletter_heading": "Vi leder stadig",
+        "newsletter_subheading": "Der findes flere mønstre derude. Vi skriver, når vi har fundet dem.",
         "newsletter_disclaimer": "<p>Du kan til enhver tid afmelde dig. <a href=\"/policies/terms-of-service\">Se betingelser og privatlivspolitik</a>.</p>",
         "brand_text": "STRIKKESTUEN",
         "bottom_menu": "footer",
-        "follow_label": "FØLG MED"
+        "follow_label": ""
       }
     }
   },

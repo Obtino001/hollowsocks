@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "about": {
@@ -6,36 +15,37 @@
         "t1": {
           "type": "timeline",
           "settings": {
-            "year": "2018",
-            "title": "The Discovery",
-            "text": "After many long days going from the gym to the office to the trails, we discovered that the usual performance socks we depended on weren't cutting it anymore. We decided to take matters into our own hands and discovered the magic of alpaca fibers."
+            "year": "",
+            "title": "Jeg tog dem med hjem. Jeg troede, jeg ville lære det.",
+            "text": "Jeg forsøgte i fire år. Jeg kunne ikke engang læse dem — hun skrev i forkortelser,\nsom kun hun forstod, og der stod ikke noget om, hvad der skulle ske efter række 40.\nJeg lagde dem væk."
           }
         },
         "t2": {
           "type": "timeline",
           "settings": {
-            "year": "2020",
-            "title": "The Research",
-            "text": "We spent two years researching and testing the best places to source alpaca fibers, the best type of alpaca fibers to use, and the best way to turn magical alpaca fibers into trustworthy performance socks."
+            "year": "",
+            "title": "SÅ FANDT JEG NOGEN, DER KUNNE",
+            "text": "Jeg hedder Margit. Jeg kan ikke strikke, og jeg kommer aldrig til det. Men jeg fandt kvinder, der kan. Kvinder, der har gjort det hele deres liv, og som\ner de sidste, der gør det.\nJeg gav dem mormors mønstre. De kunne læse dem med det samme. En af dem grinede og\nsagde, at hendes egen mor skrev på præcis samme måde.\n\nDet er dem, der laver de sokker, jeg sælger. Ikke mig. Min del er at holde mønstrene i live og sørge for, at de ikke bliver liggende i en skuffe igen. Det er dansk håndværk, og der er ikke mange tilbage, der bærer det videre. Nogen skal gøre det. Ellers forsvinder de med den sidste, der kan læse dem."
           }
         },
         "t3": {
           "type": "timeline",
           "settings": {
-            "year": "2023",
-            "title": "The Result",
-            "text": "Today, we proudly supply trustworthy performance socks using our unique alpaca fiber blend to adventurers around the country. Our socks keep feet everywhere dry and comfortable."
+            "year": "",
+            "title": "OM MØNSTRENE",
+            "text": "Der findes ikke ét dansk strikkemønster. Der findes mange, og de er forskellige\nfra egn til egn, fordi kvinderne på Fanø ikke strikkede som kvinderne på Læsø.\n\nHvert par, du finder her, følger ét bestemt mønster fra ét bestemt sted.\n\nDet er ikke pynt. Det er et mønster, nogen sad med i hånden for hundrede år siden,\nfordi det var sådan, man gjorde det, hvor de kom fra."
           }
         },
         "f1": {
           "type": "feature",
           "settings": {
-            "title": "TEMPERATURE REGULATING",
-            "text": "Alpaca fibers have a semi-hollow core that act like natural insulation allowing the fibers to trap warm air when it’s cold, and release heat when warm."
+            "title": "HVORFOR JEG GØR DET",
+            "text": "Jeg tror ikke, folk savner uldsokker.\n\nJeg tror, de savner at få noget, som nogen har brugt tid på.\n\nDer er en hel generation, der ikke får et par igen. Ikke fordi de ikke vil have\ndem, men fordi den, der lavede dem, er holdt op — og fordi ingen af os lærte det.\n\nJeg kunne ikke lære det. Det her er det, jeg kunne gøre i stedet."
           }
         },
         "f2": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "BREATHABLE & LIGHT",
             "text": "Alpaca fiber is naturally lightweight and breathable allowing it to adapt to any temperature while keeping you comfortable even in the harshest conditions."
@@ -43,6 +53,7 @@
         },
         "f3": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "SOFT ALPACA FIBER",
             "text": "Alpaca fibers are naturally smooth, and have a lower scale structure—meaning no coarse, or itchy feeling you get with wool."
@@ -50,6 +61,7 @@
         },
         "f4": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "MOISTURE WICKING",
             "text": "Alpaca fibers naturally repel moisture thanks to their low absorption rate, about 8% versus wool’s 30%, and cotton’s 60%."
@@ -57,37 +69,70 @@
         },
         "f5": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "ODOR RESISTANT",
             "text": "Unlike synthetic socks that trap moisture and odor over time, alpaca fibers make bacterial growth difficult, reducing the root cause of foot odor."
           }
         }
       },
-      "block_order": ["t1", "t2", "t3", "f1", "f2", "f3", "f4", "f5"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5"
+      ],
       "settings": {
-        "hero_heading": "The Magic of Alpaca",
-        "hero_text": "After two years of real-world testing, alpaca stood above everything else for comfort and performance.",
-        "fiber_title": "Only the Best Fiber Makes the Cut",
-        "fiber_eyebrow": "ethically sourced in the high altitudes of peru",
-        "fiber_story_title": "Precision in Every knit",
-        "fiber_text": "Made in the USA using time tested techniques to create the best socks ever",
-        "fiber_image": "",
-        "means_heading": "WHAT BETTER REALLY MEANS"
+        "hero_heading": "MIN MORMOR STRIKKEDE SOKKER TIL HELE FAMILIEN. JEG LÆRTE DET ALDRIG.",
+        "hero_text": "Mormor sad i den samme stol hver aften og strikkede, mens hun kiggede på os. Vi fik et par hver til jul. Hvert eneste år. Ingen af os sagde rigtig tak for dem.\nDe var bare der, som noget der altid ville være der.",
+        "fiber_title": "Hun holdt op i 2011, fordi hendes hænder ikke kunne mere.",
+        "fiber_eyebrow": "",
+        "fiber_story_title": "Ingen i familien har fået et par siden.",
+        "fiber_text": "Da vi tømte hendes lejlighed, fandt jeg en skuffe med hendes opskrifter.\nHåndskrevne. Nogle af dem på papir, der var revet ud af regnskabsbøger fra\nhalvfjerdserne.",
+        "fiber_image": "shopify://shop_images/hf_20261007_185139_ae49af45-04d6-4f60-9477-5691fd528961.jpg",
+        "means_heading": ""
+      }
+    },
+    "background_image_text_j7J84e": {
+      "type": "background-image-text",
+      "disabled": true,
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "Just launched",
+        "title": "Step into what’s next",
+        "heading_size": "h2",
+        "text": "<p>Fresh arrivals designed with purpose and built to perform. Explore what just landed.</p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "height": 450,
+        "framed": true,
+        "parallax": true,
+        "parallax_direction": "top"
       }
     },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "best sellers",
+        "title": "SE MØNSTRENE",
         "heading_size": "h2",
-        "home_featured_products": "",
-        "per_row": 4,
-        "rows": 2,
+        "home_featured_products": "alle-monstre",
+        "per_row": 5,
+        "rows": 4,
         "mobile_scrollable": true,
         "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
         "divider": false
       }
     }
   },
-  "order": ["about", "featured-collection"]
+  "order": [
+    "about",
+    "background_image_text_j7J84e",
+    "featured-collection"
+  ]
 }

@@ -30,12 +30,12 @@
         "announcement_compact": true,
         "sticky_on_scroll": false,
         "sticky_on_mobile": true,
-        "heading": "ÅBENT KØB TIL 30. DECEMBER",
+        "heading": "24 MØNSTRE FRA DANSKE EGNE",
         "offer": "køb julegaverne i god tid",
         "link": "",
         "enable_countdown": false,
         "end_datetime": "2026-09-07T23:59:59",
-        "bg_color": "#2F4438",
+        "bg_color": "#2f4438",
         "text_color": "#ffffff"
       }
     },

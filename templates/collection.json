@@ -19,15 +19,9 @@
     "collection-nav": {
       "type": "hollow-collection-nav",
       "blocks": {
-        "cat-1": {
-          "type": "category",
-          "settings": {
-            "title": "BEST SELLERS",
-            "link": "shopify://collections/best-sellers"
-          }
-        },
         "cat-2": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "title": "COMPRESSION",
             "link": "shopify://collections/compression"
@@ -35,6 +29,7 @@
         },
         "cat-3": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "title": "BUNDLES",
             "link": "shopify://collections/bundles"
@@ -42,46 +37,50 @@
         },
         "cat-4": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "title": "TRADES",
             "link": "shopify://collections/trades"
           }
         },
-        "cat-5": {
-          "type": "category",
-          "settings": {
-            "title": "HUNTING",
-            "link": "shopify://collections/hunting"
-          }
-        },
         "cat-6": {
           "type": "category",
           "settings": {
-            "title": "EVERYDAY",
-            "link": "shopify://collections/everyday"
+            "image": "shopify://shop_images/hf_20261009_092407_d944a589-525f-466d-a03e-8b8c238e018d.jpg",
+            "title": "GAVESÆT",
+            "link": "shopify://collections/gavesaet"
+          }
+        },
+        "cat-5": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261009_210645_e5e54495-9ab9-4760-bffd-870b07466155_1.jpg",
+            "title": "ADVENTSKALENDER",
+            "link": "shopify://collections/adventskalender"
           }
         },
         "cat-7": {
           "type": "category",
           "settings": {
-            "title": "RUNNING",
-            "link": "shopify://collections/running"
+            "image": "shopify://shop_images/hf_20261007_185139_ae49af45-04d6-4f60-9477-5691fd528961.jpg",
+            "title": "HISTORIEN",
+            "link": "shopify://pages/historien"
           }
         }
       },
       "block_order": [
-        "cat-1",
         "cat-2",
         "cat-3",
         "cat-4",
-        "cat-5",
         "cat-6",
+        "cat-5",
         "cat-7"
       ],
       "settings": {}
     },
     "collection-header": {
       "type": "collection-header",
+      "disabled": true,
       "settings": {
         "enable": true,
         "collection_image_enable": false,

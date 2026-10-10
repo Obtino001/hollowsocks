@@ -66,11 +66,11 @@
             "page": ""
           }
         },
-        "tab-3": {
+        "tab-5": {
           "type": "tab",
           "settings": {
-            "title": "Vaskeanvisning",
-            "content": "<p>30 grader på uldprogram<br/><br/></p>",
+            "title": "FRAGT",
+            "content": "<p>Fri fragt ved køb over 500 kr.&nbsp;</p><p>Fragt 59 kr. ved enkelt par<br/><br/></p>",
             "page": ""
           }
         },
@@ -82,11 +82,11 @@
             "page": ""
           }
         },
-        "tab-5": {
+        "tab-3": {
           "type": "tab",
           "settings": {
-            "title": "FRAGT",
-            "content": "<p>Fri fragt ved køb over 500 kr.&nbsp;</p><p>Fragt 59 kr. ved enkelt par<br/><br/></p>",
+            "title": "Vaskeanvisning",
+            "content": "<p>30 grader på uldprogram<br/><br/></p>",
             "page": ""
           }
         }
@@ -97,9 +97,9 @@
         "size_chart",
         "tab-1",
         "tab-2",
-        "tab-3",
+        "tab-5",
         "tab-4",
-        "tab-5"
+        "tab-3"
       ],
       "settings": {
         "sku_enable": false,
@@ -121,6 +121,7 @@
         "hollow_promo_badge": "Fri fragt, når du tager mere end ét par",
         "hollow_bestseller_badge": "",
         "hollow_new_color_badge": "NEW COLOR",
+        "hollow_show_offers": true,
         "hollow_offers_label": "BLAND SOM DU VIL",
         "hollow_offers_subtitle": "Vælg frit mellem alle mønstre — rabatten lægges på automatisk i kurven.",
         "hollow_offer_1_name": "ENKELT PAR",
@@ -135,8 +136,8 @@
         "hollow_ships_label": "AFSENDES:",
         "hollow_ships_value": "NÆSTE HVERDAG",
         "hollow_fast_shipping": "PAKKES OG SENDES FRA RINGSTED",
-        "hollow_sticky_button_label": "SHOP NOW",
-        "hollow_sticky_sold_out_label": "SOLD OUT",
+        "hollow_sticky_button_label": "",
+        "hollow_sticky_sold_out_label": "",
         "hollow_sticky_guarantee": "ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.",
         "hollow_sticky_show_thumb": false,
         "hollow_show_size_chart": true,
@@ -171,7 +172,7 @@
           "type": "stat",
           "settings": {
             "value": "12",
-            "label": "GARANTI PÅ HOLDBARHED"
+            "label": "MÅNEDERS GARANTI PÅ HOLDBARHEDEN"
           }
         },
         "stat-3": {
@@ -418,8 +419,16 @@
     "custom-split-faq": {
       "type": "custom-split-faq",
       "blocks": {
+        "faq_wiEMbF": {
+          "type": "faq",
+          "settings": {
+            "question": "Hvordan virker rabatten?",
+            "answer": "<p>Du lægger bare de par i kurven, du vil have. Prisen falder automatisk, når du når fire — og igen ved seks. Du skal ikke bruge en kode.</p><p>Mønstrene må gerne være forskellige.</p>"
+          }
+        },
         "faq_RtcxJX": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "question": "WHY DOES ALPACA PERFORM BETTER?",
             "answer": "<p>Alpaca fleece is naturally hollow, trapping heat efficiently while remaining breathable and moisture-wicking.</p>"
@@ -435,7 +444,7 @@
         "faq-2": {
           "type": "faq",
           "settings": {
-            "question": "Kan jeg vælge forskellige mønstre i et sæt?",
+            "question": "Kan jeg vælge forskellige mønstre?",
             "answer": "<p><br/>Ja. Du må gerne blande frit. Rabatten beregnes på antal par, ikke på mønster.<br/><br/></p>"
           }
         },
@@ -456,12 +465,13 @@
         "faq_pURaxa": {
           "type": "faq",
           "settings": {
-            "question": "Hvad hvis de går hul?",
+            "question": "Hvad hvis der går hul?",
             "answer": "<p>Så sender vi et nyt par. Garantien løber i 12 måneder, og du skal ikke sende de gamle retur.<br/><br/></p>"
           }
         }
       },
       "block_order": [
+        "faq_wiEMbF",
         "faq_RtcxJX",
         "faq-1",
         "faq-2",
