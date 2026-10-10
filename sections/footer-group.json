@@ -182,29 +182,31 @@
         "image_4GzDCj": {
           "type": "image",
           "settings": {
-            "tall": false
+            "image": "shopify://shop_images/hf_20261010_112257_dc74f4a2-8173-475f-9945-239ebc57a9b1.jpg",
+            "tall": true
           }
         },
         "review_L6rkKf": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
-          }
-        },
-        "image_RC7bFT": {
-          "type": "image",
-          "settings": {
-            "tall": false
+            "quote": "Jeg har haft merino før, men de er tynde som papir.\nDisse er noget helt andet. Man kan mærke, at der er garn i dem. De er for tykke til mine almindelige sko, men det er også lige meget — de skal bruges indenfor.",
+            "author": "Charlotte, Næstved",
+            "meta": ""
           }
         },
         "review_dLRhVU": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
+            "quote": "Brugte en halv time på at vælge, fordi jeg ikke kunne bestemme mig.\nEndte med fire forskellige, og det var det rigtige.",
+            "author": "Anne, Herning",
+            "meta": ""
+          }
+        },
+        "image_RC7bFT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_112643_17553487-3a84-4394-9232-807afd35e7d2.jpg",
+            "tall": false
           }
         },
         "image_y9WLy8": {
@@ -261,8 +263,8 @@
         "image_Yny7cT",
         "image_4GzDCj",
         "review_L6rkKf",
-        "image_RC7bFT",
         "review_dLRhVU",
+        "image_RC7bFT",
         "image_y9WLy8",
         "review_V83t8P",
         "image_GWmc7D",
