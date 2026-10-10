@@ -152,7 +152,7 @@
           <div class="cart__checkout-wrapper">
             <button type="submit" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}" class="btn cart__checkout hollow-cart-drawer__checkout">
               <svg class="hollow-cart-drawer__lock" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2"/><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg>
-              {{ settings.hollow_cart_checkout_label | default: 'SECURE CHECKOUT' }}
+              {{ settings.hollow_cart_checkout_label | default: 'GÅ TIL BETALING' }}
             </button>
 
             {% if additional_checkout_buttons and settings.cart_additional_buttons %}
@@ -163,15 +163,27 @@
           {%- if settings.hollow_cart_trust_enable -%}
             <div class="hollow-cart-trust">
               <div class="hollow-cart-trust__item">
-                <span class="hollow-cart-trust__text">{{ settings.hollow_cart_trust_reviews | default: '27,000+ 5-STAR REVIEWS' }}</span>
+                <span class="hollow-cart-trust__text">{{ settings.hollow_cart_trust_reviews | default: 'FRI FRAGT, NÅR DU TAGER MERE END ET PAR' }}</span>
               </div>
               <div class="hollow-cart-trust__divider" aria-hidden="true"></div>
               <div class="hollow-cart-trust__item">
                 <span class="hollow-cart-trust__badge" aria-hidden="true">
                   <img src="https://cdn.shopify.com/s/files/1/1015/4298/6071/files/icon_12.png?v=1791377572" width="28" height="28" alt="">
                 </span>
-                <span class="hollow-cart-trust__text">{{ settings.hollow_cart_trust_guarantee | default: 'ET ÅRS GARANTI. HOLDER DE IKKE, FÅR DU NYE.' }}</span>
+                <span class="hollow-cart-trust__text">{{ settings.hollow_cart_trust_guarantee | default: '12 MÅNEDERS GARANTI. DU SKAL IKKE SENDE DE GAMLE TILBAGE' }}</span>
               </div>
+            </div>
+            
+            <div class="hollow-cart-payment-icons text-center" style="margin-top: 15px;">
+              {%- unless shop.enabled_payment_types == empty -%}
+                <ul class="inline-list payment-icons" style="display: flex; justify-content: center; gap: 8px; padding: 0; list-style: none;">
+                  {%- for type in shop.enabled_payment_types -%}
+                    <li class="icon--payment">
+                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endunless -%}
             </div>
           {%- endif -%}
         </div>
