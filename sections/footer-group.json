@@ -178,6 +178,62 @@
             "image": "shopify://shop_images/hf_20261010_112040_95cba69c-14d5-4f08-8736-89e89c2fe4ab.jpg",
             "tall": false
           }
+        },
+        "image_4GzDCj": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_L6rkKf": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_RC7bFT": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_dLRhVU": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_y9WLy8": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_V83t8P": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_GWmc7D": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_darbNT": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
         }
       },
       "block_order": [
@@ -202,7 +258,15 @@
         "review_hnhLBK",
         "image_MzDHFL",
         "review_AphYHi",
-        "image_Yny7cT"
+        "image_Yny7cT",
+        "image_4GzDCj",
+        "review_L6rkKf",
+        "image_RC7bFT",
+        "review_dLRhVU",
+        "image_y9WLy8",
+        "review_V83t8P",
+        "image_GWmc7D",
+        "review_darbNT"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
