@@ -257,14 +257,15 @@
         "review_tzDWw4": {
           "type": "review",
           "settings": {
-            "quote": "I’m very happy with this purchase, they are a quality product.",
-            "author": "Steve J",
-            "meta": "verified buyer"
+            "quote": "Jeg kører lastbil og sidder med fødderne i kulde otte timer i træk. Havde kigget på nogle dyrere mærker først. De her er tykkere for halvdelen af pengene. Har bestilt seks mere til kabinen.",
+            "author": "Jan, Kolding",
+            "meta": ""
           }
         },
         "image_PhzYhG": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/hf_20261010_124602_00926029-e65e-490e-a34c-aa85360cf3b6.jpg",
             "tall": false
           }
         },
