@@ -78,7 +78,7 @@
           "type": "tab",
           "settings": {
             "title": "FRAGT",
-            "content": "<p>Fri fragt ved køb over 500 kr.&nbsp;</p><p>Fragt 59 kr. ved enkelt par<br/><br/></p>",
+            "content": "<p>Fri fragt, når du tager mere end ét par.</p><p>Fragt 59 kr. ved enkelt par.<br/><br/></p>",
             "page": ""
           }
         },
