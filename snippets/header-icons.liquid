@@ -11,12 +11,19 @@
       </button>
     {%- endif -%}
 
+    <style>
+      @media only screen and (max-width: 768px) {
+        .hollow-denmark-text {
+          display: none !important;
+        }
+      }
+    </style>
     <div class="site-nav__link site-nav__link--icon" style="display: flex; align-items: center; gap: 6px; padding: 0 10px;" aria-label="Danmark">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 28" width="22" height="16" style="border-radius: 2px; display: block;">
         <rect width="37" height="28" fill="#C60C30"/>
         <path d="M12 0h4v28h-4zM0 12h37v4H0z" fill="#FFF"/>
       </svg>
-      <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1; padding-top: 2px;">DENMARK</span>
+      <span class="hollow-denmark-text" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1; padding-top: 2px;">DENMARK</span>
     </div>
 
     <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
