@@ -8,13 +8,12 @@
       {%- for block in section.blocks -%}
         {%- if block.type == 'review' -%}
           <blockquote class="hollow-reviews__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <div class="hollow-reviews__card-image" style="margin-bottom: 15px;">
+                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', style: 'width: 100%; height: auto; border-radius: 8px;' }}
+              </div>
+            {%- endif -%}
             <p class="hollow-reviews__quote">{{ block.settings.quote }}</p>
-            {%- if block.settings.author != blank -%}
-              <div class="hollow-reviews__author">{{ block.settings.author }}</div>
-            {%- endif -%}
-            {%- if block.settings.meta != blank -%}
-              <div class="hollow-reviews__meta">{{ block.settings.meta }}</div>
-            {%- endif -%}
           </blockquote>
         {%- elsif block.type == 'image' -%}
           <figure class="hollow-reviews__photo{% if block.settings.tall %} is-tall{% endif %}" {{ block.shopify_attributes }}>
@@ -49,6 +48,7 @@
       "type": "review",
       "name": "Review",
       "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
         { "type": "textarea", "id": "quote", "label": "Quote", "default": "I’m very happy with this purchase, they are a quality product." },
         { "type": "text", "id": "author", "label": "Author", "default": "Steve J" },
         { "type": "text", "id": "meta", "label": "Meta", "default": "verified buyer" }
