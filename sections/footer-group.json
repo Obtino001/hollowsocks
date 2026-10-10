@@ -119,19 +119,19 @@
             "meta": ""
           }
         },
-        "image_VMzHQU": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20261010_110257_ffd8e498-4fa2-4c9e-930d-a15f9049fd39.jpg",
-            "tall": false
-          }
-        },
         "review_8jmg9x": {
           "type": "review",
           "settings": {
             "quote": "Jeg havde et par fra et andet mærke til halv pris liggende ved siden af.\nForskellen er til at tage og føle på. Garnet er tykkere, og der er ikke de der tynde steder, hvor man kan se igennem. Man får altså hvad man betaler for.",
             "author": "Susanne, Roskilde",
             "meta": ""
+          }
+        },
+        "image_VMzHQU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_110257_ffd8e498-4fa2-4c9e-930d-a15f9049fd39.jpg",
+            "tall": false
           }
         },
         "image_94HcpE": {
@@ -178,8 +178,8 @@
         "image_Jp6teU",
         "image_3XmtaE",
         "review_Cr3FxE",
-        "image_VMzHQU",
         "review_8jmg9x",
+        "image_VMzHQU",
         "image_94HcpE",
         "review_V69xDR",
         "image_MzDHFL",
