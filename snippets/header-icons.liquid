@@ -18,25 +18,27 @@
         }
       }
     </style>
-    <div class="site-nav__link site-nav__link--icon" style="display: flex; align-items: center; gap: 6px; padding: 0 10px;" aria-label="Danmark">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 28" width="22" height="16" style="border-radius: 2px; display: block;">
-        <rect width="37" height="28" fill="#C60C30"/>
-        <path d="M12 0h4v28h-4zM0 12h37v4H0z" fill="#FFF"/>
-      </svg>
-      <span class="hollow-denmark-text" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1; padding-top: 2px;">DENMARK</span>
-    </div>
-
-    <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
-      <span class="cart-link">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag hollow-icon-bag" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 15V42C9 43.6569 10.3431 45 12 45H36C37.6569 45 39 43.6569 39 42V15H9Z" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"/>
-          <path d="M15 18V12C15 7.02944 19.0294 3 24 3C28.9706 3 33 7.02944 33 12V18" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"/>
+    <div class="header-right-icons" style="display: flex; align-items: center; pointer-events: auto;">
+      <div class="site-nav__link site-nav__link--icon" style="display: flex; align-items: center; gap: 6px; padding: 0 10px;" aria-label="Danmark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 28" width="22" height="16" style="border-radius: 2px; display: block;">
+          <rect width="37" height="28" fill="#C60C30"/>
+          <path d="M12 0h4v28h-4zM0 12h37v4H0z" fill="#FFF"/>
         </svg>
-        <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-        {%- if cart.item_count > 0 -%}
-          <span class="hollow-cart-count cart-link__bubble-num" aria-hidden="true">{{ cart.item_count }}</span>
-        {%- endif -%}
-      </span>
-    </a>
+        <span class="hollow-denmark-text" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1; padding-top: 2px;">DENMARK</span>
+      </div>
+  
+      <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+        <span class="cart-link">
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag hollow-icon-bag" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 15V42C9 43.6569 10.3431 45 12 45H36C37.6569 45 39 43.6569 39 42V15H9Z" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"/>
+            <path d="M15 18V12C15 7.02944 19.0294 3 24 3C28.9706 3 33 7.02944 33 12V18" stroke="currentColor" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"/>
+          </svg>
+          <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+          {%- if cart.item_count > 0 -%}
+            <span class="hollow-cart-count cart-link__bubble-num" aria-hidden="true">{{ cart.item_count }}</span>
+          {%- endif -%}
+        </span>
+      </a>
+    </div>
   </div>
 </div>
