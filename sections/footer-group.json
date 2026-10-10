@@ -238,6 +238,49 @@
             "image": "shopify://shop_images/hf_20261010_114027_7c2d8949-0513-4af1-aee2-ecc561776eb5.jpg",
             "tall": false
           }
+        },
+        "image_yDwX7E": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_122731_1e0c23f6-885c-46e6-b4ed-f144df8528df.jpg",
+            "tall": true
+          }
+        },
+        "review_dfPUYn": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg er pædagog, og vi går indendørs i sokker hele dagen.\n\nBomuldssokker bliver klamme inden frokost. Disse holder sig tørre. Eneste minus er, at de nogle dage om at tørre.",
+            "author": "Louise, Randers",
+            "meta": ""
+          }
+        },
+        "review_tzDWw4": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_PhzYhG": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
+        },
+        "review_JTDWjA": {
+          "type": "review",
+          "settings": {
+            "quote": "I’m very happy with this purchase, they are a quality product.",
+            "author": "Steve J",
+            "meta": "verified buyer"
+          }
+        },
+        "image_36FQVR": {
+          "type": "image",
+          "settings": {
+            "tall": false
+          }
         }
       },
       "block_order": [
@@ -270,7 +313,13 @@
         "image_y9WLy8",
         "review_V83t8P",
         "review_darbNT",
-        "image_GWmc7D"
+        "image_GWmc7D",
+        "image_yDwX7E",
+        "review_dfPUYn",
+        "review_tzDWw4",
+        "image_PhzYhG",
+        "review_JTDWjA",
+        "image_36FQVR"
       ],
       "settings": {
         "title": "OVER 4.000.000 PAR SOLGT",
