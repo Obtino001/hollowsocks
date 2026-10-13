@@ -273,7 +273,7 @@
 
     if (msgEl) {
       if (eligible === 0) msgEl.textContent = 'Læg 2 par i kurven for at låse op for dit tilbud.';
-      else if (eligible === 1) msgEl.textContent = 'Læg 1 par mere i kurven for at låse op for dit tilbud.';
+      else if (eligible === 1) msgEl.textContent = 'Læg 1 par mere i kurven – så får du 2 par gratis oveni + fri fragt';
       else if (eligible === 2) msgEl.textContent = 'Vælg dine 2 ekstra par!';
       else if (eligible === 3) msgEl.textContent = 'Læg 1 par mere i kurven for at fuldende pakken med 4 par.';
       else if (eligible === 4 && bundleTotal === 59900) msgEl.textContent = 'Pakken med 4 par er aktiv: 599 kr.';
