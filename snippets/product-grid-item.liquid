@@ -305,14 +305,8 @@ Arguments
             {%- else -%}
               <span class="grid-product__price--current">{{ product.price | money_without_trailing_zeros }}</span>
             {%- endif -%}
-            {%- if on_sale and template.name != 'collection' -%}
-              <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-              <span class="grid-product__price--original">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-            {%- endif -%}
           </div>
-          {%- if template.name == 'collection' -%}
-            <div class="grid-product__bundle-price">150 kr. pr. par i 4-pak</div>
-          {%- endif -%}
+          <div class="grid-product__bundle-price">150 kr. pr. par i 4-pak</div>
 
           {%- if settings.enable_swatches and type == 'horizontal' -%}
             {%- liquid
