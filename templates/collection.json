@@ -112,12 +112,50 @@
         "enable_swatch_labels": true,
         "enable_sort": false
       }
+    },
+    "rich_text_pM4NNX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CVJkAE": {
+          "type": "heading",
+          "settings": {
+            "title": "Bland selv 4 par – 600 kr. Efterårstilbud. Før 1.196 kr. · Det er 150 kr. pr. par · Fri fragt",
+            "heading_size": "h2"
+          }
+        },
+        "text_CQrqCB": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<ol><li>Vælg 4 mønstre</li><li>Vælg størrelse</li><li>Fri fragt, sendes fra Ringsted</li></ol>"
+          }
+        },
+        "button_KqKeaL": {
+          "type": "button",
+          "settings": {
+            "link_text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_CVJkAE",
+        "text_CQrqCB",
+        "button_KqKeaL"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
     }
   },
   "order": [
     "ticker",
     "collection-nav",
     "collection-header",
-    "main-collection"
+    "main-collection",
+    "rich_text_pM4NNX"
   ]
 }
