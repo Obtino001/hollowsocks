@@ -5146,3 +5146,131 @@ img.r-3l3b7j {
     vertical-align: middle;
     transition: transform 0.15s ease;
 }
+
+/* Collection offer header */
+.hollow-collection-offer {
+  background: var(--hollow-cream);
+  padding: 28px 0 20px;
+  text-align: center;
+}
+
+.hollow-collection-offer__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hollow-theme .hollow-collection-offer__badge {
+  margin: 0 0 10px;
+  font-family: var(--hollow-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hollow-muted);
+}
+
+.hollow-theme .hollow-collection-offer__headline {
+  margin: 0 0 10px;
+  font-family: var(--hollow-display);
+  font-size: clamp(32px, 9vw, 56px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--hollow-black);
+}
+
+.hollow-theme .hollow-collection-offer__subline {
+  margin: 0;
+  font-family: var(--hollow-body);
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: var(--hollow-black);
+}
+
+.hollow-collection-offer__compare {
+  color: var(--hollow-muted);
+}
+
+.hollow-collection-offer__sep {
+  margin: 0 4px;
+}
+
+.hollow-theme .hollow-collection-offer__steps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.hollow-theme .hollow-collection-offer__step {
+  flex: 1 1 0;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-family: var(--hollow-body);
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--hollow-black);
+}
+
+.hollow-collection-offer__step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--hollow-green);
+  color: var(--hollow-white);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hollow-theme .hollow-collection-offer__trust {
+  margin: 16px 0 0;
+  font-family: var(--hollow-body);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--hollow-black);
+}
+
+.hollow-collection-offer__stars {
+  color: #C9A227;
+  letter-spacing: 0.05em;
+}
+
+@media only screen and (min-width: 769px) {
+  .hollow-collection-offer {
+    padding: 40px 0 28px;
+  }
+
+  .hollow-theme .hollow-collection-offer__badge {
+    font-size: 12px;
+  }
+
+  .hollow-theme .hollow-collection-offer__subline {
+    font-size: 15px;
+  }
+
+  .hollow-theme .hollow-collection-offer__step,
+  .hollow-theme .hollow-collection-offer__trust {
+    font-size: 13px;
+  }
+}
+
+/* Product card: bundle price line */
+.hollow-theme .grid-product__bundle-price {
+  margin-top: 4px;
+  font-family: var(--hollow-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--hollow-red);
+}
