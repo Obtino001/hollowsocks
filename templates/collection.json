@@ -16,6 +16,41 @@
         "text": "LABOR DAY SALE: BUY 2 GET 2 FREE"
       }
     },
+    "collection-header": {
+      "type": "collection-header",
+      "disabled": true,
+      "settings": {
+        "enable": true,
+        "collection_image_enable": false,
+        "parallax": false,
+        "parallax_direction": "top"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "enable_collection_count": false,
+            "per_row": 4,
+            "rows_per_page": 8,
+            "mobile_flush_grid": false
+          }
+        }
+      },
+      "block_order": [
+        "product_grid"
+      ],
+      "settings": {
+        "enable_sidebar": false,
+        "collapsed": true,
+        "filter_style": "drawer",
+        "enable_color_swatches": true,
+        "enable_swatch_labels": true,
+        "enable_sort": false
+      }
+    },
     "collection-nav": {
       "type": "hollow-collection-nav",
       "blocks": {
@@ -77,47 +112,12 @@
         "cat-7"
       ],
       "settings": {}
-    },
-    "collection-header": {
-      "type": "collection-header",
-      "disabled": true,
-      "settings": {
-        "enable": true,
-        "collection_image_enable": false,
-        "parallax": false,
-        "parallax_direction": "top"
-      }
-    },
-    "main-collection": {
-      "type": "main-collection",
-      "blocks": {
-        "product_grid": {
-          "type": "product_grid",
-          "settings": {
-            "enable_collection_count": false,
-            "per_row": 4,
-            "rows_per_page": 8,
-            "mobile_flush_grid": false
-          }
-        }
-      },
-      "block_order": [
-        "product_grid"
-      ],
-      "settings": {
-        "enable_sidebar": false,
-        "collapsed": true,
-        "filter_style": "drawer",
-        "enable_color_swatches": true,
-        "enable_swatch_labels": true,
-        "enable_sort": false
-      }
     }
   },
   "order": [
     "ticker",
-    "collection-nav",
     "collection-header",
-    "main-collection"
+    "main-collection",
+    "collection-nav"
   ]
 }
