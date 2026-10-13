@@ -32,12 +32,20 @@
         </ol>
       {%- endif -%}
 
-      {%- if section.settings.quote != blank or section.settings.trust != blank -%}
+      {%- if section.settings.quote != blank -%}
         <p class="hollow-collection-offer__trust">
           <span class="hollow-collection-offer__stars" aria-label="5 ud af 5 stjerner">★★★★★</span>
-          {%- if section.settings.quote != blank %} “{{ section.settings.quote }}”{% endif -%}
+          “{{ section.settings.quote }}”
           {%- if section.settings.quote_author != blank %} – {{ section.settings.quote_author }}{% endif -%}
-          {%- if section.settings.trust != blank %} · {{ section.settings.trust }}{% endif -%}
+        </p>
+      {%- endif -%}
+      {%- if section.settings.trust != blank -%}
+        <p class="hollow-collection-offer__trust hollow-collection-offer__trust--meta">
+          {%- assign trust_parts = section.settings.trust | split: ' · ' -%}
+          {%- for part in trust_parts -%}
+            <span class="hollow-collection-offer__nowrap">{{ part | strip }}</span>
+            {%- unless forloop.last %} · {% endunless -%}
+          {%- endfor -%}
         </p>
       {%- endif -%}
     </div>
