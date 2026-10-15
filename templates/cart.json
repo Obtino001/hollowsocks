@@ -16,12 +16,14 @@
     },
     "recently-viewed": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {
         "recent_count": 5
       }
     },
     "featured-collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "ALLE MØNSTRE",
         "heading_size": "h2",
@@ -380,6 +382,7 @@
         "review_AyNXBQ",
         "image_BUAphj"
       ],
+      "disabled": true,
       "settings": {
         "title": "Fra dem der har fået et par",
         "button_label": "",
