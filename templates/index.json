@@ -12,11 +12,19 @@
     "hollow_collection_nav_JAUyKh": {
       "type": "hollow-collection-nav",
       "blocks": {
+        "category_PrLtiF": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261009_174623_b823472c-2d12-4302-b58b-35ab1056b7ac.jpg",
+            "title": "BLAND SELV",
+            "link": "shopify://collections/alle-monstre"
+          }
+        },
         "category_YNdjYP": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/hf_20260904_160451_1_1_33387b3e-d2d3-4694-8ef6-de2c949d34cf.jpg",
-            "title": "ALLE MØNSTRE",
+            "title": "ALLE 24 MØNSTRE",
             "link": "shopify://collections/alle-monstre"
           }
         },
@@ -44,15 +52,6 @@
             "link": "shopify://pages/historien"
           }
         },
-        "category_PrLtiF": {
-          "type": "category",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Main_Image_df265dff-b9ba-48aa-a635-9556427a7b83.png",
-            "title": "JAGT",
-            "link": ""
-          }
-        },
         "category_4fmizW": {
           "type": "category",
           "disabled": true,
@@ -73,11 +72,11 @@
         }
       },
       "block_order": [
+        "category_PrLtiF",
         "category_YNdjYP",
         "category_w6zAXk",
         "category_HPxpdd",
         "category_dWi9PF",
-        "category_PrLtiF",
         "category_4fmizW",
         "category_a6wGW4"
       ],
