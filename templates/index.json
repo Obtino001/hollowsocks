@@ -15,13 +15,14 @@
         "category_PrLtiF": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/hf_20261009_174623_b823472c-2d12-4302-b58b-35ab1056b7ac.jpg",
+            "image": "shopify://shop_images/hf_20260904_160451_1_1_774ddd3a-6480-4482-b139-f405f67f35b9.jpg",
             "title": "BLAND SELV",
             "link": "shopify://collections/alle-monstre"
           }
         },
         "category_YNdjYP": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/hf_20260904_160451_1_1_33387b3e-d2d3-4694-8ef6-de2c949d34cf.jpg",
             "title": "ALLE 24 MØNSTRE",
