@@ -120,7 +120,7 @@
       "settings": {
         "title": "SE MØNSTRENE",
         "heading_size": "h2",
-        "home_featured_products": "alle-monstre",
+        "home_featured_products": "sokker",
         "per_row": 5,
         "rows": 4,
         "mobile_scrollable": true,

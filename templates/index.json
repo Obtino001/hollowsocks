@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/hf_20260904_160451_1_1_774ddd3a-6480-4482-b139-f405f67f35b9.jpg",
             "title": "BLAND SELV",
-            "link": "shopify://collections/alle-monstre"
+            "link": "shopify://collections/sokker"
           }
         },
         "category_YNdjYP": {
@@ -93,7 +93,7 @@
         "heading": "VI HAR GENSKABT 24 MØNSTRE",
         "text": "",
         "button_label": "SE MØNSTRENE",
-        "button_link": "shopify://collections/alle-monstre"
+        "button_link": "shopify://collections/sokker"
       }
     },
     "hollow_trust_bar_49CJx9": {
@@ -229,7 +229,7 @@
       "settings": {
         "title": "24 egne. 24 mønstre.",
         "heading_size": "h1",
-        "home_featured_products": "alle-monstre",
+        "home_featured_products": "sokker",
         "per_row": 5,
         "rows": 2,
         "mobile_scrollable": false,
@@ -247,7 +247,7 @@
             "image": "shopify://shop_images/hf_20260905_220037_335e5a80-658f-49cb-a77f-e86687b8dd94_1.jpg",
             "title": "Til efteråret",
             "text": "Og til mange efterår efter",
-            "link": "shopify://collections/alle-monstre"
+            "link": "shopify://collections/sokker"
           }
         },
         "banner-2": {
@@ -256,7 +256,7 @@
             "image": "shopify://shop_images/hf_20261009_121708_5b3eb8ae-cc01-462b-bc7c-2b6dde762204.jpg",
             "title": "Til hjemmet",
             "text": "Og til alle i det",
-            "link": "shopify://collections/alle-monstre"
+            "link": "shopify://collections/sokker"
           }
         }
       },
