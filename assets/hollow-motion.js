@@ -322,10 +322,19 @@
     });
 
     var rescan = null;
-    var contentObserver = new MutationObserver(function () {
+    var contentObserver = new MutationObserver(function (mutations) {
+      // Ignore churn inside modals/drawers/quick view (never reveal-tagged).
+      var relevant = mutations.some(function (m) {
+        return !(m.target.closest && m.target.closest(EXCLUDED_REGIONS));
+      });
+      if (!relevant) return;
       clearTimeout(rescan);
       rescan = setTimeout(function () {
-        tagAll(document);
+        if (window.requestIdleCallback) {
+          requestIdleCallback(function () { tagAll(document); }, { timeout: 1000 });
+        } else {
+          tagAll(document);
+        }
       }, 250);
     });
 

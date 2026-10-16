@@ -3162,6 +3162,15 @@ theme.recentlyViewed = {
     if (!products.length || !theme.settings.quickView) {
       return;
     }
+
+    // Cards without a quick view button never open the modal, so don't
+    // fetch and boot a full product page on hover/tap (hurts INP).
+    products = Array.prototype.filter.call(products, function(product) {
+      return product.querySelector('.quick-product__btn');
+    });
+    if (!products.length) {
+      return;
+    }
   
     products.forEach(product => {
       product.addEventListener('mouseover', productMouseover);
