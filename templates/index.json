@@ -39,6 +39,7 @@
         },
         "category_w6zAXk": {
           "type": "category",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/hf_20261009_092407_d944a589-525f-466d-a03e-8b8c238e018d.jpg",
             "title": "Gavesæt",
