@@ -2859,6 +2859,17 @@
   line-height: 1.5;
 }
 
+.hollow-about__year-image {
+  margin-top: 16px;
+}
+
+.hollow-about__year-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
 .hollow-about__gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

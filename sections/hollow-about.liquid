@@ -47,6 +47,11 @@
           <span class="hollow-about__year-mark">{{ block.settings.year }}</span>
           <h3 class="hollow-about__year-title">{{ block.settings.title }}</h3>
           <p>{{ block.settings.text }}</p>
+          {%- if block.settings.image != blank -%}
+            <div class="hollow-about__year-image">
+              {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '480, 720, 1080, 1200', sizes: '(min-width: 769px) 33vw, 100vw', alt: block.settings.image.alt }}
+            </div>
+          {%- endif -%}
         </article>
       {%- endfor -%}
     </div>
@@ -112,7 +117,8 @@
       "settings": [
         { "type": "text", "id": "year", "label": "Year", "default": "2018" },
         { "type": "text", "id": "title", "label": "Title", "default": "The Discovery" },
-        { "type": "textarea", "id": "text", "label": "Text" }
+        { "type": "textarea", "id": "text", "label": "Text" },
+        { "type": "image_picker", "id": "image", "label": "Image (shown right below the text)" }
       ]
     },
     {
