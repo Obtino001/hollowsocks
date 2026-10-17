@@ -508,6 +508,7 @@
         "menu-support"
       ],
       "settings": {
+        "show_newsletter": false,
         "newsletter_image": "shopify://shop_images/hf_20261007_183910_399b23ca-86be-4451-9e34-2a20f5b97db4.jpg",
         "newsletter_heading": "",
         "newsletter_subheading": "",
