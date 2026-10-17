@@ -223,16 +223,16 @@
         "g1": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/hf_20261007_185139_ae49af45-04d6-4f60-9477-5691fd528961.jpg",
-            "title": "Fra en skuffe",
-            "text": "Da vi tømte min mormors lejlighed, lå der en bunke opskrifter skrevet i hånden. Forkortelser, som kun hun forstod."
+            "image": "shopify://shop_images/hf_20261017_154305_0d3e17ef-8eab-4231-b41a-d81c49292086.jpg",
+            "title": "Derhjemme",
+            "text": "I Mariupol strikkede Olenas mor og bedstemor. Olena lærte Oleksandr det. Han siger, det var for håndværkets skyld. Olena siger, det var for hendes skyld. Det har vi aldrig helt fået afklaret."
           }
         },
         "g2": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/hf_20261007_183813_60a994a6-5272-4942-bb32-c0b615d9aa1f_1.jpg",
-            "title": "Nogen husker stadig hvordan",
+            "image": "shopify://shop_images/hf_20261017_170029_17b7b852-a024-437b-92bb-27fe35f91383.jpg",
+            "title": "Vores tak",
             "text": "Jeg fandt kvinder, der kunne læse opskrifterne uden at tøve. De lærte det af deres mødre, som lærte det af deres."
           }
         },
@@ -251,8 +251,8 @@
         "g3"
       ],
       "settings": {
-        "title": "Hvert sted i landet havde sit eget mønster",
-        "subtitle": "Man kunne se på et par sokker, hvor de kom fra.",
+        "title": "Et nyt hjem",
+        "subtitle": "I november 2022 kom vi til Danmark med to kufferter. I den ene lå et par strømper, Olena ikke nåede at strikke færdig.",
         "bg_color": "#ffffff",
         "text_color": "#111111",
         "columns_desktop": 3,
