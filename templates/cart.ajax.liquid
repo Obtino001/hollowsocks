@@ -17,7 +17,7 @@
   for item in cart.items
     if item.original_price == 29900
       for item_collection in item.product.collections
-        if item_collection.handle == 'alle-monstre'
+        if item_collection.handle == 'sokker' or item_collection.handle == 'se-alle-24-monstre'
           assign hollow_bundle_count = hollow_bundle_count | plus: item.quantity
           assign hollow_bundle_total = hollow_bundle_total | plus: item.final_line_price
           assign hollow_bundle_discount = hollow_bundle_discount | plus: item.line_level_total_discount
