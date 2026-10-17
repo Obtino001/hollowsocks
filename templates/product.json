@@ -202,21 +202,6 @@
         "text_color": "#ffffff"
       }
     },
-    "featured_collection_KCAmpg": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.featured_collection.name",
-      "settings": {
-        "title": "Der er 12 mønstre at vælge imellem",
-        "heading_size": "h2",
-        "home_featured_products": "sokker",
-        "per_row": 5,
-        "rows": 2,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "view_all_label": "SE ALLE MØNSTRE",
-        "divider": false
-      }
-    },
     "custom-advantage": {
       "type": "custom-advantage",
       "blocks": {
@@ -259,6 +244,21 @@
         "image_radius": 12,
         "padding_top": 50,
         "padding_bottom": 50
+      }
+    },
+    "featured_collection_KCAmpg": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "title": "Der er 12 mønstre at vælge imellem",
+        "heading_size": "h2",
+        "home_featured_products": "sokker",
+        "per_row": 5,
+        "rows": 2,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
+        "divider": false
       }
     },
     "custom-marquee": {
@@ -842,7 +842,7 @@
         "faq_pURaxa"
       ],
       "settings": {
-        "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
+        "image": "shopify://shop_images/hf_20261017_161909_c8793407-5df0-45e6-bd2a-f38122272ac6.jpg",
         "title": "Spørgsmål vi får",
         "button_text": "",
         "button_link": ""
@@ -852,8 +852,8 @@
   "order": [
     "main",
     "hollow_trust_bar_niYxDm",
-    "featured_collection_KCAmpg",
     "custom-advantage",
+    "featured_collection_KCAmpg",
     "custom-marquee",
     "hollow_reviews_4WGVMN",
     "feature-split-scroll",
