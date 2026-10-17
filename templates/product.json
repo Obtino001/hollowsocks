@@ -70,7 +70,7 @@
           "type": "tab",
           "settings": {
             "title": "Detaljer",
-            "content": "<ul><li><strong>Blød mod huden</strong> — ikke den kradsende uld, du husker fra barndommen</li><li><strong>Forstærket hæl og tå</strong> — ekstra garn præcis hvor sokker normalt går hul</li><li><strong>Tåler maskinvask</strong> — 30 grader på uldprogram, krymper ikke</li><li><strong>Tykt uldgarn</strong> — holder varmen, også når den er fugtig</li><li><strong>12 måneders garanti</strong> — holder de ikke, får du nye</li></ul>",
+            "content": "<ul><li><strong>Blød mod huden</strong> — ikke den kradsende uld, du husker fra barndommen</li><li><strong>Forstærket hæl og tå</strong> — ekstra garn præcis hvor sokker normalt går hul</li><li><strong>Tåler maskinvask</strong> — 30 grader på uldprogram, krymper ikke</li><li><strong>Tykt uldgarn</strong> — holder varmen, også når den er fugtig</li><li><strong>12 måneders garanti</strong> — Går der hul, eller slipper en maske, sender vi et nyt par. Du skal ikke sende de gamle tilbage.</li></ul>",
             "page": ""
           }
         },
@@ -86,7 +86,7 @@
           "type": "tab",
           "settings": {
             "title": "12 måneders garanti",
-            "content": "<p>Holder de ikke, får du nye. Går de hul i hæl eller tå inden for tolv måneder ved normal brug, sender vi et nyt par — du skal ikke sende de gamle tilbage.<br/><br/></p>",
+            "content": "<p>Går der hul, eller slipper en maske, sender vi et nyt par. Du skal ikke sende de gamle tilbage.&nbsp;<br/><br/></p>",
             "page": ""
           }
         },
@@ -94,7 +94,7 @@
           "type": "tab",
           "settings": {
             "title": "Vaskeanvisning",
-            "content": "<p>30 grader på uldprogram<br/><br/></p>",
+            "content": "<p>Vask på uldprogram ved maks. 30°. Brug ikke tørretumbler. Lad dem hænge til tørre.<br/><br/></p>",
             "page": ""
           }
         }
