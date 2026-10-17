@@ -45,14 +45,6 @@
             "link": "shopify://collections/gavesaet"
           }
         },
-        "category_HPxpdd": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/hf_20261009_210645_e5e54495-9ab9-4760-bffd-870b07466155_1.jpg",
-            "title": "ADVENTSKALENDER",
-            "link": "shopify://collections/adventskalender"
-          }
-        },
         "category_4fmizW": {
           "type": "category",
           "disabled": true,
@@ -77,7 +69,6 @@
         "category_PrLtiF",
         "category_YNdjYP",
         "category_w6zAXk",
-        "category_HPxpdd",
         "category_4fmizW",
         "category_a6wGW4"
       ],
