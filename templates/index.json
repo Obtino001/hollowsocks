@@ -244,9 +244,9 @@
         "banner-1": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/hf_20260905_220037_335e5a80-658f-49cb-a77f-e86687b8dd94_1.jpg",
-            "title": "Til efteråret",
-            "text": "Og til mange efterår efter",
+            "image": "shopify://shop_images/hf_20261017_122909_7a3397b2-9db1-48f1-bc45-050cd7ae42c0_1.jpg",
+            "title": "TIL HJEMMET",
+            "text": "det nye og det gamle",
             "link": "shopify://collections/sokker"
           }
         },
@@ -254,8 +254,8 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/hf_20261009_121708_5b3eb8ae-cc01-462b-bc7c-2b6dde762204.jpg",
-            "title": "Til hjemmet",
-            "text": "Og til alle i det",
+            "title": "TIL EN, DU HOLDER AF",
+            "text": "varme kan gives videre",
             "link": "shopify://collections/sokker"
           }
         }
