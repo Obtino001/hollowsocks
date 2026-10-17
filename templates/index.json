@@ -12,6 +12,14 @@
     "hollow_collection_nav_JAUyKh": {
       "type": "hollow-collection-nav",
       "blocks": {
+        "category_dWi9PF": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261016_232553_cb71ff5e-36c0-494a-a521-63914a241b3b_1.jpg",
+            "title": "HISTORIEN",
+            "link": "shopify://pages/historien"
+          }
+        },
         "category_PrLtiF": {
           "type": "category",
           "settings": {
@@ -45,14 +53,6 @@
             "link": "shopify://collections/adventskalender"
           }
         },
-        "category_dWi9PF": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/hf_20261007_183813_60a994a6-5272-4942-bb32-c0b615d9aa1f_1.jpg",
-            "title": "HISTORIEN",
-            "link": "shopify://pages/historien"
-          }
-        },
         "category_4fmizW": {
           "type": "category",
           "disabled": true,
@@ -73,11 +73,11 @@
         }
       },
       "block_order": [
+        "category_dWi9PF",
         "category_PrLtiF",
         "category_YNdjYP",
         "category_w6zAXk",
         "category_HPxpdd",
-        "category_dWi9PF",
         "category_4fmizW",
         "category_a6wGW4"
       ],
@@ -747,7 +747,7 @@
         "image_nLWfFW"
       ],
       "settings": {
-        "title": "Fra dem der har fået et par",
+        "title": "tak for varmen",
         "button_label": "",
         "button_link": ""
       }

@@ -54,7 +54,7 @@
           "type": "tab",
           "settings": {
             "title": "Historien bag",
-            "content": "<p>Hvert mønster er opkaldt efter et sted i Ukraine.</p><p></p>",
+            "content": "<p>Hvert mønster er opkaldt efter et sted i Ukraine. Steder, der betyder noget for os. Et af dem hedder Mariupol, byen vi kom fra.</p><p>Da vi kom til Danmark i 2022, kunne vi ikke tage ret meget med. Men vi kunne strikke det, vi savnede.</p><p>Hvert par strikkes i hånden ved vores køkkenbord i Ringsted, sådan som Olenas mor og bedstemor gjorde det derhjemme.</p><p>Når du tager dem på, har du et lille stykke af vores Ukraine på fødderne.</p><p><em>Olena og Oleksandr</em></p><p>[ <a href=\"/pages/historien\" target=\"_blank\" title=\"HISTORIEN\">Læs hele vores historie </a>]</p><p></p>",
             "page": ""
           }
         },
@@ -70,7 +70,7 @@
           "type": "tab",
           "settings": {
             "title": "Detaljer",
-            "content": "<ul><li><strong>Blød mod huden</strong> — ikke den kradsende uld, du husker fra barndommen</li><li><strong>Forstærket hæl og tå</strong> — ekstra garn præcis hvor sokker normalt går hul</li><li><strong>Tåler maskinvask</strong> — 30 grader på uldprogram, krymper ikke</li><li><strong>Tykt uldgarn</strong> — holder varmen, også når den er fugtig</li><li><strong>12 måneders garanti</strong> — holder de ikke, får du nye</li></ul>",
+            "content": "<ul><li><strong>Blød mod huden</strong> — ikke den kradsende uld, du husker fra barndommen</li><li><strong>Forstærket hæl og tå</strong> — ekstra garn præcis hvor sokker normalt går hul</li><li><strong>Tåler maskinvask</strong> — 30 grader på uldprogram, krymper ikke</li><li><strong>Tykt uldgarn</strong> — holder varmen, også når den er fugtig</li><li><strong>12 måneders garanti</strong> — Går der hul, eller slipper en maske, sender vi et nyt par. Du skal ikke sende de gamle tilbage.</li></ul>",
             "page": ""
           }
         },
@@ -86,7 +86,7 @@
           "type": "tab",
           "settings": {
             "title": "12 måneders garanti",
-            "content": "<p>Holder de ikke, får du nye. Går de hul i hæl eller tå inden for tolv måneder ved normal brug, sender vi et nyt par — du skal ikke sende de gamle tilbage.<br/><br/></p>",
+            "content": "<p>Går der hul, eller slipper en maske, sender vi et nyt par. Du skal ikke sende de gamle tilbage.&nbsp;<br/><br/></p>",
             "page": ""
           }
         },
@@ -94,7 +94,7 @@
           "type": "tab",
           "settings": {
             "title": "Vaskeanvisning",
-            "content": "<p>30 grader på uldprogram<br/><br/></p>",
+            "content": "<p>Vask på uldprogram ved maks. 30°. Brug ikke tørretumbler. Lad dem hænge til tørre.<br/><br/></p>",
             "page": ""
           }
         }
@@ -132,7 +132,7 @@
         "hollow_new_color_badge": "NEW COLOR",
         "hollow_show_offers": true,
         "hollow_offers_label": "BLAND SOM DU VIL",
-        "hollow_offers_subtitle": "Bland frit mellem alle 12 mønstre og størrelser. Rabatten lægges på automatisk i kurven.",
+        "hollow_offers_subtitle": "Vælg frit mellem alle mønstre — rabatten lægges på automatisk i kurven.",
         "hollow_offer_1_name": "ENKELT PAR",
         "hollow_per_pair_label": "/PAIR",
         "hollow_offer_2_name": "KØB 2 — FÅ 2 MED",
@@ -141,7 +141,7 @@
         "hollow_offer_3_name": "KØB 3 — FÅ 3 MED",
         "hollow_offer_3_badge": "BEDSTE VÆRDI",
         "hollow_offer_3_suffix": "FRI FRAGT",
-        "hollow_guarantee_title": "12 MÅNEDERS GARANTI. Går der hul, eller slipper en maske, sender vi et nyt par. Du skal ikke sende de gamle tilbage.",
+        "hollow_guarantee_title": "12 MÅNEDERS GARANTI. Holder de ikke, får du nye. Du skal ikke sende de gamle tilbage.",
         "hollow_ships_label": "AFSENDES:",
         "hollow_ships_value": "NÆSTE HVERDAG",
         "hollow_fast_shipping": "PAKKES OG SENDES FRA RINGSTED",
@@ -202,46 +202,31 @@
         "text_color": "#ffffff"
       }
     },
-    "featured_collection_KCAmpg": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.featured_collection.name",
-      "settings": {
-        "title": "Der er 24 mønstre at vælge imellem",
-        "heading_size": "h2",
-        "home_featured_products": "sokker",
-        "per_row": 5,
-        "rows": 2,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "view_all_label": "SE ALLE MØNSTRE",
-        "divider": false
-      }
-    },
     "custom-advantage": {
       "type": "custom-advantage",
       "blocks": {
         "g1": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/hf_20261007_185139_ae49af45-04d6-4f60-9477-5691fd528961.jpg",
-            "title": "Fra en skuffe",
-            "text": "Da vi tømte min mormors lejlighed, lå der en bunke opskrifter skrevet i hånden. Forkortelser, som kun hun forstod."
+            "image": "shopify://shop_images/hf_20261017_154305_0d3e17ef-8eab-4231-b41a-d81c49292086.jpg",
+            "title": "Derhjemme",
+            "text": "I Mariupol strikkede Olenas mor og bedstemor. Olena lærte Oleksandr det. Han siger, det var for håndværkets skyld. Olena siger, det var for hendes skyld. Det har vi aldrig helt fået afklaret."
           }
         },
         "g2": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/hf_20261007_183813_60a994a6-5272-4942-bb32-c0b615d9aa1f_1.jpg",
-            "title": "Nogen husker stadig hvordan",
-            "text": "Jeg fandt kvinder, der kunne læse opskrifterne uden at tøve. De lærte det af deres mødre, som lærte det af deres."
+            "image": "shopify://shop_images/hf_20261016_232553_cb71ff5e-36c0-494a-a521-63914a241b3b_1.jpg",
+            "title": "Vores tak",
+            "text": "I dag strikker vi ved køkkenbordet i Ringsted.  Den her lille webshop er vores måde at sige tak til Danmark."
           }
         },
         "g3": {
           "type": "grid_item",
           "settings": {
             "image": "shopify://shop_images/hf_20260904_160451_1_1_774ddd3a-6480-4482-b139-f405f67f35b9.jpg",
-            "title": "Man giver dem videre",
-            "text": "Man lavede dem ikke til sig selv. Man lavede dem til en, man ville holde varm."
+            "title": "",
+            "text": ""
           }
         }
       },
@@ -251,14 +236,29 @@
         "g3"
       ],
       "settings": {
-        "title": "Hvert sted i landet havde sit eget mønster",
-        "subtitle": "Man kunne se på et par sokker, hvor de kom fra.",
+        "title": "Et nyt hjem",
+        "subtitle": "I november 2022 kom vi til Danmark med to kufferter. I den ene lå et par strømper, Olena ikke nåede at strikke færdig.",
         "bg_color": "#ffffff",
         "text_color": "#111111",
         "columns_desktop": 3,
         "image_radius": 12,
         "padding_top": 50,
         "padding_bottom": 50
+      }
+    },
+    "featured_collection_KCAmpg": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "title": "Der er 12 mønstre at vælge imellem",
+        "heading_size": "h2",
+        "home_featured_products": "sokker",
+        "per_row": 5,
+        "rows": 2,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "view_all_label": "SE ALLE MØNSTRE",
+        "divider": false
       }
     },
     "custom-marquee": {
@@ -332,6 +332,358 @@
         "font_size": 14,
         "icon_size": 24,
         "padding_y": 30
+      }
+    },
+    "hollow_reviews_6bxyUz": {
+      "type": "hollow-reviews",
+      "blocks": {
+        "image_4keUKR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_101302_9683d0fa-bc42-434f-9059-cd3b51bae494.jpg",
+            "tall": false
+          }
+        },
+        "review_atFqxY": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg kunne ikke lade være med at bestille Stevns, fordi min mormor voksede op der.\n\nJeg aner ikke, om mønsteret har noget med hende at gøre. Men jeg sad og kiggede på det og tænkte på hende, og så bestilte jeg det.\n\nHun strikkede til os, da vi var små. Hun holdt op i 2009, og ingen af os lærte det. Det er nok derfor, det ramte.\n\nSokkerne er i øvrigt rigtig gode og behagelige. Men det var ikke derfor, jeg købte dem.",
+            "author": "Hanne, Aalborg",
+            "meta": ""
+          }
+        },
+        "review_KGb8By": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg har altid sagt nej til uldsokker, fordi jeg ikke kan holde ud, når de kradser. De her gør ikke. Jeg har dem på uden noget under, og jeg mærker dem slet ikke. Havde ikke regnet med det. Kan anbefales. Men der var vist ikke mange tilbage, da jeg var inde sidst. #strikkestuen",
+            "author": "Birgitte, Aarhus",
+            "meta": ""
+          }
+        },
+        "image_kdVbK6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261008_174843_3aa25497-b3e6-4ac8-9425-cd2cd70bc9d7.jpg",
+            "tall": false
+          }
+        },
+        "image_nUkMRn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261008_180627_d559d00b-06e0-4675-9c43-f5d5902ab1b0.jpg",
+            "tall": false
+          }
+        },
+        "review_6jYybJ": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg var skeptisk over prisen, indtil jeg fik dem i hånden. De er væsentligt tykkere end dem, jeg har købt tidligere og langt mere behagelige at have på. Eneste lille minus er at de er 1-2 dage om at tørre men de kan vaskes i maskine uden problemer på 30 grader. #strikkestuen",
+            "author": "Mette, Odense",
+            "meta": ""
+          }
+        },
+        "review_xP4xMr": {
+          "type": "review",
+          "settings": {
+            "quote": "Tredje gang jeg bestiller. Nu har hele familien fået et par. Har vasket de første fire-fem gange. De har ikke ændret sig. Bestiller julegaverne her igen i år.",
+            "author": "Lone, Vejle",
+            "meta": ""
+          }
+        },
+        "image_gRUGmN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261008_180936_14276477-aaaa-4611-b715-a0060384bd19.jpg",
+            "tall": false
+          }
+        },
+        "image_gY3yXW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_104942_ff01585a-bd9a-40c2-965b-4b5e3cdf8170.jpg",
+            "tall": true
+          }
+        },
+        "review_LNfEkM": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg valgte Mols, fordi min farmor kom derfra. Det betød mere, end jeg regnede med. Jeg bruger mine hele tiden på arbejde og i fritiden. Kan varmt anbefale!",
+            "author": "Thomas, København",
+            "meta": ""
+          }
+        },
+        "review_KyV87J": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg har kasseret så mange uldsokker med hul i hælen, at jeg holdt op med at købe dem.\n\nHar haft disse på hele tiden siden slutningen af september. Hælen ser ud som dagen jeg fik dem. Første gang jeg har haft et par, hvor jeg ikke bare venter på, at de går i stykker. #strikkestuen",
+            "author": "Inger, Silkeborg",
+            "meta": ""
+          }
+        },
+        "image_CBtXAY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_105230_59126d5b-ab3c-48c2-9a1c-15aa5d3a64d9.jpg",
+            "tall": false
+          }
+        },
+        "image_JaAz4r": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_105750_90ac6284-d76b-4e31-ab40-74053b5bb8f1.jpg",
+            "tall": false
+          }
+        },
+        "review_8rTFT9": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg har før ødelagt uld i maskinen, så jeg turde ikke vaske dem først. Men der stod 30 grader på uldprogram, så jeg prøvede. De er præcis samme størrelse som før. Det tager dog et par dage før de er helt tørre, så man skal være lidt tålmodig..",
+            "author": "Kirsten, Esbjerg",
+            "meta": ""
+          }
+        },
+        "review_dq4aUW": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg havde et par fra et andet mærke til halv pris liggende ved siden af.\nForskellen er til at tage og føle på. Garnet er tykkere, og der er ikke de der tynde steder, hvor man kan se igennem. Man får altså hvad man betaler for. #strikkestuen",
+            "author": "Susanne, Roskilde",
+            "meta": ""
+          }
+        },
+        "image_fQr6YU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_110257_ffd8e498-4fa2-4c9e-930d-a15f9049fd39.jpg",
+            "tall": false
+          }
+        },
+        "image_xdFfkH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_111057_1b9033c0-f6bb-4d95-96d9-a144b21df8d0.jpg",
+            "tall": false
+          }
+        },
+        "review_cGh8pc": {
+          "type": "review",
+          "settings": {
+            "quote": "Købte de første i september. De har været i vask mindst ti gange nu.\nIngen huller, ingen krympning, mønsteret er lige så skarpt som dag et. Det er derfor, jeg bestiller flere i stedet for at prøve noget andet. #strikkestuen",
+            "author": "Jette, Horsens",
+            "meta": ""
+          }
+        },
+        "review_GCwVjP": {
+          "type": "review",
+          "settings": {
+            "quote": "Fik dem af min datter. Jeg havde ikke bedt om noget, og jeg manglede heller ikke noget.\nNu står de ved døren, og jeg tager dem på, så snart jeg kommer hjem. Hun siger, hun har bestilt flere til jul",
+            "author": "Erik, Viborg",
+            "meta": ""
+          }
+        },
+        "image_WLHF9k": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_111437_02feea29-6621-4bcf-8226-2eb8d4b87073.jpg",
+            "tall": false
+          }
+        },
+        "review_8gUTPb": {
+          "type": "review",
+          "settings": {
+            "quote": "Vores hus er fra 1954. Der er to grader forskel på stuen og gangen.\n\nJeg har prøvet tøfler, men de sidder ikke fast, og man kan ikke have dem på i sengen. De her kan jeg have på hele dagen.",
+            "author": "Marianne, Haderslev",
+            "meta": ""
+          }
+        },
+        "image_6F6era": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_112040_95cba69c-14d5-4f08-8736-89e89c2fe4ab.jpg",
+            "tall": false
+          }
+        },
+        "image_Xr8eQ3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_112257_dc74f4a2-8173-475f-9945-239ebc57a9b1.jpg",
+            "tall": true
+          }
+        },
+        "review_cd6Ctf": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg har haft uld strømper før, men de var tynde som papir.\nDisse er noget helt andet. Man kan mærke, at der er garn i dem.",
+            "author": "Charlotte, Næstved",
+            "meta": ""
+          }
+        },
+        "review_jKigLd": {
+          "type": "review",
+          "settings": {
+            "quote": "Brugte en halv time på at vælge, fordi jeg ikke kunne bestemme mig.\nEndte med fire forskellige, og det var det rigtige.",
+            "author": "Anne, Herning",
+            "meta": ""
+          }
+        },
+        "image_gKkVtB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_112643_17553487-3a84-4394-9232-807afd35e7d2.jpg",
+            "tall": false
+          }
+        },
+        "image_R8mQ3X": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_113243_fd651b2b-fd32-45f2-bd89-c9cf0b7ecf73.jpg",
+            "tall": true
+          }
+        },
+        "review_mmGU9T": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg ledte overhovedet ikke efter sokker. Jeg så en annonce om, at ingen strikker dem længere. Min mormor strikkede til os alle sammen, indtil hun ikke kunne mere. Jeg har ikke haft et par siden. Bestilte fire på stedet.",
+            "author": "Pernille, Slagelse",
+            "meta": ""
+          }
+        },
+        "review_AGtqyH": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg er sygeplejerske og går tolv timer på et linoleumsgulv.\n\nHar prøvet alt muligt. De her er de første, der ikke er klemt flade efter fire timer. Jeg har et par i skabet på arbejdet nu.",
+            "author": "Camilla, Odense",
+            "meta": ""
+          }
+        },
+        "image_tw9wcG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_114027_7c2d8949-0513-4af1-aee2-ecc561776eb5.jpg",
+            "tall": false
+          }
+        },
+        "image_eiBmWN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_122731_1e0c23f6-885c-46e6-b4ed-f144df8528df.jpg",
+            "tall": true
+          }
+        },
+        "review_GKqNJf": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg er pædagog, og vi går indendørs i sokker hele dagen.\n\nBomuldssokker bliver klamme inden frokost. Disse holder sig tørre. Eneste minus er, at de nogle dage om at tørre.",
+            "author": "Louise, Randers",
+            "meta": ""
+          }
+        },
+        "review_V8jMEk": {
+          "type": "review",
+          "settings": {
+            "quote": "Jeg kører lastbil og sidder med fødderne i kulde otte timer i træk. Havde kigget på nogle dyrere mærker først. De her er tykkere for halvdelen af pengene. Har bestilt seks mere til kabinen.",
+            "author": "Jan, Kolding",
+            "meta": ""
+          }
+        },
+        "image_qPMGgf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_124602_00926029-e65e-490e-a34c-aa85360cf3b6.jpg",
+            "tall": false
+          }
+        },
+        "image_hwi7cd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_124124_4922c846-7a41-4893-a854-6c431117fa15.jpg",
+            "tall": false
+          }
+        },
+        "review_GVzXMT": {
+          "type": "review",
+          "settings": {
+            "quote": "Købte fire til mig selv. De er gode",
+            "author": "Dorthe, Hillerød",
+            "meta": ""
+          }
+        },
+        "image_TxM4kB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_124404_7a68e6af-8446-4c63-ae36-bdd252d4c272.jpg",
+            "tall": false
+          }
+        },
+        "review_z9PxNG": {
+          "type": "review",
+          "settings": {
+            "quote": "Fik et par af en kollega, der havde købt for mange. Jeg vidste ikke, der var forskel på uldsokker. Det er der. Har bestilt fire selv nu, og min mor skal have to af dem.",
+            "author": "Rikke, Esbjerg",
+            "meta": ""
+          }
+        },
+        "review_x33g9P": {
+          "type": "review",
+          "settings": {
+            "quote": "Kan varmt anbefale dem de er så hyggelige og behagelige",
+            "author": "Dorthe, Hem",
+            "meta": ""
+          }
+        },
+        "image_tfTTXT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20261010_125202_e7792885-25fc-45cd-82b2-0cd50ed66191_1.jpg",
+            "tall": true
+          }
+        }
+      },
+      "block_order": [
+        "image_4keUKR",
+        "review_atFqxY",
+        "review_KGb8By",
+        "image_kdVbK6",
+        "image_nUkMRn",
+        "review_6jYybJ",
+        "review_xP4xMr",
+        "image_gRUGmN",
+        "image_gY3yXW",
+        "review_LNfEkM",
+        "review_KyV87J",
+        "image_CBtXAY",
+        "image_JaAz4r",
+        "review_8rTFT9",
+        "review_dq4aUW",
+        "image_fQr6YU",
+        "image_xdFfkH",
+        "review_cGh8pc",
+        "review_GCwVjP",
+        "image_WLHF9k",
+        "review_8gUTPb",
+        "image_6F6era",
+        "image_Xr8eQ3",
+        "review_cd6Ctf",
+        "review_jKigLd",
+        "image_gKkVtB",
+        "image_R8mQ3X",
+        "review_mmGU9T",
+        "review_AGtqyH",
+        "image_tw9wcG",
+        "image_eiBmWN",
+        "review_GKqNJf",
+        "review_V8jMEk",
+        "image_qPMGgf",
+        "image_hwi7cd",
+        "review_GVzXMT",
+        "image_TxM4kB",
+        "review_z9PxNG",
+        "review_x33g9P",
+        "image_tfTTXT"
+      ],
+      "settings": {
+        "title": "tak for varmen",
+        "button_label": "",
+        "button_link": ""
       }
     },
     "hollow_reviews_4WGVMN": {
@@ -785,7 +1137,7 @@
           "type": "faq",
           "settings": {
             "question": "Hvordan virker rabatten?",
-            "answer": "<p>Du lægger bare de par i kurven, du vil have. Prisen falder automatisk, når du når fire — og igen ved seks. Du skal ikke bruge en kode.</p><p>Mønstrene må gerne være forskellige.</p>"
+            "answer": "<p><strong>Bland frit. Både mønstre og størrelser.</strong></p><p>Læg de par i kurven, du vil have. Mor i M, far i XL, børnene i S. Det hele tæller med.</p><p><strong>4 par:</strong> 599 kr.<br/><br/><strong>6 par:</strong> 849 kr.</p><p>Prisen ændres automatisk i kurven. Du skal ikke bruge en kode.</p>"
           }
         },
         "faq_RtcxJX": {
@@ -800,21 +1152,21 @@
           "type": "faq",
           "settings": {
             "question": "Kradser de?",
-            "answer": "<p><br/>Nej. Garnet er blødt nok til at have på uden noget under. Kløe er den eneste grund til, at folk holdt op med at bruge uldsokker — og det problem er løst.<br/><br/></p>"
+            "answer": "<p>Nej. Vi strikker i blød merinould, som du kan have direkte på huden. Det var kløen, der fik mange til at droppe uldstrømperne. Den har vi taget ud.<br/><br/></p>"
           }
         },
         "faq-2": {
           "type": "faq",
           "settings": {
             "question": "Kan jeg vælge forskellige mønstre?",
-            "answer": "<p><br/>Ja. Du må gerne blande frit. Rabatten beregnes på antal par, ikke på mønster.<br/><br/></p>"
+            "answer": "<p>Ja. Du må blande frit, både mønstre og størrelser. Rabatten regnes ud fra, hvor mange par du har i kurven. Ikke hvilke.<br/><br/></p>"
           }
         },
         "faq-3": {
           "type": "faq",
           "settings": {
             "question": "Kan de vaskes i maskine?",
-            "answer": "<p>Ja, 30 grader på uldprogram. Brug uldvaskemiddel og læg dem fladt til tørre. Ikke i tørretumbler — det er det eneste, der kan ødelægge dem.<br/><br/></p>"
+            "answer": "<p>Ja, 30 grader på uldprogram. Læg dem fladt til tørre. Ikke i tørretumbler — det er det eneste, der kan ødelægge dem.<br/><br/></p>"
           }
         },
         "faq-4": {
@@ -842,7 +1194,7 @@
         "faq_pURaxa"
       ],
       "settings": {
-        "image": "shopify://shop_images/hf_20260905_102704_ce87faa1-90cc-4c5a-9648-53f5fc9e23e3.jpg",
+        "image": "shopify://shop_images/hf_20261017_161909_c8793407-5df0-45e6-bd2a-f38122272ac6.jpg",
         "title": "Spørgsmål vi får",
         "button_text": "",
         "button_link": ""
@@ -852,9 +1204,10 @@
   "order": [
     "main",
     "hollow_trust_bar_niYxDm",
-    "featured_collection_KCAmpg",
     "custom-advantage",
+    "featured_collection_KCAmpg",
     "custom-marquee",
+    "hollow_reviews_6bxyUz",
     "hollow_reviews_4WGVMN",
     "feature-split-scroll",
     "product-recommendations",
