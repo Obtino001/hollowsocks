@@ -7,7 +7,8 @@
 
 <footer class="custom-footer" data-section-id="{{ section.id }}">
   <div class="page-width">
-    <div class="custom-footer__top">
+    <div class="custom-footer__top{% unless section.settings.show_newsletter %} custom-footer__top--no-newsletter{% endunless %}">
+      {%- if section.settings.show_newsletter -%}
       <div
         class="custom-footer__newsletter{% if bg_image_url == blank %} custom-footer__newsletter--empty{% endif %}"
         {% if bg_image_url != blank %}style="background-image: url('{{ bg_image_url }}');"{% endif %}
@@ -45,6 +46,7 @@
           {%- endif -%}
         </div>
       </div>
+      {%- endif -%}
 
       <div class="custom-footer__right">
         <div class="custom-footer__brand" aria-label="{{ section.settings.brand_text | default: 'Strikkestuen' | escape }}">
@@ -112,6 +114,12 @@
     {
       "type": "header",
       "content": "Newsletter card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter card",
+      "default": true
     },
     {
       "type": "image_picker",

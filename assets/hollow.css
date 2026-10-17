@@ -2510,6 +2510,10 @@
   margin-bottom: 72px;
 }
 
+.custom-footer__top--no-newsletter {
+  grid-template-columns: 1fr;
+}
+
 .custom-footer__newsletter {
   position: relative;
   display: flex;
@@ -2809,10 +2813,6 @@
   line-height: 1.5;
 }
 
-.hollow-about__timeline {
-  padding-inline: 24px;
-}
-
 .hollow-about__gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2848,7 +2848,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  padding: 24px 0 48px;
+  padding: 24px 24px 48px;
 }
 
 .hollow-about__year-mark {
@@ -3388,12 +3388,12 @@ body.hollow-theme:not(.template-product-gave) .product-block--price {
   font-family: var(--hollow-body);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: var(--hollow-white);
   background: var(--hollow-red);
-  padding: 7px 12px;
-  line-height: 1;
+  padding: 10px 14px;
+  line-height: 1.45;
   border-radius: 2px;
 }
 
