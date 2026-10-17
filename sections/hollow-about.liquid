@@ -10,7 +10,7 @@
     </div>
   {%- endif -%}
 
-  {%- if section.settings.fiber_title != blank or section.settings.fiber_text != blank -%}
+  {%- if section.settings.fiber_title != blank or section.settings.fiber_text != blank or section.settings.fiber_image != blank -%}
     <div class="page-width hollow-about__fiber">
       <div class="hollow-about__fiber-copy">
         {%- if section.settings.fiber_title != blank -%}
@@ -52,8 +52,27 @@
     </div>
   {%- endif -%}
 
+  {%- assign gallery = section.blocks | where: 'type', 'image' -%}
+  {%- if gallery.size > 0 -%}
+    <div class="page-width hollow-about__gallery">
+      {%- for block in gallery -%}
+        <figure class="hollow-about__gallery-item" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '480, 720, 1080, 1200', sizes: '(min-width: 769px) 33vw, 100vw', alt: block.settings.image.alt }}
+          {%- elsif request.design_mode -%}
+            <div class="hollow-about__gallery-empty">Tilføj billede</div>
+          {%- endif -%}
+        </figure>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
   {%- assign features = section.blocks | where: 'type', 'feature' -%}
-  {%- if features.size > 0 -%}
+  {%- assign features_text = '' -%}
+  {%- for block in features -%}
+    {%- assign features_text = features_text | append: block.settings.title | append: block.settings.text -%}
+  {%- endfor -%}
+  {%- if features.size > 0 and features_text != blank -%}
     <div class="hollow-about__means">
       <div class="page-width">
         {%- if section.settings.means_heading != blank -%}
@@ -94,6 +113,13 @@
         { "type": "text", "id": "year", "label": "Year", "default": "2018" },
         { "type": "text", "id": "title", "label": "Title", "default": "The Discovery" },
         { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" }
       ]
     },
     {

@@ -2793,7 +2793,8 @@
 
 /* About */
 .hollow-about__hero {
-  padding: 56px 0 24px;
+  padding: 56px 24px 24px;
+  text-align: center;
 }
 
 .hollow-about__hero-title {
@@ -2803,8 +2804,44 @@
 
 .hollow-about__hero-text {
   max-width: 640px;
+  margin-inline: auto;
   font-size: 18px;
   line-height: 1.5;
+}
+
+.hollow-about__timeline {
+  padding-inline: 24px;
+}
+
+.hollow-about__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 0 24px 48px;
+}
+
+.hollow-about__gallery-item {
+  margin: 0;
+}
+
+.hollow-about__gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hollow-about__gallery-empty {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+  border: 1px dashed currentColor;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 768px) {
+  .hollow-about__gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 .hollow-about__timeline {

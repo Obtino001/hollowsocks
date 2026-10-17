@@ -36,6 +36,18 @@
             "text": "Du åbnede døren for os. Nu åbner vi vores. For første gang. Vi kunne ikke tage vores hjem med. Men vi tog varmen med. 🇺🇦🇩🇰\n\nTak for varmen.\nOlena og Oleksandr"
           }
         },
+        "i1": {
+          "type": "image",
+          "settings": {}
+        },
+        "i2": {
+          "type": "image",
+          "settings": {}
+        },
+        "i3": {
+          "type": "image",
+          "settings": {}
+        },
         "f1": {
           "type": "feature",
           "settings": {
@@ -80,6 +92,9 @@
         "t1",
         "t2",
         "t3",
+        "i1",
+        "i2",
+        "i3",
         "f1",
         "f2",
         "f3",
@@ -93,7 +108,6 @@
         "fiber_eyebrow": "",
         "fiber_story_title": "",
         "fiber_text": "",
-        "fiber_image": "shopify://shop_images/hf_20261017_154305_0d3e17ef-8eab-4231-b41a-d81c49292086.jpg",
         "means_heading": ""
       }
     },
