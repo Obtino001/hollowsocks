@@ -2859,24 +2859,6 @@
   line-height: 1.5;
 }
 
-.hollow-about__year-image {
-  margin-top: 16px;
-}
-
-.hollow-about__year-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.hollow-about__gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding: 0 24px 48px;
-}
-
 .hollow-about__gallery-item {
   margin: 0;
 }
@@ -2895,11 +2877,6 @@
   opacity: 0.5;
 }
 
-@media only screen and (max-width: 768px) {
-  .hollow-about__gallery {
-    grid-template-columns: 1fr;
-  }
-}
 
 .hollow-about__timeline {
   display: grid;
@@ -2933,6 +2910,17 @@
   .hollow-about__timeline,
   .hollow-about__means-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile: each image comes right after its text (text 1, image 1, text 2, ...) */
+@media only screen and (max-width: 768px) {
+  .hollow-about__year {
+    order: calc(var(--i) * 2);
+  }
+
+  .hollow-about__gallery-item {
+    order: calc(var(--i) * 2 + 1);
   }
 }
 
