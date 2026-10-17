@@ -7,47 +7,7 @@
 
 <footer class="custom-footer" data-section-id="{{ section.id }}">
   <div class="page-width">
-    <div class="custom-footer__top{% unless section.settings.show_newsletter %} custom-footer__top--no-newsletter{% endunless %}">
-      {%- if section.settings.show_newsletter -%}
-      <div
-        class="custom-footer__newsletter{% if bg_image_url == blank %} custom-footer__newsletter--empty{% endif %}"
-        {% if bg_image_url != blank %}style="background-image: url('{{ bg_image_url }}');"{% endif %}
-      >
-        <div class="custom-footer__newsletter-content">
-          {%- if section.settings.newsletter_heading != blank -%}
-            <h2 class="custom-footer__newsletter-heading">{{ section.settings.newsletter_heading }}</h2>
-          {%- endif -%}
-          {%- if section.settings.newsletter_subheading != blank -%}
-            <p class="custom-footer__newsletter-sub">{{ section.settings.newsletter_subheading }}</p>
-          {%- endif -%}
-
-          {% form 'customer', class: 'custom-footer__form' %}
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            <div class="custom-footer__form-inner">
-              <label class="visually-hidden" for="FooterEmail-{{ section.id }}">Email address</label>
-              <input
-                id="FooterEmail-{{ section.id }}"
-                type="email"
-                name="contact[email]"
-                placeholder="Din e-mail"
-                autocomplete="email"
-                required
-              >
-              <button type="submit" aria-label="Subscribe">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </div>
-          {% endform %}
-
-          {%- if section.settings.newsletter_disclaimer != blank -%}
-            <div class="custom-footer__disclaimer">{{ section.settings.newsletter_disclaimer }}</div>
-          {%- endif -%}
-        </div>
-      </div>
-      {%- endif -%}
-
+    <div class="custom-footer__top custom-footer__top--no-newsletter">
       <div class="custom-footer__right">
         <div class="custom-footer__brand" aria-label="{{ section.settings.brand_text | default: 'Strikkestuen' | escape }}">
           <span class="custom-footer__brand-text">{{ section.settings.brand_text | default: 'STRIKKESTUEN' | escape }}</span>
