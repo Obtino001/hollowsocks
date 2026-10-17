@@ -228,7 +228,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "24 egne. 24 mønstre.",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "home_featured_products": "sokker",
         "per_row": 5,
         "rows": 2,
