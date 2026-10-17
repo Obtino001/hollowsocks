@@ -89,8 +89,8 @@
       "settings": {
         "image": "shopify://shop_images/hf_20261009_115220_79052827-22ff-4607-9bcb-f94e4977394a.jpg",
         "overlay_opacity": 0,
-        "kicker": "Der var engang mere end 100 mønstre i Danmark",
-        "heading": "VI HAR GENSKABT 24 MØNSTRE",
+        "kicker": "",
+        "heading": "Danmark gav os varme. Nu strikker vi den tilbage.",
         "text": "",
         "button_label": "SE MØNSTRENE",
         "button_link": "shopify://collections/sokker"
@@ -102,22 +102,22 @@
         "stat_bxgzDY": {
           "type": "stat",
           "settings": {
-            "value": "24",
-            "label": "MØNSTRE FRA DANSKE EGNE"
+            "value": "12",
+            "label": "MØNSTRE HJEMMEFRA"
           }
         },
         "stat_XxLA8b": {
           "type": "stat",
           "settings": {
-            "value": "12",
-            "label": "MÅNEDERS GARANTI PÅ HOLDBARHEDEN"
+            "value": "UKRAINSK",
+            "label": "STRIK FRA BEDSTEMORS TID"
           }
         },
         "stat_7qH6CN": {
           "type": "stat",
           "settings": {
-            "value": "SMÅ PARTIER",
-            "label": "IKKE MASSEPRODUKTION"
+            "value": "2022",
+            "label": "DA DANMARK BLEV VORES HJEM"
           }
         }
       },
