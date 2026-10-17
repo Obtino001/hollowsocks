@@ -3595,6 +3595,17 @@ body.hollow-theme:not(.template-product-gave) .product-block--price {
   white-space: nowrap;
 }
 
+.hollow-offers__save {
+  display: block;
+  font-family: var(--hollow-mono);
+  color: var(--hollow-red);
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
 .hollow-offers__was {
   display: block;
   font-family: var(--hollow-mono);
