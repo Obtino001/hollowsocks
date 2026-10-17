@@ -167,35 +167,35 @@
         "hollow_size_women_xl": "-"
       }
     },
-    "hollow-trust": {
+    "hollow_trust_bar_niYxDm": {
       "type": "hollow-trust-bar",
       "blocks": {
-        "stat-1": {
-          "type": "stat",
-          "settings": {
-            "value": "24",
-            "label": "MØNSTRE FRA DANSKE EGNE"
-          }
-        },
-        "stat-2": {
+        "stat_D6qUPN": {
           "type": "stat",
           "settings": {
             "value": "12",
-            "label": "MÅNEDERS GARANTI PÅ HOLDBARHEDEN"
+            "label": "MØNSTRE HJEMMEFRA"
           }
         },
-        "stat-3": {
+        "stat_gwx6nP": {
           "type": "stat",
           "settings": {
-            "value": "SMÅ PARTIER",
-            "label": "IKKE MASSEPRODUKTION"
+            "value": "UKRAINSK",
+            "label": "STRIK FRA BEDSTEMORS TID"
+          }
+        },
+        "stat_TP4KYc": {
+          "type": "stat",
+          "settings": {
+            "value": "2022",
+            "label": "DA DANMARK BLEV VORES HJEM"
           }
         }
       },
       "block_order": [
-        "stat-1",
-        "stat-2",
-        "stat-3"
+        "stat_D6qUPN",
+        "stat_gwx6nP",
+        "stat_TP4KYc"
       ],
       "settings": {
         "background": "#2f4438",
@@ -851,7 +851,7 @@
   },
   "order": [
     "main",
-    "hollow-trust",
+    "hollow_trust_bar_niYxDm",
     "featured_collection_KCAmpg",
     "custom-advantage",
     "custom-marquee",
