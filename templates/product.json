@@ -206,7 +206,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.featured_collection.name",
       "settings": {
-        "title": "Der er 24 mønstre at vælge imellem",
+        "title": "Der er 12 mønstre at vælge imellem",
         "heading_size": "h2",
         "home_featured_products": "sokker",
         "per_row": 5,
