@@ -34,7 +34,7 @@
         "step-3": {
           "type": "step",
           "settings": {
-            "text": "Prisen falder automatisk - Ingen kode"
+            "text": "Prisen falder automatisk. Ingen kode"
           }
         }
       },
